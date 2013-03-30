@@ -36,7 +36,7 @@ public class BaseOre extends Block {
 
 	@Override
 	public int quantityDropped(Random par1Random) {
-		return quantaty > 1 ? 1 + par1Random.nextInt(quantaty) : 1;
+		return par1Random.nextInt(quantaty);
 	}
 
 	/**
@@ -66,6 +66,6 @@ public class BaseOre extends Block {
 	}
 	public void registerIcons(IconRegister iconRegister)
 	{
-	         blockIcon = iconRegister.registerIcon("mod_nw:lexpo");//+this.getUnlocalizedName());
+	         blockIcon = iconRegister.registerIcon("mod_nw:"+this.getUnlocalizedName2());
 	}
 }
