@@ -11,7 +11,12 @@
 	<entry key="tile.coperore.name">Медная руда</entry>
 	<entry key="tile.coperblock.name">Медный блок</entry>
 	<entry key="tile.mithrilore.name">Митриловая руда</entry>
-	<entry key="tile.blockmithri.name">Митриловый блок блок</entry>
+	<entry key="tile.blockmithri.name">Митриловый блок </entry>
+	<entry key="tile.sakuralog.0.name">Доски тёмной вишни</entry>
+	<entry key="tile.sakuralog.1.name">Доски розовой берёзы</entry>
+	<entry key="tile.sakuralog.2.name">Доски жёлтого дерева</entry>
+	<entry key="tile.sakuralog.3.name">Доски серого дерева</entry>
+	<entry key="tile.iceplank.name">Морозные доски</entry>
 
 	<entry key="item.lexpi.name">Экспонит</entry>
 	<entry key="item.mingot.name">Слиток митрила</entry>

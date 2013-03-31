@@ -21,6 +21,8 @@ public class Config {
 		public static int coperblock_id;
 		public static int mithrilore_id;
 		public static int blockmithri_id;
+		public static int sakuralog_id;
+		public static int iceplank_id;
 	}
 
 	/** Item **/
@@ -52,10 +54,13 @@ public class Config {
 			BLOCK_ID.coperblock_id = cfg.getBlock("coperblock_id", 201).getInt(201);
 			BLOCK_ID.mithrilore_id = cfg.getBlock("mithrilore_id", 202).getInt(202);
 			BLOCK_ID.blockmithri_id = cfg.getBlock("blockmithri_id", 203).getInt(203);
+			BLOCK_ID.sakuralog_id= cfg.getBlock("sakuralog_id", 204).getInt(204);
+			BLOCK_ID.iceplank_id = cfg.getBlock("iceplank_id", 205).getInt(205);
 			/** Item **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
+			
 			/** **/
 			String[] _lang = new String[1];
 			_lang[0] = "ru_RU";

@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import mods.mod_nw.Block.*;
 import mods.mod_nw.Config.BLOCK_ID;
 import mods.mod_nw.Config.ITEM_ID;
-import mods.mod_nw.Item.BaseItem;
+import mods.mod_nw.Item.*;
 import mods.mod_nw.WorldGen.OreWorldGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
@@ -51,18 +51,20 @@ public class NordWest {
 	public static Block coperore;
 	public static Block coperblock;
 	public static Block mithrilore;
+	public static Block blockmithri;
+	public static Block sakuralog;
+	public static Block iceplank;
 
 	public static Item lexpiItem;
 	public static Item mingotItem;
 	public static Item cingotItem;
-	public static Block blockmithri;
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		cfg = new Config(event.getSuggestedConfigurationFile());
 	}
 
-//	LanguageRegistry language = LanguageRegistry.instance();
+	// LanguageRegistry language = LanguageRegistry.instance();
 
 	@Init
 	public void load(FMLInitializationEvent event) {
@@ -72,10 +74,9 @@ public class NordWest {
 		mingotItem = new BaseItem(Config.ITEM_ID.mingot_id).setUnlocalizedName("mingot");
 		cingotItem = new BaseItem(Config.ITEM_ID.cingot_id).setMaxStackSize(64).setUnlocalizedName("cingot");
 		/** Block **/
-		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, lexpiItem.itemID, 5).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("lexpo");
+		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, lexpiItem.itemID, 5).setHardness(3F)
+				.setResistance(5F).setUnlocalizedName("lexpo");
 		GameRegistry.registerBlock(lexpo, "lexpo");
-
 
 		ore0 = new BlockStone(Config.BLOCK_ID.ore0_id).setHardness(1.5F).setResistance(10.0F)
 				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
@@ -107,6 +108,16 @@ public class NordWest {
 		blockmithri = new BaseBlock(Config.BLOCK_ID.blockmithri_id, Material.rock).setHardness(3F).setResistance(5F)
 				.setUnlocalizedName("blockmithri");
 		GameRegistry.registerBlock(blockmithri, "blockmithri");
+		String[] wood = new String[] { "dark", "pink", "yellow", "gray" };
+		sakuralog = new BaseMetadataBlock(Config.BLOCK_ID.sakuralog_id, Material.wood, 4).setHardness(2F)
+				.setResistance(5F).setUnlocalizedName("sakuralog");
+		// Item.itemsList[sakuralog.blockID] =
+		// MetadataBlockItem(sakuralog.blockID - 256,sakuralog,wood);
+		GameRegistry.registerBlock(sakuralog, MetadataBlockItem.class, "sakuralog");
+
+		iceplank = new BaseBlock(Config.BLOCK_ID.iceplank_id, Material.iron).setHardness(20F).setResistance(5F)
+				.setUnlocalizedName("iceplank").setStepSound(Block.soundWoodFootstep);
+		GameRegistry.registerBlock(iceplank, "iceplank");
 		/** безформенные рецепты **/
 
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.expBottle, 1), NordWest.lexpiItem, Item.glassBottle);
@@ -121,15 +132,27 @@ public class NordWest {
 		GameRegistry.addSmelting(coperore.blockID, new ItemStack(cingotItem), 0.2f);
 		GameRegistry.addSmelting(mithrilore.blockID, new ItemStack(mingotItem), 0.2f);
 		/** Генераторы **/
-		//GameRegistry.registerWorldGenerator(new OreWorldGenerator());
+		// GameRegistry.registerWorldGenerator(new OreWorldGenerator());
 	}
+
+	private Item MetadataBlockItem(int i, Block sakuralog2, String[] wood) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public static final String LanguageDirectory = "/mods/mod_nw/lang/";
+
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
-		System.out.printf(cingotItem.getUnlocalizedName());
+		// String[] wood = new String[] {"dark","pink","yellow","gray"};
+		// Item.itemsList[sakuralog.blockID] = new
+		// MetadataBlockItem(sakuralog.blockID - 256,sakuralog,4);
+
 		for (String localizationName : cfg.lang) {
-            LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName +".xml",localizationName, true);
-        }
+			LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml",
+					localizationName, true);
+		}
+
 	}
 
 }
