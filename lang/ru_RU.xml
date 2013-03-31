@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Russian (RU) Localization File</comment>
+	<entry key="tile.lexpo.name">Экспонитовая руда</entry>
+	<entry key="tile.ore0.name">Не используемая руда</entry>
+	<entry key="tile.ore1.name">Не используемая руда</entry>
+	<entry key="tile.ore2.name">Не используемая руда</entry>
+	<entry key="tile.ore3.name">Не используемая руда</entry>
+	<entry key="tile.ore4.name">Не используемая руда</entry>
+	<entry key="tile.coperore.name">Медная руда</entry>
+	<entry key="tile.coperblock.name">Медный блок</entry>
+	<entry key="tile.mithrilore.name">Митриловая руда</entry>
+	<entry key="tile.blockmithri.name">Митриловый блок блок</entry>
+
+	<entry key="item.lexpi.name">Экспонит</entry>
+	<entry key="item.mingot.name">Слиток митрила</entry>
+	<entry key="item.cingot.name">Слиток меди</entry>
+	
+	
+	<entry key="itemGroup.tabNord">НордВЕст</entry>
+	
+	</properties>
