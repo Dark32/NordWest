@@ -93,6 +93,9 @@ public class NordWest {
 
 	public static final String LanguageDirectory = "/mods/mod_nw/lang/";
 
+		//--Here we're registering our world generator.--
+		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
+
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		// MinecraftForge.EVENT_BUS.register(new BonemealHandler());
