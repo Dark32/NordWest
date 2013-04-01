@@ -14,6 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -42,18 +43,6 @@ public class NordWest {
 		}
 	};
 	public static Config cfg = null;
-	public static Block lexpo;
-	public static Block ore0;
-	public static Block ore1;
-	public static Block ore2;
-	public static Block ore3;
-	public static Block ore4;
-	public static Block coperore;
-	public static Block coperblock;
-	public static Block mithrilore;
-	public static Block blockmithri;
-	public static Block sakuralog;
-	public static Block iceplank;
 
 	public static Item lexpiItem;
 	public static Item mingotItem;
@@ -62,75 +51,37 @@ public class NordWest {
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		cfg = new Config(event.getSuggestedConfigurationFile());
-	}
-
-	// LanguageRegistry language = LanguageRegistry.instance();
-
-	@Init
-	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
 		/** Item **/
 		lexpiItem = new BaseItem(Config.ITEM_ID.lexpi_id).setUnlocalizedName("lexpi");
 		mingotItem = new BaseItem(Config.ITEM_ID.mingot_id).setUnlocalizedName("mingot");
 		cingotItem = new BaseItem(Config.ITEM_ID.cingot_id).setMaxStackSize(64).setUnlocalizedName("cingot");
 		/** Block **/
-		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, lexpiItem.itemID, 5).setHardness(3F)
-				.setResistance(5F).setUnlocalizedName("lexpo");
-		GameRegistry.registerBlock(lexpo, "lexpo");
 
-		ore0 = new BlockStone(Config.BLOCK_ID.ore0_id).setHardness(1.5F).setResistance(10.0F)
-				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
-		ore1 = new BlockStone(Config.BLOCK_ID.ore1_id).setHardness(1.5F).setResistance(10.0F)
-				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
-		ore2 = new BlockStone(Config.BLOCK_ID.ore2_id).setHardness(1.5F).setResistance(10.0F)
-				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
-		ore3 = new BlockStone(Config.BLOCK_ID.ore3_id).setHardness(1.5F).setResistance(10.0F)
-				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
-		ore4 = new BlockStone(Config.BLOCK_ID.ore4_id).setHardness(1.5F).setResistance(10.0F)
-				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
-		GameRegistry.registerBlock(ore0, "ore0");
-		GameRegistry.registerBlock(ore1, "ore1");
-		GameRegistry.registerBlock(ore2, "ore2");
-		GameRegistry.registerBlock(ore3, "ore3");
-		GameRegistry.registerBlock(ore4, "ore4");
+		NWBlock.init();
 
-		coperore = new BaseBlock(Config.BLOCK_ID.coper_ore_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("coperore");
-		GameRegistry.registerBlock(coperore, "coperore");
-		coperblock = new BaseBlock(Config.BLOCK_ID.coperblock_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("coperblock");
-		GameRegistry.registerBlock(coperblock, "coperblock");
+		
+	}
 
-		mithrilore = new BaseBlock(Config.BLOCK_ID.mithrilore_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("mithrilore");
-		GameRegistry.registerBlock(mithrilore, "mithrilore");
+	// LanguageRegistry language = LanguageRegistry.instance();
 
-		blockmithri = new BaseBlock(Config.BLOCK_ID.blockmithri_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("blockmithri");
-		GameRegistry.registerBlock(blockmithri, "blockmithri");
-		String[] wood = new String[] { "dark", "pink", "yellow", "gray" };
-		sakuralog = new BaseMetadataBlock(Config.BLOCK_ID.sakuralog_id, Material.wood, 4).setHardness(2F)
-				.setResistance(5F).setUnlocalizedName("sakuralog");
-		// Item.itemsList[sakuralog.blockID] =
-		// MetadataBlockItem(sakuralog.blockID - 256,sakuralog,wood);
-		GameRegistry.registerBlock(sakuralog, MetadataBlockItem.class, "sakuralog");
-
-		iceplank = new BaseBlock(Config.BLOCK_ID.iceplank_id, Material.iron).setHardness(20F).setResistance(5F)
-				.setUnlocalizedName("iceplank").setStepSound(Block.soundWoodFootstep);
-		GameRegistry.registerBlock(iceplank, "iceplank");
+	@Init
+	public void load(FMLInitializationEvent event) {
+		proxy.registerEvent();
 		/** безформенные рецепты **/
 
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.expBottle, 1), NordWest.lexpiItem, Item.glassBottle);
-		GameRegistry.addShapelessRecipe(new ItemStack(cingotItem, 9), new ItemStack(coperblock));
-		GameRegistry.addShapelessRecipe(new ItemStack(mingotItem, 9), new ItemStack(blockmithri));
+		GameRegistry.addShapelessRecipe(new ItemStack(cingotItem, 9), new ItemStack(NWBlock.coperblock));
+		GameRegistry.addShapelessRecipe(new ItemStack(mingotItem, 9), new ItemStack(NWBlock.blockmithri));
 		/** Форменные рецепты **/
-		GameRegistry.addRecipe(new ItemStack(blockmithri, 1), new Object[] { "111", "111", "111", '1',
+		GameRegistry.addRecipe(new ItemStack(NWBlock.blockmithri, 1), new Object[] { "111", "111", "111", '1',
 				NordWest.mingotItem });
-		GameRegistry.addRecipe(new ItemStack(coperblock, 1), new Object[] { "111", "111", "111", '1',
+		GameRegistry.addRecipe(new ItemStack(NWBlock.coperblock, 1), new Object[] { "111", "111", "111", '1',
 				NordWest.cingotItem });
+
 		/** Рецепты печки **/
-		GameRegistry.addSmelting(coperore.blockID, new ItemStack(cingotItem), 0.2f);
-		GameRegistry.addSmelting(mithrilore.blockID, new ItemStack(mingotItem), 0.2f);
+		GameRegistry.addSmelting(NWBlock.coperore.blockID, new ItemStack(cingotItem), 0.2f);
+		GameRegistry.addSmelting(NWBlock.mithrilore.blockID, new ItemStack(mingotItem), 0.2f);
 		/** Генераторы **/
 		// GameRegistry.registerWorldGenerator(new OreWorldGenerator());
 	}
@@ -144,6 +95,7 @@ public class NordWest {
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
+		// MinecraftForge.EVENT_BUS.register(new BonemealHandler());
 		// String[] wood = new String[] {"dark","pink","yellow","gray"};
 		// Item.itemsList[sakuralog.blockID] = new
 		// MetadataBlockItem(sakuralog.blockID - 256,sakuralog,4);
