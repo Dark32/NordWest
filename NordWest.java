@@ -60,7 +60,6 @@ public class NordWest {
 
 		NWBlock.init();
 
-		
 	}
 
 	// LanguageRegistry language = LanguageRegistry.instance();
@@ -83,26 +82,13 @@ public class NordWest {
 		GameRegistry.addSmelting(NWBlock.coperore.blockID, new ItemStack(cingotItem), 0.2f);
 		GameRegistry.addSmelting(NWBlock.mithrilore.blockID, new ItemStack(mingotItem), 0.2f);
 		/** Генераторы **/
-		// GameRegistry.registerWorldGenerator(new OreWorldGenerator());
-	}
-
-	private Item MetadataBlockItem(int i, Block sakuralog2, String[] wood) {
-		// TODO Auto-generated method stub
-		return null;
+		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
 	}
 
 	public static final String LanguageDirectory = "/mods/mod_nw/lang/";
 
-		//--Here we're registering our world generator.--
-		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
-
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
-		// MinecraftForge.EVENT_BUS.register(new BonemealHandler());
-		// String[] wood = new String[] {"dark","pink","yellow","gray"};
-		// Item.itemsList[sakuralog.blockID] = new
-		// MetadataBlockItem(sakuralog.blockID - 256,sakuralog,4);
-
 		for (String localizationName : cfg.lang) {
 			LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml",
 					localizationName, true);
