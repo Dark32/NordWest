@@ -8,6 +8,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.mod_nw.NordWest;
 import mods.mod_nw.WorldGen.WorldGenForestSakura;
+import mods.mod_nw.WorldGen.WorldGenTreesSakura;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -98,16 +99,16 @@ public class DarkSakuraSapling extends BlockFlower {
 	            {
 	                j1 = 0;
 	                i1 = 0;
-	                object = new WorldGenTrees(true, 4 + par5Random.nextInt(7), 3, 3, false);
+	                object = new WorldGenTreesSakura(true, 4 + par5Random.nextInt(7), 3, 3, false);
 	            }
 	        }
 	        else
 	        {
-	            object = new WorldGenTrees(true);
+	            object = new WorldGenTreesSakura(true);
 
 	            if (par5Random.nextInt(10) == 0)
 	            {
-	                object = new WorldGenBigTree(true);
+	                object = new WorldGenBigSakuraTree(true);
 	            }
 	        }
 
