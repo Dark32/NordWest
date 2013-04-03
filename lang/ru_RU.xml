@@ -12,6 +12,10 @@
 	<entry key="tile.coperblock.name">Медный блок</entry>
 	<entry key="tile.mithrilore.name">Митриловая руда</entry>
 	<entry key="tile.blockmithri.name">Митриловый блок </entry>
+	<entry key="tile.dsakuraWood.0.name">Древесина сакуры</entry>
+	<entry key="tile.dsakuraWood.1.name">Березовая древесина</entry>
+	<entry key="tile.dsakuraWood.2.name">Древесина жёлтого дерева</entry>
+	<entry key="tile.dsakuraWood.3.name">Древесина баобаба</entry>
 	<entry key="tile.sakuraPlank.0.name">Доски сакуры</entry>
 	<entry key="tile.sakuraPlank.1.name">Березовые доски</entry>
 	<entry key="tile.sakuraPlank.2.name">Доски жёлтого дерева</entry>
@@ -20,10 +24,6 @@
 	<entry key="tile.dsakuraLeaves.1.name">Березовая листва</entry>
 	<entry key="tile.dsakuraLeaves.2.name">Листва жёлтого дерева</entry>
 	<entry key="tile.dsakuraLeaves.3.name">Листва баобаба</entry>
-	<entry key="tile.dsakuraWood.0.name">Древесина сакуры</entry>
-	<entry key="tile.dsakuraWood.1.name">Березовая древесина</entry>
-	<entry key="tile.dsakuraWood.2.name">Древесина жёлтого дерева</entry>
-	<entry key="tile.dsakuraWood.3.name">Древесина баобаба</entry>
 	<entry key="tile.dsakuraSapling.0.name">Росток сакуры</entry>
 	<entry key="tile.dsakuraSapling.1.name">Березовый росток</entry>
 	<entry key="tile.dsakuraSapling.2.name">Росток жёлтого дерева</entry>
