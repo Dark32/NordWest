@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+  <comment>English (US) Localization File</comment>
+	<entry key="tile.lexpo.name">Exponite Ore</entry>
+	<entry key="tile.ore0.name">WIP</entry>
+	<entry key="tile.ore1.name">WIP</entry>
+	<entry key="tile.ore2.name">WIP</entry>
+	<entry key="tile.ore3.name">WIP</entry>
+	<entry key="tile.ore4.name">WIP</entry>
+	<entry key="tile.coperore.name">Copper Ore</entry>
+	<entry key="tile.coperblock.name">Copper Block</entry>
+	<entry key="tile.mithrilore.name">Mythril Ore</entry>
+	<entry key="tile.blockmithri.name">Mythril Block</entry>
+	<entry key="tile.sakuraPlank.0.name">Sakura Plank</entry>
+	<entry key="tile.sakuraPlank.1.name">Light Birch Plank</entry>
+	<entry key="tile.sakuraPlank.2.name">Yellow Tree Plank</entry>
+	<entry key="tile.sakuraPlank.3.name">Baobab Planks</entry>
+	<entry key="tile.dsakuraLeaves.0.name">Sakura Leaves</entry>
+	<entry key="tile.dsakuraLeaves.1.name">Light Birch Leaves</entry>
+	<entry key="tile.dsakuraLeaves.2.name">Yellow Tree Leaves</entry>
+	<entry key="tile.dsakuraLeaves.3.name">Baobab Leaves</entry>
+	<entry key="tile.dsakuraWood.0.name">Sakura Log</entry>
+	<entry key="tile.dsakuraWood.1.name">Light Birch Log</entry>
+	<entry key="tile.dsakuraWood.2.name">Yellow Tree Log</entry>
+	<entry key="tile.dsakuraWood.3.name">Baobab Log</entry>
+	<entry key="tile.dsakuraSapling.0.name">Sakura Sapling</entry>
+	<entry key="tile.dsakuraSapling.1.name">Light Birch Sapling</entry>
+	<entry key="tile.dsakuraSapling.2.name">Yellow Tree Sapling</entry>
+	<entry key="tile.dsakuraSapling.3.name">Baobab Sapling</entry>
+	<entry key="tile.icepPlank.name">Forezen Plank</entry>
+
+	<entry key="item.lexpi.name">Exponite</entry>
+	<entry key="item.mingot.name">Mythril ingot</entry>
+	<entry key="item.cingot.name">Copper ingot</entry>
+	
+	
+	<entry key="itemGroup.tabNord">NordWest Essential</entry>
+	
+	</properties>

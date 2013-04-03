@@ -2,39 +2,39 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
 	<comment>Russian (RU) Localization File</comment>
-	<entry key="tile.lexpo.name">Экспонитовая руда</entry>
-	<entry key="tile.ore0.name">Не используемая руда</entry>
-	<entry key="tile.ore1.name">Не используемая руда</entry>
-	<entry key="tile.ore2.name">Не используемая руда</entry>
-	<entry key="tile.ore3.name">Не используемая руда</entry>
-	<entry key="tile.ore4.name">Не используемая руда</entry>
+	<entry key="tile.lexpo.name">Экспанитовая руда</entry>
+	<entry key="tile.ore0.name">Временный блок</entry>
+	<entry key="tile.ore1.name">Временный блок</entry>
+	<entry key="tile.ore2.name">Временный блок</entry>
+	<entry key="tile.ore3.name">Временный блок</entry>
+	<entry key="tile.ore4.name">Временный блок</entry>
 	<entry key="tile.coperore.name">Медная руда</entry>
 	<entry key="tile.coperblock.name">Медный блок</entry>
 	<entry key="tile.mithrilore.name">Митриловая руда</entry>
 	<entry key="tile.blockmithri.name">Митриловый блок </entry>
-	<entry key="tile.sakuraPlank.0.name">Доски тёмной вишни</entry>
-	<entry key="tile.sakuraPlank.1.name">Доски розовой берёзы</entry>
+	<entry key="tile.dsakuraWood.0.name">Древесина сакуры</entry>
+	<entry key="tile.dsakuraWood.1.name">Березовая древесина</entry>
+	<entry key="tile.dsakuraWood.2.name">Древесина жёлтого дерева</entry>
+	<entry key="tile.dsakuraWood.3.name">Древесина баобаба</entry>
+	<entry key="tile.sakuraPlank.0.name">Доски сакуры</entry>
+	<entry key="tile.sakuraPlank.1.name">Березовые доски</entry>
 	<entry key="tile.sakuraPlank.2.name">Доски жёлтого дерева</entry>
-	<entry key="tile.sakuraPlank.3.name">Доски серого дерева</entry>
-	<entry key="tile.dsakuraLeaves.0.name">Листва тёмной вишн</entry>
-	<entry key="tile.dsakuraLeaves.1.name">Листва розовой берёзы</entry>
+	<entry key="tile.sakuraPlank.3.name">Доски баобаба</entry>
+	<entry key="tile.dsakuraLeaves.0.name">Листва сакуры</entry>
+	<entry key="tile.dsakuraLeaves.1.name">Березовая листва</entry>
 	<entry key="tile.dsakuraLeaves.2.name">Листва жёлтого дерева</entry>
-	<entry key="tile.dsakuraLeaves.3.name">Листва серого дерева</entry>
-	<entry key="tile.dsakuraWood.0.name">Дерево тёмной вишни</entry>
-	<entry key="tile.dsakuraWood.1.name">Дерево розовой берёзы</entry>
-	<entry key="tile.dsakuraWood.2.name">Дерево жёлтого дерева</entry>
-	<entry key="tile.dsakuraWood.3.name">Дерево серого дерева</entry>
-	<entry key="tile.dsakuraSapling.0.name">Росток тёмной вишни</entry>
-	<entry key="tile.dsakuraSapling.1.name">Росток розовой берёзы</entry>
+	<entry key="tile.dsakuraLeaves.3.name">Листва баобаба</entry>
+	<entry key="tile.dsakuraSapling.0.name">Росток сакуры</entry>
+	<entry key="tile.dsakuraSapling.1.name">Березовый росток</entry>
 	<entry key="tile.dsakuraSapling.2.name">Росток жёлтого дерева</entry>
-	<entry key="tile.dsakuraSapling.3.name">Росток серого дерева</entry>
-	<entry key="tile.icepPlank.name">Морозные доски</entry>
+	<entry key="tile.dsakuraSapling.3.name">Росток баобаба</entry>
+	<entry key="tile.icepPlank.name">Доски морозного дерева</entry>
 
-	<entry key="item.lexpi.name">Экспонит</entry>
-	<entry key="item.mingot.name">Слиток митрила</entry>
-	<entry key="item.cingot.name">Слиток меди</entry>
+	<entry key="item.lexpi.name">Экспанит</entry>
+	<entry key="item.mingot.name">Митриловый слиток</entry>
+	<entry key="item.cingot.name">Медный слиток</entry>
 	
 	
-	<entry key="itemGroup.tabNord">НордВЕст</entry>
+	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
 	
 	</properties>
