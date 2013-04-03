@@ -7,6 +7,7 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import mods.mod_nw.NWBlock;
 import mods.mod_nw.NordWest;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -48,7 +49,7 @@ public class SakuraLeaves extends BlockLeaves implements IShearable {
 	}
 
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return -1;// NordWest.dsakuraSapling.blockID;
+		return NWBlock.dsakuraSapling.blockID;
 	}
 
 	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7) {

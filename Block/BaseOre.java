@@ -2,7 +2,6 @@ package mods.mod_nw.Block;
 
 import java.util.Random;
 
-
 import mods.mod_nw.NordWest;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,12 +14,31 @@ import net.minecraft.world.World;
 public class BaseOre extends Block {
 	private int drop_id;
 	private int quantaty = 1;
+	private int minQuantaty = 0;
+	private int xp = 0;
 
+	public BaseOre(int id, Material par2Material, int drop_id, int quantaty, int minQuantaty) {
+		super(id, par2Material);
+		this.drop_id = drop_id;
+		this.quantaty = quantaty;
+		setCreativeTab(NordWest.tabNord);
+		this.minQuantaty = minQuantaty;
+	}
+	public BaseOre(int id, Material par2Material, int drop_id, int quantaty, int minQuantaty,int xp) {
+		super(id, par2Material);
+		this.drop_id = drop_id;
+		this.quantaty = quantaty;
+		setCreativeTab(NordWest.tabNord);
+		this.minQuantaty = minQuantaty;
+		this.xp = xp;
+	}
 	public BaseOre(int id, Material par2Material, int drop_id, int quantaty) {
 		super(id, par2Material);
 		this.drop_id = drop_id;
 		this.quantaty = quantaty;
 		setCreativeTab(NordWest.tabNord);
+		this.minQuantaty = 0;
+
 	}
 
 	public BaseOre(int id, Material par2Material) {
@@ -36,7 +54,7 @@ public class BaseOre extends Block {
 
 	@Override
 	public int quantityDropped(Random par1Random) {
-		return par1Random.nextInt(quantaty);
+		return par1Random.nextInt(quantaty) + minQuantaty;
 	}
 
 	/**
@@ -60,12 +78,12 @@ public class BaseOre extends Block {
 
 	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7) {
 		super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, par7);
-		int j1 = MathHelper.getRandomIntegerInRange(par1World.rand, 2, 5);
-		this.dropXpOnBlockBreak(par1World, par2, par3, par4, quantaty > 1 ? j1 : 0);
+		int j1 = MathHelper.getRandomIntegerInRange(par1World.rand, xp, xp+5);
+		this.dropXpOnBlockBreak(par1World, par2, par3, par4, (quantaty > 1 && xp>0) ? j1 : 0);
 
 	}
-	public void registerIcons(IconRegister iconRegister)
-	{
-	         blockIcon = iconRegister.registerIcon("mod_nw:"+this.getUnlocalizedName2());
+
+	public void registerIcons(IconRegister iconRegister) {
+		blockIcon = iconRegister.registerIcon("mod_nw:" + this.getUnlocalizedName2());
 	}
 }

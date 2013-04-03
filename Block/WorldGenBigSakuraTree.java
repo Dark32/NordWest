@@ -28,8 +28,8 @@ public class WorldGenBigSakuraTree extends WorldGenerator
     int height;
     double heightAttenuation = 0.618D;
     double branchDensity = 1.0D;
-    double branchSlope = 0.381D;
-    double scaleWidth = 1.0D;
+    double branchSlope = -0.381D;
+    double scaleWidth = 1.25D;
     double leafDensity = 1.0D;
 
     /**
@@ -40,7 +40,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
     /**
      * Sets the limit of the random value used to initialize the height limit.
      */
-    int heightLimitLimit = 12;
+    int heightLimitLimit = 15;
 
     /**
      * Sets the distance limit for how far away the generator will populate leaves from the base leaf node.
@@ -370,7 +370,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
 
             if (this.leafNodeNeedsBase(k))
             {
-                this.placeBlockLine(aint, aint2, (byte)NWBlock.dsakuraWood.blockID);
+                this.placeBlockLine(aint, aint2, NWBlock.dsakuraWood.blockID);
             }
         }
     }

@@ -31,7 +31,7 @@ public class NWBlock {
 	public static Block dsakuraWood;
 
 	public static void init() {
-		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NordWest.lexpiItem.itemID, 3).setHardness(3F)
+		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NordWest.lexpiItem.itemID, 2,4,0).setHardness(3F)
 				.setResistance(5F).setUnlocalizedName("lexpo");
 		GameRegistry.registerBlock(lexpo, "lexpo");
 

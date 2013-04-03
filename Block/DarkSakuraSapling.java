@@ -106,7 +106,7 @@ public class DarkSakuraSapling extends BlockFlower {
 	        {
 	            object = new WorldGenTreesSakura(true);
 
-	            if (par5Random.nextInt(10) == 0)
+	            if (par5Random.nextInt(1) == 0)
 	            {
 	                object = new WorldGenBigSakuraTree(true);
 	            }
