@@ -7,7 +7,10 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.mod_nw.NordWest;
+import mods.mod_nw.WorldGen.WorldGenBigSakuraTree;
 import mods.mod_nw.WorldGen.WorldGenForestSakura;
+import mods.mod_nw.WorldGen.WorldGenHugeSakura;
+import mods.mod_nw.WorldGen.WorldGenSakura2;
 import mods.mod_nw.WorldGen.WorldGenTreesSakura;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -69,7 +72,7 @@ public class DarkSakuraSapling extends BlockFlower {
 
 	        if (l == 2)
 	        {
-	            object = new WorldGenTaiga2(true);
+	            object = new WorldGenSakura2(true);
 	        }
 	        else if (l == 1)
 	        {
@@ -83,7 +86,7 @@ public class DarkSakuraSapling extends BlockFlower {
 	                {
 	                    if (this.isSameSapling(par1World, par2 + i1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1, par3, par4 + j1 + 1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1 + 1, 3))
 	                    {
-	                        object = new WorldGenHugeTrees(true, 10 + par5Random.nextInt(20), 3, 3);
+	                        object = new WorldGenHugeSakura(true, 7 + par5Random.nextInt(10), 3, 3);
 	                        flag = true;
 	                        break;
 	                    }

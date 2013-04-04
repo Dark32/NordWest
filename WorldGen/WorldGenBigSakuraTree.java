@@ -1,8 +1,9 @@
-package mods.mod_nw.Block;
+package mods.mod_nw.WorldGen;
 
 import java.util.Random;
 
 import mods.mod_nw.NWBlock;
+import mods.mod_nw.Block.DarkSakuraSapling;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.util.MathHelper;
