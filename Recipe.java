@@ -9,13 +9,9 @@ public class Recipe {
 	public static void init() {
 		/** Форменные рецепты **/
 		basePlankRecipe(NWBlock.sakuraPlank);
-		addRecipe(new ItemStack(NWBlock.blockmithri, 1), new Object[] { "111", "111", "111", '1',
-				NordWest.mingotItem });
-		addRecipe(new ItemStack(NWBlock.coperblock, 1), new Object[] { "111", "111", "111", '1',
-				NordWest.cingotItem });
-
+		addRecipe(new ItemStack(NWBlock.blockmithri, 1), new Object[] { "111", "111", "111", '1', NordWest.mingotItem });
+		addRecipe(new ItemStack(NWBlock.coperblock, 1), new Object[] { "111", "111", "111", '1', NordWest.cingotItem });
 		/** безформенные рецепты **/
-
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.expBottle, 1), NordWest.lexpiItem, Item.glassBottle);
 		GameRegistry.addShapelessRecipe(new ItemStack(NordWest.cingotItem, 9), new ItemStack(NWBlock.coperblock));
 		GameRegistry.addShapelessRecipe(new ItemStack(NordWest.mingotItem, 9), new ItemStack(NWBlock.blockmithri));
