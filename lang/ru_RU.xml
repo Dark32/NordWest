@@ -3,11 +3,11 @@
 <properties version="1.0">
 	<comment>Russian (RU) Localization File</comment>
 	<entry key="tile.lexpo.name">Экспанитовая руда</entry>
-	<entry key="tile.ore0.name">Временный блок</entry>
-	<entry key="tile.ore1.name">Временный блок</entry>
-	<entry key="tile.ore2.name">Временный блок</entry>
-	<entry key="tile.ore3.name">Временный блок</entry>
-	<entry key="tile.ore4.name">Временный блок</entry>
+	<entry key="tile.ore0.name">Технический блок</entry>
+	<entry key="tile.ore1.name">Технический блок</entry>
+	<entry key="tile.ore2.name">Технический блок</entry>
+	<entry key="tile.ore3.name">Технический блок</entry>
+	<entry key="tile.ore4.name">Технический блок</entry>
 	<entry key="tile.coperore.name">Медная руда</entry>
 	<entry key="tile.coperblock.name">Медный блок</entry>
 	<entry key="tile.mithrilore.name">Митриловая руда</entry>
