@@ -3,7 +3,7 @@ package mods.mod_nw.WorldGen;
 import java.util.Random;
 
 import mods.mod_nw.NWBlock;
-import mods.mod_nw.Block.DarkSakuraSapling;
+import mods.mod_nw.Block.CustomTreeSapling;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.util.Direction;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.ForgeDirection;
 
-public class WorldGenTreesSakura extends WorldGenerator
+public class WorldGenCustomTree extends WorldGenerator
 {
     /** The minimum height of a generated tree. */
     private final int minTreeHeight;
@@ -25,12 +25,12 @@ public class WorldGenTreesSakura extends WorldGenerator
     /** The metadata value of the leaves to use in tree generation. */
     private final int metaLeaves;
 
-    public WorldGenTreesSakura(boolean par1)
+    public WorldGenCustomTree(boolean par1)
     {
         this(par1, 4, 0, 0, false);
     }
 
-    public WorldGenTreesSakura(boolean par1, int par2, int par3, int par4, boolean par5)
+    public WorldGenCustomTree(boolean par1, int par2, int par3, int par4, boolean par5)
     {
         super(par1);
         this.minTreeHeight = par2;
@@ -100,7 +100,7 @@ public class WorldGenTreesSakura extends WorldGenerator
             {
                 i1 = par1World.getBlockId(par3, par4 - 1, par5);
                 Block soil = Block.blocksList[i1];
-                boolean isSoil = (soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (DarkSakuraSapling)NWBlock.dsakuraSapling));
+                boolean isSoil = (soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (CustomTreeSapling)NWBlock.customTreeSapling));
 
                 if (isSoil && par4 < 256 - l - 1)
                 {
@@ -131,7 +131,7 @@ public class WorldGenTreesSakura extends WorldGenerator
 
                                     if (block == null || block.canBeReplacedByLeaves(par1World, j2, j1, l2))
                                     {
-                                        this.setBlockAndMetadata(par1World, j2, j1, l2, NWBlock.dsakuraLeaves.blockID, this.metaLeaves);
+                                        this.setBlockAndMetadata(par1World, j2, j1, l2, NWBlock.customTreeLeaves.blockID, this.metaLeaves);
                                     }
                                 }
                             }
@@ -146,7 +146,7 @@ public class WorldGenTreesSakura extends WorldGenerator
 
                         if (k1 == 0 || block == null || block.isLeaves(par1World, par3, par4 + j1, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, NWBlock.dsakuraWood.blockID, this.metaWood);
+                            this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, NWBlock.customTreeWood.blockID, this.metaWood);
 
                             if (this.vinesGrow && j1 > 0)
                             {

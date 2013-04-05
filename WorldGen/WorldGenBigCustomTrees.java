@@ -3,7 +3,7 @@ package mods.mod_nw.WorldGen;
 import java.util.Random;
 
 import mods.mod_nw.NWBlock;
-import mods.mod_nw.Block.DarkSakuraSapling;
+import mods.mod_nw.Block.CustomTreeSapling;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.util.MathHelper;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.ForgeDirection;
 
-public class WorldGenBigSakuraTree extends WorldGenerator
+public class WorldGenBigCustomTrees extends WorldGenerator
 {
     /**
      * Contains three sets of two values that provide complimentary indices for a given 'major' index - 1 and 2 for 0, 0
@@ -51,7 +51,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
     /** Contains a list of a points at which to generate groups of leaves. */
     int[][] leafNodes;
 
-    public WorldGenBigSakuraTree(boolean par1)
+    public WorldGenBigCustomTrees(boolean par1)
     {
         super(par1);
     }
@@ -170,7 +170,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
                     aint1[b2] = aint[b2] + k1;
                     int l1 = this.worldObj.getBlockId(aint1[0], aint1[1], aint1[2]);
 
-                    if (l1 != 0 && l1 != NWBlock.dsakuraLeaves.blockID)
+                    if (l1 != 0 && l1 != NWBlock.customTreeLeaves.blockID)
                     {
                         ++k1;
                     }
@@ -232,7 +232,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
         for (int i1 = par2 + this.leafDistanceLimit; l < i1; ++l)
         {
             float f = this.leafSize(l - par2);
-            this.genTreeLayer(par1, l, par3, f, (byte)1, NWBlock.dsakuraLeaves.blockID);
+            this.genTreeLayer(par1, l, par3, f, (byte)1, NWBlock.customTreeLeaves.blockID);
         }
     }
 
@@ -338,19 +338,19 @@ public class WorldGenBigSakuraTree extends WorldGenerator
         int l = this.basePos[2];
         int[] aint = new int[] {i, j, l};
         int[] aint1 = new int[] {i, k, l};
-        this.placeBlockLine(aint, aint1, NWBlock.dsakuraWood.blockID);
+        this.placeBlockLine(aint, aint1, NWBlock.customTreeWood.blockID);
 
         if (this.trunkSize == 2)
         {
             ++aint[0];
             ++aint1[0];
-            this.placeBlockLine(aint, aint1, NWBlock.dsakuraWood.blockID);
+            this.placeBlockLine(aint, aint1, NWBlock.customTreeWood.blockID);
             ++aint[2];
             ++aint1[2];
-            this.placeBlockLine(aint, aint1,NWBlock.dsakuraWood.blockID);
+            this.placeBlockLine(aint, aint1,NWBlock.customTreeWood.blockID);
             aint[0] += -1;
             aint1[0] += -1;
-            this.placeBlockLine(aint, aint1, NWBlock.dsakuraWood.blockID);
+            this.placeBlockLine(aint, aint1, NWBlock.customTreeWood.blockID);
         }
     }
 
@@ -371,7 +371,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
 
             if (this.leafNodeNeedsBase(k))
             {
-                this.placeBlockLine(aint, aint2, NWBlock.dsakuraWood.blockID);
+                this.placeBlockLine(aint, aint2, NWBlock.customTreeWood.blockID);
             }
         }
     }
@@ -428,7 +428,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
                 aint3[b3] = MathHelper.floor_double((double)par1ArrayOfInteger[b3] + (double)i * d1);
                 int k = this.worldObj.getBlockId(aint3[0], aint3[1], aint3[2]);
 
-                if (k != 0 && k != NWBlock.dsakuraLeaves.blockID)
+                if (k != 0 && k != NWBlock.customTreeLeaves.blockID)
                 {
                     break;
                 }
@@ -449,7 +449,7 @@ public class WorldGenBigSakuraTree extends WorldGenerator
         int i = this.worldObj.getBlockId(this.basePos[0], this.basePos[1] - 1, this.basePos[2]);
 
         Block soil = Block.blocksList[i];
-        boolean isValidSoil = (soil != null && soil.canSustainPlant(worldObj, basePos[0], basePos[1] - 1, basePos[2], ForgeDirection.UP, (DarkSakuraSapling)NWBlock.dsakuraSapling));
+        boolean isValidSoil = (soil != null && soil.canSustainPlant(worldObj, basePos[0], basePos[1] - 1, basePos[2], ForgeDirection.UP, (CustomTreeSapling)NWBlock.customTreeSapling));
         if (!isValidSoil)
         {
             return false;

@@ -62,7 +62,7 @@ public class NordWest {
 		Recipe.init();
 	}
 
-	// LanguageRegistry language = LanguageRegistry.instance();
+// LanguageRegistry language = LanguageRegistry.instance();
 
 	@Init
 	public void load(FMLInitializationEvent event) {
@@ -72,7 +72,7 @@ public class NordWest {
 		/** Рецепты печки **/
 		GameRegistry.addSmelting(NWBlock.coperore.blockID, new ItemStack(cingotItem), 0.2f);
 		GameRegistry.addSmelting(NWBlock.mithrilore.blockID, new ItemStack(mingotItem), 0.2f);
-		GameRegistry.addSmelting(NWBlock.dsakuraWood.blockID, new ItemStack(Item.coal, 1, 1), 0.2f);
+		GameRegistry.addSmelting(NWBlock.customTreeWood.blockID, new ItemStack(Item.coal, 1, 1), 0.2f);
 		/** Генераторы **/
 		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
 	}
