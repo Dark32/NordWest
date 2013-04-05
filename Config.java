@@ -76,7 +76,7 @@ public class Config {
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
 			
 			/** **/
-			String[] _lang = new String[1];
+			String[] _lang = new String[10];
 			_lang[0] = "ru_RU";
 			_lang[1] = "en_US";
 				for (int i = 0; i < _lang.length; ++i) {
