@@ -4,9 +4,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import mods.mod_nw.Block.BaseBlock;
 import mods.mod_nw.Block.BaseMetadataBlock;
 import mods.mod_nw.Block.BaseOre;
-import mods.mod_nw.Block.customTreeSapling;
-import mods.mod_nw.Block.customTreeLeaves;
-import mods.mod_nw.Block.customTreeWood;
+import mods.mod_nw.Block.CustomTreeSapling;
+import mods.mod_nw.Block.CustomTreeLeaves;
+import mods.mod_nw.Block.CustomTreeWood;
 import mods.mod_nw.Item.MetadataBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
@@ -79,15 +79,15 @@ public class NWBlock {
 				.setStepSound(Block.soundGlassFootstep).setUnlocalizedName("redstoneLight").setLightValue(1.0F);
 		GameRegistry.registerBlock(lamp, "redstoneLight");
 
-		customTreeLeaves = new customTreeLeaves(Config.BLOCK_ID.leave_id).setHardness(0.2F).setLightOpacity(1)
+		customTreeLeaves = new CustomTreeLeaves(Config.BLOCK_ID.leave_id).setHardness(0.2F).setLightOpacity(1)
 				.setStepSound(Block.soundGrassFootstep).setUnlocalizedName("customTreeLeaves");
 		GameRegistry.registerBlock(customTreeLeaves, MetadataBlockItem.class, "customTreeLeaves");
 
-		customTreeWood = new customTreeWood(Config.BLOCK_ID.customTreewood_id).setHardness(2.0F).setResistance(5.0F)
+		customTreeWood = new CustomTreeWood(Config.BLOCK_ID.customTreewood_id).setHardness(2.0F).setResistance(5.0F)
 				.setStepSound(Block.soundWoodFootstep).setUnlocalizedName("customTreeWood");
 		GameRegistry.registerBlock(customTreeWood, MetadataBlockItem.class, "customTreeWood");
 
-		customTreeSapling = new customTreeSapling(Config.BLOCK_ID.customTreeSapling).setHardness(0.1F).setResistance(5F)
+		customTreeSapling = new CustomTreeSapling(Config.BLOCK_ID.customTreeSapling).setHardness(0.1F).setResistance(5F)
 				.setUnlocalizedName("customTreeSapling").setStepSound(Block.soundGrassFootstep);
 		GameRegistry.registerBlock(customTreeSapling, MetadataBlockItem.class, "customTreeSapling");		
 	}

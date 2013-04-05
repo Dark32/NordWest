@@ -25,11 +25,11 @@ import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class customTreeSapling extends BlockFlower {
+public class CustomTreeSapling extends BlockFlower {
 	@SideOnly(Side.CLIENT)
 	private Icon[] Icons;
 
-	public customTreeSapling(int par1)
+	public CustomTreeSapling(int par1)
 
 	{
 		super(par1);

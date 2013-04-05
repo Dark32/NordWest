@@ -9,13 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
-public class customTreeWood extends BaseMetadataBlock {
+public class CustomTreeWood extends BaseMetadataBlock {
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 	@SideOnly(Side.CLIENT)
 	private Icon[] tree_topArray;
 
-	public customTreeWood(int par1) {
+	public CustomTreeWood(int par1) {
 		super(par1, Material.wood, 4);
 	}
 

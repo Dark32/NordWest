@@ -23,7 +23,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-public class customTreeLeaves extends BlockLeaves implements IShearable {
+public class CustomTreeLeaves extends BlockLeaves implements IShearable {
 	public static final String[] LEAF_TYPES = new String[] { "0", "1", "2", "3" };
 	// public static final String[][] field_94396_b = new String[][] {{"0", "1",
 	// "2", "3"}, {"0", "1", "2", "3"}};
@@ -32,7 +32,7 @@ public class customTreeLeaves extends BlockLeaves implements IShearable {
 	private Icon[] iconArray = new Icon[4];
 	int[] adjacentTreeBlocks;
 
-	public customTreeLeaves(int par1) {
+	public CustomTreeLeaves(int par1) {
 		super(par1);
 		this.setTickRandomly(true);
 		setCreativeTab(NordWest.tabNord);

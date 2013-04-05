@@ -3,7 +3,7 @@ package mods.mod_nw.WorldGen;
 import java.util.Random;
 
 import mods.mod_nw.NWBlock;
-import mods.mod_nw.Block.customTreeSapling;
+import mods.mod_nw.Block.CustomTreeSapling;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.util.Direction;
@@ -100,7 +100,7 @@ public class WorldGenCustomTree extends WorldGenerator
             {
                 i1 = par1World.getBlockId(par3, par4 - 1, par5);
                 Block soil = Block.blocksList[i1];
-                boolean isSoil = (soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (customTreeSapling)NWBlock.customTreeSapling));
+                boolean isSoil = (soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (CustomTreeSapling)NWBlock.customTreeSapling));
 
                 if (isSoil && par4 < 256 - l - 1)
                 {

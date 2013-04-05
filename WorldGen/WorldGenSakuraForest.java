@@ -3,7 +3,7 @@ package mods.mod_nw.WorldGen;
 import java.util.Random;
 
 import mods.mod_nw.NWBlock;
-import mods.mod_nw.Block.customTreeSapling;
+import mods.mod_nw.Block.CustomTreeSapling;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.world.World;
@@ -60,7 +60,7 @@ public class WorldGenSakuraForest extends WorldGenerator {
 				Block soil = Block.blocksList[i1];
 				boolean isValidSoil = soil != null
 						&& soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP,
-								(customTreeSapling) NWBlock.customTreeSapling);
+								(CustomTreeSapling) NWBlock.customTreeSapling);
 
 				if (isValidSoil && par4 < 256 - l - 1) {
 					soil.onPlantGrow(par1World, par3, par4 - 1, par5, par3, par4, par5);
