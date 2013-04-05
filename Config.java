@@ -72,6 +72,7 @@ public class Config {
 			/** **/
 			String[] _lang = new String[1];
 			_lang[0] = "ru_RU";
+			_lang[1] = "en_US";
 			lang = cfg.get("Local", "lang", _lang).getStringList();
 
 		} catch (Exception e) {
