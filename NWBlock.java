@@ -29,6 +29,7 @@ public class NWBlock {
 	public static Block dsakuraLeaves;
 	public static Block dsakuraSapling;
 	public static Block dsakuraWood;
+	public static Block magicTreeLeaves;
 
 	public static void init() {
 		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NordWest.lexpiItem.itemID, 2,4,0).setHardness(3F)
@@ -71,9 +72,9 @@ public class NWBlock {
 
 		GameRegistry.registerBlock(sakuraPlank, MetadataBlockItem.class, "sakuraPlank");
 
-		icepPlank = new BaseBlock(Config.BLOCK_ID.iceplank_id, Material.iron).setHardness(20F).setResistance(5F)
+		icepPlank = new BaseMetadataBlock(Config.BLOCK_ID.iceplank_id, Material.iron,4).setHardness(20F).setResistance(5F)
 				.setUnlocalizedName("icepPlank").setStepSound(Block.soundWoodFootstep);
-		GameRegistry.registerBlock(icepPlank, "icepPlank");
+		GameRegistry.registerBlock(icepPlank, MetadataBlockItem.class, "icepPlank");
 
 		lamp = new Block(Config.BLOCK_ID.lamp_id, Material.glass).setHardness(0.3F)
 				.setStepSound(Block.soundGlassFootstep).setUnlocalizedName("redstoneLight").setLightValue(1.0F);
@@ -89,6 +90,12 @@ public class NWBlock {
 
 		dsakuraSapling = new DarkSakuraSapling(Config.BLOCK_ID.dsakuraSapling).setHardness(0.1F).setResistance(5F)
 				.setUnlocalizedName("dsakuraSapling").setStepSound(Block.soundGrassFootstep);
-		GameRegistry.registerBlock(dsakuraSapling, MetadataBlockItem.class, "dsakuraSapling");		
+		GameRegistry.registerBlock(dsakuraSapling, MetadataBlockItem.class, "dsakuraSapling");	
+		
+		magicTreeLeaves = new SakuraLeaves(Config.BLOCK_ID.magicTreeLeaves).setHardness(0.2F).setLightOpacity(1)
+				.setStepSound(Block.soundGrassFootstep).setUnlocalizedName("magicTreeLeaves");
+		GameRegistry.registerBlock(magicTreeLeaves, MetadataBlockItem.class, "magicTreeLeaves");
+
+		
 	}
 }

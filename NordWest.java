@@ -81,10 +81,6 @@ public class NordWest {
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
-		for (String localizationName : cfg.lang) {
-			LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml",
-					localizationName, true);
-		}
 
 	}
 

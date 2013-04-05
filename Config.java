@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Config {
 	public static class BLOCK_ID {
@@ -27,6 +28,7 @@ public class Config {
 		public static int leave_id;
 		public static int sakurawood_id;
 		public static int dsakuraSapling;
+		public static int magicTreeLeaves;
 	}
 
 	/** Item **/
@@ -37,7 +39,8 @@ public class Config {
 	}
 
 	/** Other **/
-	public String[] lang;
+	//public static String[] lang;
+	public static final String LanguageDirectory = "/mods/mod_nw/lang/";
 
 	public Config(File file) {
 
@@ -64,16 +67,21 @@ public class Config {
 			BLOCK_ID.leave_id = cfg.getBlock("leave_id", 207).getInt(207);
 			BLOCK_ID.sakurawood_id = cfg.getBlock("sakurawood_id", 208).getInt(208);
 			BLOCK_ID.dsakuraSapling = cfg.getBlock("dsakuraSapling", 209).getInt(209);
+			BLOCK_ID.magicTreeLeaves = cfg.getBlock("magicTreeLeaves", 210).getInt(210);
 			/** Item **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
 			
 			/** **/
-			String[] _lang = new String[1];
+			String[] _lang = new String[10];
 			_lang[0] = "ru_RU";
 			_lang[1] = "en_US";
-			lang = cfg.get("Local", "lang", _lang).getStringList();
+				for (int i = 0; i < _lang.length; ++i) {
+				String localizationName = _lang[i];
+				LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml",
+						localizationName, true);
+			}
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "NordWest has a problem loading it's configuration");
