@@ -29,6 +29,8 @@ public class Config {
 		public static int customTreewood_id;
 		public static int customTreeSapling;
 		public static int magicTreeLeaves;
+		public static int magicTreeWood;
+
 	}
 
 	/** Item **/
@@ -63,27 +65,34 @@ public class Config {
 			BLOCK_ID.coperblock_id = cfg.getBlock("coperblock_id", 201).getInt(201);
 			BLOCK_ID.mithrilore_id = cfg.getBlock("mithrilore_id", 202).getInt(202);
 			BLOCK_ID.blockmithri_id = cfg.getBlock("blockmithri_id", 203).getInt(203);
-			BLOCK_ID.customTreeplank_id= cfg.getBlock("customTreelog_id", 204).getInt(204);
+			BLOCK_ID.customTreeplank_id = cfg.getBlock("customTreelog_id", 204).getInt(204);
 			BLOCK_ID.magicTreeplank_id = cfg.getBlock("magicTreeplank_id", 205).getInt(205);
 			BLOCK_ID.lamp_id = cfg.getBlock("lamp_id", 206).getInt(206);
 			BLOCK_ID.leave_id = cfg.getBlock("leave_id", 207).getInt(207);
 			BLOCK_ID.customTreewood_id = cfg.getBlock("customTreewood_id", 208).getInt(208);
 			BLOCK_ID.customTreeSapling = cfg.getBlock("customTreeSapling", 209).getInt(209);
 			BLOCK_ID.magicTreeLeaves = cfg.getBlock("magicTreeLeaves", 210).getInt(210);
+			BLOCK_ID.magicTreeWood = cfg.getBlock("magicTreeWood", 211).getInt(211);
+
 			/** Item **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
-			
-			/** **/
-			String[] _lang = new String[10];
-			_lang[0] = "ru_RU";
-			_lang[1] = "en_US";
-				for (int i = 0; i < _lang.length; ++i) {
-				String localizationName = _lang[i];
+
+			/** локализация **/
+			List<String> _lang = new ArrayList<String>();
+			_lang.add("ru_RU");
+			_lang.add("en_US");
+			for (String localizationName : _lang) {
 				LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml",
 						localizationName, true);
 			}
+			/*
+			 * for (int i = 0; i < _lang.length; ++i) { String localizationName
+			 * = _lang[i];
+			 * LanguageRegistry.instance().loadLocalization(LanguageDirectory +
+			 * localizationName + ".xml", localizationName, true); }
+			 */
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "NordWest has a problem loading because of it's configuration!");

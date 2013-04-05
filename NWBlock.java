@@ -30,6 +30,7 @@ public class NWBlock {
 	public static Block customTreeSapling;
 	public static Block customTreeWood;
 	public static Block magicTreeLeaves;
+	public static Block magicTreeWood;
 
 	public static void init() {
 		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NordWest.lexpiItem.itemID, 2, 4, 0)
@@ -72,9 +73,9 @@ public class NWBlock {
 
 		GameRegistry.registerBlock(customTreePlank, MetadataBlockItem.class, "customTreePlank");
 
-		magicTreePlank = new BaseBlock(Config.BLOCK_ID.magicTreeplank_id, Material.iron).setHardness(20F).setResistance(5F)
-				.setUnlocalizedName("magicTreePlank").setStepSound(Block.soundWoodFootstep);
-		GameRegistry.registerBlock(magicTreePlank, "magicTreePlank");
+		magicTreePlank = new BaseMetadataBlock(Config.BLOCK_ID.magicTreeplank_id, Material.iron,4).setHardness(20F)
+				.setResistance(5F).setUnlocalizedName("magicTreePlank").setStepSound(Block.soundWoodFootstep);
+		GameRegistry.registerBlock(magicTreePlank, MetadataBlockItem.class,"magicTreePlank");
 
 		lamp = new Block(Config.BLOCK_ID.lamp_id, Material.glass).setHardness(0.3F)
 				.setStepSound(Block.soundGlassFootstep).setUnlocalizedName("redstoneLight").setLightValue(1.0F);
@@ -87,13 +88,23 @@ public class NWBlock {
 		customTreeWood = new CustomTreeWood(Config.BLOCK_ID.customTreewood_id).setHardness(2.0F).setResistance(5.0F)
 				.setStepSound(Block.soundWoodFootstep).setUnlocalizedName("customTreeWood");
 		GameRegistry.registerBlock(customTreeWood, MetadataBlockItem.class, "customTreeWood");
-		
+
 		magicTreeLeaves = new CustomTreeLeaves(Config.BLOCK_ID.magicTreeLeaves).setHardness(0.2F).setLightOpacity(1)
 				.setStepSound(Block.soundGrassFootstep).setUnlocalizedName("magicTreeLeaves");
 		GameRegistry.registerBlock(magicTreeLeaves, MetadataBlockItem.class, "magicTreeLeaves");
 
-		customTreeSapling = new CustomTreeSapling(Config.BLOCK_ID.customTreeSapling).setHardness(0.1F).setResistance(5F)
-				.setUnlocalizedName("customTreeSapling").setStepSound(Block.soundGrassFootstep);
-		GameRegistry.registerBlock(customTreeSapling, MetadataBlockItem.class, "customTreeSapling");		
-			}
+		customTreeSapling = new CustomTreeSapling(Config.BLOCK_ID.customTreeSapling).setHardness(0.1F)
+				.setResistance(5F).setUnlocalizedName("customTreeSapling").setStepSound(Block.soundGrassFootstep);
+		GameRegistry.registerBlock(customTreeSapling, MetadataBlockItem.class, "customTreeSapling");
+
+		magicTreeWood = new CustomTreeWood(Config.BLOCK_ID.magicTreeWood, Material.iron).setHardness(25.0F).setResistance(50F).setUnlocalizedName("magicTreeWood")
+				.setStepSound(Block.soundWoodFootstep).setLightValue(0.2F);;
+		GameRegistry.registerBlock(magicTreeWood, MetadataBlockItem.class, "magicTreeWood");
+
+	}
+	private static void burn(){
+		Block.setBurnProperties(NWBlock.customTreePlank.blockID, 5, 20);
+		Block.setBurnProperties(NWBlock.customTreeLeaves.blockID, 30, 60);
+		Block.setBurnProperties(NWBlock.customTreeWood.blockID, 5, 5);
+	}
 }

@@ -18,7 +18,9 @@ public class CustomTreeWood extends BaseMetadataBlock {
 	public CustomTreeWood(int par1) {
 		super(par1, Material.wood, 4);
 	}
-
+	public CustomTreeWood(int par1,Material mat) {
+		super(par1, mat, 4);
+	}
 	public int getRenderType() {
 		return 31;
 	}

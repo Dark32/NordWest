@@ -35,8 +35,13 @@
 	
 	<entry key="tile.magicTreeLeaves.0.name">Ice Wood Leaves</entry>
 	<entry key="tile.magicTreeLeaves.1.name">Fire Wood Leaves</entry>
-	<entry key="tile.magicTreeLeaves.2.name">Air Wood </entry>
+	<entry key="tile.magicTreeLeaves.2.name">Air Wood Leaves</entry>
 	<entry key="tile.magicTreeLeaves.3.name">Violliant Woodа Leaves</entry>
+
+	<entry key="tile.magicTreeWood.0.name">Ice Wood</entry>
+	<entry key="tile.magicTreeWood.1.name">Fire Wood</entry>
+	<entry key="tile.magicTreeWood.2.name">Air Wood </entry>
+	<entry key="tile.magicTreeWood.3.name">Violliant Leaves</entry>
 
 	<entry key="item.lexpi.name">Exponite</entry>
 	<entry key="item.mingot.name">Mythril ingot</entry>

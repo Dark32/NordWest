@@ -36,7 +36,13 @@
 	<entry key="tile.magicTreeLeaves.0.name">Листва морозного дерева</entry>
 	<entry key="tile.magicTreeLeaves.1.name">Листва огненого дерева</entry>
 	<entry key="tile.magicTreeLeaves.2.name">Листва воздушного дерева</entry>
-	<entry key="tile.magicTreeLeaves.3.name">Листва фиолетового дерева</entry>
+	<entry key="tile.magicTreeLeaves.3.name">Листва фиолетового дерева</entry>	
+	
+	<entry key="tile.magicTreeWood.0.name">Древесина морозного дерева</entry>
+	<entry key="tile.magicTreeWood.1.name">Древесина огненого дерева</entry>
+	<entry key="tile.magicTreeWood.2.name">Древесина воздушного дерева</entry>
+	<entry key="tile.magicTreeWood.3.name">Древесина фиолетового дерева</entry>
+	
 
 	<entry key="item.lexpi.name">Экспанит</entry>
 	<entry key="item.mingot.name">Митриловый слиток</entry>
