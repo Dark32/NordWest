@@ -21,12 +21,12 @@ public class Config {
 		public static int coperblock_id;
 		public static int mithrilore_id;
 		public static int blockmithri_id;
-		public static int sakuraplank_id;
-		public static int iceplank_id;
+		public static int customTreeplank_id;
+		public static int magicTreeplank_id;
 		public static int lamp_id;
 		public static int leave_id;
-		public static int sakurawood_id;
-		public static int dsakuraSapling;
+		public static int customTreewood_id;
+		public static int customTreeSapling;
 	}
 
 	/** Item **/
@@ -58,12 +58,12 @@ public class Config {
 			BLOCK_ID.coperblock_id = cfg.getBlock("coperblock_id", 201).getInt(201);
 			BLOCK_ID.mithrilore_id = cfg.getBlock("mithrilore_id", 202).getInt(202);
 			BLOCK_ID.blockmithri_id = cfg.getBlock("blockmithri_id", 203).getInt(203);
-			BLOCK_ID.sakuraplank_id= cfg.getBlock("sakuralog_id", 204).getInt(204);
-			BLOCK_ID.iceplank_id = cfg.getBlock("iceplank_id", 205).getInt(205);
+			BLOCK_ID.customTreeplank_id= cfg.getBlock("customTreelog_id", 204).getInt(204);
+			BLOCK_ID.magicTreeplank_id = cfg.getBlock("magicTreeplank_id", 205).getInt(205);
 			BLOCK_ID.lamp_id = cfg.getBlock("lamp_id", 206).getInt(206);
 			BLOCK_ID.leave_id = cfg.getBlock("leave_id", 207).getInt(207);
-			BLOCK_ID.sakurawood_id = cfg.getBlock("sakurawood_id", 208).getInt(208);
-			BLOCK_ID.dsakuraSapling = cfg.getBlock("dsakuraSapling", 209).getInt(209);
+			BLOCK_ID.customTreewood_id = cfg.getBlock("customTreewood_id", 208).getInt(208);
+			BLOCK_ID.customTreeSapling = cfg.getBlock("customTreeSapling", 209).getInt(209);
 			/** Item **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
@@ -76,7 +76,7 @@ public class Config {
 			lang = cfg.get("Local", "lang", _lang).getStringList();
 
 		} catch (Exception e) {
-			FMLLog.log(Level.SEVERE, e, "NordWest has a problem loading it's configuration");
+			FMLLog.log(Level.SEVERE, e, "NordWest has a problem loading because of it's configuration!");
 		} finally {
 			cfg.save();
 		}

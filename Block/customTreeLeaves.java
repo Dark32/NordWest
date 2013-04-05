@@ -23,7 +23,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-public class SakuraLeaves extends BlockLeaves implements IShearable {
+public class customTreeLeaves extends BlockLeaves implements IShearable {
 	public static final String[] LEAF_TYPES = new String[] { "0", "1", "2", "3" };
 	// public static final String[][] field_94396_b = new String[][] {{"0", "1",
 	// "2", "3"}, {"0", "1", "2", "3"}};
@@ -32,7 +32,7 @@ public class SakuraLeaves extends BlockLeaves implements IShearable {
 	private Icon[] iconArray = new Icon[4];
 	int[] adjacentTreeBlocks;
 
-	public SakuraLeaves(int par1) {
+	public customTreeLeaves(int par1) {
 		super(par1);
 		this.setTickRandomly(true);
 		setCreativeTab(NordWest.tabNord);
@@ -49,7 +49,7 @@ public class SakuraLeaves extends BlockLeaves implements IShearable {
 	}
 
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return NWBlock.dsakuraSapling.blockID;
+		return NWBlock.customTreeSapling.blockID;
 	}
 
 	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7) {

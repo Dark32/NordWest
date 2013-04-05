@@ -7,11 +7,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.mod_nw.NordWest;
-import mods.mod_nw.WorldGen.WorldGenBigSakuraTree;
-import mods.mod_nw.WorldGen.WorldGenForestSakura;
-import mods.mod_nw.WorldGen.WorldGenHugeSakura;
-import mods.mod_nw.WorldGen.WorldGenSakura2;
-import mods.mod_nw.WorldGen.WorldGenTreesSakura;
+import mods.mod_nw.WorldGen.WorldGenBigCustomTrees;
+import mods.mod_nw.WorldGen.WorldGenSakuraForest;
+import mods.mod_nw.WorldGen.WorldGenHugeTree;
+import mods.mod_nw.WorldGen.WorldGenCustomTree2;
+import mods.mod_nw.WorldGen.WorldGenCustomTree;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,11 +25,11 @@ import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class DarkSakuraSapling extends BlockFlower {
+public class customTreeSapling extends BlockFlower {
 	@SideOnly(Side.CLIENT)
 	private Icon[] Icons;
 
-	public DarkSakuraSapling(int par1)
+	public customTreeSapling(int par1)
 
 	{
 		super(par1);
@@ -72,11 +72,11 @@ public class DarkSakuraSapling extends BlockFlower {
 
 	        if (l == 2)
 	        {
-	            object = new WorldGenSakura2(true);
+	            object = new WorldGenCustomTree2(true);
 	        }
 	        else if (l == 1)
 	        {
-	            object = new WorldGenForestSakura(true);
+	            object = new WorldGenSakuraForest(true);
 	        }
 	        else if (l == 3)
 	        {
@@ -86,7 +86,7 @@ public class DarkSakuraSapling extends BlockFlower {
 	                {
 	                    if (this.isSameSapling(par1World, par2 + i1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1, par3, par4 + j1 + 1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1 + 1, 3))
 	                    {
-	                        object = new WorldGenHugeSakura(true, 7 + par5Random.nextInt(10), 3, 3);
+	                        object = new WorldGenHugeTree(true, 7 + par5Random.nextInt(10), 3, 3);
 	                        flag = true;
 	                        break;
 	                    }
@@ -102,16 +102,16 @@ public class DarkSakuraSapling extends BlockFlower {
 	            {
 	                j1 = 0;
 	                i1 = 0;
-	                object = new WorldGenTreesSakura(true, 4 + par5Random.nextInt(7), 3, 3, false);
+	                object = new WorldGenCustomTree(true, 4 + par5Random.nextInt(7), 3, 3, false);
 	            }
 	        }
 	        else
 	        {
-	            object = new WorldGenTreesSakura(true);
+	            object = new WorldGenCustomTree(true);
 
 	            if (par5Random.nextInt(1) == 0)
 	            {
-	                object = new WorldGenBigSakuraTree(true);
+	                object = new WorldGenBigCustomTrees(true);
 	            }
 	        }
 

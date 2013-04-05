@@ -8,7 +8,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Recipe {
 	public static void init() {
 		/** Форменные рецепты **/
-		basePlankRecipe(NWBlock.sakuraPlank);
+		basePlankRecipe(NWBlock.customTreePlank);
 		addRecipe(new ItemStack(NWBlock.blockmithri, 1), new Object[] { "111", "111", "111", '1', NordWest.mingotItem });
 		addRecipe(new ItemStack(NWBlock.coperblock, 1), new Object[] { "111", "111", "111", '1', NordWest.cingotItem });
 		/** безформенные рецепты **/
@@ -16,8 +16,8 @@ public class Recipe {
 		GameRegistry.addShapelessRecipe(new ItemStack(NordWest.cingotItem, 9), new ItemStack(NWBlock.coperblock));
 		GameRegistry.addShapelessRecipe(new ItemStack(NordWest.mingotItem, 9), new ItemStack(NWBlock.blockmithri));
 		for (int i = 0; i < 4; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(NWBlock.sakuraPlank, 4, i), new ItemStack(
-					NWBlock.dsakuraWood, 1, i));
+			GameRegistry.addShapelessRecipe(new ItemStack(NWBlock.customTreePlank, 4, i), new ItemStack(
+					NWBlock.customTreeWood, 1, i));
 
 		}
 

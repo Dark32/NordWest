@@ -3,16 +3,16 @@ package mods.mod_nw.WorldGen;
 import java.util.Random;
 
 import mods.mod_nw.NWBlock;
-import mods.mod_nw.Block.DarkSakuraSapling;
+import mods.mod_nw.Block.customTreeSapling;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.ForgeDirection;
 
-public class WorldGenSakura2 extends WorldGenerator
+public class WorldGenCustomTree2 extends WorldGenerator
 {
-    public WorldGenSakura2(boolean par1)
+    public WorldGenCustomTree2(boolean par1)
     {
         super(par1);
     }
@@ -76,7 +76,7 @@ public class WorldGenSakura2 extends WorldGenerator
             {
                 l1 = par1World.getBlockId(par3, par4 - 1, par5);
                 Block soil = Block.blocksList[l1];
-                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (DarkSakuraSapling)NWBlock.dsakuraSapling);
+                boolean isValidSoil = soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (customTreeSapling)NWBlock.customTreeSapling);
 
                 if (isValidSoil && par4 < 256 - l - 1)
                 {
@@ -104,7 +104,7 @@ public class WorldGenSakura2 extends WorldGenerator
                                 if ((Math.abs(k3) != k2 || Math.abs(i4) != k2 || k2 <= 0) &&
                                     (block == null || block.canBeReplacedByLeaves(par1World, i3, j3, l3)))
                                 {
-                                    this.setBlockAndMetadata(par1World, i3, j3, l3, NWBlock.dsakuraLeaves.blockID,2);
+                                    this.setBlockAndMetadata(par1World, i3, j3, l3, NWBlock.customTreeLeaves.blockID,2);
                                 }
                             }
                         }
@@ -136,7 +136,7 @@ public class WorldGenSakura2 extends WorldGenerator
 
                         if (i3 == 0 || block == null || block.isLeaves(par1World, par3, par4 + j3, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + j3, par5, NWBlock.dsakuraWood.blockID, 2);
+                            this.setBlockAndMetadata(par1World, par3, par4 + j3, par5, NWBlock.customTreeWood.blockID, 2);
                         }
                     }
 
