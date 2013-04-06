@@ -14,7 +14,10 @@ public class BonemealHandler {
 
 			//System.out.print(NWBlock.customTreeSapling);
 			if (e.getResult() == Result.DEFAULT && e.ID == NWBlock.customTreeSapling.blockID) {
-				((CustomTreeSapling) NWBlock.customTreeSapling).growTree(e.world, e.X, e.Y, e.Z, e.world.rand);
+				((CustomTreeSapling) NWBlock.customTreeSapling).func_96477_c(e.world, e.X, e.Y, e.Z, e.world.rand);
+			}
+			if (e.getResult() == Result.DEFAULT && e.ID == NWBlock.magicTreeSapling.blockID) {
+				((CustomTreeSapling) NWBlock.magicTreeSapling).func_96477_c(e.world, e.X, e.Y, e.Z, e.world.rand);
 			}
 		}
 

@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import mods.mod_nw.Block.BaseBlock;
 import mods.mod_nw.Block.BaseMetadataBlock;
 import mods.mod_nw.Block.BaseOre;
+import mods.mod_nw.Block.BlockFlora;
 import mods.mod_nw.Block.CustomTreeSapling;
 import mods.mod_nw.Block.CustomTreeLeaves;
 import mods.mod_nw.Block.CustomTreeWood;
@@ -11,6 +12,7 @@ import mods.mod_nw.Item.MetadataBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.common.MinecraftForge;
 
 public class NWBlock {
 	public static Block lexpo;
@@ -31,6 +33,8 @@ public class NWBlock {
 	public static Block customTreeWood;
 	public static Block magicTreeLeaves;
 	public static Block magicTreeWood;
+	public static Block magicTreeSapling;
+	public static Block flora;
 
 	public static void init() {
 		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NordWest.lexpiItem.itemID, 2, 4, 0)
@@ -73,9 +77,9 @@ public class NWBlock {
 
 		GameRegistry.registerBlock(customTreePlank, MetadataBlockItem.class, "customTreePlank");
 
-		magicTreePlank = new BaseMetadataBlock(Config.BLOCK_ID.magicTreeplank_id, Material.iron,4).setHardness(20F)
+		magicTreePlank = new BaseMetadataBlock(Config.BLOCK_ID.magicTreeplank_id, Material.iron, 4).setHardness(20F)
 				.setResistance(5F).setUnlocalizedName("magicTreePlank").setStepSound(Block.soundWoodFootstep);
-		GameRegistry.registerBlock(magicTreePlank, MetadataBlockItem.class,"magicTreePlank");
+		GameRegistry.registerBlock(magicTreePlank, MetadataBlockItem.class, "magicTreePlank");
 
 		lamp = new Block(Config.BLOCK_ID.lamp_id, Material.glass).setHardness(0.3F)
 				.setStepSound(Block.soundGlassFootstep).setUnlocalizedName("redstoneLight").setLightValue(1.0F);
@@ -97,14 +101,31 @@ public class NWBlock {
 				.setResistance(5F).setUnlocalizedName("customTreeSapling").setStepSound(Block.soundGrassFootstep);
 		GameRegistry.registerBlock(customTreeSapling, MetadataBlockItem.class, "customTreeSapling");
 
-		magicTreeWood = new CustomTreeWood(Config.BLOCK_ID.magicTreeWood, Material.iron).setHardness(25.0F).setResistance(50F).setUnlocalizedName("magicTreeWood")
-				.setStepSound(Block.soundWoodFootstep).setLightValue(0.2F);;
+		magicTreeWood = new CustomTreeWood(Config.BLOCK_ID.magicTreeWood, Material.iron).setHardness(25.0F)
+				.setResistance(50F).setUnlocalizedName("magicTreeWood").setStepSound(Block.soundWoodFootstep)
+				.setLightValue(0.2F);
+		;
 		GameRegistry.registerBlock(magicTreeWood, MetadataBlockItem.class, "magicTreeWood");
 
+		magicTreeSapling = new CustomTreeSapling(Config.BLOCK_ID.magicTreeSapling, "magic").setHardness(0.1F)
+				.setResistance(5F).setUnlocalizedName("magicTreeSapling").setStepSound(Block.soundGrassFootstep);
+		GameRegistry.registerBlock(magicTreeSapling, MetadataBlockItem.class, "magicTreeSapling");
+		flora = new BlockFlora(Config.BLOCK_ID.flora).setHardness(0.0F).setResistance(1F).setUnlocalizedName("flora")
+				.setStepSound(Block.soundGrassFootstep);
+		GameRegistry.registerBlock(flora, MetadataBlockItem.class, "flora");
+		burn();
+		flowers();
 	}
-	private static void burn(){
+
+	private static void burn() {
 		Block.setBurnProperties(NWBlock.customTreePlank.blockID, 5, 20);
 		Block.setBurnProperties(NWBlock.customTreeLeaves.blockID, 30, 60);
 		Block.setBurnProperties(NWBlock.customTreeWood.blockID, 5, 5);
+	}
+
+	private static void flowers() {
+		for (int l1 = 0; l1 < 11; l1++) {
+			MinecraftForge.addGrassPlant(flora, l1, 10);
+		}
 	}
 }
