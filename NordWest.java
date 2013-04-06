@@ -29,7 +29,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "NordWest", name = "mod for mcnw.ru", version = "1.0.0")
+@Mod(modid = "NordWest", name = "Mod for mcnw.ru", version = "1.0.0")
 // @NetworkMod(channels = { "NordWest" }, clientSideRequired = true,
 // serverSideRequired = false, packetHandler = PacketHandler.class)
 public class NordWest {
@@ -59,7 +59,7 @@ public class NordWest {
 		/** Block **/
 
 		NWBlock.init();
-		Recipe.init();
+		Recipes.init();
 	}
 
 // LanguageRegistry language = LanguageRegistry.instance();
