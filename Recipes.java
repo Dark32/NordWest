@@ -39,6 +39,7 @@ public class Recipes {
 		addRecipe(new ItemStack(Item.boat, 1), new Object[] { "# #", "###", '#', plank });
 		addRecipe(new ItemStack(Block.tripWireSource, 2), new Object[] { "I", "S", "#", '#', plank, 'S', Item.stick,
 				'I', Item.ingotIron });
+		addRecipe(new ItemStack(Block.workbench, 1), new Object[] { "##", "##", '#', plank });
 		addRecipe(new ItemStack(Block.woodenButton, 1), new Object[] { "#", '#', plank });
 		addRecipe(new ItemStack(Block.pressurePlatePlanks, 1), new Object[] { "##", '#', plank });
 		addRecipe(new ItemStack(Block.jukebox, 1), new Object[] { "###", "#X#", "###", '#', plank, 'X', Item.diamond });
@@ -56,12 +57,12 @@ public class Recipes {
 		addRecipe(new ItemStack(axe, 1), new Object[] { "XX", "X#", " #", '#', Item.stick, 'X', material });
 		addRecipe(new ItemStack(hoe, 1), new Object[] { "XX", " #", " #", '#', Item.stick, 'X', material });
 		}
-	    if(chestplate != null) {
+		if(chestplate != null) {
 		addRecipe(new ItemStack(helmet, 1), new Object[] { "XXX", "X X", 'X', material });
 		addRecipe(new ItemStack(chestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', material });
 		addRecipe(new ItemStack(legs, 1), new Object[] { "XXX", "X X", "X X", 'X', material });
 		addRecipe(new ItemStack(boots, 1), new Object[] { "X X", "X X", 'X', material });
-	    }
+		}
 	}
 	
 	private static void woodenToolsRecipe(Block material, Item stick, Item sword, Item pickaxe, Item shovel, Item axe, Item hoe) {
