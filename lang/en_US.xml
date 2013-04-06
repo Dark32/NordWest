@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<!Minecraft NordWest Modification / mcnw.ru / Localization file>
 <properties version="1.0">
   <comment>English (US) Localization File</comment>
 	<entry key="tile.lexpo.name">Exponite Ore</entry>
-	<entry key="tile.ore0.name">WIP</entry>
-	<entry key="tile.ore1.name">WIP</entry>
-	<entry key="tile.ore2.name">WIP</entry>
-	<entry key="tile.ore3.name">WIP</entry>
-	<entry key="tile.ore4.name">WIP</entry>
+	<entry key="tile.ore0.name">Temporary Block</entry>
+	<entry key="tile.ore1.name">Temporary Block</entry>
+	<entry key="tile.ore2.name">Temporary Block</entry>
+	<entry key="tile.ore3.name">Temporary Block</entry>
+	<entry key="tile.ore4.name">Temporary Block</entry>
 	<entry key="tile.coperore.name">Copper Ore</entry>
 	<entry key="tile.coperblock.name">Copper Block</entry>
 	<entry key="tile.mithrilore.name">Mythril Ore</entry>
@@ -15,7 +16,7 @@
 	<entry key="tile.customTreePlank.0.name">Sakura Plank</entry>
 	<entry key="tile.customTreePlank.1.name">Light Birch Plank</entry>
 	<entry key="tile.customTreePlank.2.name">Yellow Tree Plank</entry>
-	<entry key="tile.customTreePlank.3.name">Baobab Planks</entry>
+	<entry key="tile.customTreePlank.3.name">Baobab Plank</entry>
 	<entry key="tile.customTreeLeaves.0.name">Sakura Leaves</entry>
 	<entry key="tile.customTreeLeaves.1.name">Light Birch Leaves</entry>
 	<entry key="tile.customTreeLeaves.2.name">Yellow Tree Leaves</entry>
@@ -28,21 +29,20 @@
 	<entry key="tile.customTreeSapling.1.name">Light Birch Sapling</entry>
 	<entry key="tile.customTreeSapling.2.name">Yellow Tree Sapling</entry>
 	<entry key="tile.customTreeSapling.3.name">Baobab Sapling</entry>
+	
 	<entry key="tile.magicTreePlank.0.name">Ice Wood Plank</entry>
 	<entry key="tile.magicTreePlank.1.name">Fire Wood Plank</entry>
 	<entry key="tile.magicTreePlank.2.name">Air Wood Plank</entry>
 	<entry key="tile.magicTreePlank.3.name">Violliant Wood Plank</entry>
-	
 	<entry key="tile.magicTreeLeaves.0.name">Ice Wood Leaves</entry>
 	<entry key="tile.magicTreeLeaves.1.name">Fire Wood Leaves</entry>
-	<entry key="tile.magicTreeLeaves.2.name">Air Wood Leaves</entry>
-	<entry key="tile.magicTreeLeaves.3.name">Violliant Woodа Leaves</entry>
-
+	<entry key="tile.magicTreeLeaves.2.name">Soul Wood Leaves</entry>
+	<entry key="tile.magicTreeLeaves.3.name">Violliant Wood Leaves</entry>
 	<entry key="tile.magicTreeWood.0.name">Ice Wood</entry>
 	<entry key="tile.magicTreeWood.1.name">Fire Wood</entry>
 	<entry key="tile.magicTreeWood.2.name">Air Wood </entry>
-	<entry key="tile.magicTreeWood.3.name">Violliant Leaves</entry>
-
+	<entry key="tile.magicTreeWood.3.name">Violliant Wood</entry>
+	
 	<entry key="item.lexpi.name">Exponite</entry>
 	<entry key="item.mingot.name">Mythril ingot</entry>
 	<entry key="item.cingot.name">Copper ingot</entry>

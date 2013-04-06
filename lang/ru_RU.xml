@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<!Модификация Minecraft NordWest / mcnw.ru / Файл локализации>
 <properties version="1.0">
 	<comment>Russian (RU) Localization File</comment>
 	<entry key="tile.lexpo.name">Экспанитовая руда</entry>
@@ -11,7 +12,7 @@
 	<entry key="tile.coperore.name">Медная руда</entry>
 	<entry key="tile.coperblock.name">Медный блок</entry>
 	<entry key="tile.mithrilore.name">Митриловая руда</entry>
-	<entry key="tile.blockmithri.name">Митриловый блок </entry>
+	<entry key="tile.blockmithri.name">Митриловый блок </entry>	
 	<entry key="tile.customTreeWood.0.name">Древесина сакуры</entry>
 	<entry key="tile.customTreeWood.1.name">Березовая древесина</entry>
 	<entry key="tile.customTreeWood.2.name">Древесина жёлтого дерева</entry>
@@ -27,21 +28,20 @@
 	<entry key="tile.customTreeSapling.0.name">Росток сакуры</entry>
 	<entry key="tile.customTreeSapling.1.name">Березовый росток</entry>
 	<entry key="tile.customTreeSapling.2.name">Росток жёлтого дерева</entry>
-	<entry key="tile.customTreeSapling.3.name">Росток баобаба</entry>
-	<entry key="tile.magicTreePlank.0.name">Доски морозного дерева</entry>
-	<entry key="tile.magicTreePlank.1.name">Доски огненого дерева</entry>
-	<entry key="tile.magicTreePlank.2.name">Доски воздушного дерева</entry>
-	<entry key="tile.magicTreePlank.3.name">Доски фиолетового дерева</entry>
+	<entry key="tile.customTreeSapling.3.name">Росток баобаба</entry>	
 	
-	<entry key="tile.magicTreeLeaves.0.name">Листва морозного дерева</entry>
-	<entry key="tile.magicTreeLeaves.1.name">Листва огненого дерева</entry>
-	<entry key="tile.magicTreeLeaves.2.name">Листва воздушного дерева</entry>
-	<entry key="tile.magicTreeLeaves.3.name">Листва фиолетового дерева</entry>	
-	
-	<entry key="tile.magicTreeWood.0.name">Древесина морозного дерева</entry>
-	<entry key="tile.magicTreeWood.1.name">Древесина огненого дерева</entry>
-	<entry key="tile.magicTreeWood.2.name">Древесина воздушного дерева</entry>
-	<entry key="tile.magicTreeWood.3.name">Древесина фиолетового дерева</entry>
+	<entry key="tile.magicTreePlank.0.name">Доски ледяного дерева</entry>
+	<entry key="tile.magicTreePlank.1.name">Доски огненного дерева</entry>
+	<entry key="tile.magicTreePlank.2.name">Доски дерева жизни</entry>
+	<entry key="tile.magicTreePlank.3.name">Доски дерева смерти</entry>
+	<entry key="tile.magicTreeLeaves.0.name">Листва ледяного дерева</entry>
+	<entry key="tile.magicTreeLeaves.1.name">Листва огненного дерева</entry>
+	<entry key="tile.magicTreeLeaves.2.name">Листва дерева жизни</entry>
+	<entry key="tile.magicTreeLeaves.3.name">Листва дерева смерти</entry>	
+	<entry key="tile.magicTreeWood.0.name">Древесина ледяного дерева</entry>
+	<entry key="tile.magicTreeWood.1.name">Древесина огненного дерева</entry>
+	<entry key="tile.magicTreeWood.2.name">Древесина дерева жизни</entry>
+	<entry key="tile.magicTreeWood.3.name">Древесина дерева смерти</entry>
 	
 
 	<entry key="item.lexpi.name">Экспанит</entry>
