@@ -23,8 +23,8 @@ public class ScrollItem extends BaseItem {
 		super(par1);
 		setCreativeTab(NordWest.tabNord);
 		this.setMaxStackSize(16);
-        this.setHasSubtypes(true);
-        this.setMaxDamage(0);
+		this.setHasSubtypes(true);
+		this.setMaxDamage(0);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -58,8 +58,9 @@ public class ScrollItem extends BaseItem {
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
 			if (!itemstack.hasTagCompound()) {
-				if (itemstack.itemID == this.itemID && testBlock(world, x, y, z)) {
-					ItemStack item = new ItemStack(this, 1,itemstack.getItemDamage());
+				if (itemstack.itemID == this.itemID
+						&& (testBlock(world, x, y, z) || (itemstack.getItemDamage() == 1 && world.getBlockId(x, y, z) == NWBlock.blockhome.blockID))) {
+					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
 					NBTTagCompound tag = item.getTagCompound();
 					if (tag == null) {
 						tag = new NBTTagCompound();
@@ -88,13 +89,14 @@ public class ScrollItem extends BaseItem {
 	private boolean returnTeleport(ItemStack itemstack, World world, EntityPlayer player) {
 		if (itemstack.hasTagCompound()) {
 			int x, y, z;
-		
-			x = itemstack.getTagCompound().getInteger("X") ;//+ 0.5d;
-			y = itemstack.getTagCompound().getInteger("Y") ;//+ 1.2d;
-			z = itemstack.getTagCompound().getInteger("Z") ;//+ 0.5d;
+
+			x = itemstack.getTagCompound().getInteger("X");// + 0.5d;
+			y = itemstack.getTagCompound().getInteger("Y");// + 1.2d;
+			z = itemstack.getTagCompound().getInteger("Z");// + 0.5d;
 			String worldName = itemstack.getTagCompound().getString("world");
-			if (worldName.equals(world.provider.getDimensionName()) &&( testBlock(world, x, y, z)||itemstack.getItemDamage() == 1 )) {
-				effectDdaw(world, player.posX, player.posY-1, player.posZ);
+			if (worldName.equals(world.provider.getDimensionName())
+					&& (testBlock(world, x, y, z) || itemstack.getItemDamage() == 1)) {
+				effectDdaw(world, player.posX, player.posY - 1, player.posZ);
 				world.playSound(x + 0.5D, y + 1.0D, z + 0.5D, "random.breath", 0.5f, 2.2f, false);
 				effectDdaw(world, x + 0.5D, y + 1.0D, z + 0.5D);
 				player.setPositionAndUpdate(x + 0.5D, y + 1.0D, z + 0.5D);
@@ -130,16 +132,15 @@ public class ScrollItem extends BaseItem {
 			return test;
 		}
 	}
-    public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
-        for (int j = 0; j < 2; ++j)
-        {
-            par3List.add(new ItemStack(par1, 1, j));
-        }
-    }
-    public String getUnlocalizedName(ItemStack par1ItemStack)
-    {
-        int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
-        return super.getUnlocalizedName() + "." + i;
-    }
+
+	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
+		for (int j = 0; j < 2; ++j) {
+			par3List.add(new ItemStack(par1, 1, j));
+		}
+	}
+
+	public String getUnlocalizedName(ItemStack par1ItemStack) {
+		int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
+		return super.getUnlocalizedName() + "." + i;
+	}
 }
