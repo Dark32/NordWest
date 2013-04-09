@@ -1,7 +1,8 @@
 To-Do List:
 ========
 
-Scrolls:
+A. Scrolls:
+
 1. Rename "Absolute Scroll" to "Scroll of Teleportation":
 This type of scrolls doesn't contain information about his creator, coordinates of the linked Home Block or something else. If you use it with Home Blocks, its Description should be empty.
 It also should be a command to get this type of scrolls - /scroll <Description of the Scroll> [Coordinates]. If we don't use coordinates-option, scroll must get our currently position.
