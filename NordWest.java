@@ -47,6 +47,7 @@ public class NordWest {
 	public static Item lexpiItem;
 	public static Item mingotItem;
 	public static Item cingotItem;
+	public static Item homescroll;
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
@@ -56,6 +57,8 @@ public class NordWest {
 		lexpiItem = new BaseItem(Config.ITEM_ID.lexpi_id).setUnlocalizedName("lexpi");
 		mingotItem = new BaseItem(Config.ITEM_ID.mingot_id).setUnlocalizedName("mingot");
 		cingotItem = new BaseItem(Config.ITEM_ID.cingot_id).setMaxStackSize(64).setUnlocalizedName("cingot");
+		homescroll= new ScrollItem(Config.ITEM_ID.homescroll).setUnlocalizedName("homescroll");
+		//pu
 		/** Block **/
 
 		NWBlock.init();

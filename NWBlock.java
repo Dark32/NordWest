@@ -5,6 +5,7 @@ import mods.mod_nw.Block.BaseBlock;
 import mods.mod_nw.Block.BaseMetadataBlock;
 import mods.mod_nw.Block.BaseOre;
 import mods.mod_nw.Block.BlockFlora;
+import mods.mod_nw.Block.BlockHome;
 import mods.mod_nw.Block.CustomTreeSapling;
 import mods.mod_nw.Block.CustomTreeLeaves;
 import mods.mod_nw.Block.CustomTreeWood;
@@ -35,6 +36,7 @@ public class NWBlock {
 	public static Block magicTreeWood;
 	public static Block magicTreeSapling;
 	public static Block flora;
+	public static Block blockhome;
 
 	public static void init() {
 		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NordWest.lexpiItem.itemID, 2, 4, 0)
@@ -113,6 +115,11 @@ public class NWBlock {
 		flora = new BlockFlora(Config.BLOCK_ID.flora).setHardness(0.0F).setResistance(1F).setUnlocalizedName("flora")
 				.setStepSound(Block.soundGrassFootstep);
 		GameRegistry.registerBlock(flora, MetadataBlockItem.class, "flora");
+		
+		blockhome = new BlockHome(Config.BLOCK_ID.homeblock).setHardness(10.0F).setResistance(10F).setUnlocalizedName("blockhome")
+				.setStepSound(Block.soundStoneFootstep);
+		GameRegistry.registerBlock(blockhome, "blockhome");
+		
 		burn();
 		flowers();
 	}

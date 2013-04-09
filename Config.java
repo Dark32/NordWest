@@ -31,7 +31,8 @@ public class Config {
 		public static int magicTreeLeaves;
 		public static int magicTreeWood;
 		public static int magicTreeSapling;
-		public static int flora;;
+		public static int flora;
+		public static int homeblock;;
 
 	}
 
@@ -42,6 +43,8 @@ public class Config {
 
 		public static int mingot_id;
 		public static int cingot_id;
+
+		public static int homescroll;
 	}
 
 	/** Other **/
@@ -77,10 +80,12 @@ public class Config {
 			BLOCK_ID.magicTreeWood = cfg.getBlock("magicTreeWood", 211).getInt(211);
 			BLOCK_ID.magicTreeSapling = cfg.getBlock("magicTreeSapling", 212).getInt(212);
 			BLOCK_ID.flora = cfg.getBlock("flora", 213).getInt(213);
+			BLOCK_ID.homeblock = cfg.getBlock("homeblock", 214).getInt(214);
 			/** Item **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
+			ITEM_ID.homescroll = cfg.getItem("homescroll", 437).getInt(437);
 
 			/** локализация **/
 			List<String> _lang = new ArrayList<String>();

@@ -65,10 +65,13 @@
 	<entry key="tile.flora.14.name">Flower</entry>
 	<entry key="tile.flora.15.name">Flower</entry>
 	
+	<entry key="tile.blockhome.name">Home Return Block</entry>
+	
 	<entry key="item.lexpi.name">Exponite</entry>
 	<entry key="item.mingot.name">Mythril ingot</entry>
 	<entry key="item.cingot.name">Copper ingot</entry>
-	
+	<entry key="item.homescroll.0.name">Scroll of Return</entry>
+	<entry key="item.homescroll.1.name">Scroll of Return (absolute)</entry>
 	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
 	

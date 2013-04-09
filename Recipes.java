@@ -27,8 +27,13 @@ public class Recipes {
 		for (int i = 0; i < 4; i++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(NWBlock.customTreePlank, 4, i), new ItemStack(
 					NWBlock.customTreeWood, 1, i));
-
 		}
+		GameRegistry.addRecipe(new ItemStack(NWBlock.blockhome, 1), new Object[] { "x#x", "#Z#", "x#x", 'x',
+				Item.paper, '#', Item.enderPearl, 'Z', NordWest.homescroll });
+		GameRegistry.addRecipe(new ItemStack(NordWest.homescroll, 4, 0), new Object[] { "x#x", "#Z#", "x#x", 'x',
+				Item.paper, '#', Item.enderPearl });
+		GameRegistry.addRecipe(new ItemStack(NordWest.homescroll, 1, 1), new Object[] { "xxx", "xzx", "xxx", 'x',
+				new ItemStack(NordWest.homescroll, 1, 0), 'z', Item.eyeOfEnder });
 
 	}
 
@@ -41,7 +46,8 @@ public class Recipes {
 		addRecipe(new ItemStack(Item.sign, 3), new Object[] { "###", "###", " X ", '#', plank, 'X', Item.stick });
 		addRecipe(new ItemStack(Item.bowlEmpty, 4), new Object[] { "# #", " # ", '#', plank });
 		addRecipe(new ItemStack(Item.boat, 1), new Object[] { "# #", "###", '#', plank });
-		addRecipe(new ItemStack(Block.tripWireSource, 2), new Object[] { "I", "S", "#", '#', plank, 'S', Item.stick,'I', Item.ingotIron });
+		addRecipe(new ItemStack(Block.tripWireSource, 2), new Object[] { "I", "S", "#", '#', plank, 'S', Item.stick,
+				'I', Item.ingotIron });
 		addRecipe(new ItemStack(Block.workbench, 1), new Object[] { "##", "##", '#', plank });
 		addRecipe(new ItemStack(Block.woodenButton, 1), new Object[] { "#", '#', plank });
 		addRecipe(new ItemStack(Block.pressurePlatePlanks, 1), new Object[] { "##", '#', plank });

@@ -65,10 +65,14 @@
 	<entry key="tile.flora.14.name">Цветок</entry>
 	<entry key="tile.flora.15.name">Цветок</entry>
 
+	<entry key="tile.blockhome.name">Блок дома</entry>
+	
 	<entry key="item.lexpi.name">Экспанит</entry>
 	<entry key="item.mingot.name">Митриловый слиток</entry>
 	<entry key="item.cingot.name">Медный слиток</entry>
-	
+	<entry key="item.homescroll.0.name">Свиток возврата</entry>
+	<entry key="item.homescroll.1.name">Свиток возврата (безусловный)</entry>
+
 	
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
 	
