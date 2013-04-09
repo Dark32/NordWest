@@ -19,7 +19,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public int addArmor(String armor)
 	{
-		return RenderingRegistry.addNewArmourRendererPrefix(armor);
+		return RenderingRegistry.addNewArmourRendererPrefix("../mods/mod_nw/textures/armor/"+armor);
 	}
 	public void registerServerTickHandler()
 	{

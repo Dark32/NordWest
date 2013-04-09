@@ -38,13 +38,15 @@ public class Config {
 
 	/** Item **/
 	public static class ITEM_ID {
-
 		public static int lexpi_id;
-
 		public static int mingot_id;
 		public static int cingot_id;
-
 		public static int homescroll;
+		public static int copperHelmet;
+		public static int copperChestplate;
+		public static int copperLegs;
+		public static int homescopperBootscroll;
+		public static int copperBoots;
 	}
 
 	/** Other **/
@@ -86,6 +88,11 @@ public class Config {
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
 			ITEM_ID.homescroll = cfg.getItem("homescroll", 437).getInt(437);
+
+			ITEM_ID.copperHelmet = cfg.getItem("copperHelmet", 480).getInt(480);
+			ITEM_ID.copperChestplate = cfg.getItem("copperChestplate", 481).getInt(481);
+			ITEM_ID.copperLegs = cfg.getItem("copperLegs", 482).getInt(482);
+			ITEM_ID.copperBoots = cfg.getItem("copperBoots", 483).getInt(483);
 
 			/** локализация **/
 			List<String> _lang = new ArrayList<String>();

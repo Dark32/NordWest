@@ -34,7 +34,8 @@ public class Recipes {
 				Item.paper, '#', Item.enderPearl });
 		GameRegistry.addRecipe(new ItemStack(NordWest.homescroll, 1, 1), new Object[] { "xxx", "xzx", "xxx", 'x',
 				new ItemStack(NordWest.homescroll, 1, 0), 'z', Item.eyeOfEnder });
-
+		baseArmorRecipe(NordWest.cingotItem, NordWest.copperHelmet, NordWest.copperChestplate, NordWest.copperLegs,
+				NordWest.copperBoots);
 	}
 
 	private static void basePlankRecipe(Block plank) {
