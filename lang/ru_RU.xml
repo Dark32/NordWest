@@ -66,6 +66,15 @@
 	<entry key="tile.flora.15.name">Цветок</entry>
 
 	<entry key="tile.blockhome.name">Блок дома</entry>
+		
+	<entry key="item.copperHelmet.name">Медный шлем</entry>
+	<entry key="item.copperChestplate.name">Медный нагрудник</entry>
+	<entry key="item.copperLegs.name">Медные поножи</entry>
+	<entry key="item.copperBoots.name">Медные ботинки</entry>
+	<entry key="item.mythrilHelmet.name">Митриловый шлем</entry>
+	<entry key="item.mythrilChestplate.name">Митриловый нагрудник</entry>
+	<entry key="item.mythrilLegs.name">Митриловые поножи</entry>
+	<entry key="item.mythrilBoots.name">Митриловые ботинки</entry>
 	
 	<entry key="item.lexpi.name">Экспанит</entry>
 	<entry key="item.mingot.name">Митриловый слиток</entry>

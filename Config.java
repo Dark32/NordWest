@@ -36,7 +36,7 @@ public class Config {
 
 	}
 
-	/** Item **/
+	/** Items **/
 	public static class ITEM_ID {
 		public static int lexpi_id;
 		public static int mingot_id;
@@ -45,8 +45,12 @@ public class Config {
 		public static int copperHelmet;
 		public static int copperChestplate;
 		public static int copperLegs;
-		public static int homescopperBootscroll;
 		public static int copperBoots;
+		public static int homescopperBootscroll;
+		public static int mythrilHelmet;
+		public static int mythrilChestplate;
+		public static int mythrilLegs;
+		public static int mythrilBoots;
 	}
 
 	/** Other **/
@@ -60,7 +64,7 @@ public class Config {
 		Configuration cfg = new Configuration(file);
 		try {
 			cfg.load();
-			/** Block **/
+			/** Blocks **/
 			BLOCK_ID.lexpo_id = cfg.getBlock("lexpo", 194).getInt(194);
 
 			BLOCK_ID.ore0_id = cfg.getBlock("ore0_id", 195).getInt(195);
@@ -83,7 +87,8 @@ public class Config {
 			BLOCK_ID.magicTreeSapling = cfg.getBlock("magicTreeSapling", 212).getInt(212);
 			BLOCK_ID.flora = cfg.getBlock("flora", 213).getInt(213);
 			BLOCK_ID.homeblock = cfg.getBlock("homeblock", 214).getInt(214);
-			/** Item **/
+			
+			/** Items... AGAIN! **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
 			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
@@ -93,8 +98,13 @@ public class Config {
 			ITEM_ID.copperChestplate = cfg.getItem("copperChestplate", 481).getInt(481);
 			ITEM_ID.copperLegs = cfg.getItem("copperLegs", 482).getInt(482);
 			ITEM_ID.copperBoots = cfg.getItem("copperBoots", 483).getInt(483);
+			
+			ITEM_ID.mythrilHelmet = cfg.getItem("mythrilHelmet", 484).getInt(484);
+			ITEM_ID.mythrilChestplate = cfg.getItem("mythrilChestplate", 485).getInt(485);
+			ITEM_ID.mythrilLegs = cfg.getItem("mythrilLegs", 486).getInt(486);
+			ITEM_ID.mythrilBoots = cfg.getItem("mythrilBoots", 487).getInt(487);
 
-			/** локализация **/
+			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");
 			_lang.add("en_US");

@@ -12,11 +12,11 @@ public class Recipes {
 		woodenToolsRecipe(NWBlock.customTreePlank, Item.stick, Item.swordWood, Item.pickaxeWood, Item.shovelWood,
 				Item.axeWood, Item.hoeWood);
 		// You can use this simple preset to create new armor/tools sets -
-		// (Material, Sword, Pickaxe, Shovel, Axe, Hoe, Helmet, Chestplate,
-		// Leggins, Boots).
+		// (Material, Sword, Pickaxe, Shovel, Axe, Hoe, Helmet, Chestplate, Leggings, Boots).
 		// Simple Example:
-		baseToolRecipe(NordWest.cingotItem, Item.swordSteel, Item.pickaxeSteel, Item.shovelSteel, Item.axeSteel,
-				Item.hoeSteel);
+		baseToolRecipe(NordWest.cingotItem, Item.swordSteel, Item.pickaxeSteel, Item.shovelSteel, Item.axeSteel, Item.hoeSteel);
+		baseArmorRecipe(NordWest.cingotItem, NordWest.copperHelmet, NordWest.copperChestplate, NordWest.copperLegs, NordWest.copperBoots);
+		baseArmorRecipe(NordWest.mingotItem, NordWest.mythrilHelmet, NordWest.mythrilChestplate, NordWest.mythrilLegs, NordWest.mythrilBoots);
 		// Example ends here! This is really easy to understand, isn't it?
 		addRecipe(new ItemStack(NWBlock.blockmithri, 1), new Object[] { "###", "###", "###", '#', NordWest.mingotItem });
 		addRecipe(new ItemStack(NWBlock.coperblock, 1), new Object[] { "###", "###", "###", '#', NordWest.cingotItem });
@@ -34,8 +34,6 @@ public class Recipes {
 				Item.paper, '#', Item.enderPearl });
 		GameRegistry.addRecipe(new ItemStack(NordWest.homescroll, 1, 1), new Object[] { "xxx", "xzx", "xxx", 'x',
 				new ItemStack(NordWest.homescroll, 1, 0), 'z', Item.eyeOfEnder });
-		baseArmorRecipe(NordWest.cingotItem, NordWest.copperHelmet, NordWest.copperChestplate, NordWest.copperLegs,
-				NordWest.copperBoots);
 	}
 
 	private static void basePlankRecipe(Block plank) {

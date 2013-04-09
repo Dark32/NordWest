@@ -65,7 +65,16 @@
 	<entry key="tile.flora.14.name">Flower</entry>
 	<entry key="tile.flora.15.name">Flower</entry>
 	
-	<entry key="tile.blockhome.name">Home Return Block</entry>
+	<entry key="tile.blockhome.name">Home Block</entry>
+	
+	<entry key="item.copperHelmet.name">Copper Helmet</entry>
+	<entry key="item.copperChestplate.name">Copper Chestplate</entry>
+	<entry key="item.copperLegs.name">Copper Leggings</entry>
+	<entry key="item.copperBoots.name">Copper Boots</entry>
+	<entry key="item.mythrilHelmet.name">Mythril Helmet</entry>
+	<entry key="item.mythrilChestplate.name">Mythril Chestplate</entry>
+	<entry key="item.mythrilLegs.name">Mythril Leggings</entry>
+	<entry key="item.mythrilBoots.name">Mythril Boots</entry>
 	
 	<entry key="item.lexpi.name">Exponite</entry>
 	<entry key="item.mingot.name">Mythril ingot</entry>
