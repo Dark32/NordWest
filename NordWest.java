@@ -45,52 +45,14 @@ public class NordWest {
 	};
 	public static Config cfg = null;
 
-	public static Item lexpiItem;
-	public static Item mingotItem;
-	public static Item cingotItem;
-	public static Item homescroll;
-	public static Item copperHelmet;
-	public static Item copperChestplate;
-	public static Item copperLegs;
-	public static Item copperBoots;
-	public static Item mythrilHelmet;
-	public static Item mythrilChestplate;
-	public static Item mythrilLegs;
-	public static Item mythrilBoots;
-	/** renders **/
-	private int renderCOPERArmour;
-	private int renderMithrilArmour;
-	/**
-	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). Reduction Amount is a main armor feature.
-	 * Vanilla Reduction Amounts - Leather: {1, 3, 2, 1}, Chain: {2, 5, 4, 1}, Iron: {2, 6, 5, 2}, Gold: {2, 6, 5, 2}, Diamond: {3, 8, 6, 3};
-	 * Vanilla Enchantabilities - Leather: 15, Chain: 12, Iron: 9, Gold: 25, Diamond: 10;
-	 * Vanilla Durability - Leather: 5, Chain: 15, Iron: 15, Gold: 7, Diamond: 33.
-	 */
-	EnumArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 15, new int[] { 2, 5, 4, 1 }, 9);
-	EnumArmorMaterial mythrilArmorMaterial = EnumHelper.addArmorMaterial("mythrilArmorMaterial", 40, new int[]{3, 8, 6, 3}, 12);
-
+	
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		cfg = new Config(event.getSuggestedConfigurationFile());
 		proxy.registerRenderers();
 		/** Renders **/
-		renderCOPERArmour = proxy.addArmor("COPER");
-		renderMithrilArmour = proxy.addArmor("Mithril");
 		/** Item **/
-		lexpiItem = new BaseItem(Config.ITEM_ID.lexpi_id).setUnlocalizedName("lexpi");
-		mingotItem = new BaseItem(Config.ITEM_ID.mingot_id).setUnlocalizedName("mingot");
-		cingotItem = new BaseItem(Config.ITEM_ID.cingot_id).setMaxStackSize(64).setUnlocalizedName("cingot");
-		homescroll = new ScrollItem(Config.ITEM_ID.homescroll).setUnlocalizedName("homescroll");
-		
-		copperHelmet = new CustomArmor(Config.ITEM_ID.copperHelmet, copperArmorMaterial, renderCOPERArmour, 0).setUnlocalizedName("copperHelmet");
-		copperChestplate = new CustomArmor(Config.ITEM_ID.copperChestplate, copperArmorMaterial, renderCOPERArmour, 1).setUnlocalizedName("copperChestplate");
-		copperLegs = new CustomArmor(Config.ITEM_ID.copperLegs, copperArmorMaterial, renderCOPERArmour, 2).setUnlocalizedName("copperLegs");
-		copperBoots = new CustomArmor(Config.ITEM_ID.copperBoots, copperArmorMaterial, renderCOPERArmour, 3).setUnlocalizedName("copperBoots");
-		
-		mythrilHelmet = new CustomArmor(Config.ITEM_ID.mythrilHelmet, mythrilArmorMaterial, renderMithrilArmour, 0).setUnlocalizedName("mythrilHelmet");
-		mythrilChestplate = new CustomArmor(Config.ITEM_ID.mythrilChestplate, mythrilArmorMaterial, renderMithrilArmour, 1).setUnlocalizedName("mythrilChestplate");
-		mythrilLegs = new CustomArmor(Config.ITEM_ID.mythrilLegs, mythrilArmorMaterial, renderMithrilArmour, 2).setUnlocalizedName("mythrilLegs");
-		mythrilBoots = new CustomArmor(Config.ITEM_ID.mythrilBoots, mythrilArmorMaterial, renderMithrilArmour, 3).setUnlocalizedName("mythrilBoots");
+		NWItem.init();
 		/** Block **/
 
 		NWBlock.init();
@@ -105,8 +67,8 @@ public class NordWest {
 		proxy.registerEvent();
 
 		/** Рецепты печки **/
-		GameRegistry.addSmelting(NWBlock.coperore.blockID, new ItemStack(cingotItem), 0.2f);
-		GameRegistry.addSmelting(NWBlock.mithrilore.blockID, new ItemStack(mingotItem), 0.2f);
+		GameRegistry.addSmelting(NWBlock.coperore.blockID, new ItemStack(NWItem.cingotItem), 0.2f);
+		GameRegistry.addSmelting(NWBlock.mithrilore.blockID, new ItemStack(NWItem.mingotItem), 0.2f);
 		GameRegistry.addSmelting(NWBlock.customTreeWood.blockID, new ItemStack(Item.coal, 1, 1), 0.2f);
 		/** Генераторы **/
 		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
