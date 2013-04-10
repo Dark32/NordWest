@@ -12,16 +12,16 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Config {
 	public static class BLOCK_ID {
-		public static int lexpo_id;
+		public static int expaniteOre_id;
 		public static int ore0_id;
 		public static int ore1_id;
 		public static int ore2_id;
 		public static int ore3_id;
 		public static int ore4_id;
 		public static int coper_ore_id;
-		public static int coperblock_id;
-		public static int mithrilore_id;
-		public static int blockmithri_id;
+		public static int copperBlock_id;
+		public static int mythrilOre_id;
+		public static int mythrilBlock_id;
 		public static int customTreeplank_id;
 		public static int magicTreeplank_id;
 		public static int lamp_id;
@@ -38,9 +38,9 @@ public class Config {
 
 	/** Items **/
 	public static class ITEM_ID {
-		public static int lexpi_id;
-		public static int mingot_id;
-		public static int cingot_id;
+		public static int expanite_id;
+		public static int mythrilIngot_id;
+		public static int copperIngot_id;
 		public static int homescroll;
 		public static int copperHelmet;
 		public static int copperChestplate;
@@ -51,6 +51,16 @@ public class Config {
 		public static int mythrilChestplate;
 		public static int mythrilLegs;
 		public static int mythrilBoots;
+		public static int copperPickaxe;
+		public static int copperAxe;
+		public static int copperShovel;
+		public static int copperSword;
+		public static int copperHoe;
+		public static int mythrilPickaxe;
+		public static int mythrilAxe;
+		public static int mythrilShovel;
+		public static int mythrilSword;
+		public static int mythrilHoe;
 	}
 
 	/** Other **/
@@ -65,7 +75,7 @@ public class Config {
 		try {
 			cfg.load();
 			/** Blocks **/
-			BLOCK_ID.lexpo_id = cfg.getBlock("lexpo", 194).getInt(194);
+			BLOCK_ID.expaniteOre_id = cfg.getBlock("expaniteOre", 194).getInt(194);
 
 			BLOCK_ID.ore0_id = cfg.getBlock("ore0_id", 195).getInt(195);
 			BLOCK_ID.ore1_id = cfg.getBlock("ore1_id", 196).getInt(196);
@@ -73,9 +83,9 @@ public class Config {
 			BLOCK_ID.ore3_id = cfg.getBlock("ore3_id", 198).getInt(198);
 			BLOCK_ID.ore4_id = cfg.getBlock("ore4_id", 199).getInt(199);
 			BLOCK_ID.coper_ore_id = cfg.getBlock("coper_ore_id", 200).getInt(200);
-			BLOCK_ID.coperblock_id = cfg.getBlock("coperblock_id", 201).getInt(201);
-			BLOCK_ID.mithrilore_id = cfg.getBlock("mithrilore_id", 202).getInt(202);
-			BLOCK_ID.blockmithri_id = cfg.getBlock("blockmithri_id", 203).getInt(203);
+			BLOCK_ID.copperBlock_id = cfg.getBlock("copperBlock_id", 201).getInt(201);
+			BLOCK_ID.mythrilOre_id = cfg.getBlock("mythrilOre_id", 202).getInt(202);
+			BLOCK_ID.mythrilBlock_id = cfg.getBlock("mythrilBlock_id", 203).getInt(203);
 			BLOCK_ID.customTreeplank_id = cfg.getBlock("customTreelog_id", 204).getInt(204);
 			BLOCK_ID.magicTreeplank_id = cfg.getBlock("magicTreeplank_id", 205).getInt(205);
 			BLOCK_ID.lamp_id = cfg.getBlock("lamp_id", 206).getInt(206);
@@ -89,9 +99,9 @@ public class Config {
 			BLOCK_ID.homeblock = cfg.getBlock("homeblock", 214).getInt(214);
 			
 			/** Items... AGAIN! **/
-			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
-			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
-			ITEM_ID.cingot_id = cfg.getItem("cingot_id", 410).getInt(410);
+			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
+			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
+			ITEM_ID.copperIngot_id = cfg.getItem("copperIngot_id", 410).getInt(410);
 			ITEM_ID.homescroll = cfg.getItem("homescroll", 437).getInt(437);
 
 			ITEM_ID.copperHelmet = cfg.getItem("copperHelmet", 480).getInt(480);
@@ -99,10 +109,23 @@ public class Config {
 			ITEM_ID.copperLegs = cfg.getItem("copperLegs", 482).getInt(482);
 			ITEM_ID.copperBoots = cfg.getItem("copperBoots", 483).getInt(483);
 			
-			ITEM_ID.mythrilHelmet = cfg.getItem("mythrilHelmet", 484).getInt(484);
-			ITEM_ID.mythrilChestplate = cfg.getItem("mythrilChestplate", 485).getInt(485);
-			ITEM_ID.mythrilLegs = cfg.getItem("mythrilLegs", 486).getInt(486);
-			ITEM_ID.mythrilBoots = cfg.getItem("mythrilBoots", 487).getInt(487);
+			ITEM_ID.mythrilHelmet = cfg.getItem("mythrilHelmet", 470).getInt(470);
+			ITEM_ID.mythrilChestplate = cfg.getItem("mythrilChestplate", 471).getInt(471);
+			ITEM_ID.mythrilLegs = cfg.getItem("mythrilLegs", 472).getInt(472);
+			ITEM_ID.mythrilBoots = cfg.getItem("mythrilBoots", 473).getInt(473);
+			
+			ITEM_ID.copperPickaxe = cfg.getItem("copperPickaxe", 490).getInt(490);
+			ITEM_ID.copperAxe = cfg.getItem("copperAxe", 491).getInt(491);
+			ITEM_ID.copperShovel = cfg.getItem("copperShovel", 492).getInt(492);
+			ITEM_ID.copperSword = cfg.getItem("copperSword", 493).getInt(493);
+			ITEM_ID.copperHoe = cfg.getItem("copperHoe", 494).getInt(494);
+			
+			
+			ITEM_ID.mythrilPickaxe = cfg.getItem("mythrilPickaxe", 495).getInt(495);
+			ITEM_ID.mythrilAxe = cfg.getItem("mythrilAxe", 496).getInt(496);
+			ITEM_ID.mythrilShovel = cfg.getItem("mythrilShovel", 497).getInt(497);
+			ITEM_ID.mythrilSword = cfg.getItem("mythrilSword", 498).getInt(498);
+			ITEM_ID.mythrilHoe = cfg.getItem("mythrilHoe", 499).getInt(499);
 
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();

@@ -23,11 +23,11 @@ public class OreWorldGenerator implements IWorldGenerator {
 	}
 
 	private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
-		WorldGenMinable coper = (new WorldGenMinable(NWBlock.coperore.blockID, 0, 16, 1));
-		WorldGenMinable lexpo = (new WorldGenMinable(NWBlock.lexpo.blockID, 0, 20, 1));
+		WorldGenMinable coper = (new WorldGenMinable(NWBlock.copperOre.blockID, 0, 16, 1));
+		WorldGenMinable expaniteOre = (new WorldGenMinable(NWBlock.expaniteOre.blockID, 0, 20, 1));
 		//WorldGenMinable air = (new WorldGenMinable(20, 0, 40, 1));
 		baseOreGeneration(world, coper, random, chunkX, chunkZ, 20, 200, 45);
-		baseOreGeneration(world, lexpo, random, chunkX, chunkZ, 0, 200, 50);
+		baseOreGeneration(world, expaniteOre, random, chunkX, chunkZ, 0, 200, 50);
 		//baseOreGeneration(world, air, random, chunkX, chunkZ, 0, 205, 300);
 
 	}

@@ -16,16 +16,16 @@ import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
 
 public class NWBlock {
-	public static Block lexpo;
+	public static Block expaniteOre;
 	public static Block ore0;
 	public static Block ore1;
 	public static Block ore2;
 	public static Block ore3;
 	public static Block ore4;
-	public static Block coperore;
-	public static Block coperblock;
-	public static Block mithrilore;
-	public static Block blockmithri;
+	public static Block copperOre;
+	public static Block copperBlock;
+	public static Block mythrilOre;
+	public static Block mythrilBlock;
 	public static Block customTreePlank;
 	public static Block magicTreePlank;
 	public static Block lamp;
@@ -39,9 +39,9 @@ public class NWBlock {
 	public static Block blockhome;
 
 	public static void init() {
-		lexpo = new BaseOre(Config.BLOCK_ID.lexpo_id, Material.rock, NWItem.lexpiItem.itemID, 2, 4, 0)
-				.setHardness(3F).setResistance(5F).setUnlocalizedName("lexpo");
-		GameRegistry.registerBlock(lexpo, "lexpo");
+		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, NWItem.expaniteItem.itemID, 2, 4, 0)
+				.setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
+		GameRegistry.registerBlock(expaniteOre, "expaniteOre");
 
 		ore0 = new BlockStone(Config.BLOCK_ID.ore0_id).setHardness(1.5F).setResistance(10.0F)
 				.setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stone");
@@ -59,20 +59,20 @@ public class NWBlock {
 		GameRegistry.registerBlock(ore3, "ore3");
 		GameRegistry.registerBlock(ore4, "ore4");
 
-		coperore = new BaseBlock(Config.BLOCK_ID.coper_ore_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("coperore");
-		GameRegistry.registerBlock(coperore, "coperore");
-		coperblock = new BaseBlock(Config.BLOCK_ID.coperblock_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("coperblock");
-		GameRegistry.registerBlock(coperblock, "coperblock");
+		copperOre = new BaseBlock(Config.BLOCK_ID.coper_ore_id, Material.rock).setHardness(3F).setResistance(5F)
+				.setUnlocalizedName("copperOre");
+		GameRegistry.registerBlock(copperOre, "copperOre");
+		copperBlock = new BaseBlock(Config.BLOCK_ID.copperBlock_id, Material.rock).setHardness(3F).setResistance(5F)
+				.setUnlocalizedName("copperBlock");
+		GameRegistry.registerBlock(copperBlock, "copperBlock");
 
-		mithrilore = new BaseBlock(Config.BLOCK_ID.mithrilore_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("mithrilore");
-		GameRegistry.registerBlock(mithrilore, "mithrilore");
+		mythrilOre = new BaseBlock(Config.BLOCK_ID.mythrilOre_id, Material.rock).setHardness(3F).setResistance(5F)
+				.setUnlocalizedName("mythrilOre");
+		GameRegistry.registerBlock(mythrilOre, "mythrilOre");
 
-		blockmithri = new BaseBlock(Config.BLOCK_ID.blockmithri_id, Material.rock).setHardness(3F).setResistance(5F)
-				.setUnlocalizedName("blockmithri");
-		GameRegistry.registerBlock(blockmithri, "blockmithri");
+		mythrilBlock = new BaseBlock(Config.BLOCK_ID.mythrilBlock_id, Material.rock).setHardness(3F).setResistance(5F)
+				.setUnlocalizedName("mythrilBlock");
+		GameRegistry.registerBlock(mythrilBlock, "mythrilBlock");
 		String[] wood = new String[] { "dark", "pink", "yellow", "gray" };
 		customTreePlank = new BaseMetadataBlock(Config.BLOCK_ID.customTreeplank_id, Material.wood, 4).setHardness(2F)
 				.setResistance(5F).setUnlocalizedName("customTreePlank");

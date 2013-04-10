@@ -51,10 +51,10 @@ public class NordWest {
 		cfg = new Config(event.getSuggestedConfigurationFile());
 		proxy.registerRenderers();
 		/** Renders **/
+		NWItem.render();
 		/** Item **/
 		NWItem.init();
 		/** Block **/
-
 		NWBlock.init();
 		Recipes.init();
 
@@ -67,8 +67,8 @@ public class NordWest {
 		proxy.registerEvent();
 
 		/** Рецепты печки **/
-		GameRegistry.addSmelting(NWBlock.coperore.blockID, new ItemStack(NWItem.cingotItem), 0.2f);
-		GameRegistry.addSmelting(NWBlock.mithrilore.blockID, new ItemStack(NWItem.mingotItem), 0.2f);
+		GameRegistry.addSmelting(NWBlock.copperOre.blockID, new ItemStack(NWItem.copperIngotItem), 0.2f);
+		GameRegistry.addSmelting(NWBlock.mythrilOre.blockID, new ItemStack(NWItem.mythrilIngotItem), 0.2f);
 		GameRegistry.addSmelting(NWBlock.customTreeWood.blockID, new ItemStack(Item.coal, 1, 1), 0.2f);
 		/** Генераторы **/
 		GameRegistry.registerWorldGenerator(new OreWorldGenerator());

@@ -3,16 +3,16 @@
 <properties version="1.0">
 	<comment>Russian (RU) Localization File</comment>
 	
-	<entry key="tile.lexpo.name">Экспанитовая руда</entry>
+	<entry key="tile.expaniteOre.name">Экспанитовая руда</entry>
 	<entry key="tile.ore0.name">Технический блок</entry>
 	<entry key="tile.ore1.name">Технический блок</entry>
 	<entry key="tile.ore2.name">Технический блок</entry>
 	<entry key="tile.ore3.name">Технический блок</entry>
 	<entry key="tile.ore4.name">Технический блок</entry>
-	<entry key="tile.coperore.name">Медная руда</entry>
-	<entry key="tile.coperblock.name">Медный блок</entry>
-	<entry key="tile.mithrilore.name">Митриловая руда</entry>
-	<entry key="tile.blockmithri.name">Митриловый блок </entry>	
+	<entry key="tile.copperOre.name">Медная руда</entry>
+	<entry key="tile.copperBlock.name">Медный блок</entry>
+	<entry key="tile.mythrilOre.name">Митриловая руда</entry>
+	<entry key="tile.mythrilBlock.name">Митриловый блок </entry>	
 	<entry key="tile.customTreeWood.0.name">Древесина сакуры</entry>
 	<entry key="tile.customTreeWood.1.name">Березовая древесина</entry>
 	<entry key="tile.customTreeWood.2.name">Древесина жёлтого дерева</entry>
@@ -76,9 +76,20 @@
 	<entry key="item.mythrilLegs.name">Митриловые поножи</entry>
 	<entry key="item.mythrilBoots.name">Митриловые ботинки</entry>
 	
-	<entry key="item.lexpi.name">Экспанит</entry>
-	<entry key="item.mingot.name">Митриловый слиток</entry>
-	<entry key="item.cingot.name">Медный слиток</entry>
+	<entry key="item.mythrilPickaxe.name">Медная кирка</entry>
+	<entry key="item.mythrilAxe.name">Медный топор</entry>
+	<entry key="item.mythrilShovel.name">Медная лопата</entry>
+	<entry key="item.mythrilSword.name">Медный меч</entry>
+	<entry key="item.mythrilHoe.name">Медная тяпка</entry>
+	<entry key="item.copperPickaxe.name">Митриловая кирка</entry>
+	<entry key="item.copperAxe.name">Митриловый топор</entry>
+	<entry key="item.copperShovel.name">Митриловая лопата</entry>
+	<entry key="item.copperSword.name">Митриловый меч</entry>
+	<entry key="item.copperHoe.name">Митриловая тяпка</entry>
+	
+	<entry key="item.expanite.name">Экспанит</entry>
+	<entry key="item.mythrilIngot.name">Митриловый слиток</entry>
+	<entry key="item.copperIngot.name">Медный слиток</entry>
 	<entry key="item.homescroll.0.name">Свиток возврата</entry>
 	<entry key="item.homescroll.1.name">Свиток возврата (абсалутный)</entry>
 
