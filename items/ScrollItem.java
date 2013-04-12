@@ -36,7 +36,7 @@ public class ScrollItem extends BaseItem {
 			if (par1ItemStack.getItemDamage() == 1) {
 				return;
 			}
-			par3List.add("by " + par1ItemStack.getTagCompound().getString("Lore"));
+			par3List.add(par1ItemStack.getTagCompound().getString("Lore"));
 			int x, y, z;
 			x = par1ItemStack.getTagCompound().getInteger("X");
 			y = par1ItemStack.getTagCompound().getInteger("Y");
@@ -63,7 +63,7 @@ public class ScrollItem extends BaseItem {
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
 			if (!itemstack.hasTagCompound()) {
-				if (itemstack.itemID == this.itemID && (testBlock(world, x, y, z, player, itemstack))) {
+				if (itemstack.itemID == this.itemID && (testBlock(world, x, y, z))) {
 					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
 					NBTTagCompound tag = item.getTagCompound();
 					if (tag == null) {
@@ -75,8 +75,8 @@ public class ScrollItem extends BaseItem {
 					tag.setInteger("Y", y);
 					tag.setInteger("Z", z);
 					tag.setString("world", world.provider.getDimensionName());
-					player.inventory.addItemStackToInventory(item);
 					itemstack.stackSize--;
+					player.inventory.addItemStackToInventory(item);
 					world.playSound(x, y, z, "random.breath", 0.5f, 1.2f, false);
 					world.spawnParticle("reddust", x + 0.5D, y + 1.0D, z + 0.5D, 0.0D, 0.5D, 0.0D);
 					return itemstack;
@@ -141,19 +141,19 @@ public class ScrollItem extends BaseItem {
 		}
 	}
 
-	//private boolean testBlock(World world, int x, int y, int z) {
-	//	int id = world.getBlockId(x, y, z);
-	//	if (id != CustomBlocks.blockhome.blockID) {
-	//		return false;
-	//	} else {
-	//		boolean test = true;
-	//		/** Проверка конструкции алтаря **/
-	//		/*
-	//		 * for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID; }
-	//		 */
-	//		return test;
-	//	}
-	//}
+	private boolean testBlock(World world, int x, int y, int z) {
+		int id = world.getBlockId(x, y, z);
+		if (id != CustomBlocks.blockhome.blockID) {
+			return false;
+		} else {
+			boolean test = true;
+			/** Проверка конструкции алтаря **/
+			/*
+			 * for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID; }
+			 */
+			return test;
+		}
+	}
 
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int j = 0; j < 2; ++j) {

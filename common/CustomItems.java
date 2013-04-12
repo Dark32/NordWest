@@ -32,7 +32,10 @@ public class CustomItems {
 	static Item mythrilShovel;
 	static Item mythrilHoe;
 	static Item mythrilSword;
-
+	static Item samuraiHelmet;
+	static Item samuraiChestplate;
+	static Item samuraiLegs;
+	static Item samuraiBoots;
 	 /**
 	 * Armor Materials:
 	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
@@ -53,8 +56,8 @@ public class CustomItems {
 	 */
 	static EnumArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 15, new int[] {2, 5, 4, 1 }, 9);
 	static EnumArmorMaterial mythrilArmorMaterial = EnumHelper.addArmorMaterial("mythrilArmorMaterial", 40, new int[] {3, 8, 6, 3 }, 12);
-	
-	 /**
+	public static EnumArmorMaterial samuraiArmorMaterial = EnumHelper.addArmorMaterial("samuraiArmorMaterial", 10, new int[] {2, 6, 5, 2 }, 18);
+	/**
 	 * Tool Materials:
 	 * Use following syntaxes: (Material Name, Harvest Level (See Below), Durability (Max Uses), Speed, Entities Damage, Enchantability). 
 	 * Vanilla Harvest Levels:
@@ -72,10 +75,13 @@ public class CustomItems {
 	/** Renders **/
 	private static int renderCopperArmour;
 	private static int renderMythrilArmour;
+	private static int renderSamuraiArmour;
+
 
 	public static void render() {
 		renderCopperArmour = NordWest.proxy.addArmor("Copper");
 		renderMythrilArmour = NordWest.proxy.addArmor("Mythril");
+		renderSamuraiArmour = NordWest.proxy.addArmor("Samurai");
 	}
 
 	public static void init() {
@@ -108,6 +114,11 @@ public class CustomItems {
 		mythrilSword = new CustomSword(Config.ITEM_ID.mythrilSword, mythrilToolMaterial).setUnlocalizedName("mythrilSword");
 		mythrilHoe = new CustomHoe(Config.ITEM_ID.mythrilHoe, mythrilToolMaterial).setUnlocalizedName("mythrilHoe");
 
+		samuraiHelmet = new CustomColoredArmor(Config.ITEM_ID.samuraiHelmet, samuraiArmorMaterial, renderSamuraiArmour, 0).setUnlocalizedName("samuraiHelmet");
+		samuraiChestplate = new CustomColoredArmor(Config.ITEM_ID.samuraiChestplate, samuraiArmorMaterial, renderSamuraiArmour, 1).setUnlocalizedName("samuraiChestplate");
+		samuraiLegs = new CustomColoredArmor(Config.ITEM_ID.samuraiLegs, samuraiArmorMaterial, renderSamuraiArmour, 2).setUnlocalizedName("samuraiLegs");
+		samuraiBoots = new CustomColoredArmor(Config.ITEM_ID.samuraiBoots, samuraiArmorMaterial, renderSamuraiArmour, 3).setUnlocalizedName("samuraiBoots");
+		 
 	}
 	public static void setToolClass(){
 		MinecraftForge.setToolClass(copperPickaxe, "pickaxe", 1);
