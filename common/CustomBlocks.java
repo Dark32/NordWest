@@ -1,6 +1,7 @@
 package mods.nordwest.common;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import mods.nordwest.blocks.BaseBlockStep;
 import mods.nordwest.blocks.BaseBlock;
 import mods.nordwest.blocks.BaseMetadataBlock;
 import mods.nordwest.blocks.BaseOre;
@@ -11,8 +12,11 @@ import mods.nordwest.blocks.CustomTreeSapling;
 import mods.nordwest.blocks.CustomTreeWood;
 import mods.nordwest.items.MetadataBlockItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemSlab;
 import net.minecraftforge.common.MinecraftForge;
 
 public class CustomBlocks {
@@ -38,6 +42,10 @@ public class CustomBlocks {
 	public static Block flora;
 	public static Block blockhome;
 
+	public static BlockHalfSlab blockWoolHalf1;
+	public static BlockHalfSlab blockWoolFull1;
+	public static BlockHalfSlab blockWoolHalf2;
+	public static BlockHalfSlab blockWoolFull2;
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
 		GameRegistry.registerBlock(expaniteOre, "expaniteOre");
@@ -96,7 +104,14 @@ public class CustomBlocks {
 		
 		blockhome = new BlockHome(Config.BLOCK_ID.homeblock).setHardness(10.0F).setResistance(10F).setUnlocalizedName("blockhome").setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(blockhome, "blockhome");
-		
+		blockWoolHalf1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf1, false)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
+		blockWoolFull1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull1, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
+		GameRegistry.registerBlock(blockWoolHalf1, "blockWoolHalf1");
+		GameRegistry.registerBlock(blockWoolFull1, "blockWoolFull1");
+		blockWoolHalf2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf2, false)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
+		blockWoolFull2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull2, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
+		GameRegistry.registerBlock(blockWoolHalf2, "blockWoolHalf2");
+		GameRegistry.registerBlock(blockWoolFull2, "blockWoolFull2");
 		burn();
 		flowers();
 	}
@@ -111,5 +126,18 @@ public class CustomBlocks {
 		for (int l1 = 0; l1 < 11; l1++) {
 			MinecraftForge.addGrassPlant(flora, l1, 10);
 		}
+	}
+
+	public static void registerSlabItem() {
+		registerSlabItem(blockWoolHalf1,blockWoolFull1);
+		registerSlabItem(blockWoolHalf2,blockWoolFull2);
+	}
+	private static void registerSlabItem(BlockHalfSlab half,BlockHalfSlab full){
+		Item.itemsList[half.blockID] = null;
+		Item.itemsList[full.blockID] = null;
+		Item.itemsList[half.blockID] = (new ItemSlab(half.blockID - 256, half, full, false)).setUnlocalizedName(half.getUnlocalizedName());
+		Item.itemsList[full.blockID] = (new ItemSlab(full.blockID - 256, half, full, true)).setUnlocalizedName(half.getUnlocalizedName());
+
+		
 	}
 }

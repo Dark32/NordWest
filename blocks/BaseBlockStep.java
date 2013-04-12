@@ -1,4 +1,4 @@
-package mods.mod_nw.Block;
+package mods.nordwest.blocks;
 
 import java.util.List;
 import java.util.Random;
@@ -6,8 +6,8 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mods.mod_nw.NWBlock;
-import mods.mod_nw.NordWest;
+import mods.nordwest.common.CustomBlocks;
+import mods.nordwest.common.NordWest;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
@@ -32,11 +32,11 @@ public class BaseBlockStep extends BlockHalfSlab {
 	public int idDropped(int par1, Random par2Random, int par3) {
 		int ret = this.blockID;
 		if (!isBlockSingleSlab(this.blockID)) {
-			if (this.blockID == NWBlock.blockWoolFull1.blockID) {
-				ret = NWBlock.blockWoolHalf1.blockID;
+			if (this.blockID == CustomBlocks.blockWoolFull1.blockID) {
+				ret = CustomBlocks.blockWoolHalf1.blockID;
 			}
-			if (this.blockID == NWBlock.blockWoolFull2.blockID) {
-				ret = NWBlock.blockWoolHalf2.blockID;
+			if (this.blockID == CustomBlocks.blockWoolFull2.blockID) {
+				ret = CustomBlocks.blockWoolHalf2.blockID;
 			}
 
 		}
@@ -50,7 +50,7 @@ public class BaseBlockStep extends BlockHalfSlab {
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		for (int i = 0; i < 8; ++i) {
-			iconSide[i] = par1IconRegister.registerIcon("mod_nw:" + this.getUnlocalizedName2() + "." + i);
+			iconSide[i] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + "." + i);
 		}
 	}
 
@@ -71,10 +71,10 @@ public class BaseBlockStep extends BlockHalfSlab {
 
 	@SideOnly(Side.CLIENT)
 	private static boolean isBlockSingleSlab(int par0) {
-		if (par0 == NWBlock.blockWoolHalf1.blockID) {
+		if (par0 == CustomBlocks.blockWoolHalf1.blockID) {
 			return true;
 		}
-		if (par0 == NWBlock.blockWoolHalf2.blockID) {
+		if (par0 == CustomBlocks.blockWoolHalf2.blockID) {
 			return true;
 		}
 		return false;
@@ -85,11 +85,11 @@ public class BaseBlockStep extends BlockHalfSlab {
 	public int idPicked(World par1World, int par2, int par3, int par4) {
 		int ret = this.blockID;
 		if (!isBlockSingleSlab(this.blockID)) {
-			if (this.blockID == NWBlock.blockWoolFull1.blockID) {
-				ret = NWBlock.blockWoolHalf1.blockID;
+			if (this.blockID == CustomBlocks.blockWoolFull1.blockID) {
+				ret = CustomBlocks.blockWoolHalf1.blockID;
 			}
-			if (this.blockID == NWBlock.blockWoolFull2.blockID) {
-				ret = NWBlock.blockWoolHalf2.blockID;
+			if (this.blockID == CustomBlocks.blockWoolFull2.blockID) {
+				ret = CustomBlocks.blockWoolHalf2.blockID;
 			}
 
 		}

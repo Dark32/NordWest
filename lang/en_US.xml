@@ -67,22 +67,22 @@
 	
 	<entry key="tile.blockhome.name">Home Block</entry>
 	
-	<entry key="tile.blockWool1.0.name">Полублок белой шерсти</entry>
-	<entry key="tile.blockWool1.1.name">Полублок оранжевой шерсти</entry>
-	<entry key="tile.blockWool1.2.name">Полублок пурпурной шерсти</entry>
-	<entry key="tile.blockWool1.3.name">Полублок голубо шерсти</entry>
-	<entry key="tile.blockWool1.4.name">Полублок жёлтой шерсти</entry>
-	<entry key="tile.blockWool1.5.name">Полублок лаймовой шерсти</entry>
-	<entry key="tile.blockWool1.6.name">Полублок розовой шерсти</entry>
-	<entry key="tile.blockWool1.7.name">Полублок серой шерсти</entry>
-	<entry key="tile.blockWool2.0.name">Полублок светло-серой шерсти</entry>
-	<entry key="tile.blockWool2.1.name">Полублок берюзовой шерсти</entry>
-	<entry key="tile.blockWool2.2.name">Полублок фиолетовой шерсти</entry>
-	<entry key="tile.blockWool2.3.name">Полублок синий шерсти</entry>
-	<entry key="tile.blockWool2.4.name">Полублок коричневой шерсти</entry>
-	<entry key="tile.blockWool2.5.name">Полублок зелёной шерсти</entry>
-	<entry key="tile.blockWool2.6.name">Полублок красной шерсти</entry>
-	<entry key="tile.blockWool2.7.name">Полублок чёрной шерсти</entry>
+	<entry key="tile.blockWool1.0.name">HalfBlock White Wool</entry>
+	<entry key="tile.blockWool1.1.name">HalfBlock Orange Wool</entry>
+	<entry key="tile.blockWool1.2.name">HalfBlock Purpure Wool</entry>
+	<entry key="tile.blockWool1.3.name">HalfBlock Ligth-Blue Wool</entry>
+	<entry key="tile.blockWool1.4.name">HalfBlock Yellow Wool</entry>
+	<entry key="tile.blockWool1.5.name">HalfBlock Lime Wool</entry>
+	<entry key="tile.blockWool1.6.name">HalfBlock Pink Wool</entry>
+	<entry key="tile.blockWool1.7.name">HalfBlock Gray Wool</entry>
+	<entry key="tile.blockWool2.0.name">HalfBlock Ligth-Gray Wool</entry>
+	<entry key="tile.blockWool2.1.name">HalfBlock Cian Wool</entry>
+	<entry key="tile.blockWool2.2.name">HalfBlock Violen Wool</entry>
+	<entry key="tile.blockWool2.3.name">HalfBlock Blue Wool</entry>
+	<entry key="tile.blockWool2.4.name">HalfBlock Brow Wool</entry>
+	<entry key="tile.blockWool2.5.name">HalfBlock Green Wool</entry>
+	<entry key="tile.blockWool2.6.name">HalfBlock Red Wool</entry>
+	<entry key="tile.blockWool2.7.name">HalfBlock Black Wool</entry>
 	
 	<entry key="item.copperHelmet.name">Copper Helmet</entry>
 	<entry key="item.copperChestplate.name">Copper Chestplate</entry>
@@ -93,16 +93,17 @@
 	<entry key="item.mythrilLegs.name">Mythril Leggings</entry>
 	<entry key="item.mythrilBoots.name">Mythril Boots</entry>
 	
-	<entry key="item.mythrilPickaxe.name">Copper Pickaxe</entry>
-	<entry key="item.mythrilAxe.name">Copper Axe</entry>
-	<entry key="item.mythrilShovel.name">Copper Shovel</entry>
-	<entry key="item.mythrilSword.name">Copper Sword</entry>
-	<entry key="item.mythrilHoe.name">Copper Hoe</entry>
-	<entry key="item.copperPickaxe.name">Mythril Pickaxe</entry>
-	<entry key="item.copperAxe.name">Mythril Axe</entry>
-	<entry key="item.copperShovel.name">Mythril Shovel</entry>
-	<entry key="item.copperSword.name">Mythril Sword</entry>
-	<entry key="item.copperHoe.name">Mythril Hoe</entry>
+	<entry key="item.copperPickaxe.name">Copper Pickaxe</entry>
+	<entry key="item.copperAxe.name">Copper Axe</entry>
+	<entry key="item.copperShovel.name">Copper Shovel</entry>
+	<entry key="item.copperSword.name">Copper Sword</entry>
+	<entry key="item.copperHoe.name">Copper Hoe</entry>
+	
+	<entry key="item.mythrilPickaxe.name">Mythril Pickaxe</entry>
+	<entry key="item.mythrilAxe.name">Mythril Axe</entry>
+	<entry key="item.mythrilShovel.name">Mythril Shovel</entry>
+	<entry key="item.mythrilSword.name">Mythril Sword</entry>
+	<entry key="item.mythrilHoe.name">Mythril Hoe</entry>
 	
 	<entry key="item.expanite.name">Expanite</entry>
 	<entry key="item.mythrilIngot.name">Mythril Ingot</entry>

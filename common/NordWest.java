@@ -76,7 +76,7 @@ public class NordWest {
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
-		NWBlock.registerSlabItem();
+		CustomBlocks.registerSlabItem();
 	}
 
 }

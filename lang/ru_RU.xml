@@ -51,7 +51,7 @@
 	<entry key="tile.blockWool1.0.name">Полублок белой шерсти</entry>
 	<entry key="tile.blockWool1.1.name">Полублок оранжевой шерсти</entry>
 	<entry key="tile.blockWool1.2.name">Полублок пурпурной шерсти</entry>
-	<entry key="tile.blockWool1.3.name">Полублок голубо шерсти</entry>
+	<entry key="tile.blockWool1.3.name">Полублок голубой шерсти</entry>
 	<entry key="tile.blockWool1.4.name">Полублок жёлтой шерсти</entry>
 	<entry key="tile.blockWool1.5.name">Полублок лаймовой шерсти</entry>
 	<entry key="tile.blockWool1.6.name">Полублок розовой шерсти</entry>
@@ -93,16 +93,17 @@
 	<entry key="item.mythrilLegs.name">Митриловые поножи</entry>
 	<entry key="item.mythrilBoots.name">Митриловые ботинки</entry>
 	
-	<entry key="item.mythrilPickaxe.name">Медная кирка</entry>
-	<entry key="item.mythrilAxe.name">Медный топор</entry>
-	<entry key="item.mythrilShovel.name">Медная лопата</entry>
-	<entry key="item.mythrilSword.name">Медный меч</entry>
-	<entry key="item.mythrilHoe.name">Медная тяпка</entry>
-	<entry key="item.copperPickaxe.name">Митриловая кирка</entry>
-	<entry key="item.copperAxe.name">Митриловый топор</entry>
-	<entry key="item.copperShovel.name">Митриловая лопата</entry>
-	<entry key="item.copperSword.name">Митриловый меч</entry>
-	<entry key="item.copperHoe.name">Митриловая тяпка</entry>
+	<entry key="item.copperPickaxe.name">Медная кирка</entry>
+	<entry key="item.copperAxe.name">Медный топор</entry>
+	<entry key="item.copperShovel.name">Медная лопата</entry>
+	<entry key="item.copperSword.name">Медный меч</entry>
+	<entry key="item.copperHoe.name">Медная тяпка</entry>
+	
+	<entry key="item.mythrilPickaxe.name">Митриловая кирка</entry>
+	<entry key="item.mythrilAxe.name">Митриловый топор</entry>
+	<entry key="item.mythrilShovel.name">Митриловая лопата</entry>
+	<entry key="item.mythrilSword.name">Митриловый меч</entry>
+	<entry key="item.mythrilHoe.name">Митриловая тяпка</entry>
 	
 	<entry key="item.expanite.name">Экспанит</entry>
 	<entry key="item.mythrilIngot.name">Митриловый слиток</entry>
