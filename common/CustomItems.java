@@ -4,6 +4,7 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import mods.nordwest.items.*;
 
 public class CustomItems {
@@ -107,5 +108,14 @@ public class CustomItems {
 		mythrilSword = new CustomSword(Config.ITEM_ID.mythrilSword, mythrilToolMaterial).setUnlocalizedName("mythrilSword");
 		mythrilHoe = new CustomHoe(Config.ITEM_ID.mythrilHoe, mythrilToolMaterial).setUnlocalizedName("mythrilHoe");
 
+	}
+	public static void setToolClass(){
+		MinecraftForge.setToolClass(copperPickaxe, "pickaxe", 1);
+		MinecraftForge.setToolClass(copperShovel, "shovel", 1);
+		MinecraftForge.setToolClass(copperAxe, "axe", 1);
+		MinecraftForge.setToolClass(mythrilPickaxe, "pickaxe", 3);
+		MinecraftForge.setToolClass(mythrilShovel, "shovel", 3);
+		MinecraftForge.setToolClass(mythrilAxe, "axe", 3);
+	
 	}
 }

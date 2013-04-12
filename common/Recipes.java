@@ -9,31 +9,32 @@ public class Recipes {
 	public static void init() {
 		/** Shaped recipes **/
 		basePlankRecipe(CustomBlocks.customTreePlank);
-		
+
 		baseToolRecipe(CustomBlocks.customTreePlank, Item.swordWood, Item.pickaxeWood, Item.shovelWood, Item.axeWood, Item.hoeWood);
 		baseToolRecipe(CustomItems.copperIngotItem, CustomItems.copperSword, CustomItems.copperPickaxe, CustomItems.copperShovel, CustomItems.copperAxe, CustomItems.copperHoe);
 		baseToolRecipe(CustomItems.mythrilIngotItem, CustomItems.mythrilSword, CustomItems.mythrilPickaxe, CustomItems.mythrilShovel, CustomItems.mythrilAxe, CustomItems.mythrilHoe);
-		
+
 		baseArmorRecipe(CustomItems.copperIngotItem, CustomItems.copperHelmet, CustomItems.copperChestplate, CustomItems.copperLegs, CustomItems.copperBoots);
 		baseArmorRecipe(CustomItems.mythrilIngotItem, CustomItems.mythrilHelmet, CustomItems.mythrilChestplate, CustomItems.mythrilLegs, CustomItems.mythrilBoots);
-		
+
 		addRecipe(new ItemStack(CustomBlocks.mythrilBlock, 1), new Object[] { "###", "###", "###", '#', CustomItems.mythrilIngotItem });
 		addRecipe(new ItemStack(CustomBlocks.copperBlock, 1), new Object[] { "###", "###", "###", '#', CustomItems.copperIngotItem });
-		
+		addRecipe(new ItemStack(CustomBlocks.blockhome, 1), new Object[] { "x#x", "#Z#", "x#x", 'x', Item.paper, '#', Item.enderPearl, 'Z', CustomItems.homescroll });
+		addRecipe(new ItemStack(CustomItems.homescroll, 4, 0), new Object[] { "x#x", "#Z#", "x#x", 'x', Item.paper, '#', Item.enderPearl });
+		addRecipe(new ItemStack(CustomItems.homescroll, 1, 1), new Object[] { "xxx", "xzx", "xxx", 'x', new ItemStack(CustomItems.homescroll, 1, 0), 'z', Item.eyeOfEnder });
+		for (int i=0;i<8;i++){
+			addRecipe(new ItemStack(CustomBlocks.blockWoolHalf1,6,i),new Object[]{"xxx",'x',new ItemStack(Block.cloth,1,i)});
+			addRecipe(new ItemStack(CustomBlocks.blockWoolHalf2,6,i),new Object[]{"xxx",'x',new ItemStack(Block.cloth,1,i+8)});
+			
+		}
 		/** Shapeless recipes **/
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.expBottle, 1), CustomItems.expaniteItem, Item.glassBottle);
 		GameRegistry.addShapelessRecipe(new ItemStack(CustomItems.copperIngotItem, 9), new ItemStack(CustomBlocks.copperBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(CustomItems.mythrilIngotItem, 9), new ItemStack(CustomBlocks.mythrilBlock));
 		for (int i = 0; i < 4; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.customTreePlank, 4, i), new ItemStack(
-					CustomBlocks.customTreeWood, 1, i));
+			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.customTreePlank, 4, i), new ItemStack(CustomBlocks.customTreeWood, 1, i));
 		}
-		GameRegistry.addRecipe(new ItemStack(CustomBlocks.blockhome, 1), new Object[] { "x#x", "#Z#", "x#x", 'x',
-				Item.paper, '#', Item.enderPearl, 'Z', CustomItems.homescroll });
-		GameRegistry.addRecipe(new ItemStack(CustomItems.homescroll, 4, 0), new Object[] { "x#x", "#Z#", "x#x", 'x',
-				Item.paper, '#', Item.enderPearl });
-		GameRegistry.addRecipe(new ItemStack(CustomItems.homescroll, 1, 1), new Object[] { "xxx", "xzx", "xxx", 'x',
-				new ItemStack(CustomItems.homescroll, 1, 0), 'z', Item.eyeOfEnder });
+		
 	}
 
 	private static void basePlankRecipe(Block plank) {

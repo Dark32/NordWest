@@ -54,8 +54,13 @@ public class NordWest {
 		CustomItems.render();
 		/** Item **/
 		CustomItems.init();
+		/** ClassTool **/
+		CustomItems.setToolClass();
 		/** Block **/
 		CustomBlocks.init();
+		/** Harvest Level for block **/
+		CustomBlocks.setHarvestLevel();
+		/** Recipes **/
 		Recipes.init();
 
 	}
@@ -76,6 +81,7 @@ public class NordWest {
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
+		/** overwrite item **/
 		CustomBlocks.registerSlabItem();
 	}
 
