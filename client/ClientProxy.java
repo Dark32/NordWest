@@ -1,4 +1,4 @@
-package mods.mod_nw.client;
+package mods.nordwest.client;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
@@ -7,7 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
-import mods.mod_nw.CommonProxy;
+import mods.nordwest.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
 
@@ -19,7 +19,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public int addArmor(String armor)
 	{
-		return RenderingRegistry.addNewArmourRendererPrefix("../mods/mod_nw/textures/armor/"+armor);
+		return RenderingRegistry.addNewArmourRendererPrefix("../mods/nordwest/textures/armor/"+armor);
 	}
 	public void registerServerTickHandler()
 	{

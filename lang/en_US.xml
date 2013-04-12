@@ -3,16 +3,16 @@
 <properties version="1.0">
   <comment>English (US) Localization File</comment>
 
-	<entry key="tile.lexpo.name">Exponite Ore</entry>
+	<entry key="tile.expaniteOre.name">Expanite Ore</entry>
 	<entry key="tile.ore0.name">Temporary Block</entry>
 	<entry key="tile.ore1.name">Temporary Block</entry>
 	<entry key="tile.ore2.name">Temporary Block</entry>
 	<entry key="tile.ore3.name">Temporary Block</entry>
 	<entry key="tile.ore4.name">Temporary Block</entry>
-	<entry key="tile.coperore.name">Copper Ore</entry>
-	<entry key="tile.coperblock.name">Copper Block</entry>
-	<entry key="tile.mithrilore.name">Mythril Ore</entry>
-	<entry key="tile.blockmithri.name">Mythril Block</entry>
+	<entry key="tile.copperOre.name">Copper Ore</entry>
+	<entry key="tile.copperBlock.name">Copper Block</entry>
+	<entry key="tile.mythrilOre.name">Mythril Ore</entry>
+	<entry key="tile.mythrilBlock.name">Mythril Block</entry>
 	<entry key="tile.customTreePlank.0.name">Sakura Plank</entry>
 	<entry key="tile.customTreePlank.1.name">Light Birch Plank</entry>
 	<entry key="tile.customTreePlank.2.name">Yellow Tree Plank</entry>
@@ -93,11 +93,22 @@
 	<entry key="item.mythrilLegs.name">Mythril Leggings</entry>
 	<entry key="item.mythrilBoots.name">Mythril Boots</entry>
 	
-	<entry key="item.lexpi.name">Exponite</entry>
-	<entry key="item.mingot.name">Mythril ingot</entry>
-	<entry key="item.cingot.name">Copper ingot</entry>
+	<entry key="item.mythrilPickaxe.name">Copper Pickaxe</entry>
+	<entry key="item.mythrilAxe.name">Copper Axe</entry>
+	<entry key="item.mythrilShovel.name">Copper Shovel</entry>
+	<entry key="item.mythrilSword.name">Copper Sword</entry>
+	<entry key="item.mythrilHoe.name">Copper Hoe</entry>
+	<entry key="item.copperPickaxe.name">Mythril Pickaxe</entry>
+	<entry key="item.copperAxe.name">Mythril Axe</entry>
+	<entry key="item.copperShovel.name">Mythril Shovel</entry>
+	<entry key="item.copperSword.name">Mythril Sword</entry>
+	<entry key="item.copperHoe.name">Mythril Hoe</entry>
+	
+	<entry key="item.expanite.name">Expanite</entry>
+	<entry key="item.mythrilIngot.name">Mythril Ingot</entry>
+	<entry key="item.copperIngot.name">Copper Ingot</entry>
 	<entry key="item.homescroll.0.name">Scroll of Return</entry>
-	<entry key="item.homescroll.1.name">Scroll of Return (absolute)</entry>
+	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
 	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
 	
