@@ -113,5 +113,7 @@
 
 	
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
+	<entry key="scroll.error.creative">Блок дома сломан, но вам можно к нему прыгнуть</entry>
+	<entry key="scroll.error.notcreative">Блок дома сломан, вам некуда возвращатся</entry>
 	
 	</properties>

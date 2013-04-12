@@ -1,6 +1,8 @@
 package mods.nordwest.items;
 
 import java.util.List;
+
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -31,7 +33,10 @@ public class ScrollItem extends BaseItem {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		if (par1ItemStack.hasTagCompound()) {
-			par3List.add(par1ItemStack.getTagCompound().getString("Lore"));
+			if (par1ItemStack.getItemDamage() == 1) {
+				return;
+			}
+			par3List.add("by " + par1ItemStack.getTagCompound().getString("Lore"));
 			int x, y, z;
 			x = par1ItemStack.getTagCompound().getInteger("X");
 			y = par1ItemStack.getTagCompound().getInteger("Y");
@@ -58,8 +63,7 @@ public class ScrollItem extends BaseItem {
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
 			if (!itemstack.hasTagCompound()) {
-				if (itemstack.itemID == this.itemID
-						&& (testBlock(world, x, y, z) || (itemstack.getItemDamage() == 1 && world.getBlockId(x, y, z) == CustomBlocks.blockhome.blockID))) {
+				if (itemstack.itemID == this.itemID && (testBlock(world, x, y, z, player, itemstack))) {
 					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
 					NBTTagCompound tag = item.getTagCompound();
 					if (tag == null) {
@@ -94,8 +98,7 @@ public class ScrollItem extends BaseItem {
 			y = itemstack.getTagCompound().getInteger("Y");// + 1.2d;
 			z = itemstack.getTagCompound().getInteger("Z");// + 0.5d;
 			String worldName = itemstack.getTagCompound().getString("world");
-			if (worldName.equals(world.provider.getDimensionName())
-					&& (testBlock(world, x, y, z) || itemstack.getItemDamage() == 1)) {
+			if (worldName.equals(world.provider.getDimensionName()) && (testBlock(world, x, y, z, player, itemstack) || itemstack.getItemDamage() == 1)) {
 				effectDdaw(world, player.posX, player.posY - 1, player.posZ);
 				world.playSound(x + 0.5D, y + 1.0D, z + 0.5D, "random.breath", 0.5f, 2.2f, false);
 				effectDdaw(world, x + 0.5D, y + 1.0D, z + 0.5D);
@@ -117,21 +120,40 @@ public class ScrollItem extends BaseItem {
 		}
 	}
 
-	private boolean testBlock(World world, int x, int y, int z) {
+	private boolean testBlock(World world, int x, int y, int z, EntityPlayer player, ItemStack itemstack) {
+		if (itemstack.getItemDamage() == 1) {
+			return true;
+		}
 		int id = world.getBlockId(x, y, z);
 		if (id != CustomBlocks.blockhome.blockID) {
+			if (player.capabilities.isCreativeMode) {
+				if (!world.isRemote)
+					player.sendChatToPlayer(LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
+				return true;
+			}
+			if (!world.isRemote)
+				player.sendChatToPlayer(LanguageRegistry.instance().getStringLocalization("scroll.error.notcreative"));
 			return false;
+
 		} else {
 			boolean test = true;
-			for (int i = 0; i < 4; i++) {
-				test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID;
-				test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID;
-				test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID;
-				test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID;
-			}
 			return test;
 		}
 	}
+
+	//private boolean testBlock(World world, int x, int y, int z) {
+	//	int id = world.getBlockId(x, y, z);
+	//	if (id != CustomBlocks.blockhome.blockID) {
+	//		return false;
+	//	} else {
+	//		boolean test = true;
+	//		/** Проверка конструкции алтаря **/
+	//		/*
+	//		 * for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID; }
+	//		 */
+	//		return test;
+	//	}
+	//}
 
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int j = 0; j < 2; ++j) {

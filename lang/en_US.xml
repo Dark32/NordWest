@@ -112,5 +112,7 @@
 	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
 	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
+	<entry key="scroll.error.creative">Your Home Block is braeck, but you can jump to it</entry>
+	<entry key="scroll.error.notcreative">Your Home Block is breack, you have nowhere to return</entry>
 	
 	</properties>

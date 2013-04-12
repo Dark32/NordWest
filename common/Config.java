@@ -101,10 +101,10 @@ public class Config {
 			BLOCK_ID.magicTreeSapling = cfg.getBlock("magicTreeSapling", 212).getInt(212);
 			BLOCK_ID.flora = cfg.getBlock("flora", 213).getInt(213);
 			BLOCK_ID.homeblock = cfg.getBlock("homeblock", 214).getInt(214);
-			BLOCK_ID.blockWoolHalf1 = cfg.getBlock("blockWoolHalf1", 1300).getInt(1300);
-			BLOCK_ID.blockWoolHalf2 = cfg.getBlock("blockWoolHalf2", 1302).getInt(1302);
-			BLOCK_ID.blockWoolFull1 = cfg.getBlock("blockWoolFull1", 1301).getInt(1301);
-			BLOCK_ID.blockWoolFull2 = cfg.getBlock("blockWoolFull2", 1303).getInt(1303);
+			BLOCK_ID.blockWoolHalf1 = cfg.getBlock("blockWoolHalf1", 215).getInt(215);
+			BLOCK_ID.blockWoolHalf2 = cfg.getBlock("blockWoolHalf2", 216).getInt(216);
+			BLOCK_ID.blockWoolFull1 = cfg.getBlock("blockWoolFull1", 217).getInt(217);
+			BLOCK_ID.blockWoolFull2 = cfg.getBlock("blockWoolFull2", 218).getInt(218);
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);

@@ -10,6 +10,7 @@ import mods.nordwest.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
+import net.minecraft.command.ServerCommandManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
@@ -75,6 +76,7 @@ public class NordWest {
 		GameRegistry.addSmelting(CustomBlocks.customTreeWood.blockID, new ItemStack(Item.coal, 1, 1), 0.2f);
 		/** Генераторы **/
 		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
+		
 	}
 
 	public static final String LanguageDirectory = "/mods/nordwest/lang/";
