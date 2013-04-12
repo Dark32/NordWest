@@ -13,6 +13,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
@@ -45,22 +46,21 @@ public class NordWest {
 	};
 	public static Config cfg = null;
 
-	
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		cfg = new Config(event.getSuggestedConfigurationFile());
 		proxy.registerRenderers();
 		/** Renders **/
+		NWItem.render();
 		/** Item **/
 		NWItem.init();
+
 		/** Block **/
 
 		NWBlock.init();
 		Recipes.init();
 
 	}
-
-	// LanguageRegistry language = LanguageRegistry.instance();
 
 	@Init
 	public void load(FMLInitializationEvent event) {
@@ -78,7 +78,7 @@ public class NordWest {
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
-
+		NWBlock.registerSlabItem();
 	}
 
 }

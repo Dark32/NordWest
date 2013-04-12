@@ -67,6 +67,23 @@
 	
 	<entry key="tile.blockhome.name">Home Block</entry>
 	
+	<entry key="tile.blockWool1.0.name">Полублок белой шерсти</entry>
+	<entry key="tile.blockWool1.1.name">Полублок оранжевой шерсти</entry>
+	<entry key="tile.blockWool1.2.name">Полублок пурпурной шерсти</entry>
+	<entry key="tile.blockWool1.3.name">Полублок голубо шерсти</entry>
+	<entry key="tile.blockWool1.4.name">Полублок жёлтой шерсти</entry>
+	<entry key="tile.blockWool1.5.name">Полублок лаймовой шерсти</entry>
+	<entry key="tile.blockWool1.6.name">Полублок розовой шерсти</entry>
+	<entry key="tile.blockWool1.7.name">Полублок серой шерсти</entry>
+	<entry key="tile.blockWool2.0.name">Полублок светло-серой шерсти</entry>
+	<entry key="tile.blockWool2.1.name">Полублок берюзовой шерсти</entry>
+	<entry key="tile.blockWool2.2.name">Полублок фиолетовой шерсти</entry>
+	<entry key="tile.blockWool2.3.name">Полублок синий шерсти</entry>
+	<entry key="tile.blockWool2.4.name">Полублок коричневой шерсти</entry>
+	<entry key="tile.blockWool2.5.name">Полублок зелёной шерсти</entry>
+	<entry key="tile.blockWool2.6.name">Полублок красной шерсти</entry>
+	<entry key="tile.blockWool2.7.name">Полублок чёрной шерсти</entry>
+	
 	<entry key="item.copperHelmet.name">Copper Helmet</entry>
 	<entry key="item.copperChestplate.name">Copper Chestplate</entry>
 	<entry key="item.copperLegs.name">Copper Leggings</entry>

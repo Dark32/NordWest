@@ -55,11 +55,6 @@ public class BaseMetadataBlock extends BaseBlock {
      */
     public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-     //   if (par2 < 0 || par2 >= this.iconArray.length)
-      //  {
-      //      par2 = 0;
-      //  }
-
         return this.iconArray[par2];
     }
 }

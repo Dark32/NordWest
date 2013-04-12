@@ -32,7 +32,11 @@ public class Config {
 		public static int magicTreeWood;
 		public static int magicTreeSapling;
 		public static int flora;
-		public static int homeblock;;
+		public static int homeblock;
+		public static int blockWoolHalf1;
+		public static int blockWoolHalf2;
+		public static int blockWoolFull1;
+		public static int blockWoolFull2;;
 
 	}
 
@@ -87,7 +91,10 @@ public class Config {
 			BLOCK_ID.magicTreeSapling = cfg.getBlock("magicTreeSapling", 212).getInt(212);
 			BLOCK_ID.flora = cfg.getBlock("flora", 213).getInt(213);
 			BLOCK_ID.homeblock = cfg.getBlock("homeblock", 214).getInt(214);
-			
+			BLOCK_ID.blockWoolHalf1 = cfg.getBlock("blockWoolHalf1", 1300).getInt(1300);
+			BLOCK_ID.blockWoolHalf2 = cfg.getBlock("blockWoolHalf2", 1302).getInt(1302);
+			BLOCK_ID.blockWoolFull1 = cfg.getBlock("blockWoolFull1", 1301).getInt(1301);
+			BLOCK_ID.blockWoolFull2 = cfg.getBlock("blockWoolFull2", 1303).getInt(1303);
 			/** Items... AGAIN! **/
 			ITEM_ID.lexpi_id = cfg.getItem("lexpi", 411).getInt(411);
 			ITEM_ID.mingot_id = cfg.getItem("mingot_id", 409).getInt(409);
