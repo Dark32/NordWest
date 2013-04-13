@@ -30,9 +30,9 @@ public class CustomSword extends ItemSword
         weaponDamage = 4 + enumtoolmaterial.getDamageVsEntity();
 		setCreativeTab(NordWest.tabNord);
     }
-    
-	public void updateIcons(IconRegister iconRegister) {
-		iconIndex = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
+    @Override
+	public void registerIcons(IconRegister iconRegister) {
+		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
 	}
 
     @Override

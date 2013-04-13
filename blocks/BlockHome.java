@@ -23,10 +23,7 @@ public class BlockHome extends BaseBlock {
 	}
 
 	@SideOnly(Side.CLIENT)
-	/**
-	 * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-	 * is the only chance you get to register icons.
-	 */
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[3];
 
@@ -37,17 +34,15 @@ public class BlockHome extends BaseBlock {
 	}
 
 	@SideOnly(Side.CLIENT)
-	/**
-	 * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata!
-	 */
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	@Override
+	public Icon getIcon(int par1, int par2) {
 		if (par1 == 0)
 			return this.iconArray[2];
 		if (par1 == 1)
 			return this.iconArray[1];
 		return this.iconArray[0];
 	}
-
+	@Override
 	public void randomDisplayTick(World par1World, int x, int y, int z, Random random) {
 		super.randomDisplayTick(par1World, x, y, z, random);
 		if (testBlock(par1World, x, y, z)) {
@@ -55,11 +50,8 @@ public class BlockHome extends BaseBlock {
 				for (int j = y; j < y + 4; j++) {
 					for (int k = z - 2; k < z + 3; k++) {
 						if (random.nextInt(16) == 0) {
-							par1World.spawnParticle("portal", 
-									i + random.nextDouble(), 
-									j + random.nextDouble(), 
-									k + random.nextDouble(),
-									0, 0, 0);
+							par1World.spawnParticle("portal", i + random.nextDouble(), j + random.nextDouble(), k
+									+ random.nextDouble(), 0, 0, 0);
 						}
 					}
 				}

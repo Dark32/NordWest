@@ -29,7 +29,7 @@ public class ScrollItem extends BaseItem {
 		this.setMaxDamage(0);
 		// TODO Auto-generated constructor stub
 	}
-
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		if (par1ItemStack.hasTagCompound()) {
@@ -50,7 +50,7 @@ public class ScrollItem extends BaseItem {
 		}
 
 	}
-
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, player, true);
 		if (movingobjectposition == null) {
@@ -154,13 +154,13 @@ public class ScrollItem extends BaseItem {
 			return test;
 		}
 	}
-
+	@Override
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int j = 0; j < 2; ++j) {
 			par3List.add(new ItemStack(par1, 1, j));
 		}
 	}
-
+	@Override
 	public String getUnlocalizedName(ItemStack par1ItemStack) {
 		int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
 		return super.getUnlocalizedName() + "." + i;

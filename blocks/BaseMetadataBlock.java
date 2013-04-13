@@ -23,10 +23,7 @@ public class BaseMetadataBlock extends BaseBlock {
 	}
 
 	@SideOnly(Side.CLIENT)
-	/**
-	 * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-	 * is the only chance you get to register icons.
-	 */
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[subName];
 
@@ -34,26 +31,22 @@ public class BaseMetadataBlock extends BaseBlock {
 			this.iconArray[i] = par1IconRegister.registerIcon("nordwest:" +this.getUnlocalizedName2()+"."+i);
 		}
 	}
-
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int i = 0; i < this.subName; ++i) {
 			par3List.add(new ItemStack(par1, 1, i));
 		}
 
 	}
-    /**
-     * Determines the damage on the item the block drops. Used in cloth and wood.
-     */
+	@Override
     public int damageDropped(int par1)
     {
         return par1;
     }
     @SideOnly(Side.CLIENT)
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+    @Override
+    public Icon getIcon(int par1, int par2)
     {
         return this.iconArray[par2];
     }

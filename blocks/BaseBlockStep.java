@@ -28,7 +28,7 @@ public class BaseBlockStep extends BlockHalfSlab {
 		setCreativeTab(NordWest.tabNord);
 		useNeighborBrightness[id] = true;
 	}
-
+	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
 		int ret = this.blockID;
 		if (!isBlockSingleSlab(this.blockID)) {
@@ -42,7 +42,7 @@ public class BaseBlockStep extends BlockHalfSlab {
 		}
 		return ret;
 	}
-
+	@Override
 	public String getFullSlabName(int i) {
 		return super.getUnlocalizedName() + "." + i;
 	}
@@ -56,7 +56,7 @@ public class BaseBlockStep extends BlockHalfSlab {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	public Icon getIcon(int par1, int par2) {
 		return iconSide[par2 & 7];
 	}
 
@@ -70,6 +70,7 @@ public class BaseBlockStep extends BlockHalfSlab {
 	}
 
 	@SideOnly(Side.CLIENT)
+	//@Override
 	private static boolean isBlockSingleSlab(int par0) {
 		if (par0 == CustomBlocks.blockWoolHalf1.blockID) {
 			return true;

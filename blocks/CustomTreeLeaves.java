@@ -39,19 +39,23 @@ public class CustomTreeLeaves extends BlockLeaves implements IShearable {
 
 	}
 
+	@Override
 	public int colorMultiplier(IBlockAccess par1IBlockAccess, int par2, int par3, int par4) {
 		return 0xffffff;
 
 	}
 
+	@Override
 	public int getRenderColor(int par1) {
 		return 0xffffff;
 	}
 
+	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
 		return CustomBlocks.customTreeSapling.blockID;
 	}
 
+	@Override
 	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7) {
 		if (!par1World.isRemote) {
 			int j1 = 20;
@@ -90,10 +94,12 @@ public class CustomTreeLeaves extends BlockLeaves implements IShearable {
 		}
 	}
 
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
-		return this.iconArray[par2&3];
+	@Override
+	public Icon getIcon(int par1, int par2) {
+		return this.iconArray[par2 & 3];
 	}
 
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		for (int i = 0; i < this.iconArray.length; ++i) {
 			this.iconArray[i] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + "." + i);
@@ -112,19 +118,24 @@ public class CustomTreeLeaves extends BlockLeaves implements IShearable {
 		return ret;
 	}
 
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
 		par3List.add(new ItemStack(par1, 1, 1));
 		par3List.add(new ItemStack(par1, 1, 2));
 		par3List.add(new ItemStack(par1, 1, 3));
 	}
-    public boolean isOpaqueCube()
-    {
-        return false;
-    }
-    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
-    {
-        
-    	return par5 == 0 && this.minY > 0.0D ? true : (par5 == 1 && this.maxY < 1.0D ? true : (par5 == 2 && this.minZ > 0.0D ? true : (par5 == 3 && this.maxZ < 1.0D ? true : (par5 == 4 && this.minX > 0.0D ? true : (par5 == 5 && this.maxX < 1.0D ? true : !par1IBlockAccess.isBlockOpaqueCube(par2, par3, par4))))));
-    }
+
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+	@Override
+	public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
+
+		return par5 == 0 && this.minY > 0.0D ? true : (par5 == 1 && this.maxY < 1.0D ? true : (par5 == 2
+				&& this.minZ > 0.0D ? true : (par5 == 3 && this.maxZ < 1.0D ? true
+				: (par5 == 4 && this.minX > 0.0D ? true : (par5 == 5 && this.maxX < 1.0D ? true : !par1IBlockAccess
+						.isBlockOpaqueCube(par2, par3, par4))))));
+	}
 }

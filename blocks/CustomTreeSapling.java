@@ -49,7 +49,7 @@ public class CustomTreeSapling extends BlockFlower {
 		this.setCreativeTab(NordWest.tabNord);
 		this.type = type;
 	}
-
+	@Override
 	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random) {
 		if (!par1World.isRemote) {
 			super.updateTick(par1World, par2, par3, par4, par5Random);
@@ -59,7 +59,7 @@ public class CustomTreeSapling extends BlockFlower {
 			}
 		}
 	}
-
+	//@Override
 	public void func_96477_c(World par1World, int par2, int par3, int par4, Random par5Random) {
 		int l = par1World.getBlockMetadata(par2, par3, par4);
 
@@ -69,7 +69,7 @@ public class CustomTreeSapling extends BlockFlower {
 			this.growTree(par1World, par2, par3, par4, par5Random);
 		}
 	}
-
+	//@Override
 	public void growTree(World par1World, int par2, int par3, int par4, Random par5Random) {
 		// if (!TerrainGen.saplingGrowTree(par1World, par5Random, par2, par3,
 		// par4)) return;
@@ -147,18 +147,13 @@ public class CustomTreeSapling extends BlockFlower {
 				&& (par1World.getBlockMetadata(par2, par3, par4) & 3) == par5;
 	}
 
-	/**
-	 * Determines the damage on the item the block drops. Used in cloth and
-	 * wood.
-	 */
+	@Override
 	public int damageDropped(int par1) {
 		return par1 & 3;
 	}
 
 	@SideOnly(Side.CLIENT)
-	/**
-	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-	 */
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
 		par3List.add(new ItemStack(par1, 1, 1));
@@ -167,10 +162,7 @@ public class CustomTreeSapling extends BlockFlower {
 	}
 
 	@SideOnly(Side.CLIENT)
-	/**
-	 * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-	 * is the only chance you get to register icons.
-	 */
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.Icons = new Icon[4];
 
@@ -178,8 +170,8 @@ public class CustomTreeSapling extends BlockFlower {
 			this.Icons[i] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + "." + i);
 		}
 	}
-
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	@Override
+	public Icon getIcon(int par1, int par2) {
 		par2 &= 3;
 		return this.Icons[par2];
 	}

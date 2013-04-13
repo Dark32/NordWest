@@ -75,14 +75,14 @@ public class BaseOre extends Block {
 			return this.quantityDropped(par2Random);
 		}
 	}
-
+	@Override
 	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7) {
 		super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, par7);
 		int j1 = MathHelper.getRandomIntegerInRange(par1World.rand, xp, xp+5);
 		this.dropXpOnBlockBreak(par1World, par2, par3, par4, (quantaty > 1 && xp>0) ? j1 : 0);
 
 	}
-
+	@Override
 	public void registerIcons(IconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2());
 	}

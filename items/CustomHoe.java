@@ -32,9 +32,9 @@ public class CustomHoe extends ItemHoe
         setCreativeTab(CreativeTabs.tabTools);
 		setCreativeTab(NordWest.tabNord);
     }
-    
-	public void updateIcons(IconRegister iconRegister) {
-		iconIndex = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
+    @Override
+	public void registerIcons(IconRegister iconRegister) {
+		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
 	}
 
     @Override

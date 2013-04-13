@@ -11,7 +11,7 @@ public class Recipes {
 	public static void init() {
 		/** Shaped recipes **/
 		basePlankRecipe(CustomBlocks.customTreePlank);
-		CraftingManager.getInstance().getRecipeList().add(new RecipesCustomArmorDyes());
+		GameRegistry.addRecipe(new RecipesCustomArmorDyes());
 		baseToolRecipe(CustomBlocks.customTreePlank, Item.swordWood, Item.pickaxeWood, Item.shovelWood, Item.axeWood, Item.hoeWood);
 		baseToolRecipe(CustomItems.copperIngotItem, CustomItems.copperSword, CustomItems.copperPickaxe, CustomItems.copperShovel, CustomItems.copperAxe, CustomItems.copperHoe);
 		baseToolRecipe(CustomItems.mythrilIngotItem, CustomItems.mythrilSword, CustomItems.mythrilPickaxe, CustomItems.mythrilShovel, CustomItems.mythrilAxe, CustomItems.mythrilHoe);

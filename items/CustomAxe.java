@@ -20,9 +20,9 @@ public class CustomAxe extends ItemAxe
         super(id, enumtoolmaterial);
 		setCreativeTab(NordWest.tabNord);
     }
-    
-	public void updateIcons(IconRegister iconRegister) {
-		iconIndex = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
+    @Override
+	public void registerIcons(IconRegister iconRegister) {
+		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
 	}
 
     @Override

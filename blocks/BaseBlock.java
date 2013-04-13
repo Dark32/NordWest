@@ -12,8 +12,9 @@ public class BaseBlock extends Block {
 		setCreativeTab(NordWest.tabNord);
 		// TODO Auto-generated constructor stub
 	}
-	public void registerIcons(IconRegister iconRegister)
-	{
-	         blockIcon = iconRegister.registerIcon("nordwest:"+this.getUnlocalizedName2());
+
+	@Override
+	public void registerIcons(IconRegister iconRegister) {
+		blockIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2());
 	}
 }

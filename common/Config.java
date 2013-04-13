@@ -138,10 +138,10 @@ public class Config {
 			ITEM_ID.mythrilSword = cfg.getItem("mythrilSword", 498).getInt(498);
 			ITEM_ID.mythrilHoe = cfg.getItem("mythrilHoe", 499).getInt(499);
 			
-			ITEM_ID.samuraiHelmet = cfg.getItem("samuraiHelmet ", 488).getInt(499);;
-			ITEM_ID.samuraiChestplate= cfg.getItem("samuraiChestplate", 499).getInt(499);;
-			ITEM_ID.samuraiLegs= cfg.getItem("samuraiLegs", 499).getInt(499);;
-			ITEM_ID.samuraiBoots= cfg.getItem("samuraiBoots", 499).getInt(499);;
+			ITEM_ID.samuraiHelmet = cfg.getItem("samuraiHelmet", 488).getInt(488);;
+			ITEM_ID.samuraiChestplate= cfg.getItem("samuraiChestplate", 489).getInt(489);;
+			ITEM_ID.samuraiLegs= cfg.getItem("samuraiLegs", 490).getInt(490);;
+			ITEM_ID.samuraiBoots= cfg.getItem("samuraiBoots", 491).getInt(491);;
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");

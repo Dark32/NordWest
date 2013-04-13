@@ -20,9 +20,9 @@ public class CustomPickaxe extends ItemPickaxe
         super(id, enumtoolmaterial);
 		setCreativeTab(NordWest.tabNord);
     }
-    
-	public void updateIcons(IconRegister iconRegister) {
-		iconIndex = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
+    @Override
+	public void registerIcons(IconRegister iconRegister) {
+		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
 	}
 
     @Override
@@ -43,7 +43,7 @@ public class CustomPickaxe extends ItemPickaxe
             return toolMaterial.getHarvestLevel() >= 2;
         }
 
-        if (block == Block.blockSteel || block == Block.oreIron)
+        if (block == Block.blockIron || block == Block.oreIron)
         {
             return toolMaterial.getHarvestLevel() >= 1;
         }
@@ -83,7 +83,7 @@ public class CustomPickaxe extends ItemPickaxe
     {
         blocksEffectiveAgainst = (new Block[]
                 {
-                    Block.cobblestone, Block.stoneSingleSlab, Block.stoneDoubleSlab, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold,
+                    Block.cobblestone, Block.stoneSingleSlab, Block.stoneDoubleSlab, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockIron, Block.oreCoal, Block.blockGold,
                     Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.netherrack, Block.oreLapis, Block.blockLapis, Block.oreRedstone, Block.oreRedstoneGlowing, Block.rail,
                     Block.railDetector, Block.railPowered
                 });

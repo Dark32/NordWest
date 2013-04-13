@@ -37,25 +37,29 @@ public class BlockFlora extends BlockFlower implements IPlantable {
 		this(par1, Material.plants);
 	}
 
+	@Override
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int i = 0; i < 16; ++i) {
 			par3List.add(new ItemStack(par1, 1, i));
 		}
 
 	}
+
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[16];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("nordwest:" +this.getUnlocalizedName2()+"."+i);
+			this.iconArray[i] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + "." + i);
 		}
 	}
+	@Override
 	public int damageDropped(int par1) {
 		return par1;
 	}
-
+	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	public Icon getIcon(int par1, int par2) {
 
 		return this.iconArray[par2];
 	}

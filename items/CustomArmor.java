@@ -15,9 +15,9 @@ public class CustomArmor extends ItemArmor {
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		setCreativeTab(NordWest.tabNord);
 	}
-
-	public void updateIcons(IconRegister iconRegister) {
-		iconIndex = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
+	@Override
+	public void registerIcons(IconRegister iconRegister) {
+		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
 	}
 
 

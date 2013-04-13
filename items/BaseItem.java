@@ -11,8 +11,8 @@ public class BaseItem extends Item {
 		setCreativeTab(NordWest.tabNord);
 		// TODO Auto-generated constructor stub
 	}
-	public void updateIcons(IconRegister iconRegister)
-	{
-	         iconIndex = iconRegister.registerIcon("nordwest:"+this.getUnlocalizedName());
+	@Override
+	public void registerIcons(IconRegister iconRegister) {
+		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
 	}
 }

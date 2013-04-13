@@ -18,17 +18,17 @@ public class CustomTreeWood extends BaseMetadataBlock {
 	public CustomTreeWood(int par1) {
 		super(par1, Material.wood, 4);
 	}
-	public CustomTreeWood(int par1,Material mat) {
+
+	public CustomTreeWood(int par1, Material mat) {
 		super(par1, mat, 4);
 	}
+
+	@Override
 	public int getRenderType() {
 		return 31;
 	}
 
-	/**
-	 * ejects contained items into the world, and notifies neighbours of an
-	 * update, as appropriate
-	 */
+	@Override
 	public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6) {
 		byte b0 = 4;
 		int j1 = b0 + 1;
@@ -48,6 +48,7 @@ public class CustomTreeWood extends BaseMetadataBlock {
 		}
 	}
 
+	@Override
 	public int onBlockPlaced(World par1World, int par2, int par3, int par4, int par5, float par6, float par7,
 			float par8, int par9) {
 		int j1 = par9 & 3;
@@ -69,12 +70,12 @@ public class CustomTreeWood extends BaseMetadataBlock {
 
 		return j1 | b0;
 	}
-
+	@Override
 	public int damageDropped(int par1) {
 		return par1 & 3;
 	}
-
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+	@Override
+	public Icon getIcon(int par1, int par2) {
 		int k = par2 & 12;
 		int l = par2 & 3;
 		return k == 0 && (par1 == 1 || par1 == 0) ? this.tree_topArray[l]
@@ -85,11 +86,11 @@ public class CustomTreeWood extends BaseMetadataBlock {
 	public static int limitToValidMetadata(int par0) {
 		return par0 & 3;
 	}
-
+	@Override
 	protected ItemStack createStackedBlock(int par1) {
 		return new ItemStack(this.blockID, 1, limitToValidMetadata(par1));
 	}
-
+	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		String path = "nordwest:" + this.getUnlocalizedName2() + ".";
 		this.iconArray = new Icon[4];
