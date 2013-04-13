@@ -84,6 +84,12 @@
 	<entry key="tile.blockWool2.6.name">HalfBlock Red Wool</entry>
 	<entry key="tile.blockWool2.7.name">HalfBlock Black Wool</entry>
 	
+	<entry key="tile.redBlock.0.name">Red Stone</entry>
+	<entry key="tile.redBlock.1.name">Carved Red Stone</entry>
+	<entry key="tile.redBlock.2.name">Carved Lapic</entry>
+	<entry key="tile.redBlock.3.name">Checkers Stone</entry>
+	<entry key="tile.slimeBlock.name">Block of Slime</entry>
+	
 	<entry key="item.copperHelmet.name">Copper Helmet</entry>
 	<entry key="item.copperChestplate.name">Copper Chestplate</entry>
 	<entry key="item.copperLegs.name">Copper Leggings</entry>
@@ -92,6 +98,11 @@
 	<entry key="item.mythrilChestplate.name">Mythril Chestplate</entry>
 	<entry key="item.mythrilLegs.name">Mythril Leggings</entry>
 	<entry key="item.mythrilBoots.name">Mythril Boots</entry>
+
+	<entry key="item.samuraiHelmet.name">Samurai Helmet</entry>
+	<entry key="item.samuraiChestplate.name">Samurai Chestplate</entry>
+	<entry key="item.samuraiLegs.name">Samurai Leggings</entry>
+	<entry key="item.samuraiBoots.name">Samurai Boots</entry>
 	
 	<entry key="item.copperPickaxe.name">Copper Pickaxe</entry>
 	<entry key="item.copperAxe.name">Copper Axe</entry>

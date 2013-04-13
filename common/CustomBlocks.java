@@ -10,6 +10,7 @@ import mods.nordwest.blocks.BlockHome;
 import mods.nordwest.blocks.CustomTreeLeaves;
 import mods.nordwest.blocks.CustomTreeSapling;
 import mods.nordwest.blocks.CustomTreeWood;
+import mods.nordwest.blocks.SlimeBlock;
 import mods.nordwest.items.MetadataBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
@@ -46,6 +47,10 @@ public class CustomBlocks {
 	public static BlockHalfSlab blockWoolFull1;
 	public static BlockHalfSlab blockWoolHalf2;
 	public static BlockHalfSlab blockWoolFull2;
+	
+	public static Block redBlock;
+	public static Block slimeBlock;
+
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -114,6 +119,14 @@ public class CustomBlocks {
 		blockWoolFull2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull2, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
 		GameRegistry.registerBlock(blockWoolHalf2, "blockWoolHalf2");
 		GameRegistry.registerBlock(blockWoolFull2, "blockWoolFull2");
+		
+		slimeBlock = new SlimeBlock(Config.BLOCK_ID.slameBlock).setHardness(1F).setResistance(2F).setUnlocalizedName("slimeBlock").setStepSound(Block.soundSnowFootstep);
+		GameRegistry.registerBlock(slimeBlock, "slimeBlock");
+
+		redBlock = new BaseMetadataBlock(Config.BLOCK_ID.redBlock, Material.iron, 4).setHardness(2F).setResistance(2F).setUnlocalizedName("redBlock").setStepSound(Block.soundStoneFootstep);
+		GameRegistry.registerBlock(redBlock, MetadataBlockItem.class, "redBlock");
+
+		
 		burn();
 		flowers();
 	}

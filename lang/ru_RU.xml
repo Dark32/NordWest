@@ -81,7 +81,14 @@
 	<entry key="tile.flora.13.name">Цветок</entry>
 	<entry key="tile.flora.14.name">Цветок</entry>
 	<entry key="tile.flora.15.name">Цветок</entry>
+	
+	<entry key="tile.redBlock.0.name">Красный камень</entry>
+	<entry key="tile.redBlock.1.name">Красный резной камень</entry>
+	<entry key="tile.redBlock.2.name">Лапис резной</entry>
+	<entry key="tile.redBlock.3.name">Камень в шашечку</entry>
 
+	<entry key="tile.slimeBlock.name">Блок слизи</entry>
+	
 	<entry key="tile.blockhome.name">Блок дома</entry>
 		
 	<entry key="item.copperHelmet.name">Медный шлем</entry>
@@ -92,6 +99,12 @@
 	<entry key="item.mythrilChestplate.name">Митриловый нагрудник</entry>
 	<entry key="item.mythrilLegs.name">Митриловые поножи</entry>
 	<entry key="item.mythrilBoots.name">Митриловые ботинки</entry>
+	
+	<entry key="item.samuraiHelmet.name">Самурайский шлем</entry>
+	<entry key="item.samuraiChestplate.name">Самурайский нагрудник</entry>
+	<entry key="item.samuraiLegs.name">Самурайские поножи</entry>
+	<entry key="item.samuraiBoots.name">Самурайские ботинки</entry>
+	
 	
 	<entry key="item.copperPickaxe.name">Медная кирка</entry>
 	<entry key="item.copperAxe.name">Медный топор</entry>

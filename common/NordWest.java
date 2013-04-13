@@ -1,5 +1,6 @@
 package mods.nordwest.common;
 
+import java.util.Random;
 import java.util.logging.Level;
 import net.minecraftforge.common.EnumHelper;
 import mods.nordwest.blocks.*;
@@ -46,6 +47,7 @@ public class NordWest {
 		}
 	};
 	public static Config cfg = null;
+	public static Random rand = new Random();
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {

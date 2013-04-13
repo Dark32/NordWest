@@ -36,7 +36,9 @@ public class Config {
 		public static int blockWoolHalf1;
 		public static int blockWoolHalf2;
 		public static int blockWoolFull1;
-		public static int blockWoolFull2;;
+		public static int blockWoolFull2;
+		public static int redBlock;
+		public static int slameBlock;;
 
 	}
 
@@ -109,6 +111,10 @@ public class Config {
 			BLOCK_ID.blockWoolHalf2 = cfg.getBlock("blockWoolHalf2", 216).getInt(216);
 			BLOCK_ID.blockWoolFull1 = cfg.getBlock("blockWoolFull1", 217).getInt(217);
 			BLOCK_ID.blockWoolFull2 = cfg.getBlock("blockWoolFull2", 218).getInt(218);
+			
+			BLOCK_ID.slameBlock= cfg.getBlock("slameBlock", 219).getInt(219);
+			BLOCK_ID.redBlock= cfg.getBlock("redBlock", 220).getInt(220);
+			
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);

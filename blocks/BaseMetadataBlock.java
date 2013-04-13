@@ -21,7 +21,6 @@ public class BaseMetadataBlock extends BaseBlock {
 		this.subName = subName;
 		// TODO Auto-generated constructor stub
 	}
-
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
