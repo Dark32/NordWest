@@ -138,7 +138,8 @@ public class ScrollItem extends BaseItem {
 
 		} else {
 			boolean test = true;
-			player.sendChatToPlayer(EnumColor.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
+			if (!world.isRemote)
+				player.sendChatToPlayer(EnumColor.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
 			return test;
 		}
 	}
