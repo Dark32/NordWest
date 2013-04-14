@@ -46,7 +46,7 @@ public class CustomColoredArmor extends CustomArmor {
 			NBTTagCompound nbttagcompound = par1ItemStack.getTagCompound();
 
 			if (nbttagcompound == null) {
-				return 0xa06540;
+				return 0xa01401;
 			} else {
 				NBTTagCompound nbttagcompound1 = nbttagcompound.getCompoundTag("display");
 				return nbttagcompound1 == null ? 0xa06540 : (nbttagcompound1.hasKey("color") ? nbttagcompound1

@@ -123,7 +123,8 @@
 	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
 	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
-	<entry key="scroll.error.creative">Your Home Block is braeck, but you can jump to it</entry>
-	<entry key="scroll.error.notcreative">Your Home Block is breack, you have nowhere to return</entry>
+	<entry key="scroll.tp">*Poof*</entry>
+	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
+	<entry key="scroll.error.notcreative">Your altar was removed, so you can't return to the home this way.</entry>
 	
 	</properties>
