@@ -102,7 +102,6 @@ public class ScrollItem extends BaseItem {
 			if (worldName.equals(world.provider.getDimensionName()) && (testBlock(world, x, y, z, player, itemstack) || itemstack.getItemDamage() == 1)) {
 				effectDdaw(world, player.posX, player.posY - 1, player.posZ);
 				world.playSound(x + 0.5D, y + 1.0D, z + 0.5D, "random.breath", 0.5f, 2.2f, false);
-				player.sendChatToPlayer(EnumColor.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
 				effectDdaw(world, x + 0.5D, y + 1.0D, z + 0.5D);
 				player.setPositionAndUpdate(x + 0.5D, y + 1.0D, z + 0.5D);
 				player.fallDistance = 0.0F;
@@ -139,6 +138,7 @@ public class ScrollItem extends BaseItem {
 
 		} else {
 			boolean test = true;
+			player.sendChatToPlayer(EnumColor.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
 			return test;
 		}
 	}
