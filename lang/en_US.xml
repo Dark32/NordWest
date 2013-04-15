@@ -122,7 +122,12 @@
 	<entry key="item.homescroll.0.name">Scroll of Return</entry>
 	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
 	
+	<entry key="world.undefined">Undefined</entry>
+	<entry key="world.overworld">Overworld</entry>
+	<entry key="world.nether">Nether</entry>
+	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
+	
 	<entry key="scroll.tp">*Poof*</entry>
 	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
 	<entry key="scroll.error.notcreative">Your altar was removed, so you can't return to home this way.</entry>

@@ -8,7 +8,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.nordwest.common.CustomBlocks;
 import mods.nordwest.common.NordWest;
-import mods.nordwest.utils.EnumColor;
+import mods.nordwest.utils.EnumColors;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
 import net.minecraft.creativetab.CreativeTabs;
@@ -43,11 +43,16 @@ public class ScrollItem extends BaseItem {
 			y = par1ItemStack.getTagCompound().getInteger("Y");
 			z = par1ItemStack.getTagCompound().getInteger("Z");
 			String world = par1ItemStack.getTagCompound().getString("world");
+			String worldName = LanguageRegistry.instance().getStringLocalization("world.undefined");
+			if (par1ItemStack.getTagCompound().getString("world") == "Overworld") {
+				worldName = LanguageRegistry.instance().getStringLocalization("world.overworld");
+			} else {
+				worldName = LanguageRegistry.instance().getStringLocalization("world.nether");
+			}
+			par3List.add("World: " + worldName);
 			par3List.add("X: " + x);
 			par3List.add("Y: " + y);
 			par3List.add("Z: " + z);
-			par3List.add("World: " + world);
-
 		}
 
 	}
@@ -129,17 +134,17 @@ public class ScrollItem extends BaseItem {
 		if (id != CustomBlocks.blockhome.blockID) {
 			if (player.capabilities.isCreativeMode) {
 				if (!world.isRemote)
-					player.sendChatToPlayer(EnumColor.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
+					player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
 				return true;
 			}
 			if (!world.isRemote)
-				player.sendChatToPlayer(EnumColor.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notcreative"));
+				player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notcreative"));
 			return false;
 
 		} else {
 			boolean test = true;
 			if (!world.isRemote)
-				player.sendChatToPlayer(EnumColor.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
+				player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
 			return test;
 		}
 	}

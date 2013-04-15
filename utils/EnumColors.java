@@ -1,6 +1,6 @@
 package mods.nordwest.utils;
 
-public enum EnumColor
+public enum EnumColors
 {
 	BLACK("\u00a70", "Black"),
 	DARK_BLUE("\u00a71", "Dark Blue"),
@@ -25,7 +25,7 @@ public enum EnumColor
 	/** A friendly name of the color. */
 	public String friendlyName;
 	
-	private EnumColor(String s, String n)
+	private EnumColors(String s, String n)
 	{
 		code = s;
 		friendlyName = n;

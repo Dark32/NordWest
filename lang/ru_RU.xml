@@ -126,6 +126,11 @@
 
 	
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
+	
+	<entry key="world.undefined">Неизвестно</entry>
+	<entry key="world.overworld">Верхний мир</entry>
+	<entry key="world.nether">Нижний мир</entry>
+	
 	<entry key="scroll.tp">*Poof*</entry>
 	<entry key="scroll.error.creative">Блок дома сломан, но вам можно к нему прыгнуть</entry>
 	<entry key="scroll.error.notcreative">Блок дома сломан, вам некуда возвращатся</entry>
