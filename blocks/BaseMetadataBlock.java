@@ -15,21 +15,37 @@ public class BaseMetadataBlock extends BaseBlock {
 	private int subName;
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
+	private String[] stringTops;
+	private Icon[] iconTopArray;
 
 	public BaseMetadataBlock(int par1, Material par2Material, int subName) {
 		super(par1, par2Material);
 		this.subName = subName;
-		// TODO Auto-generated constructor stub
+		this.stringTops = new String[subName];
 	}
+
+	public BaseMetadataBlock(int par1, Material par2Material, int subName, String[] tops) {
+		super(par1, par2Material);
+		this.subName = subName;
+		this.stringTops = new String[subName];
+		this.iconTopArray = new Icon[subName];
+		this.stringTops = tops;
+	}
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerIcons(IconRegister par1IconRegister) {
 		this.iconArray = new Icon[subName];
 
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("nordwest:" +this.getUnlocalizedName2()+"."+i);
+			this.iconArray[i] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + "." + i);
+			if (stringTops[i] != null && !stringTops[i].equals("")) {
+				iconTopArray[i] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + "." + i
+						+ stringTops[i]);
+			}
 		}
 	}
+
 	@Override
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int i = 0; i < this.subName; ++i) {
@@ -37,16 +53,23 @@ public class BaseMetadataBlock extends BaseBlock {
 		}
 
 	}
-	@Override
-    public int damageDropped(int par1)
-    {
-        return par1;
-    }
-    @SideOnly(Side.CLIENT)
 
-    @Override
-    public Icon getIcon(int par1, int par2)
-    {
-        return this.iconArray[par2];
-    }
+	@Override
+	public int damageDropped(int par1) {
+		return par1;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public Icon getIcon(int par1, int par2) {
+		if (par1 == 1 || par1 == 0) {
+			if (stringTops[par2] != null && !stringTops[par2].equals("")) {
+				return iconTopArray[par2];
+			} else {
+				return this.iconArray[par2];
+			}
+		} else {
+			return this.iconArray[par2];
+		}
+	}
 }

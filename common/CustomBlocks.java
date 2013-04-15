@@ -50,7 +50,7 @@ public class CustomBlocks {
 	
 	public static Block redBlock;
 	public static Block slimeBlock;
-
+	public static Block customStone1;
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -122,9 +122,13 @@ public class CustomBlocks {
 		
 		slimeBlock = new SlimeBlock(Config.BLOCK_ID.slameBlock).setHardness(1F).setResistance(2F).setUnlocalizedName("slimeBlock").setStepSound(Block.soundSnowFootstep);
 		GameRegistry.registerBlock(slimeBlock, "slimeBlock");
-
-		redBlock = new BaseMetadataBlock(Config.BLOCK_ID.redBlock, Material.iron, 4).setHardness(2F).setResistance(2F).setUnlocalizedName("redBlock").setStepSound(Block.soundStoneFootstep);
+		
+		String[] block_top = new String[]{"",".top",".top",""};
+		redBlock = new BaseMetadataBlock(Config.BLOCK_ID.redBlock, Material.iron, 4, block_top).setHardness(2F).setResistance(2F).setUnlocalizedName("redBlock").setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(redBlock, MetadataBlockItem.class, "redBlock");
+		block_top = new String[]{"","","","",".top","","","",""};
+		customStone1 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock1, Material.rock, 9, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone1");
+		GameRegistry.registerBlock(customStone1, MetadataBlockItem.class, "customStone1");
 
 		
 		burn();
