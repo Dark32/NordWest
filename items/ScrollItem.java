@@ -11,6 +11,7 @@ import mods.nordwest.common.NordWest;
 import mods.nordwest.utils.EnumColors;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -28,34 +29,43 @@ public class ScrollItem extends BaseItem {
 		this.setMaxStackSize(16);
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
-		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		if (par1ItemStack.hasTagCompound()) {
 			if (par1ItemStack.getItemDamage() == 1) {
 				return;
 			}
-			par3List.add(par1ItemStack.getTagCompound().getString("Lore"));
 			int x, y, z;
+			int worldID = par1ItemStack.getTagCompound().getInteger("worldID");
+			String by = LanguageRegistry.instance().getStringLocalization("author.by");
+			String doublePoint = ": ";
+			String worldDescription = LanguageRegistry.instance().getStringLocalization("world.desc");
+			String worldName = LanguageRegistry.instance().getStringLocalization("world.undefined");
+			String color = "\u00a77"; //Default Color
+			if (worldID == 0) {
+				worldName = LanguageRegistry.instance().getStringLocalization("world.overworld");
+			} else if (worldID == -1) {
+				worldName = LanguageRegistry.instance().getStringLocalization("world.nether");
+			} else if (worldID != 0 || worldID != 1 || worldID != -1 && par1ItemStack.getTagCompound().getString("worldName") == null){
+				worldName = par1ItemStack.getTagCompound().getString("worldName");
+				color = "\u00a7e"; //Yellow Color
+			} else {
+				worldName = LanguageRegistry.instance().getStringLocalization("world.undefined");
+				color = "\u00a78"; //Gray Color
+			}
 			x = par1ItemStack.getTagCompound().getInteger("X");
 			y = par1ItemStack.getTagCompound().getInteger("Y");
 			z = par1ItemStack.getTagCompound().getInteger("Z");
-			String world = par1ItemStack.getTagCompound().getString("world");
-			String worldName = LanguageRegistry.instance().getStringLocalization("world.undefined");
-			if (par1ItemStack.getTagCompound().getString("world") == "Overworld") {
-				worldName = LanguageRegistry.instance().getStringLocalization("world.overworld");
-			} else {
-				worldName = LanguageRegistry.instance().getStringLocalization("world.nether");
+			par3List.add(color + worldDescription + doublePoint + worldName);
+			par3List.add(by + doublePoint + par1ItemStack.getTagCompound().getString("Lore"));
+			par3List.add("X" + doublePoint + x);
+			par3List.add("Y" + doublePoint  + y);
+			par3List.add("Z" + doublePoint  + z);
 			}
-			par3List.add("World: " + worldName);
-			par3List.add("X: " + x);
-			par3List.add("Y: " + y);
-			par3List.add("Z: " + z);
 		}
-
-	}
+	
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, player, true);
@@ -69,7 +79,7 @@ public class ScrollItem extends BaseItem {
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
 			if (!itemstack.hasTagCompound()) {
-				if (itemstack.itemID == this.itemID && (testBlock(world, x, y, z))) {
+				if (itemstack.itemID == this.itemID/** && (testBlock(world, x, y, z))*/) {
 					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
 					NBTTagCompound tag = item.getTagCompound();
 					if (tag == null) {
@@ -77,10 +87,11 @@ public class ScrollItem extends BaseItem {
 						item.setTagCompound(tag);
 					}
 					tag.setString("Lore", player.getEntityName());
+					tag.setString("worldName", world.provider.getDimensionName());
 					tag.setInteger("X", x);
 					tag.setInteger("Y", y);
 					tag.setInteger("Z", z);
-					tag.setString("world", world.provider.getDimensionName());
+					tag.setInteger("worldID", world.provider.dimensionId);
 					itemstack.stackSize--;
 					player.inventory.addItemStackToInventory(item);
 					world.playSound(x, y, z, "random.breath", 0.5f, 1.2f, false);
@@ -100,11 +111,11 @@ public class ScrollItem extends BaseItem {
 		if (itemstack.hasTagCompound()) {
 			int x, y, z;
 
-			x = itemstack.getTagCompound().getInteger("X");// + 0.5d;
-			y = itemstack.getTagCompound().getInteger("Y");// + 1.2d;
-			z = itemstack.getTagCompound().getInteger("Z");// + 0.5d;
-			String worldName = itemstack.getTagCompound().getString("world");
-			if (worldName.equals(world.provider.getDimensionName()) && (testBlock(world, x, y, z, player, itemstack) || itemstack.getItemDamage() == 1)) {
+			x = itemstack.getTagCompound().getInteger("X"); // + 0.5d;
+			y = itemstack.getTagCompound().getInteger("Y"); // + 1.2d;
+			z = itemstack.getTagCompound().getInteger("Z"); // + 0.5d;
+			int worldId = itemstack.getTagCompound().getInteger("worldID");
+			if (/**worldId == (world.provider.dimensionId) && */(testBlock(world, x, y, z, player, itemstack) || itemstack.getItemDamage() == 1)) {
 				effectDdaw(world, player.posX, player.posY - 1, player.posZ);
 				world.playSound(x + 0.5D, y + 1.0D, z + 0.5D, "random.breath", 0.5f, 2.2f, false);
 				effectDdaw(world, x + 0.5D, y + 1.0D, z + 0.5D);
@@ -125,43 +136,86 @@ public class ScrollItem extends BaseItem {
 
 		}
 	}
+	
+	
+	private void badEffectDraw(World world, double x, double y, double z) {
+		double r = 0.5d;
+		int c = 36;
+		for (int i = 1; i < c; i++) {
+			world.spawnParticle("smoke", x + r * Math.cos(i), y + (i * 0.025), z + r * Math.sin(i), 0.0D, 0.0D, 0.0D);
+		}
+	}
 
 	private boolean testBlock(World world, int x, int y, int z, EntityPlayer player, ItemStack itemstack) {
 		if (itemstack.getItemDamage() == 1) {
 			return true;
 		}
 		int id = world.getBlockId(x, y, z);
-		if (id != CustomBlocks.blockhome.blockID) {
+		int worldId = itemstack.getTagCompound().getInteger("worldID");
+		if (id != CustomBlocks.blockhome.blockID && worldId == (world.provider.dimensionId)) {
 			if (player.capabilities.isCreativeMode) {
-				if (!world.isRemote)
-					player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
+				spamProtection (world, x, y, z, player, itemstack);
 				return true;
 			}
-			if (!world.isRemote)
-				player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notcreative"));
+			spamProtection (world, x, y, z, player, itemstack);
 			return false;
-
 		} else {
+			if (worldId != (world.provider.dimensionId)) {
+				spamProtection (world, x, y, z, player, itemstack);
+				return false;
+			} else if (worldId != (world.provider.dimensionId)) {
+			return false;
+			} else {
 			boolean test = true;
 			if (!world.isRemote)
 				player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
 			return test;
+				}
+			}
 		}
-	}
+	
+	private void spamProtection(World world, int x, int y, int z, EntityPlayer player, ItemStack itemstack) {
+		NBTTagCompound tag = itemstack.getTagCompound();
+	     if (tag == null) {
+	      tag = new NBTTagCompound();
+	      itemstack.setTagCompound(tag);
+	     }
+		boolean showError = false;
+		int id = world.getBlockId(x, y, z);
+		int worldId = itemstack.getTagCompound().getInteger("worldID");
+		if (Minecraft.getSystemTime() >= itemstack.getTagCompound().getLong("time") + 1250 || (!tag.hasKey("time"))) {
+				showError = true;
+			} else {
+				showError = false;
+			}
+			if (showError == true) {
+				if (worldId == (world.provider.dimensionId)) {
+					if (!world.isRemote)
+						player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.wrongDimension"));
+				} else {
+					if (!world.isRemote)
+						player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notCreative"));
+				}
+				badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
+				world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
+				//time = Minecraft.getSystemTime();
+				tag.setLong("time", Minecraft.getSystemTime());
+			}
+		}
 
-	private boolean testBlock(World world, int x, int y, int z) {
+	/**private boolean testBlock(World world, int x, int y, int z) {
 		int id = world.getBlockId(x, y, z);
 		if (id != CustomBlocks.blockhome.blockID) {
 			return false;
 		} else {
 			boolean test = true;
-			/** Altar Feature **/
-			/*
-			 * for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID; }
-			 */
+			
+			for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID; }
+
 			return test;
 		}
-	}
+	}*/
+	
 	@Override
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int j = 0; j < 2; ++j) {
