@@ -217,11 +217,15 @@
 	<entry key="world.undefined">Undefined</entry>
 	<entry key="world.overworld">Overworld</entry>
 	<entry key="world.nether">Nether</entry>
+	<entry key="world.desc">World</entry>
 	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
 	
+	<entry key="author.by">Creator</entry>
+	
 	<entry key="scroll.tp">*Poof*</entry>
 	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
-	<entry key="scroll.error.notcreative">Your altar was removed, so you can't return to home this way.</entry>
+	<entry key="scroll.error.notCreative">Your altar was removed, so you can't return to home this way.</entry>
+	<entry key="scroll.error.wrongDimension">You can't jump to your home, as it is so far.</entry>
 	
 	</properties>

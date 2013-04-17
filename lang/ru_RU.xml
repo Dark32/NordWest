@@ -218,9 +218,15 @@
 	<entry key="world.undefined">Неизвестно</entry>
 	<entry key="world.overworld">Верхний мир</entry>
 	<entry key="world.nether">Нижний мир</entry>
+	<entry key="world.desc">World</entry>
+	
+	<entry key="itemGroup.tabNord">NordWest Essential</entry>
+	
+	<entry key="author.by">Creator</entry>
 	
 	<entry key="scroll.tp">*Poof*</entry>
-	<entry key="scroll.error.creative">Блок дома сломан, но вам можно к нему прыгнуть</entry>
-	<entry key="scroll.error.notcreative">Блок дома сломан, вам некуда возвращатся</entry>
+	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
+	<entry key="scroll.error.notCreative">Your altar was removed, so you can't return to home this way.</entry>
+	<entry key="scroll.error.wrongDimension">You can't jump to your home, as it is so far.</entry>
 	
 	</properties>
