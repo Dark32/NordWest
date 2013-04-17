@@ -79,7 +79,7 @@ public class ScrollItem extends BaseItem {
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
 			if (!itemstack.hasTagCompound()) {
-				if (itemstack.itemID == this.itemID/** && (testBlock(world, x, y, z))*/) {
+				if (itemstack.itemID == this.itemID) {
 					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
 					NBTTagCompound tag = item.getTagCompound();
 					if (tag == null) {
@@ -116,9 +116,10 @@ public class ScrollItem extends BaseItem {
 			z = itemstack.getTagCompound().getInteger("Z"); // + 0.5d;
 			int worldId = itemstack.getTagCompound().getInteger("worldID");
 			if (/**worldId == (world.provider.dimensionId) && */(testBlock(world, x, y, z, player, itemstack) || itemstack.getItemDamage() == 1)) {
-				effectDdaw(world, player.posX, player.posY - 1, player.posZ);
-				world.playSound(x + 0.5D, y + 1.0D, z + 0.5D, "random.breath", 0.5f, 2.2f, false);
-				effectDdaw(world, x + 0.5D, y + 1.0D, z + 0.5D);
+				effectDraw(world, player.posX, player.posY - 1, player.posZ);
+				world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "mob.endermen.portal", 0.5f, 2.2f, false);
+				effectDraw(world, x + 0.5D, y + 1.0D, z + 0.5D);
+				world.playSound(x + 0.5D, y + 1.0D, z + 0.5D, "mob.endermen.portal2", 0.5f, 2.2f, false);
 				player.setPositionAndUpdate(x + 0.5D, y + 1.0D, z + 0.5D);
 				player.fallDistance = 0.0F;
 				return true;
@@ -128,7 +129,7 @@ public class ScrollItem extends BaseItem {
 		return false;
 	}
 
-	private void effectDdaw(World world, double x, double y, double z) {
+	private void effectDraw(World world, double x, double y, double z) {
 		double r = 0.5d;
 		int c = 36;
 		for (int i = 1; i < c; i++) {
@@ -154,8 +155,9 @@ public class ScrollItem extends BaseItem {
 		int worldId = itemstack.getTagCompound().getInteger("worldID");
 		if (id != CustomBlocks.blockhome.blockID && worldId == (world.provider.dimensionId)) {
 			if (player.capabilities.isCreativeMode) {
-				spamProtection (world, x, y, z, player, itemstack);
-				return true;
+				 if (!world.isRemote)
+				 player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
+				 return true;
 			}
 			spamProtection (world, x, y, z, player, itemstack);
 			return false;
@@ -189,7 +191,7 @@ public class ScrollItem extends BaseItem {
 				showError = false;
 			}
 			if (showError == true) {
-				if (worldId == (world.provider.dimensionId)) {
+				if (worldId != (world.provider.dimensionId)) {
 					if (!world.isRemote)
 						player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.wrongDimension"));
 				} else {
