@@ -65,6 +65,98 @@
 	<entry key="tile.flora.14.name">Flower</entry>
 	<entry key="tile.flora.15.name">Flower</entry>
 	
+	
+	<entry key="tile.customStone1.0.name">Stone</entry>
+	<entry key="tile.customStone1.1.name">Coblestone</entry>
+	<entry key="tile.customStone1.2.name">Framed Coblestone</entry>
+	<entry key="tile.customStone1.3.name">Smooth Stone</entry>
+	<entry key="tile.customStone1.4.name">Carved Stone</entry>
+	<entry key="tile.customStone1.5.name">Stone Brick</entry>
+	<entry key="tile.customStone1.6.name">Crackeв Stone Brick</entry>
+	<entry key="tile.customStone1.7.name">Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone1.8.name">Quality Stone Brick</entry>
+	<entry key="tile.customStone1.9.name">Carved Stone</entry>
+	
+	<entry key="tile.customStone2.0.name">White Stone</entry>
+	<entry key="tile.customStone2.1.name">White Coblestone</entry>
+	<entry key="tile.customStone2.2.name">White Framed Coblestone</entry>
+	<entry key="tile.customStone2.3.name">White Smooth Stone</entry>
+	<entry key="tile.customStone2.4.name">White Carved Stone</entry>
+	<entry key="tile.customStone2.5.name">White Stone Brick</entry>
+	<entry key="tile.customStone2.6.name">White Crackeв Stone Brick</entry>
+	<entry key="tile.customStone2.7.name">White Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone2.8.name">White Quality Stone Brick</entry>
+	<entry key="tile.customStone2.9.name">White Carved Stone</entry>
+	
+	<entry key="tile.customStone3.0.name">Black Stone</entry>
+	<entry key="tile.customStone3.1.name">Black Coblestone</entry>
+	<entry key="tile.customStone3.2.name">Black Framed Coblestone</entry>
+	<entry key="tile.customStone3.3.name">Black Smooth Stone</entry>
+	<entry key="tile.customStone3.4.name">Black Carved Stone</entry>
+	<entry key="tile.customStone3.5.name">Black Stone Brick</entry>
+	<entry key="tile.customStone3.6.name">Black Crackeв Stone Brick</entry>
+	<entry key="tile.customStone3.7.name">Black Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone3.8.name">Black Quality Stone Brick</entry>
+	<entry key="tile.customStone3.9.name">Black Carved Stone</entry>
+	
+	<entry key="tile.customStone4.0.name">Sand Stone</entry>
+	<entry key="tile.customStone4.1.name">Sand Coblestone</entry>
+	<entry key="tile.customStone4.2.name">Sand Framed Coblestone</entry>
+	<entry key="tile.customStone4.3.name">Sand Smooth Stone</entry>
+	<entry key="tile.customStone4.4.name">Sand Carved Stone</entry>
+	<entry key="tile.customStone4.5.name">Sand Stone Brick</entry>
+	<entry key="tile.customStone4.6.name">Sand Crackeв Stone Brick</entry>
+	<entry key="tile.customStone4.7.name">Sand Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone4.8.name">Sand Quality Stone Brick</entry>
+	<entry key="tile.customStone4.9.name">Sand Carved Stone</entry>
+	
+	<entry key="tile.customStone5.0.name">Green Stone</entry>
+	<entry key="tile.customStone5.1.name">Green Coblestone</entry>
+	<entry key="tile.customStone5.2.name">Green Framed Coblestone</entry>
+	<entry key="tile.customStone5.3.name">Green Smooth Stone</entry>
+	<entry key="tile.customStone5.4.name">Green Carved Stone</entry>
+	<entry key="tile.customStone5.5.name">Green Stone Brick</entry>
+	<entry key="tile.customStone5.6.name">Green Crackeв Stone Brick</entry>
+	<entry key="tile.customStone5.7.name">Green Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone5.8.name">Green Quality Stone Brick</entry>
+	<entry key="tile.customStone5.9.name">Green Carved Stone</entry>
+	
+	
+	<entry key="tile.customStone6.0.name">Brown Stone</entry>
+	<entry key="tile.customStone6.1.name">Brown Coblestone</entry>
+	<entry key="tile.customStone6.2.name">Brown Framed Coblestone</entry>
+	<entry key="tile.customStone6.3.name">Brown Smooth Stone</entry>
+	<entry key="tile.customStone6.4.name">Brown Carved Stone</entry>
+	<entry key="tile.customStone6.5.name">Brown Stone Brick</entry>
+	<entry key="tile.customStone6.6.name">Brown Crackeв Stone Brick</entry>
+	<entry key="tile.customStone6.7.name">Brown Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone6.8.name">Brown Quality Stone Brick</entry>
+	<entry key="tile.customStone6.9.name">Brown Carved Stone</entry>
+	
+	
+	<entry key="tile.customStone7.0.name">Moss Stone</entry>
+	<entry key="tile.customStone7.1.name">Moss Coblestone</entry>
+	<entry key="tile.customStone7.2.name">Moss Framed Coblestone</entry>
+	<entry key="tile.customStone7.3.name">Moss Smooth Stone</entry>
+	<entry key="tile.customStone7.4.name">Moss Carved Stone</entry>
+	<entry key="tile.customStone7.5.name">Moss Stone Brick</entry>
+	<entry key="tile.customStone7.6.name">Moss Crackeв Stone Brick</entry>
+	<entry key="tile.customStone7.7.name">Moss Mosse Crackeв Stone Brick</entry>
+	<entry key="tile.customStone7.8.name">Moss Quality Stone Brick</entry>
+	<entry key="tile.customStone7.9.name">Moss Carved Stone</entry>
+	
+	<entry key="tile.customStone8.0.name">Obsidian Stone</entry>
+	<entry key="tile.customStone8.1.name">Obsidian Coblestone</entry>
+	<entry key="tile.customStone8.2.name">Obsidian Framed Coblestone</entry>
+	<entry key="tile.customStone8.3.name">Obsidian Smooth Stone</entry>
+	<entry key="tile.customStone8.4.name">Obsidian Carved Stone</entry>
+	<entry key="tile.customStone8.5.name">Obsidian Stone Brick</entry>
+	<entry key="tile.customStone8.6.name">Obsidian Crackeв Stone Brick</entry>
+	<entry key="tile.customStone8.7.name">Obsidian Corrosion Crackeв Stone Brick</entry>
+	<entry key="tile.customStone8.8.name">Obsidian Quality Stone Brick</entry>
+	<entry key="tile.customStone8.9.name">Obsidian Carved Stone</entry>
+	
+	
 	<entry key="tile.blockhome.name">Home Block</entry>
 	
 	<entry key="tile.blockWool1.0.name">HalfBlock White Wool</entry>

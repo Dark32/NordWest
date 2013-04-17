@@ -82,6 +82,94 @@
 	<entry key="tile.flora.14.name">Цветок</entry>
 	<entry key="tile.flora.15.name">Цветок</entry>
 	
+	<entry key="tile.customStone1.0.name">Камень</entry>
+	<entry key="tile.customStone1.1.name">Булыжник</entry>
+	<entry key="tile.customStone1.2.name">Окантованный булыжник</entry>
+	<entry key="tile.customStone1.3.name">Гладкий камень</entry>
+	<entry key="tile.customStone1.4.name">Резной камень</entry>
+	<entry key="tile.customStone1.5.name">Каменный кирпич</entry>
+	<entry key="tile.customStone1.6.name">Треснувший каменный кипич</entry>
+	<entry key="tile.customStone1.7.name">Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone1.8.name">Качественный каменный кирпич</entry>
+	<entry key="tile.customStone1.9.name">Резной камень</entry>
+	
+	<entry key="tile.customStone2.0.name">Белый Камень</entry>
+	<entry key="tile.customStone2.1.name">Белый Булыжник</entry>
+	<entry key="tile.customStone2.2.name">Белый Окантованный булыжник</entry>
+	<entry key="tile.customStone2.3.name">Белый Гладкий камень</entry>
+	<entry key="tile.customStone2.4.name">Белый Резной камень</entry>
+	<entry key="tile.customStone2.5.name">Белый Каменный кирпич</entry>
+	<entry key="tile.customStone2.6.name">Белый Треснувший каменный кипич</entry>
+	<entry key="tile.customStone2.7.name">Белый Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone2.8.name">Белый Качественный каменный кирпич</entry>
+	<entry key="tile.customStone2.9.name">Белый Резной камень</entry>
+	
+	<entry key="tile.customStone3.0.name">Чёрный Камень</entry>
+	<entry key="tile.customStone3.1.name">Чёрный Булыжник</entry>
+	<entry key="tile.customStone3.2.name">Чёрный Окантованный булыжник</entry>
+	<entry key="tile.customStone3.3.name">Чёрный Гладкий камень</entry>
+	<entry key="tile.customStone3.4.name">Чёрный Резной камень</entry>
+	<entry key="tile.customStone3.5.name">Чёрный Каменный кирпич</entry>
+	<entry key="tile.customStone3.6.name">Чёрный Треснувший каменный кипич</entry>
+	<entry key="tile.customStone3.7.name">Чёрный Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone3.8.name">Чёрный Качественный каменный кирпич</entry>
+	<entry key="tile.customStone3.9.name">Чёрный Резной камень</entry>
+	
+	<entry key="tile.customStone4.0.name">Песчаный Камень</entry>
+	<entry key="tile.customStone4.1.name">Песчаный Булыжник</entry>
+	<entry key="tile.customStone4.2.name">Песчаный Окантованный булыжник</entry>
+	<entry key="tile.customStone4.3.name">Песчаный Гладкий камень</entry>
+	<entry key="tile.customStone4.4.name">Песчаный Резной камень</entry>
+	<entry key="tile.customStone4.5.name">Песчаный Каменный кирпич</entry>
+	<entry key="tile.customStone4.6.name">Песчаный Треснувший каменный кипич</entry>
+	<entry key="tile.customStone4.7.name">Песчаный Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone4.8.name">Песчаный Качественный каменный кирпич</entry>
+	<entry key="tile.customStone4.9.name">Песчаный Резной камень</entry>
+
+	<entry key="tile.customStone5.0.name">Зелёный Камень</entry>
+	<entry key="tile.customStone5.1.name">Зелёный Булыжник</entry>
+	<entry key="tile.customStone5.2.name">Зелёный Окантованный булыжник</entry>
+	<entry key="tile.customStone5.3.name">Зелёный Гладкий камень</entry>
+	<entry key="tile.customStone5.4.name">Зелёный Резной камень</entry>
+	<entry key="tile.customStone5.5.name">Зелёный Каменный кирпич</entry>
+	<entry key="tile.customStone5.6.name">Зелёный Треснувший каменный кипич</entry>
+	<entry key="tile.customStone5.7.name">Зелёный Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone5.8.name">Зелёный Качественный каменный кирпич</entry>
+	<entry key="tile.customStone5.9.name">Зелёный Резной камень</entry>	
+	
+	<entry key="tile.customStone6.0.name">Коричневый Камень</entry>
+	<entry key="tile.customStone6.1.name">Коричневый Булыжник</entry>
+	<entry key="tile.customStone6.2.name">Коричневый Окантованный булыжник</entry>
+	<entry key="tile.customStone6.3.name">Коричневый Гладкий камень</entry>
+	<entry key="tile.customStone6.4.name">Коричневый Резной камень</entry>
+	<entry key="tile.customStone6.5.name">Коричневый Каменный кирпич</entry>
+	<entry key="tile.customStone6.6.name">Коричневый Треснувший каменный кипич</entry>
+	<entry key="tile.customStone6.7.name">Коричневый Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone6.8.name">Коричневый Качественный каменный кирпич</entry>
+	<entry key="tile.customStone6.9.name">Коричневый Резной камень</entry>
+	
+	<entry key="tile.customStone7.0.name">Замшелый Камень</entry>
+	<entry key="tile.customStone7.1.name">Замшелый Булыжник</entry>
+	<entry key="tile.customStone7.2.name">Замшелый Окантованный булыжник</entry>
+	<entry key="tile.customStone7.3.name">Замшелый Гладкий камень</entry>
+	<entry key="tile.customStone7.4.name">Замшелый Резной камень</entry>
+	<entry key="tile.customStone7.5.name">Замшелый Каменный кирпич</entry>
+	<entry key="tile.customStone7.6.name">Замшелый Треснувший каменный кипич</entry>
+	<entry key="tile.customStone7.7.name">Замшелый Замшелый треснувший каменный кирпич</entry>
+	<entry key="tile.customStone7.8.name">Замшелый Качественный каменный кирпич</entry>
+	<entry key="tile.customStone7.9.name">Замшелый Резной камень</entry>
+	
+	<entry key="tile.customStone8.0.name">Обсидиановый Камень</entry>
+	<entry key="tile.customStone8.1.name">Обсидиановый Булыжник</entry>
+	<entry key="tile.customStone8.2.name">Обсидиановый Окантованный булыжник</entry>
+	<entry key="tile.customStone8.3.name">Обсидиановый Гладкий камень</entry>
+	<entry key="tile.customStone8.4.name">Обсидиановый Резной камень</entry>
+	<entry key="tile.customStone8.5.name">Обсидиановый Каменный кирпич</entry>
+	<entry key="tile.customStone8.6.name">Обсидиановый Треснувший каменный кипич</entry>
+	<entry key="tile.customStone8.7.name">Обсидиановый Корозионный треснувший каменный кирпич</entry>
+	<entry key="tile.customStone8.8.name">Обсидиановый Качественный каменный кирпич</entry>
+	<entry key="tile.customStone8.9.name">Обсидиановый Резной камень</entry>
+	
 	<entry key="tile.redBlock.0.name">Красный камень</entry>
 	<entry key="tile.redBlock.1.name">Красный резной камень</entry>
 	<entry key="tile.redBlock.2.name">Лапис резной</entry>

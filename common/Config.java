@@ -40,6 +40,13 @@ public class Config {
 		public static int redBlock;
 		public static int slameBlock;
 		public static int customBlock1;
+		public static int customBlock2;
+		public static int customBlock3;
+		public static int customBlock4;
+		public static int customBlock5;
+		public static int customBlock6;
+		public static int customBlock7;
+		public static int customBlock8;
 
 	}
 
@@ -112,11 +119,17 @@ public class Config {
 			BLOCK_ID.blockWoolHalf2 = cfg.getBlock("blockWoolHalf2", 216).getInt(216);
 			BLOCK_ID.blockWoolFull1 = cfg.getBlock("blockWoolFull1", 217).getInt(217);
 			BLOCK_ID.blockWoolFull2 = cfg.getBlock("blockWoolFull2", 218).getInt(218);
-			
-			BLOCK_ID.slameBlock= cfg.getBlock("slameBlock", 219).getInt(219);
+
+			BLOCK_ID.slameBlock = cfg.getBlock("slameBlock", 219).getInt(219);
 			BLOCK_ID.redBlock = cfg.getBlock("redBlock", 220).getInt(220);
-			BLOCK_ID.customBlock1= cfg.getBlock("customBlock1", 221).getInt(221);
-			
+			BLOCK_ID.customBlock1 = cfg.getBlock("customBlock1", 221).getInt(221);
+			BLOCK_ID.customBlock2 = cfg.getBlock("customBlock2", 222).getInt(222);
+			BLOCK_ID.customBlock3 = cfg.getBlock("customBlock3", 223).getInt(223);
+			BLOCK_ID.customBlock4 = cfg.getBlock("customBlock4", 224).getInt(224);
+			BLOCK_ID.customBlock5 = cfg.getBlock("customBlock5", 225).getInt(225);
+			BLOCK_ID.customBlock6 = cfg.getBlock("customBlock6", 226).getInt(226);
+			BLOCK_ID.customBlock7 = cfg.getBlock("customBlock7", 227).getInt(227);
+			BLOCK_ID.customBlock8 = cfg.getBlock("customBlock8", 237).getInt(237);
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
@@ -127,29 +140,32 @@ public class Config {
 			ITEM_ID.copperChestplate = cfg.getItem("copperChestplate", 481).getInt(481);
 			ITEM_ID.copperLegs = cfg.getItem("copperLegs", 482).getInt(482);
 			ITEM_ID.copperBoots = cfg.getItem("copperBoots", 483).getInt(483);
-			
+
 			ITEM_ID.mythrilHelmet = cfg.getItem("mythrilHelmet", 470).getInt(470);
 			ITEM_ID.mythrilChestplate = cfg.getItem("mythrilChestplate", 471).getInt(471);
 			ITEM_ID.mythrilLegs = cfg.getItem("mythrilLegs", 472).getInt(472);
 			ITEM_ID.mythrilBoots = cfg.getItem("mythrilBoots", 473).getInt(473);
-			
+
 			ITEM_ID.copperPickaxe = cfg.getItem("copperPickaxe", 490).getInt(490);
 			ITEM_ID.copperAxe = cfg.getItem("copperAxe", 491).getInt(491);
 			ITEM_ID.copperShovel = cfg.getItem("copperShovel", 492).getInt(492);
 			ITEM_ID.copperSword = cfg.getItem("copperSword", 493).getInt(493);
 			ITEM_ID.copperHoe = cfg.getItem("copperHoe", 494).getInt(494);
-			
-			
+
 			ITEM_ID.mythrilPickaxe = cfg.getItem("mythrilPickaxe", 495).getInt(495);
 			ITEM_ID.mythrilAxe = cfg.getItem("mythrilAxe", 496).getInt(496);
 			ITEM_ID.mythrilShovel = cfg.getItem("mythrilShovel", 497).getInt(497);
 			ITEM_ID.mythrilSword = cfg.getItem("mythrilSword", 498).getInt(498);
 			ITEM_ID.mythrilHoe = cfg.getItem("mythrilHoe", 499).getInt(499);
-			
-			ITEM_ID.samuraiHelmet = cfg.getItem("samuraiHelmet", 488).getInt(488);;
-			ITEM_ID.samuraiChestplate= cfg.getItem("samuraiChestplate", 489).getInt(489);;
-			ITEM_ID.samuraiLegs= cfg.getItem("samuraiLegs", 490).getInt(490);;
-			ITEM_ID.samuraiBoots= cfg.getItem("samuraiBoots", 491).getInt(491);;
+
+			ITEM_ID.samuraiHelmet = cfg.getItem("samuraiHelmet", 488).getInt(488);
+			;
+			ITEM_ID.samuraiChestplate = cfg.getItem("samuraiChestplate", 489).getInt(489);
+			;
+			ITEM_ID.samuraiLegs = cfg.getItem("samuraiLegs", 490).getInt(490);
+			;
+			ITEM_ID.samuraiBoots = cfg.getItem("samuraiBoots", 491).getInt(491);
+			;
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");
@@ -159,10 +175,7 @@ public class Config {
 						localizationName, true);
 			}
 			/*
-			 * for (int i = 0; i < _lang.length; ++i) { String localizationName
-			 * = _lang[i];
-			 * LanguageRegistry.instance().loadLocalization(LanguageDirectory +
-			 * localizationName + ".xml", localizationName, true); }
+			 * for (int i = 0; i < _lang.length; ++i) { String localizationName = _lang[i]; LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml", localizationName, true); }
 			 */
 
 		} catch (Exception e) {

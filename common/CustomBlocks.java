@@ -51,6 +51,13 @@ public class CustomBlocks {
 	public static Block redBlock;
 	public static Block slimeBlock;
 	public static Block customStone1;
+	public static Block customStone2;
+	public static Block customStone3;
+	public static Block customStone4;
+	public static Block customStone5;
+	public static Block customStone6;
+	public static Block customStone7;
+	public static Block customStone8;
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -126,10 +133,23 @@ public class CustomBlocks {
 		String[] block_top = new String[]{"",".top",".top",""};
 		redBlock = new BaseMetadataBlock(Config.BLOCK_ID.redBlock, Material.iron, 4, block_top).setHardness(2F).setResistance(2F).setUnlocalizedName("redBlock").setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(redBlock, MetadataBlockItem.class, "redBlock");
-		block_top = new String[]{"","","","",".top","","","",""};
-		customStone1 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock1, Material.rock, 9, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone1");
+		block_top = new String[]{"","","","",".top","","","","",""};
+		customStone1 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock1, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone1");
 		GameRegistry.registerBlock(customStone1, MetadataBlockItem.class, "customStone1");
-
+		customStone2 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock2, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone2");
+		GameRegistry.registerBlock(customStone2, MetadataBlockItem.class, "customStone2");
+		customStone3 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock3, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone3");
+		GameRegistry.registerBlock(customStone3, MetadataBlockItem.class, "customStone3");
+		customStone4 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock4, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone4");
+		GameRegistry.registerBlock(customStone4, MetadataBlockItem.class, "customStone4");
+		customStone5 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock5, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone5");
+		GameRegistry.registerBlock(customStone5, MetadataBlockItem.class, "customStone5");
+		customStone6 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock6, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone6");
+		GameRegistry.registerBlock(customStone6, MetadataBlockItem.class, "customStone6");
+		customStone7 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock7, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone7");
+		GameRegistry.registerBlock(customStone7, MetadataBlockItem.class, "customStone7");
+		customStone8 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock8, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone8");
+		GameRegistry.registerBlock(customStone8, MetadataBlockItem.class, "customStone8");
 		
 		burn();
 		flowers();
