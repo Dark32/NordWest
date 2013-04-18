@@ -44,6 +44,7 @@ public class ScrollItem extends BaseItem {
 			String doublePoint = ": ";
 			String worldDescription = LanguageRegistry.instance().getStringLocalization("world.desc");
 			String worldName = LanguageRegistry.instance().getStringLocalization("world.undefined");
+			String homeName = LanguageRegistry.instance().getStringLocalization("world.undefined");
 			String color = "\u00a77"; //Default Color
 			if (worldID == 0) {
 				worldName = LanguageRegistry.instance().getStringLocalization("world.overworld");
@@ -61,6 +62,7 @@ public class ScrollItem extends BaseItem {
 			x = par1ItemStack.getTagCompound().getInteger("X");
 			y = par1ItemStack.getTagCompound().getInteger("Y");
 			z = par1ItemStack.getTagCompound().getInteger("Z");
+			par3List.add(EnumColors.WHITE + homeName);
 			par3List.add(color + worldDescription + doublePoint + worldName);
 			par3List.add(by + doublePoint + par1ItemStack.getTagCompound().getString("Lore"));
 			par3List.add("X" + doublePoint + x);

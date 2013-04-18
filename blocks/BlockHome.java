@@ -10,6 +10,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -30,9 +32,32 @@ public class BlockHome extends BaseBlock {
 		this.iconArray[0] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".side");
 		this.iconArray[1] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".top");
 		this.iconArray[2] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".buttom");
-
 	}
 
+	@Override
+	public void onBlockAdded(World world, int x, int y, int z) {
+		Random random = new Random();
+		if (world.provider.dimensionId == 1) {
+			int dropChance = random.nextInt(10);
+			world.createExplosion((Entity)null, x, y, z, 2.0F, false);
+			if (dropChance <= 7) {
+			world.destroyBlock(x, y, z, true);
+			} else {
+			world.destroyBlock(x, y, z, false);
+			}
+		}/** else {
+			if (homeGui(world, x, y, z, player) == true) {
+				
+			} else {
+				world.destroyBlock(x, y, z, true);
+			}
+		}*/
+	}
+	
+	/**public boolean homeGui(World world, int x, int y, int z, EntityPlayer player){
+		player.openGui(Tutorial.instance, 3, world, x, y, z);
+	}*/
+	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public Icon getIcon(int par1, int par2) {
@@ -42,6 +67,7 @@ public class BlockHome extends BaseBlock {
 			return this.iconArray[1];
 		return this.iconArray[0];
 	}
+	
 	@Override
 	public void randomDisplayTick(World par1World, int x, int y, int z, Random random) {
 		super.randomDisplayTick(par1World, x, y, z, random);
