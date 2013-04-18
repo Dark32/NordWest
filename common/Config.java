@@ -47,6 +47,12 @@ public class Config {
 		public static int customBlock6;
 		public static int customBlock7;
 		public static int customBlock8;
+		public static int customSlabHalf;
+		public static int customSlabFull;
+		public static int customSlabHalf2;
+		public static int customSlabFull2;
+		public static int customSlabHalf3;
+		public static int customSlabFull3;
 
 	}
 
@@ -130,6 +136,12 @@ public class Config {
 			BLOCK_ID.customBlock6 = cfg.getBlock("customBlock6", 226).getInt(226);
 			BLOCK_ID.customBlock7 = cfg.getBlock("customBlock7", 227).getInt(227);
 			BLOCK_ID.customBlock8 = cfg.getBlock("customBlock8", 237).getInt(237);
+			BLOCK_ID.customSlabHalf = cfg.getBlock("customSlabHalf", 238).getInt(238);
+			BLOCK_ID.customSlabFull = cfg.getBlock("customSlabFull", 239).getInt(239);
+			BLOCK_ID.customSlabHalf2 = cfg.getBlock("customSlabHalf2", 240).getInt(240);
+			BLOCK_ID.customSlabFull2 = cfg.getBlock("customSlabFull2", 241).getInt(241);
+			BLOCK_ID.customSlabHalf3 = cfg.getBlock("customSlabHalf3", 242).getInt(242);
+			BLOCK_ID.customSlabFull3 = cfg.getBlock("customSlabFull3", 243).getInt(243);
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
@@ -171,8 +183,7 @@ public class Config {
 			_lang.add("ru_RU");
 			_lang.add("en_US");
 			for (String localizationName : _lang) {
-				LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml",
-						localizationName, true);
+				LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml", localizationName, true);
 			}
 			/*
 			 * for (int i = 0; i < _lang.length; ++i) { String localizationName = _lang[i]; LanguageRegistry.instance().loadLocalization(LanguageDirectory + localizationName + ".xml", localizationName, true); }

@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.RecipesArmorDyes;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -24,14 +25,14 @@ public class Recipes {
 		addRecipe(new ItemStack(CustomBlocks.blockhome, 1), new Object[] { "x#x", "#Z#", "x#x", 'x', Item.paper, '#', Item.enderPearl, 'Z', CustomItems.homescroll });
 		addRecipe(new ItemStack(CustomItems.homescroll, 4, 0), new Object[] { "x#x", "#Z#", "x#x", 'x', Item.paper, '#', Item.enderPearl });
 		addRecipe(new ItemStack(CustomItems.homescroll, 1, 1), new Object[] { "xxx", "xzx", "xxx", 'x', new ItemStack(CustomItems.homescroll, 1, 0), 'z', Item.eyeOfEnder });
-		for (int i=0;i<8;i++){
-			addRecipe(new ItemStack(CustomBlocks.blockWoolHalf1,6,i),new Object[]{"xxx",'x',new ItemStack(Block.cloth,1,i)});
-			addRecipe(new ItemStack(CustomBlocks.blockWoolHalf2,6,i),new Object[]{"xxx",'x',new ItemStack(Block.cloth,1,i+8)});
-			
+		for (int i = 0; i < 8; i++) {
+			addRecipe(new ItemStack(CustomBlocks.blockWoolHalf1, 6, i), new Object[] { "xxx", 'x', new ItemStack(Block.cloth, 1, i) });
+			addRecipe(new ItemStack(CustomBlocks.blockWoolHalf2, 6, i), new Object[] { "xxx", 'x', new ItemStack(Block.cloth, 1, i + 8) });
+
 		}
 		addRecipe(new ItemStack(CustomBlocks.redBlock, 1, 0), new Object[] { "xxx", "xzx", "xxx", 'x', new ItemStack(Item.redstone, 1, 0) });
 		addRecipe(new ItemStack(CustomBlocks.slimeBlock, 1), new Object[] { "###", "###", "###", '#', Item.slimeBall });
-		
+
 		/** Shapeless recipes **/
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.expBottle, 1), CustomItems.expaniteItem, Item.glassBottle);
 		GameRegistry.addShapelessRecipe(new ItemStack(CustomItems.copperIngotItem, 9), new ItemStack(CustomBlocks.copperBlock));
@@ -39,15 +40,52 @@ public class Recipes {
 		for (int i = 0; i < 4; i++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.customTreePlank, 4, i), new ItemStack(CustomBlocks.customTreeWood, 1, i));
 			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.magicTreePlank, 4, i), new ItemStack(CustomBlocks.magicTreeWood, 1, i));
-			
+
 		}
-		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 8), new ItemStack(CustomBlocks.redBlock,1,0));
-		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 8), new ItemStack(CustomBlocks.redBlock,1,1));
-		GameRegistry.addShapelessRecipe(new ItemStack(Item.dyePowder, 9,4), new ItemStack(CustomBlocks.redBlock,1,2));
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 8), new ItemStack(CustomBlocks.redBlock, 1, 0));
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 8), new ItemStack(CustomBlocks.redBlock, 1, 1));
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.dyePowder, 9, 4), new ItemStack(CustomBlocks.redBlock, 1, 2));
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.slimeBall, 9), CustomBlocks.slimeBlock);
+		customStoneRecipe(CustomBlocks.customStone1);
+		customStoneRecipe(CustomBlocks.customStone2);
+		customStoneRecipe(CustomBlocks.customStone3);
+		customStoneRecipe(CustomBlocks.customStone4);
+		customStoneRecipe(CustomBlocks.customStone5);
+		customStoneRecipe(CustomBlocks.customStone6);
+		customStoneRecipe(CustomBlocks.customStone7);
+		customStoneRecipe(CustomBlocks.customStone8);
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 0), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone1, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 1), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone2, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 2), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone3, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 3), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone4, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 4), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone5, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 5), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone6, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 6), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone7, 1, 3) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 7), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone8, 1, 3) });
+		
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 0), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone1, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 1), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone2, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 2), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone3, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 3), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone4, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 4), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone5, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 5), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone6, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 6), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone7, 1, 5) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 7), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone8, 1, 5) });
+		
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 0), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone1, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 1), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone2, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 2), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone3, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 3), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone4, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 4), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone5, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 5), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone6, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 6), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone7, 1, 8) });
+		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 7), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone8, 1, 8) });
 		
 		
-		
+		addRecipe(new ItemStack(CustomBlocks.customStone1, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.cobblestone) });
+		addRecipe(new ItemStack(CustomBlocks.customStone7, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.cobblestoneMossy) });
+		addRecipe(new ItemStack(CustomBlocks.customStone8, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.obsidian) });
+
 	}
 
 	private static void basePlankRecipe(Block plank) {
@@ -78,6 +116,15 @@ public class Recipes {
 		addRecipe(new ItemStack(hoe, 1), new Object[] { "XX", " #", " #", '#', Item.stick, 'X', material });
 	}
 
+	private static void customStoneRecipe(Block material) {
+		addSmelting(new ItemStack(material, 1, 1), new ItemStack(material, 1, 0), 0.1f);
+		addSmelting(new ItemStack(material, 2, 1), new ItemStack(material, 1, 0), 0.1f);
+		addRecipe(new ItemStack(material, 1, 2), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(material, 1, 1) });
+		addRecipe(new ItemStack(material, 4, 3), new Object[] { "XX", "XX", 'X', new ItemStack(material, 1, 0) });
+		addRecipe(new ItemStack(material, 4, 5), new Object[] { "XX", "XX", 'X', new ItemStack(material, 1, 3) });
+		addRecipe(new ItemStack(material, 4, 8), new Object[] { "XX", "XX", 'X', new ItemStack(material, 1, 5) });
+	}
+
 	private static void baseToolRecipe(Item material, Item sword, Item pickaxe, Item shovel, Item axe, Item hoe) {
 		baseToolRecipe(new ItemStack(material), sword, pickaxe, shovel, axe, hoe);
 	}
@@ -97,4 +144,8 @@ public class Recipes {
 		GameRegistry.addRecipe(output, params);
 	}
 
+	private static void addSmelting(ItemStack input, ItemStack output, Float exp) {
+		FurnaceRecipes.smelting().addSmelting(input.itemID, input.getItemDamage(), output, exp);
+
+	}
 }

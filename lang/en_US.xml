@@ -66,8 +66,8 @@
 	<entry key="tile.flora.15.name">Flower</entry>
 	
 	
-	<entry key="tile.customStone1.0.name">Stone</entry>
-	<entry key="tile.customStone1.1.name">Coblestone</entry>
+	<entry key="tile.customStone1.0.name">Prepared Stone</entry>
+	<entry key="tile.customStone1.1.name">Prepared Coblestone</entry>
 	<entry key="tile.customStone1.2.name">Framed Coblestone</entry>
 	<entry key="tile.customStone1.3.name">Smooth Stone</entry>
 	<entry key="tile.customStone1.4.name">Carved Stone</entry>
@@ -121,7 +121,6 @@
 	<entry key="tile.customStone5.8.name">Green Quality Stone Brick</entry>
 	<entry key="tile.customStone5.9.name">Green Carved Stone</entry>
 	
-	
 	<entry key="tile.customStone6.0.name">Brown Stone</entry>
 	<entry key="tile.customStone6.1.name">Brown Coblestone</entry>
 	<entry key="tile.customStone6.2.name">Brown Framed Coblestone</entry>
@@ -133,9 +132,8 @@
 	<entry key="tile.customStone6.8.name">Brown Quality Stone Brick</entry>
 	<entry key="tile.customStone6.9.name">Brown Carved Stone</entry>
 	
-	
 	<entry key="tile.customStone7.0.name">Moss Stone</entry>
-	<entry key="tile.customStone7.1.name">Moss Coblestone</entry>
+	<entry key="tile.customStone7.1.name">Prepared Moss Coblestone</entry>
 	<entry key="tile.customStone7.2.name">Moss Framed Coblestone</entry>
 	<entry key="tile.customStone7.3.name">Moss Smooth Stone</entry>
 	<entry key="tile.customStone7.4.name">Moss Carved Stone</entry>
@@ -146,7 +144,7 @@
 	<entry key="tile.customStone7.9.name">Moss Carved Stone</entry>
 	
 	<entry key="tile.customStone8.0.name">Obsidian Stone</entry>
-	<entry key="tile.customStone8.1.name">Obsidian Coblestone</entry>
+	<entry key="tile.customStone8.1.name">Prepared Obsidian</entry>
 	<entry key="tile.customStone8.2.name">Obsidian Framed Coblestone</entry>
 	<entry key="tile.customStone8.3.name">Obsidian Smooth Stone</entry>
 	<entry key="tile.customStone8.4.name">Obsidian Carved Stone</entry>
@@ -175,6 +173,33 @@
 	<entry key="tile.blockWool2.5.name">HalfBlock Green Wool</entry>
 	<entry key="tile.blockWool2.6.name">HalfBlock Red Wool</entry>
 	<entry key="tile.blockWool2.7.name">HalfBlock Black Wool</entry>
+	
+	<entry key="tile.customSlabHalf.0.name">Smooth Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.1.name">White Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.2.name">Black Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.3.name">Sand Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.4.name">Green Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.5.name">Brown Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.6.name">Moss Stone HalfBlock</entry>
+	<entry key="tile.customSlabHalf.7.name">Obsidian HalfBlock</entry>
+	
+	<entry key="tile.customSlabHalf2.0.name">Smooth Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.1.name">White Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.2.name">Black Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.3.name">Sand Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.4.name">Green Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.5.name">Brown Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.6.name">Moss Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf2.7.name">Obsidian Brick HalfBlock</entry>
+	
+	<entry key="tile.customSlabHalf3.0.name">Smooth Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.1.name">White Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.2.name">Black Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.3.name">Sand Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.4.name">Green Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.5.name">Brown Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.6.name">Moss Quality Brick HalfBlock</entry>
+	<entry key="tile.customSlabHalf3.7.name">Obsidian Quality Brick HalfBlock</entry>
 	
 	<entry key="tile.redBlock.0.name">Red Stone</entry>
 	<entry key="tile.redBlock.1.name">Carved Red Stone</entry>

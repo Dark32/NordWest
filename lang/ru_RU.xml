@@ -149,7 +149,7 @@
 	<entry key="tile.customStone6.9.name">Коричневый Резной камень</entry>
 	
 	<entry key="tile.customStone7.0.name">Замшелый Камень</entry>
-	<entry key="tile.customStone7.1.name">Замшелый Булыжник</entry>
+	<entry key="tile.customStone7.1.name">Подготовленный Замшелый Булыжник</entry>
 	<entry key="tile.customStone7.2.name">Замшелый Окантованный булыжник</entry>
 	<entry key="tile.customStone7.3.name">Замшелый Гладкий камень</entry>
 	<entry key="tile.customStone7.4.name">Замшелый Резной камень</entry>
@@ -160,7 +160,7 @@
 	<entry key="tile.customStone7.9.name">Замшелый Резной камень</entry>
 	
 	<entry key="tile.customStone8.0.name">Обсидиановый Камень</entry>
-	<entry key="tile.customStone8.1.name">Обсидиановый Булыжник</entry>
+	<entry key="tile.customStone8.1.name">Подготовленный Обсидиановый Булыжник</entry>
 	<entry key="tile.customStone8.2.name">Обсидиановый Окантованный булыжник</entry>
 	<entry key="tile.customStone8.3.name">Обсидиановый Гладкий камень</entry>
 	<entry key="tile.customStone8.4.name">Обсидиановый Резной камень</entry>
@@ -169,6 +169,33 @@
 	<entry key="tile.customStone8.7.name">Обсидиановый Корозионный треснувший каменный кирпич</entry>
 	<entry key="tile.customStone8.8.name">Обсидиановый Качественный каменный кирпич</entry>
 	<entry key="tile.customStone8.9.name">Обсидиановый Резной камень</entry>
+	
+	<entry key="tile.customSlabHalf.0.name">Гладкий каменный полублок</entry>
+	<entry key="tile.customSlabHalf.1.name">Белый каменный полублок</entry>
+	<entry key="tile.customSlabHalf.2.name">Чёрный каменный полублок</entry>
+	<entry key="tile.customSlabHalf.3.name">Песчанный каменный полублок</entry>
+	<entry key="tile.customSlabHalf.4.name">Зелёный каменный полублок</entry>
+	<entry key="tile.customSlabHalf.5.name">Коричневый каменный полублок</entry>
+	<entry key="tile.customSlabHalf.6.name">Замшелый каменный полублок</entry>
+	<entry key="tile.customSlabHalf.7.name">Обсидиановый каменный полублок</entry>
+	
+	<entry key="tile.customSlabHalf2.0.name">Гладкий кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.1.name">Белый кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.2.name">Чёрный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.3.name">Песчанный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.4.name">Зелёный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.5.name">Коричневый кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.6.name">Замшелый кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.7.name">Обсидиановый кирпичный полублок</entry>
+	
+	<entry key="tile.customSlabHalf2.0.name">Гладкий качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.1.name">Белый качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.2.name">Чёрный качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.3.name">Песчанный качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.4.name">Зелёный качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.5.name">Коричневый качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.6.name">Замшелый качественный кирпичный полублок</entry>
+	<entry key="tile.customSlabHalf2.7.name">Обсидиановый качественный кирпичный полублок</entry>
 	
 	<entry key="tile.redBlock.0.name">Красный камень</entry>
 	<entry key="tile.redBlock.1.name">Красный резной камень</entry>
