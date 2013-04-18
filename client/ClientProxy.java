@@ -2,6 +2,7 @@ package mods.nordwest.client;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
@@ -25,5 +26,7 @@ public class ClientProxy extends CommonProxy {
 	{
 		//TickRegistry.registerTickHandler(new ClientTickHandler(), Side.CLIENT);
 	}
-
+	public String getStringLocalization(String key){
+		return  LanguageRegistry.instance().getStringLocalization(key);
+	}
 }
