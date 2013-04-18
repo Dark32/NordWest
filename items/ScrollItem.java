@@ -32,6 +32,7 @@ public class ScrollItem extends BaseItem {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		if (par1ItemStack.hasTagCompound()) {
 			if (par1ItemStack.getItemDamage() == 1) {
@@ -50,7 +51,7 @@ public class ScrollItem extends BaseItem {
 				worldName = LanguageRegistry.instance().getStringLocalization("world.nether");
 			} else if (worldID == 1) {
 				worldName = LanguageRegistry.instance().getStringLocalization("world.end");
-			} else if (worldID != 0 || worldID != 1 || worldID != -1 && par1ItemStack.getTagCompound().getString("worldName") == null){
+			} else if (worldID != 0 || worldID != 1 || worldID != -1 && par1ItemStack.getTagCompound().getString("worldName") != null){
 				worldName = par1ItemStack.getTagCompound().getString("worldName");
 				color = "\u00a7e"; //Yellow Color
 			} else {
@@ -74,14 +75,13 @@ public class ScrollItem extends BaseItem {
 		if (movingobjectposition == null) {
 			if (start(itemstack, world, player))
 				itemstack.stackSize--;
-
 			return itemstack;
 		} else {
 			int x = movingobjectposition.blockX;
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
 			if (!itemstack.hasTagCompound()) {
-				if (itemstack.itemID == this.itemID) {
+				if (itemstack.itemID == this.itemID && (checkOnLinking(world, x, y, z))) {
 					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
 					NBTTagCompound tag = item.getTagCompound();
 					if (tag == null) {
@@ -112,7 +112,6 @@ public class ScrollItem extends BaseItem {
 	private boolean start(ItemStack itemstack, World world, EntityPlayer player) {
 		if (itemstack.hasTagCompound()) {
 			int x, y, z;
-
 			x = itemstack.getTagCompound().getInteger("X"); // + 0.5d;
 			y = itemstack.getTagCompound().getInteger("Y"); // + 1.2d;
 			z = itemstack.getTagCompound().getInteger("Z"); // + 0.5d;
@@ -181,7 +180,19 @@ public class ScrollItem extends BaseItem {
 		} else {
 				return false;
 			}
-}
+		}
+	
+	private boolean checkOnLinking(World world, int x, int y, int z) {
+		int id = world.getBlockId(x, y, z);
+		if (id != CustomBlocks.blockhome.blockID) {
+			return false;
+		} else {
+			/**boolean test = true;
+			for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID;
+			return test;*/
+			return true;
+		}
+	}
 	
 	private void goodEffectDraw(World world, double x, double y, double z) {
 		double r = 0.5d;
@@ -200,19 +211,6 @@ public class ScrollItem extends BaseItem {
 		}
 		
 	}
-
-	/**private boolean testBlock(World world, int x, int y, int z) {
-		int id = world.getBlockId(x, y, z);
-		if (id != CustomBlocks.blockhome.blockID) {
-			return false;
-		} else {
-			boolean test = true;
-			
-			for (int i = 0; i < 4; i++) { test &= world.getBlockId(x + 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z + 2) == Block.obsidian.blockID; test &= world.getBlockId(x + 2, y + i, z - 2) == Block.obsidian.blockID; test &= world.getBlockId(x - 2, y + i, z - 2) == Block.obsidian.blockID; }
-
-			return test;
-		}
-	}*/
 	
 	@Override
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
