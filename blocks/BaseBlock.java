@@ -20,6 +20,4 @@ public class BaseBlock extends Block {
 		blockIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2());
 	}
 
-	public void onBlockAdded(World world, int x, int y, int z, EntityPlayer player) {		
-	}
 }
