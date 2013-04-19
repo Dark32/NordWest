@@ -85,7 +85,9 @@ public class CustomItems {
 	}
 
 	public static void init() {
-
+		/** set Repair material **/
+		copperArmorMaterial.customCraftingMaterial = copperIngotItem;
+		mythrilToolMaterial.customCraftingMaterial = mythrilIngotItem; 
 		/** Items **/
 		expaniteItem = new BaseItem(Config.ITEM_ID.expanite_id).setUnlocalizedName("expanite");
 		mythrilIngotItem = new BaseItem(Config.ITEM_ID.mythrilIngot_id).setUnlocalizedName("mythrilIngot");
