@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -53,6 +54,7 @@ public class Config {
 		public static int customSlabFull2;
 		public static int customSlabHalf3;
 		public static int customSlabFull3;
+		public static int candle;
 
 	}
 
@@ -90,6 +92,7 @@ public class Config {
 	/** Other **/
 	public String[] lang;
 	public static final String LanguageDirectory = "/mods/nordwest/lang/";
+	public static int CandleRendererID = RenderingRegistry.getNextAvailableRenderId();
 
 	public Config(File file) {
 
@@ -142,6 +145,7 @@ public class Config {
 			BLOCK_ID.customSlabFull2 = cfg.getBlock("customSlabFull2", 241).getInt(241);
 			BLOCK_ID.customSlabHalf3 = cfg.getBlock("customSlabHalf3", 242).getInt(242);
 			BLOCK_ID.customSlabFull3 = cfg.getBlock("customSlabFull3", 243).getInt(243);
+			BLOCK_ID.candle = cfg.getBlock("candle", 244).getInt(244);
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
