@@ -62,6 +62,7 @@ public class Config {
 
 	/** Items **/
 	public static class ITEM_ID {
+		public static int wax;
 		public static int expanite_id;
 		public static int mythrilIngot_id;
 		public static int copperIngot_id;
@@ -149,8 +150,11 @@ public class Config {
 			BLOCK_ID.customSlabFull3 = cfg.getBlock("customSlabFull3", 243).getInt(243);
 			BLOCK_ID.decoratedTreeWood = cfg.getBlock("decoratedTreeWood", 244).getInt(244);
 			BLOCK_ID.decoratedTreeWood2 = cfg.getBlock("decoratedTreeWood2", 245).getInt(245);
-			BLOCK_ID.candle = cfg.getBlock("candle", 244).getInt(244);
+			BLOCK_ID.candle = cfg.getBlock("candle", 246).getInt(246);
+			
 			/** Items... AGAIN! **/
+			ITEM_ID.wax = cfg.getItem("wax", 410).getInt(410);
+			
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
 			ITEM_ID.copperIngot_id = cfg.getItem("copperIngot_id", 410).getInt(410);

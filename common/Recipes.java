@@ -32,6 +32,7 @@ public class Recipes {
 		}
 		addRecipe(new ItemStack(CustomBlocks.redBlock, 1, 0), new Object[] { "xxx", "xzx", "xxx", 'x', new ItemStack(Item.redstone, 1, 0) });
 		addRecipe(new ItemStack(CustomBlocks.slimeBlock, 1), new Object[] { "###", "###", "###", '#', Item.slimeBall });
+		addRecipe(new ItemStack(CustomBlocks.candle, 1), new Object[] { "#X#", "#X#", "#X#", '#', CustomItems.wax, 'X', Item.silk });
 
 		/** Shapeless recipes **/
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.expBottle, 1), CustomItems.expaniteItem, Item.glassBottle);
@@ -40,7 +41,10 @@ public class Recipes {
 		for (int i = 0; i < 4; i++) {
 			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.customTreePlank, 4, i), new ItemStack(CustomBlocks.customTreeWood, 1, i));
 			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.magicTreePlank, 4, i), new ItemStack(CustomBlocks.magicTreeWood, 1, i));
-
+		}
+		for (int i = 0, a = 15; i < 16; i++, a--) {
+			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.candle, 1, i), new ItemStack(CustomBlocks.candle, 1), new ItemStack(Item.dyePowder, 1, a));
+			GameRegistry.addShapelessRecipe(new ItemStack(CustomBlocks.candle, 1), new ItemStack(CustomBlocks.candle, 1, i), new ItemStack(Item.dyePowder, 1, 15));
 		}
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 8), new ItemStack(CustomBlocks.redBlock, 1, 0));
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.redstone, 8), new ItemStack(CustomBlocks.redBlock, 1, 1));

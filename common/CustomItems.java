@@ -12,6 +12,7 @@ public class CustomItems {
 	static Item mythrilIngotItem;
 	static Item copperIngotItem;
 	static Item homescroll;
+	static Item wax;
 	
 	static Item copperHelmet;
 	static Item copperChestplate;
@@ -89,6 +90,7 @@ public class CustomItems {
 		copperArmorMaterial.customCraftingMaterial = copperIngotItem;
 		mythrilToolMaterial.customCraftingMaterial = mythrilIngotItem; 
 		/** Items **/
+		wax = new BaseItem(Config.ITEM_ID.wax).setUnlocalizedName("wax");
 		expaniteItem = new BaseItem(Config.ITEM_ID.expanite_id).setUnlocalizedName("expanite");
 		mythrilIngotItem = new BaseItem(Config.ITEM_ID.mythrilIngot_id).setUnlocalizedName("mythrilIngot");
 		copperIngotItem = new BaseItem(Config.ITEM_ID.copperIngot_id).setMaxStackSize(64).setUnlocalizedName("copperIngot");
