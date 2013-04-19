@@ -197,6 +197,12 @@
 	<entry key="tile.customSlabHalf2.6.name">Замшелый качественный кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.7.name">Обсидиановый качественный кирпичный полублок</entry>
 	
+	
+	<entry key="tile.decoratedTreeWood.0.name">Декорированное Дерево</entry>
+	<entry key="tile.decoratedTreeWood.1.name">Декорированное Дерево</entry>
+	<entry key="tile.decoratedTreeWood.2.name">Декорированное Дерево</entry>
+	<entry key="tile.decoratedTreeWood.3.name">Декорированное Дерево</entry>
+	
 	<entry key="tile.redBlock.0.name">Красный камень</entry>
 	<entry key="tile.redBlock.1.name">Красный резной камень</entry>
 	<entry key="tile.redBlock.2.name">Лапис резной</entry>

@@ -154,6 +154,11 @@
 	<entry key="tile.customStone8.8.name">Obsidian Quality Stone Brick</entry>
 	<entry key="tile.customStone8.9.name">Obsidian Carved Stone</entry>
 	
+	<entry key="tile.decoratedTreeWood.0.name">Decorated Wood</entry>
+	<entry key="tile.decoratedTreeWood.1.name">Decorated Wood</entry>
+	<entry key="tile.decoratedTreeWood.2.name">Decorated Wood</entry>
+	<entry key="tile.decoratedTreeWood.3.name">Decorated Wood</entry>
+	
 	
 	<entry key="tile.blockhome.name">Home Block</entry>
 	

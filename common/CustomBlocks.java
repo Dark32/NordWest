@@ -68,6 +68,8 @@ public class CustomBlocks {
 	public static BlockHalfSlab customSlabFull2;
 	public static BlockHalfSlab customSlabHalf3;
 	public static BlockHalfSlab customSlabFull3;
+	public static Block decoratedTreeWood;
+	public static Block decoratedTreeWood2;
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -116,7 +118,6 @@ public class CustomBlocks {
 		GameRegistry.registerBlock(customTreeSapling, MetadataBlockItem.class, "customTreeSapling");
 
 		magicTreeWood = new CustomTreeWood(Config.BLOCK_ID.magicTreeWood, Material.iron).setHardness(25.0F).setResistance(50F).setUnlocalizedName("magicTreeWood").setStepSound(Block.soundWoodFootstep).setLightValue(0.2F);
-		;
 		GameRegistry.registerBlock(magicTreeWood, MetadataBlockItem.class, "magicTreeWood");
 
 		magicTreeSapling = new CustomTreeSapling(Config.BLOCK_ID.magicTreeSapling, "magic").setHardness(0.1F).setResistance(5F).setUnlocalizedName("magicTreeSapling").setStepSound(Block.soundGrassFootstep);
@@ -127,12 +128,12 @@ public class CustomBlocks {
 
 		blockhome = new BlockHome(Config.BLOCK_ID.homeblock).setHardness(10.0F).setResistance(10F).setUnlocalizedName("blockhome").setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(blockhome, "blockhome");
-		blockWoolHalf1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf1, false)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
-		blockWoolFull1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull1, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
+		blockWoolHalf1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf1, false,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
+		blockWoolFull1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull1, true,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
 		GameRegistry.registerBlock(blockWoolHalf1, "blockWoolHalf1");
 		GameRegistry.registerBlock(blockWoolFull1, "blockWoolFull1");
-		blockWoolHalf2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf2, false)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
-		blockWoolFull2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull2, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
+		blockWoolHalf2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf2, false, Material.cloth)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
+		blockWoolFull2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull2, true,Material.cloth)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool2");
 		GameRegistry.registerBlock(blockWoolHalf2, "blockWoolHalf2");
 		GameRegistry.registerBlock(blockWoolFull2, "blockWoolFull2");
 
@@ -161,21 +162,27 @@ public class CustomBlocks {
 		customStone8 = new BaseMetadataBlock(Config.BLOCK_ID.customBlock8, Material.rock, 10, block_top).setHardness(1F).setResistance(10F).setUnlocalizedName("customStone8");
 		GameRegistry.registerBlock(customStone8, MetadataBlockItem.class, "customStone8");
 		block_top = new String[] { "customStone1.3", "customStone2.3", "customStone3.3", "customStone4.3", "customStone5.3", "customStone6.3", "customStone7.3", "customStone8.3" };
-		customSlabHalf = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabHalf, false, block_top)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf");
-		customSlabFull = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull, true, block_top)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf");
+		customSlabHalf = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabHalf, false,Material.rock, block_top)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf");
+		customSlabFull = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull, true,Material.rock, block_top)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf");
 		GameRegistry.registerBlock(customSlabHalf, "customSlabHalf");
 		GameRegistry.registerBlock(customSlabFull, "customSlabFull");
-		customSlabHalf2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabHalf2, false)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf2");
-		customSlabFull2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull2, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf2");
+		customSlabHalf2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabHalf2, false,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf2");
+		customSlabFull2 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull2, true,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf2");
 		GameRegistry.registerBlock(customSlabHalf2, "customSlabHalf2");
 		GameRegistry.registerBlock(customSlabFull2, "customSlabFull2");
-		customSlabHalf3 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabHalf3, false)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf3");
-		customSlabFull3 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull3, true)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf3");
+		customSlabHalf3 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabHalf3, false,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf3");
+		customSlabFull3 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull3, true,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf3");
 		GameRegistry.registerBlock(customSlabHalf3, "customSlabHalf3");
 		GameRegistry.registerBlock(customSlabFull3, "customSlabFull3");
 
+		decoratedTreeWood = new CustomTreeWood(Config.BLOCK_ID.decoratedTreeWood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoratedTreeWood");
+		GameRegistry.registerBlock(decoratedTreeWood, MetadataBlockItem.class, "decoratedTreeWood");
+		decoratedTreeWood2 = new CustomTreeWood(Config.BLOCK_ID.decoratedTreeWood2).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoratedTreeWood2");
+		GameRegistry.registerBlock(decoratedTreeWood2, MetadataBlockItem.class, "decoratedTreeWood2");
+
 		burn();
 		flowers();
+		//MinecraftForge.addGrassSeed(seed, weight);
 	}
 
 	private static void burn() {

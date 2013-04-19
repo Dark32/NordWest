@@ -25,19 +25,24 @@ public class BaseBlockStep extends BlockHalfSlab {
 	private Icon[] iconTop = new Icon[8];
 	private String[] siconTop = new String[8];
 
-	public BaseBlockStep(int id, boolean doubleslab) {
-		super(id, doubleslab, Material.wood);
+	public BaseBlockStep(int id, boolean doubleslab,Material m) {
+		super(id, doubleslab, m);
 		setCreativeTab(NordWest.tabNord);
 		useNeighborBrightness[id] = true;
 	}
 
 	public BaseBlockStep(int id, boolean doubleslab, String[] iconTop) {
-		super(id, doubleslab, Material.wood);
+		super(id, doubleslab, Material.rock);
 		setCreativeTab(NordWest.tabNord);
 		useNeighborBrightness[id] = true;
 		this.siconTop = iconTop;
 	}
-
+	public BaseBlockStep(int id, boolean doubleslab,Material m, String[] iconTop) {
+		super(id, doubleslab, m);
+		setCreativeTab(NordWest.tabNord);
+		useNeighborBrightness[id] = true;
+		this.siconTop = iconTop;
+	}
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
 		int ret = this.blockID;

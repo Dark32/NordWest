@@ -53,6 +53,8 @@ public class Config {
 		public static int customSlabFull2;
 		public static int customSlabHalf3;
 		public static int customSlabFull3;
+		public static int decoratedTreeWood;
+		public static int decoratedTreeWood2;
 
 	}
 
@@ -142,6 +144,8 @@ public class Config {
 			BLOCK_ID.customSlabFull2 = cfg.getBlock("customSlabFull2", 241).getInt(241);
 			BLOCK_ID.customSlabHalf3 = cfg.getBlock("customSlabHalf3", 242).getInt(242);
 			BLOCK_ID.customSlabFull3 = cfg.getBlock("customSlabFull3", 243).getInt(243);
+			BLOCK_ID.decoratedTreeWood = cfg.getBlock("decoratedTreeWood", 244).getInt(244);
+			BLOCK_ID.decoratedTreeWood2 = cfg.getBlock("decoratedTreeWood2", 245).getInt(245);
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
