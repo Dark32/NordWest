@@ -207,9 +207,25 @@
 	<entry key="tile.redBlock.1.name">Красный резной камень</entry>
 	<entry key="tile.redBlock.2.name">Лапис резной</entry>
 	<entry key="tile.redBlock.3.name">Камень в шашечку</entry>
+	
+	<entry key="tile.candle.0.name">Candel</entry>
+	<entry key="tile.candle.1.name">Orange Candel</entry>
+	<entry key="tile.candle.2.name">Pink Candel</entry>
+	<entry key="tile.candle.3.name">Light Blue Candel</entry>
+	<entry key="tile.candle.4.name">Yellow Candel</entry>
+	<entry key="tile.candle.5.name">Green Candel</entry>
+	<entry key="tile.candle.6.name">Red Candel</entry>
+	<entry key="tile.candle.7.name">Grey Candel</entry>
+	<entry key="tile.candle.8.name">Light Brown Candel</entry>
+	<entry key="tile.candle.9.name">Cyan Candel</entry>
+	<entry key="tile.candle.10.name">Purple Candel</entry>
+	<entry key="tile.candle.11.name">Blue Candel</entry>
+	<entry key="tile.candle.12.name">Brown Candel</entry>
+	<entry key="tile.candle.13.name">Dark Green Candel</entry>
+	<entry key="tile.candle.14.name">Bloody Candel</entry>
+	<entry key="tile.candle.15.name">Black Candel</entry>
 
 	<entry key="tile.slimeBlock.name">Блок слизи</entry>
-	
 	<entry key="tile.blockhome.name">Блок дома</entry>
 		
 	<entry key="item.copperHelmet.name">Медный шлем</entry>

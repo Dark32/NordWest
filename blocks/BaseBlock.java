@@ -4,6 +4,8 @@ import mods.nordwest.common.NordWest;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 
 public class BaseBlock extends Block {
 
@@ -17,4 +19,5 @@ public class BaseBlock extends Block {
 	public void registerIcons(IconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2());
 	}
+
 }

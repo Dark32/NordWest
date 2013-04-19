@@ -10,6 +10,7 @@ import mods.nordwest.blocks.BaseMetadataBlock;
 import mods.nordwest.blocks.BaseOre;
 import mods.nordwest.blocks.BlockFlora;
 import mods.nordwest.blocks.BlockHome;
+import mods.nordwest.blocks.CandleBlock;
 import mods.nordwest.blocks.CustomTreeLeaves;
 import mods.nordwest.blocks.CustomTreeSapling;
 import mods.nordwest.blocks.CustomTreeWood;
@@ -70,6 +71,7 @@ public class CustomBlocks {
 	public static BlockHalfSlab customSlabFull3;
 	public static Block decoratedTreeWood;
 	public static Block decoratedTreeWood2;
+	public static Block candle;
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -174,6 +176,9 @@ public class CustomBlocks {
 		customSlabFull3 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.customSlabFull3, true,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("customSlabHalf3");
 		GameRegistry.registerBlock(customSlabHalf3, "customSlabHalf3");
 		GameRegistry.registerBlock(customSlabFull3, "customSlabFull3");
+		
+		candle = new CandleBlock(Config.BLOCK_ID.candle, Material.rock).setLightValue(0.9375F).setHardness(0.1F).setResistance(1F).setUnlocalizedName("candle");
+		GameRegistry.registerBlock(candle, MetadataBlockItem.class, "candle");
 
 		decoratedTreeWood = new CustomTreeWood(Config.BLOCK_ID.decoratedTreeWood).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoratedTreeWood");
 		GameRegistry.registerBlock(decoratedTreeWood, MetadataBlockItem.class, "decoratedTreeWood");
