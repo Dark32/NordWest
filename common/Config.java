@@ -57,6 +57,7 @@ public class Config {
 		public static int decoratedTreeWood;
 		public static int decoratedTreeWood2;
 		public static int candle;
+		public static int ryeCrop;
 
 	}
 
@@ -89,6 +90,8 @@ public class Config {
 		public static int samuraiChestplate;
 		public static int samuraiLegs;
 		public static int samuraiBoots;
+		public static int seedRye;
+		public static int cropRye;
 	}
 
 	/** Other **/
@@ -149,7 +152,9 @@ public class Config {
 			BLOCK_ID.customSlabFull3 = cfg.getBlock("customSlabFull3", 243).getInt(243);
 			BLOCK_ID.decoratedTreeWood = cfg.getBlock("decoratedTreeWood", 244).getInt(244);
 			BLOCK_ID.decoratedTreeWood2 = cfg.getBlock("decoratedTreeWood2", 245).getInt(245);
-			BLOCK_ID.candle = cfg.getBlock("candle", 244).getInt(244);
+			BLOCK_ID.candle = cfg.getBlock("candle", 246).getInt(246);
+			
+			BLOCK_ID.ryeCrop = cfg.getBlock("ryeCrop", 247).getInt(247);
 			/** Items... AGAIN! **/
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 411).getInt(411);
 			ITEM_ID.mythrilIngot_id = cfg.getItem("mythrilIngot_id", 409).getInt(409);
@@ -179,13 +184,12 @@ public class Config {
 			ITEM_ID.mythrilHoe = cfg.getItem("mythrilHoe", 499).getInt(499);
 
 			ITEM_ID.samuraiHelmet = cfg.getItem("samuraiHelmet", 488).getInt(488);
-			;
 			ITEM_ID.samuraiChestplate = cfg.getItem("samuraiChestplate", 489).getInt(489);
-			;
 			ITEM_ID.samuraiLegs = cfg.getItem("samuraiLegs", 490).getInt(490);
-			;
 			ITEM_ID.samuraiBoots = cfg.getItem("samuraiBoots", 491).getInt(491);
-			;
+			
+			ITEM_ID.seedRye = cfg.getItem("seedRye", 492).getInt(492);;
+			ITEM_ID.cropRye = cfg.getItem("cropRye", 493).getInt(493);;
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");

@@ -227,7 +227,7 @@
 
 	<entry key="tile.slimeBlock.name">Блок слизи</entry>
 	<entry key="tile.blockhome.name">Блок дома</entry>
-		
+	<entry key="tile.ryeCrop.name">Рожь</entry>
 	<entry key="item.copperHelmet.name">Медный шлем</entry>
 	<entry key="item.copperChestplate.name">Медный нагрудник</entry>
 	<entry key="item.copperLegs.name">Медные поножи</entry>
@@ -260,7 +260,9 @@
 	<entry key="item.copperIngot.name">Медный слиток</entry>
 	<entry key="item.homescroll.0.name">Свиток возврата</entry>
 	<entry key="item.homescroll.1.name">Свиток возврата (абсалутный)</entry>
-
+	
+	<entry key="item.cropRye.name">Рожь</entry>
+	<entry key="item.seedRye.name">Семяна ржи</entry>
 	
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
 	

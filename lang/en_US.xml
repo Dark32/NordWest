@@ -161,6 +161,7 @@
 	
 	
 	<entry key="tile.blockhome.name">Home Block</entry>
+	<entry key="tile.ryeCrop.name">Rye Crop</entry>
 	
 	<entry key="tile.blockWool1.0.name">HalfBlock White Wool</entry>
 	<entry key="tile.blockWool1.1.name">HalfBlock Orange Wool</entry>
@@ -260,6 +261,9 @@
 	<entry key="item.copperIngot.name">Copper Ingot</entry>
 	<entry key="item.homescroll.0.name">Scroll of Return</entry>
 	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
+	
+	<entry key="item.cropRye.name">Rye</entry>
+	<entry key="item.seedRye.name">Seed of Rye</entry>
 	
 	<entry key="world.undefined">Undefined</entry>
 	<entry key="world.overworld">Overworld</entry>

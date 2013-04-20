@@ -4,17 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import mods.nordwest.blocks.BaseBlockStep;
-import mods.nordwest.blocks.BaseBlock;
-import mods.nordwest.blocks.BaseMetadataBlock;
-import mods.nordwest.blocks.BaseOre;
-import mods.nordwest.blocks.BlockFlora;
-import mods.nordwest.blocks.BlockHome;
-import mods.nordwest.blocks.CandleBlock;
-import mods.nordwest.blocks.CustomTreeLeaves;
-import mods.nordwest.blocks.CustomTreeSapling;
-import mods.nordwest.blocks.CustomTreeWood;
-import mods.nordwest.blocks.SlimeBlock;
+import mods.nordwest.blocks.*;
 import mods.nordwest.items.MetadataBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
@@ -72,6 +62,7 @@ public class CustomBlocks {
 	public static Block decoratedTreeWood;
 	public static Block decoratedTreeWood2;
 	public static Block candle;
+	public static Block ryeCrop;
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -184,19 +175,26 @@ public class CustomBlocks {
 		GameRegistry.registerBlock(decoratedTreeWood, MetadataBlockItem.class, "decoratedTreeWood");
 		decoratedTreeWood2 = new CustomTreeWood(Config.BLOCK_ID.decoratedTreeWood2).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoratedTreeWood2");
 		GameRegistry.registerBlock(decoratedTreeWood2, MetadataBlockItem.class, "decoratedTreeWood2");
-
+		ryeCrop = new BaseCrop(Config.BLOCK_ID.ryeCrop,CustomItems.cropRye.itemID, CustomItems.seedRye.itemID).setHardness(0.1F).setResistance(1F).setUnlocalizedName("ryeCrop");
+	//	ryeCrop = new BaseCrop(Config.BLOCK_ID.ryeCrop,Config.ITEM_ID.cropRye, Config.ITEM_ID.seedRye).setHardness(0.1F).setResistance(1F).setUnlocalizedName("ryeCrop");
+		GameRegistry.registerBlock(ryeCrop, "ryeCrop");
+		
+		
+	}
+	public static void posItemBlockInit(){
+		
 		burn();
 		flowers();
-		//MinecraftForge.addGrassSeed(seed, weight);
+		MinecraftForge.addGrassSeed(new ItemStack(CustomItems.seedRye), 10);		
+		
 	}
-
-	private static void burn() {
+	public static void burn() {
 		Block.setBurnProperties(CustomBlocks.customTreePlank.blockID, 5, 20);
 		Block.setBurnProperties(CustomBlocks.customTreeLeaves.blockID, 30, 60);
 		Block.setBurnProperties(CustomBlocks.customTreeWood.blockID, 5, 5);
 	}
 
-	private static void flowers() {
+	public static void flowers() {
 		for (int l1 = 0; l1 < 11; l1++) {
 			MinecraftForge.addGrassPlant(flora, l1, 10);
 		}

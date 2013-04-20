@@ -2,7 +2,7 @@ package mods.nordwest.common;
 
 import java.util.Random;
 
-import mods.nordwest.blocks.CustomTreeSapling;
+import mods.nordwest.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.item.ItemStack;
@@ -24,6 +24,9 @@ public class GeneralHandler {
 			}
 			if (e.getResult() == Result.DEFAULT && e.ID == CustomBlocks.magicTreeSapling.blockID) {
 				((CustomTreeSapling) CustomBlocks.magicTreeSapling).func_96477_c(e.world, e.X, e.Y, e.Z, e.world.rand);
+			}
+			if (e.getResult() == Result.DEFAULT && e.ID == CustomBlocks.ryeCrop.blockID) {
+				((BaseCrop) CustomBlocks.ryeCrop).fertilize(e.world, e.X, e.Y, e.Z);
 			}
 		}
 

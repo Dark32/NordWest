@@ -69,11 +69,13 @@ public class NordWest {
 		CustomItems.setToolClass();
 		/** Block **/
 		CustomBlocks.init();
+		/** Post block item init**/
+		CustomItems.posBlockInit();
+		CustomBlocks.posItemBlockInit();
 		/** Harvest Level for block **/
 		CustomBlocks.setHarvestLevel();
 		/** Recipes **/
 		Recipes.init();
-
 	}
 
 	@Init
