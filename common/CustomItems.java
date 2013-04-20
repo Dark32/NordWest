@@ -43,7 +43,6 @@ public class CustomItems {
 	/**
 	 * Armor Materials:
 	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
-	 * Armor Materials: Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). Vanilla Durability - Leather: 5, Chain: 15, Iron: 15, Gold: 7, Diamond: 33. Reduction Amount is a main armor feature. Vanilla Reduction Amounts: Leather: {1, 3, 2, 1}, Chain: {2, 5, 4, 1}, Iron: {2, 6, 5, 2}, Gold: {2, 6, 5, 2}, Diamond: {3, 8, 6, 3}. Vanilla Enchantabilities: Leather: 15, Chain: 12, Iron: 9, Gold: 25, Diamond: 10.
 	 * Reduction Amount is a main armor feature. 
 	 * Vanilla Reduction Amounts:
 	 * 	 Leather: {1, 3, 2, 1},
