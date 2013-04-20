@@ -256,6 +256,8 @@
 	<entry key="item.mythrilSword.name">Mythril Sword</entry>
 	<entry key="item.mythrilHoe.name">Mythril Hoe</entry>
 	
+	<entry key="item.wax.name">Wax</entry>
+	
 	<entry key="item.expanite.name">Expanite</entry>
 	<entry key="item.mythrilIngot.name">Mythril Ingot</entry>
 	<entry key="item.copperIngot.name">Copper Ingot</entry>

@@ -13,7 +13,8 @@ public class CustomItems {
 	static Item mythrilIngotItem;
 	static Item copperIngotItem;
 	static Item homescroll;
-
+	static Item wax;
+	
 	static Item copperHelmet;
 	static Item copperChestplate;
 	static Item copperLegs;
@@ -40,13 +41,37 @@ public class CustomItems {
 	static Item seedRye;
 	static Item cropRye;
 	/**
+	 * Armor Materials:
+	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
 	 * Armor Materials: Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). Vanilla Durability - Leather: 5, Chain: 15, Iron: 15, Gold: 7, Diamond: 33. Reduction Amount is a main armor feature. Vanilla Reduction Amounts: Leather: {1, 3, 2, 1}, Chain: {2, 5, 4, 1}, Iron: {2, 6, 5, 2}, Gold: {2, 6, 5, 2}, Diamond: {3, 8, 6, 3}. Vanilla Enchantabilities: Leather: 15, Chain: 12, Iron: 9, Gold: 25, Diamond: 10.
+	 * Reduction Amount is a main armor feature. 
+	 * Vanilla Reduction Amounts:
+	 * 	 Leather: {1, 3, 2, 1},
+	 * 	 Chain: {2, 5, 4, 1}, 
+	 *   Iron: {2, 6, 5, 2}, 
+	 * 	 Gold: {2, 6, 5, 2}, 
+	 * 	 Diamond: {3, 8, 6, 3}.
+	 * Vanilla Enchantabilities:
+	 *   Leather: 15, 
+	 *   Chain: 12, 
+	 *   Iron: 9, 
+	 *   Gold: 25, 
+	 *   Diamond: 10.
 	 */
 	static EnumArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 15, new int[] { 2, 5, 4, 1 }, 9);
 	static EnumArmorMaterial mythrilArmorMaterial = EnumHelper.addArmorMaterial("mythrilArmorMaterial", 40, new int[] { 3, 8, 6, 3 }, 12);
 	public static EnumArmorMaterial samuraiArmorMaterial = EnumHelper.addArmorMaterial("samuraiArmorMaterial", 10, new int[] { 2, 6, 5, 2 }, 18);
 	/**
-	 * Tool Materials: Use following syntaxes: (Material Name, Harvest Level (See Below), Durability (Max Uses), Speed, Entities Damage, Enchantability). Vanilla Harvest Levels: 3 = DIAMOND (Everything + Obsidian); 2 = IRON (Everything); 1 = STONE (Everything except Diamonds, Emeralds, Redstone); 0 = WOOD/GOLD (Everything except Diamonds, Emeralds, Redstone, Lapis, Gold & Iron). Vanilla Durabilities - Wood: 59, Stone: 131, Iron: 250, Diamond: 1561, Gold: 32. Vanilla Entities Damage - Diamond: 3, Iron: 2, Stone: 1, Wood/Gold: 0. Vanilla Enchantabilities - Wood: 15, Stone: 5, Iron: 14, Diamond: 10, Gold: 22.
+	 * Tool Materials:
+	 * Use following syntaxes: (Material Name, Harvest Level (See Below), Durability (Max Uses), Speed, Entities Damage, Enchantability). 
+	 * Vanilla Harvest Levels:
+	 * 3 = DIAMOND (Everything + Obsidian); 
+	 * 2 = IRON (Everything);
+	 * 1 = STONE (Everything except Diamonds, Emeralds, Redstone);
+	 * 0 = WOOD/GOLD (Everything except Diamonds, Emeralds, Redstone, Lapis, Gold & Iron).
+	 * Vanilla Durabilities - Wood: 59, Stone: 131, Iron: 250, Diamond: 1561, Gold: 32.
+	 * Vanilla Entities Damage - Diamond: 3, Iron: 2, Stone: 1, Wood/Gold: 0.
+	 * Vanilla Enchantabilities -  Wood: 15, Stone: 5, Iron: 14, Diamond: 10, Gold: 22.
 	 */
 	static EnumToolMaterial mythrilToolMaterial = EnumHelper.addToolMaterial("mythrilToolMaterial", 3, 1561, 10.5F, 3, 22);
 	static EnumToolMaterial copperToolMaterial = EnumHelper.addToolMaterial("copperToolMaterial", 2, 180, 6.5F, 2, 8);
@@ -67,6 +92,7 @@ public class CustomItems {
 		copperArmorMaterial.customCraftingMaterial = copperIngotItem;
 		mythrilToolMaterial.customCraftingMaterial = mythrilIngotItem;
 		/** Items **/
+		wax = new BaseItem(Config.ITEM_ID.wax).setUnlocalizedName("wax");
 		expaniteItem = new BaseItem(Config.ITEM_ID.expanite_id).setUnlocalizedName("expanite");
 		mythrilIngotItem = new BaseItem(Config.ITEM_ID.mythrilIngot_id).setUnlocalizedName("mythrilIngot");
 		copperIngotItem = new BaseItem(Config.ITEM_ID.copperIngot_id).setMaxStackSize(64).setUnlocalizedName("copperIngot");

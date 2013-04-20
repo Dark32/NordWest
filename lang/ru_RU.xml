@@ -255,6 +255,8 @@
 	<entry key="item.mythrilSword.name">Митриловый меч</entry>
 	<entry key="item.mythrilHoe.name">Митриловая тяпка</entry>
 	
+	<entry key="item.wax.name">Воск</entry>
+	
 	<entry key="item.expanite.name">Экспанит</entry>
 	<entry key="item.mythrilIngot.name">Митриловый слиток</entry>
 	<entry key="item.copperIngot.name">Медный слиток</entry>
