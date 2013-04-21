@@ -34,7 +34,7 @@ public class GeneralHandler {
 
 	@ForgeSubscribe
 	public void onLivingSpecialSpawn(LivingSpawnEvent  event) {
-		System.out.print(1);
+		//System.out.print(1);
 		Random random = new Random();
 		int chance = random.nextInt(10);
 		int secondChance = random.nextInt(2);

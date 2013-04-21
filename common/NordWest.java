@@ -8,6 +8,7 @@ import net.minecraftforge.common.EnumHelper;
 import mods.nordwest.blocks.*;
 import mods.nordwest.common.Config.BLOCK_ID;
 import mods.nordwest.common.Config.ITEM_ID;
+import mods.nordwest.generators.CustomTreeWorldGenerator;
 import mods.nordwest.generators.OreWorldGenerator;
 import mods.nordwest.utils.PacketHandler;
 import mods.nordwest.items.*;
@@ -79,7 +80,7 @@ public class NordWest {
 	}
 
 	@Init
-	public void load(FMLInitializationEvent event, EntityPlayer player) {
+	public void load(FMLInitializationEvent event) {
 		
 		/** Our Proxies */
 		proxy.registerEvent();
@@ -90,7 +91,7 @@ public class NordWest {
 		GameRegistry.addSmelting(CustomBlocks.customTreeWood.blockID, new ItemStack(Item.coal, 1, 1), 0.2f);
 		/** Registering Generators **/
 		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
-		
+		GameRegistry.registerWorldGenerator(new CustomTreeWorldGenerator());
 		String currentVersion = "0.1.a";
 		
 		/** Console Notification */
