@@ -1,11 +1,15 @@
 package mods.nordwest.common;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.RecipesArmorDyes;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
@@ -13,12 +17,12 @@ public class Recipes {
 		/** Shaped recipes **/
 		basePlankRecipe(CustomBlocks.customTreePlank);
 		GameRegistry.addRecipe(new RecipesCustomArmorDyes());
-		baseToolRecipe(CustomBlocks.customTreePlank, Item.swordWood, Item.pickaxeWood, Item.shovelWood, Item.axeWood, Item.hoeWood);
-		baseToolRecipe(CustomItems.copperIngotItem, CustomItems.copperSword, CustomItems.copperPickaxe, CustomItems.copperShovel, CustomItems.copperAxe, CustomItems.copperHoe);
-		baseToolRecipe(CustomItems.mythrilIngotItem, CustomItems.mythrilSword, CustomItems.mythrilPickaxe, CustomItems.mythrilShovel, CustomItems.mythrilAxe, CustomItems.mythrilHoe);
+		baseToolRecipe(Dictionary.ingotCopper, CustomItems.copperSword, CustomItems.copperPickaxe, CustomItems.copperShovel, CustomItems.copperAxe, CustomItems.copperHoe);
+		baseToolRecipe(Dictionary.ingotMythril, CustomItems.mythrilSword, CustomItems.mythrilPickaxe, CustomItems.mythrilShovel, CustomItems.mythrilAxe, CustomItems.mythrilHoe);
+		baseToolRecipe(Dictionary.woodPlank, Item.swordWood, Item.pickaxeWood, Item.shovelWood, Item.axeWood, Item.hoeWood);
 
-		baseArmorRecipe(CustomItems.copperIngotItem, CustomItems.copperHelmet, CustomItems.copperChestplate, CustomItems.copperLegs, CustomItems.copperBoots);
-		baseArmorRecipe(CustomItems.mythrilIngotItem, CustomItems.mythrilHelmet, CustomItems.mythrilChestplate, CustomItems.mythrilLegs, CustomItems.mythrilBoots);
+		baseArmorRecipe(Dictionary.ingotCopper, CustomItems.copperHelmet, CustomItems.copperChestplate, CustomItems.copperLegs, CustomItems.copperBoots);
+		baseArmorRecipe(Dictionary.ingotMythril, CustomItems.mythrilHelmet, CustomItems.mythrilChestplate, CustomItems.mythrilLegs, CustomItems.mythrilBoots);
 
 		addRecipe(new ItemStack(CustomBlocks.mythrilBlock, 1), new Object[] { "###", "###", "###", '#', CustomItems.mythrilIngotItem });
 		addRecipe(new ItemStack(CustomBlocks.copperBlock, 1), new Object[] { "###", "###", "###", '#', CustomItems.copperIngotItem });
@@ -66,7 +70,7 @@ public class Recipes {
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 5), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone6, 1, 3) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 6), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone7, 1, 3) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf, 6, 7), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone8, 1, 3) });
-		
+
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 0), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone1, 1, 5) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 1), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone2, 1, 5) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 2), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone3, 1, 5) });
@@ -75,7 +79,7 @@ public class Recipes {
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 5), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone6, 1, 5) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 6), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone7, 1, 5) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf2, 6, 7), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone8, 1, 5) });
-		
+
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 0), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone1, 1, 8) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 1), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone2, 1, 8) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 2), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone3, 1, 8) });
@@ -84,8 +88,7 @@ public class Recipes {
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 5), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone6, 1, 8) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 6), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone7, 1, 8) });
 		addRecipe(new ItemStack(CustomBlocks.customSlabHalf3, 6, 7), new Object[] { "XXX", 'X', new ItemStack(CustomBlocks.customStone8, 1, 8) });
-		
-		
+
 		addRecipe(new ItemStack(CustomBlocks.customStone1, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.cobblestone) });
 		addRecipe(new ItemStack(CustomBlocks.customStone7, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.cobblestoneMossy) });
 		addRecipe(new ItemStack(CustomBlocks.customStone8, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.obsidian) });
@@ -112,12 +115,27 @@ public class Recipes {
 		addRecipe(new ItemStack(Item.stick, 4), new Object[] { "#", "#", '#', plank });
 	}
 
-	private static void baseToolRecipe(ItemStack material, Item sword, Item pickaxe, Item shovel, Item axe, Item hoe) {
-		addRecipe(new ItemStack(sword, 1), new Object[] { "X", "X", "#", '#', Item.stick, 'X', material });
-		addRecipe(new ItemStack(pickaxe, 1), new Object[] { "XXX", " # ", " # ", '#', Item.stick, 'X', material });
-		addRecipe(new ItemStack(shovel, 1), new Object[] { "X", "#", "#", '#', Item.stick, 'X', material });
-		addRecipe(new ItemStack(axe, 1), new Object[] { "XX", "X#", " #", '#', Item.stick, 'X', material });
-		addRecipe(new ItemStack(hoe, 1), new Object[] { "XX", " #", " #", '#', Item.stick, 'X', material });
+	private static void baseToolRecipe(Object mat, Item sword, Item pickaxe, Item shovel, Item axe, Item hoe) {
+		Object material = null;
+		mat = getAnyCraftablyMateryal(mat);
+		//if (material instanceof Item || material instanceof Block || material instanceof Integer || material instanceof ItemStack) {
+		if (mat instanceof ArrayList<?>) {
+			material = (ArrayList<?>) mat;
+			for (ItemStack _mat : (ArrayList<ItemStack>) material) {
+				baseToolRecipe(_mat, sword, pickaxe, shovel, axe, hoe);
+			}
+			return;
+		} else {
+			material = mat;
+		}
+		if (material != null) {
+
+			addRecipe(new ItemStack(sword, 1), new Object[] { "X", "X", "#", '#', Item.stick, 'X', material });
+			addRecipe(new ItemStack(pickaxe, 1), new Object[] { "XXX", " # ", " # ", '#', Item.stick, 'X', material });
+			addRecipe(new ItemStack(shovel, 1), new Object[] { "X", "#", "#", '#', Item.stick, 'X', material });
+			addRecipe(new ItemStack(axe, 1), new Object[] { "XX", "X#", " #", '#', Item.stick, 'X', material });
+			addRecipe(new ItemStack(hoe, 1), new Object[] { "XX", " #", " #", '#', Item.stick, 'X', material });
+		}
 	}
 
 	private static void customStoneRecipe(Block material) {
@@ -129,19 +147,25 @@ public class Recipes {
 		addRecipe(new ItemStack(material, 4, 8), new Object[] { "XX", "XX", 'X', new ItemStack(material, 1, 5) });
 	}
 
-	private static void baseToolRecipe(Item material, Item sword, Item pickaxe, Item shovel, Item axe, Item hoe) {
-		baseToolRecipe(new ItemStack(material), sword, pickaxe, shovel, axe, hoe);
-	}
+	private static void baseArmorRecipe(Object mat, Item helmet, Item chestplate, Item legs, Item boots) {
+		Object material = null;
+		mat = getAnyCraftablyMateryal(mat);
+		if (mat instanceof ArrayList<?>) {
+			material = (ArrayList<?>) mat;
+			for (ItemStack _mat : (ArrayList<ItemStack>) material) {
+				baseArmorRecipe(_mat, helmet, chestplate, legs, boots);
+			}
+			return;
+		} else {
+			material = mat;
+		}
+		if (material != null) {
 
-	private static void baseToolRecipe(Block material, Item sword, Item pickaxe, Item shovel, Item axe, Item hoe) {
-		baseToolRecipe(new ItemStack(material), sword, pickaxe, shovel, axe, hoe);
-	}
-
-	private static void baseArmorRecipe(Item material, Item helmet, Item chestplate, Item legs, Item boots) {
-		addRecipe(new ItemStack(helmet, 1), new Object[] { "XXX", "X X", 'X', material });
-		addRecipe(new ItemStack(chestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', material });
-		addRecipe(new ItemStack(legs, 1), new Object[] { "XXX", "X X", "X X", 'X', material });
-		addRecipe(new ItemStack(boots, 1), new Object[] { "X X", "X X", 'X', material });
+			addRecipe(new ItemStack(helmet, 1), new Object[] { "XXX", "X X", 'X', material });
+			addRecipe(new ItemStack(chestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', material });
+			addRecipe(new ItemStack(legs, 1), new Object[] { "XXX", "X X", "X X", 'X', material });
+			addRecipe(new ItemStack(boots, 1), new Object[] { "X X", "X X", 'X', material });
+		}
 	}
 
 	private static void addRecipe(ItemStack output, Object... params) {
@@ -151,5 +175,44 @@ public class Recipes {
 	private static void addSmelting(ItemStack input, ItemStack output, Float exp) {
 		FurnaceRecipes.smelting().addSmelting(input.itemID, input.getItemDamage(), output, exp);
 
+	}
+
+	/**
+	 * Крайне не безопасный метод получения Вещи, блока, Стака или нескольких видов стаков по за ранее не определённому параметру
+	 * @param mat Число, Блок, стак, Вещь, лист стаков или строка, остальные типы вызовут проблемы
+	 * @return Блок, Вещь, стак, лист стаков
+	 */
+	private static Object getAnyCraftablyMateryal(Object mat) {
+		boolean debug = false;
+		if (debug)
+			System.out.print("Try get  " + mat.toString() + "\n");
+		Object material = null;
+		if (mat instanceof Item) {
+			return (Item) mat;
+		} else if (mat instanceof Block) {
+			return (Block) mat;
+		}
+		if (mat instanceof Integer) {
+			/** Прошу, не передавайти числа в чистом виде, я не уверен насчёт этой кадабры **/
+			if ((Integer) mat < 4096 && Block.blocksList[(Integer) mat] != null) {
+				return Block.blocksList[(Integer) mat];
+			} else {
+				return Item.itemsList[(Integer) mat];
+			}
+		} else if (mat instanceof String) {
+			return getAnyCraftablyMateryal(OreDictionary.getOres((String) mat));
+		} else if (mat instanceof ItemStack) {
+			return (ItemStack) mat;
+		} else if (mat instanceof ArrayList<?>) {
+			return (ArrayList<ItemStack>) mat;
+		}
+		if (mat == null) {
+			if (debug)
+				System.out.print("Fail get: null  \n");
+		} else {
+			if (debug)
+				System.out.print("Got  " + mat.toString() + ", but i unknow it\n");
+		}
+		return material;
 	}
 }

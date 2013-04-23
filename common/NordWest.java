@@ -25,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -40,14 +41,14 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "NordWest", name = "Mod for mcnw.ru", version = "0.1.a")
-@NetworkMod(channels = {"NordWest"}, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+@NetworkMod(channels = { "NordWest" }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class NordWest {
-	
+
 	public static Logger logger = Logger.getLogger("Minecraft");
-	
+
 	@Instance("nordwest")
 	public static NordWest instance;
-	
+
 	@SidedProxy(clientSide = "mods.nordwest.client.ClientProxy", serverSide = "mods.nordwest.common.CommonProxy")
 	public static CommonProxy proxy;
 	public static CreativeTabs tabNord = new CreativeTabs("tabNord") {
@@ -70,18 +71,21 @@ public class NordWest {
 		CustomItems.setToolClass();
 		/** Block **/
 		CustomBlocks.init();
-		/** Post block item init**/
+		/** Post block item init **/
 		CustomItems.posBlockInit();
 		CustomBlocks.posItemBlockInit();
 		/** Harvest Level for block **/
 		CustomBlocks.setHarvestLevel();
+		/** Dictionary **/
+		Dictionary.init();
 		/** Recipes **/
 		Recipes.init();
+
 	}
 
 	@Init
 	public void load(FMLInitializationEvent event) {
-		
+
 		/** Our Proxies */
 		proxy.registerEvent();
 
@@ -93,10 +97,10 @@ public class NordWest {
 		GameRegistry.registerWorldGenerator(new OreWorldGenerator());
 		GameRegistry.registerWorldGenerator(new CustomTreeWorldGenerator());
 		String currentVersion = "0.1.a";
-		
+
 		/** Console Notification */
 		System.out.println("[NordWest] Loading of the mod version " + currentVersion + " is successfully completed!");
-		
+
 		/** Log Files Notification */
 		logger.info("[NordWest] Mod version " + currentVersion + " is loaded.");
 	}
