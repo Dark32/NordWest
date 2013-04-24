@@ -75,7 +75,7 @@ public class BaseMetadataBlock extends BaseBlock {
 		stone |= this.blockID == CustomBlocks.customStone5.blockID;
 		stone |= this.blockID == CustomBlocks.customStone6.blockID;
 		stone |= this.blockID == CustomBlocks.customStone7.blockID;
-		if (par1 == 0 || stone) {
+		if (par1 == 0 && stone) {
 			return 1;
 		} else {
 			return par1;
@@ -95,4 +95,5 @@ public class BaseMetadataBlock extends BaseBlock {
 			return this.iconArray[par2];
 		}
 	}
+	
 }

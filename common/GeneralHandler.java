@@ -28,12 +28,18 @@ public class GeneralHandler {
 			if (e.getResult() == Result.DEFAULT && e.ID == CustomBlocks.ryeCrop.blockID) {
 				((BaseCrop) CustomBlocks.ryeCrop).fertilize(e.world, e.X, e.Y, e.Z);
 			}
+			if (e.getResult() == Result.DEFAULT && e.ID == CustomBlocks.riceCrop.blockID) {
+				((BaseCrop) CustomBlocks.riceCrop).fertilize(e.world, e.X, e.Y, e.Z);
+			}
+			if (e.getResult() == Result.DEFAULT && e.ID == CustomBlocks.blackriceCrop.blockID) {
+				((BaseCrop) CustomBlocks.blackriceCrop).fertilize(e.world, e.X, e.Y, e.Z);
+			}
 		}
 
 	}
 
 	@ForgeSubscribe
-	public void onLivingSpecialSpawn(LivingSpawnEvent  event) {
+	public void onLivingSpecialSpawn(LivingSpawnEvent event) {
 		//System.out.print(1);
 		Random random = new Random();
 		int chance = random.nextInt(10);

@@ -40,14 +40,15 @@ public class SlimeBlock extends BaseBlock {
 		int id = world.getBlockId(x, y - 1, z);
 		AxisAlignedBB box = null;
 		if (id != this.blockID && id != 0)
-			box = AxisAlignedBB.getBoundingBox((double) x, (double) y, (double) z, (double) (x + 1),
-					(double) ((float) (y + 1) - dy), (double) (z + 1));
+			box = AxisAlignedBB.getBoundingBox((double) x, (double) y, (double) z, (double) (x + 1), (double) ((float) (y + 1) - dy), (double) (z + 1));
 		return box;
 		//return null;
 	}
 
 	@Override
 	public void onEntityCollidedWithBlock(World par1World, int i, int j, int k, Entity entity) {
+		if (par1World.isRemote)
+			return;
 		if (entity.motionY < -0.3) {
 			entity.setVelocity(entity.motionX * 1.2D, entity.motionY * -1.2D, entity.motionZ * 1.2D);
 			entity.fallDistance = 0.0F;
@@ -94,12 +95,9 @@ public class SlimeBlock extends BaseBlock {
 		if (canFallBelow(par1World, par2, par3 - 1, par4) && par3 >= 0) {
 			byte b0 = 32;
 
-			if (!fallInstantly
-					&& par1World.checkChunksExist(par2 - b0, par3 - b0, par4 - b0, par2 + b0, par3 + b0, par4 + b0)) {
+			if (!fallInstantly && par1World.checkChunksExist(par2 - b0, par3 - b0, par4 - b0, par2 + b0, par3 + b0, par4 + b0)) {
 				if (!par1World.isRemote) {
-					EntityFallingSand entityfallingskime = new EntityFallingSand(par1World,
-							(double) ((float) par2 + 0.5F), (double) ((float) par3 + 0.5F),
-							(double) ((float) par4 + 0.5F), this.blockID, par1World.getBlockMetadata(par2, par3, par4));
+					EntityFallingSand entityfallingskime = new EntityFallingSand(par1World, (double) ((float) par2 + 0.5F), (double) ((float) par3 + 0.5F), (double) ((float) par4 + 0.5F), this.blockID, par1World.getBlockMetadata(par2, par3, par4));
 					this.onStartFalling(entityfallingskime);
 					entityfallingskime.motionY *= 0.5D;
 					par1World.spawnEntityInWorld(entityfallingskime);
@@ -152,7 +150,7 @@ public class SlimeBlock extends BaseBlock {
 	 * Called when the falling block entity for this block hits the ground and turns back into a block
 	 */
 	public void onFinishFalling(World par1World, int par2, int par3, int par4, int par5) {
-		
+
 	}
 
 }
