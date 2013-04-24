@@ -29,7 +29,6 @@
 	<entry key="tile.customTreeSapling.1.name">Light Birch Sapling</entry>
 	<entry key="tile.customTreeSapling.2.name">Yellow Tree Sapling</entry>
 	<entry key="tile.customTreeSapling.3.name">Baobab Sapling</entry>
-	
 	<entry key="tile.magicTreePlank.0.name">Ice Wood Plank</entry>
 	<entry key="tile.magicTreePlank.1.name">Fire Wood Plank</entry>
 	<entry key="tile.magicTreePlank.2.name">Air Wood Plank</entry>
@@ -42,12 +41,10 @@
 	<entry key="tile.magicTreeWood.1.name">Fire Wood</entry>
 	<entry key="tile.magicTreeWood.2.name">Air Wood </entry>
 	<entry key="tile.magicTreeWood.3.name">Violliant Wood</entry>
-	
 	<entry key="tile.magicTreeSapling.0.name">Ice Wood Sapling</entry>
 	<entry key="tile.magicTreeSapling.1.name">Fire Wood Sapling</entry>
 	<entry key="tile.magicTreeSapling.2.name">Air Wood Sapling</entry>
 	<entry key="tile.magicTreeSapling.3.name">Violliant Wood Sapling</entry>
-	
 	<entry key="tile.flora.0.name">Flower</entry>
 	<entry key="tile.flora.1.name">Flower</entry>
 	<entry key="tile.flora.2.name">Flower</entry>
@@ -64,8 +61,6 @@
 	<entry key="tile.flora.13.name">Flower</entry>
 	<entry key="tile.flora.14.name">Flower</entry>
 	<entry key="tile.flora.15.name">Flower</entry>
-	
-	
 	<entry key="tile.customStone1.0.name">Prepared Stone</entry>
 	<entry key="tile.customStone1.1.name">Prepared Coblestone</entry>
 	<entry key="tile.customStone1.2.name">Framed Coblestone</entry>
@@ -76,7 +71,6 @@
 	<entry key="tile.customStone1.7.name">Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone1.8.name">Quality Stone Brick</entry>
 	<entry key="tile.customStone1.9.name">Carved Stone</entry>
-	
 	<entry key="tile.customStone2.0.name">White Stone</entry>
 	<entry key="tile.customStone2.1.name">White Coblestone</entry>
 	<entry key="tile.customStone2.2.name">White Framed Coblestone</entry>
@@ -87,7 +81,6 @@
 	<entry key="tile.customStone2.7.name">White Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone2.8.name">White Quality Stone Brick</entry>
 	<entry key="tile.customStone2.9.name">White Carved Stone</entry>
-	
 	<entry key="tile.customStone3.0.name">Black Stone</entry>
 	<entry key="tile.customStone3.1.name">Black Coblestone</entry>
 	<entry key="tile.customStone3.2.name">Black Framed Coblestone</entry>
@@ -98,7 +91,6 @@
 	<entry key="tile.customStone3.7.name">Black Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone3.8.name">Black Quality Stone Brick</entry>
 	<entry key="tile.customStone3.9.name">Black Carved Stone</entry>
-	
 	<entry key="tile.customStone4.0.name">Sand Stone</entry>
 	<entry key="tile.customStone4.1.name">Sand Coblestone</entry>
 	<entry key="tile.customStone4.2.name">Sand Framed Coblestone</entry>
@@ -109,7 +101,6 @@
 	<entry key="tile.customStone4.7.name">Sand Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone4.8.name">Sand Quality Stone Brick</entry>
 	<entry key="tile.customStone4.9.name">Sand Carved Stone</entry>
-	
 	<entry key="tile.customStone5.0.name">Green Stone</entry>
 	<entry key="tile.customStone5.1.name">Green Coblestone</entry>
 	<entry key="tile.customStone5.2.name">Green Framed Coblestone</entry>
@@ -120,7 +111,6 @@
 	<entry key="tile.customStone5.7.name">Green Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone5.8.name">Green Quality Stone Brick</entry>
 	<entry key="tile.customStone5.9.name">Green Carved Stone</entry>
-	
 	<entry key="tile.customStone6.0.name">Brown Stone</entry>
 	<entry key="tile.customStone6.1.name">Brown Coblestone</entry>
 	<entry key="tile.customStone6.2.name">Brown Framed Coblestone</entry>
@@ -131,7 +121,6 @@
 	<entry key="tile.customStone6.7.name">Brown Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone6.8.name">Brown Quality Stone Brick</entry>
 	<entry key="tile.customStone6.9.name">Brown Carved Stone</entry>
-	
 	<entry key="tile.customStone7.0.name">Moss Stone</entry>
 	<entry key="tile.customStone7.1.name">Prepared Moss Coblestone</entry>
 	<entry key="tile.customStone7.2.name">Moss Framed Coblestone</entry>
@@ -142,7 +131,6 @@
 	<entry key="tile.customStone7.7.name">Moss Mosse Crackeв Stone Brick</entry>
 	<entry key="tile.customStone7.8.name">Moss Quality Stone Brick</entry>
 	<entry key="tile.customStone7.9.name">Moss Carved Stone</entry>
-	
 	<entry key="tile.customStone8.0.name">Obsidian Stone</entry>
 	<entry key="tile.customStone8.1.name">Prepared Obsidian</entry>
 	<entry key="tile.customStone8.2.name">Obsidian Framed Coblestone</entry>
@@ -153,16 +141,12 @@
 	<entry key="tile.customStone8.7.name">Obsidian Corrosion Crackeв Stone Brick</entry>
 	<entry key="tile.customStone8.8.name">Obsidian Quality Stone Brick</entry>
 	<entry key="tile.customStone8.9.name">Obsidian Carved Stone</entry>
-	
 	<entry key="tile.decoratedTreeWood.0.name">Decorated Wood</entry>
 	<entry key="tile.decoratedTreeWood.1.name">Decorated Wood</entry>
 	<entry key="tile.decoratedTreeWood.2.name">Decorated Wood</entry>
 	<entry key="tile.decoratedTreeWood.3.name">Decorated Wood</entry>
-	
-	
 	<entry key="tile.blockhome.name">Home Block</entry>
 	<entry key="tile.ryeCrop.name">Rye Crop</entry>
-	
 	<entry key="tile.blockWool1.0.name">HalfBlock White Wool</entry>
 	<entry key="tile.blockWool1.1.name">HalfBlock Orange Wool</entry>
 	<entry key="tile.blockWool1.2.name">HalfBlock Purpure Wool</entry>
@@ -179,7 +163,6 @@
 	<entry key="tile.blockWool2.5.name">HalfBlock Green Wool</entry>
 	<entry key="tile.blockWool2.6.name">HalfBlock Red Wool</entry>
 	<entry key="tile.blockWool2.7.name">HalfBlock Black Wool</entry>
-	
 	<entry key="tile.customSlabHalf.0.name">Smooth Stone HalfBlock</entry>
 	<entry key="tile.customSlabHalf.1.name">White Stone HalfBlock</entry>
 	<entry key="tile.customSlabHalf.2.name">Black Stone HalfBlock</entry>
@@ -188,7 +171,6 @@
 	<entry key="tile.customSlabHalf.5.name">Brown Stone HalfBlock</entry>
 	<entry key="tile.customSlabHalf.6.name">Moss Stone HalfBlock</entry>
 	<entry key="tile.customSlabHalf.7.name">Obsidian HalfBlock</entry>
-	
 	<entry key="tile.customSlabHalf2.0.name">Smooth Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf2.1.name">White Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf2.2.name">Black Brick HalfBlock</entry>
@@ -197,7 +179,6 @@
 	<entry key="tile.customSlabHalf2.5.name">Brown Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf2.6.name">Moss Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf2.7.name">Obsidian Brick HalfBlock</entry>
-	
 	<entry key="tile.customSlabHalf3.0.name">Smooth Quality Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf3.1.name">White Quality Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf3.2.name">Black Quality Brick HalfBlock</entry>
@@ -206,13 +187,11 @@
 	<entry key="tile.customSlabHalf3.5.name">Brown Quality Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf3.6.name">Moss Quality Brick HalfBlock</entry>
 	<entry key="tile.customSlabHalf3.7.name">Obsidian Quality Brick HalfBlock</entry>
-	
 	<entry key="tile.redBlock.0.name">Red Stone</entry>
 	<entry key="tile.redBlock.1.name">Carved Red Stone</entry>
 	<entry key="tile.redBlock.2.name">Carved Lapic</entry>
 	<entry key="tile.redBlock.3.name">Checkers Stone</entry>
 	<entry key="tile.slimeBlock.name">Block of Slime</entry>
-
 	<entry key="tile.candle.0.name">Candel</entry>
 	<entry key="tile.candle.1.name">Orange Candel</entry>
 	<entry key="tile.candle.2.name">Pink Candel</entry>
@@ -229,7 +208,9 @@
 	<entry key="tile.candle.13.name">Dark Green Candel</entry>
 	<entry key="tile.candle.14.name">Bloody Candel</entry>
 	<entry key="tile.candle.15.name">Black Candel</entry>
-	
+	<entry key="tile.cropRice.name">Rice Crop</entry>
+	<entry key="tile.cropBlackRice.name">Black Rice Crop</entry>
+
 	<entry key="item.copperHelmet.name">Copper Helmet</entry>
 	<entry key="item.copperChestplate.name">Copper Chestplate</entry>
 	<entry key="item.copperLegs.name">Copper Leggings</entry>
@@ -238,32 +219,28 @@
 	<entry key="item.mythrilChestplate.name">Mythril Chestplate</entry>
 	<entry key="item.mythrilLegs.name">Mythril Leggings</entry>
 	<entry key="item.mythrilBoots.name">Mythril Boots</entry>
-
 	<entry key="item.samuraiHelmet.name">Samurai Helmet</entry>
 	<entry key="item.samuraiChestplate.name">Samurai Chestplate</entry>
 	<entry key="item.samuraiLegs.name">Samurai Leggings</entry>
 	<entry key="item.samuraiBoots.name">Samurai Boots</entry>
-	
 	<entry key="item.copperPickaxe.name">Copper Pickaxe</entry>
 	<entry key="item.copperAxe.name">Copper Axe</entry>
 	<entry key="item.copperShovel.name">Copper Shovel</entry>
 	<entry key="item.copperSword.name">Copper Sword</entry>
 	<entry key="item.copperHoe.name">Copper Hoe</entry>
-	
 	<entry key="item.mythrilPickaxe.name">Mythril Pickaxe</entry>
 	<entry key="item.mythrilAxe.name">Mythril Axe</entry>
 	<entry key="item.mythrilShovel.name">Mythril Shovel</entry>
 	<entry key="item.mythrilSword.name">Mythril Sword</entry>
 	<entry key="item.mythrilHoe.name">Mythril Hoe</entry>
-	
 	<entry key="item.wax.name">Wax</entry>
-	
+	<entry key="item.rice.name">Rice</entry>
+	<entry key="item.blackrice.name">Black Rice</entry>
 	<entry key="item.expanite.name">Expanite</entry>
 	<entry key="item.mythrilIngot.name">Mythril Ingot</entry>
 	<entry key="item.copperIngot.name">Copper Ingot</entry>
 	<entry key="item.homescroll.0.name">Scroll of Return</entry>
 	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
-	
 	<entry key="item.cropRye.name">Rye</entry>
 	<entry key="item.seedRye.name">Seed of Rye</entry>
 	

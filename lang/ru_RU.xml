@@ -29,7 +29,6 @@
 	<entry key="tile.customTreeSapling.1.name">Березовый росток</entry>
 	<entry key="tile.customTreeSapling.2.name">Росток жёлтого дерева</entry>
 	<entry key="tile.customTreeSapling.3.name">Росток баобаба</entry>	
-	
 	<entry key="tile.magicTreePlank.0.name">Доски ледяного дерева</entry>
 	<entry key="tile.magicTreePlank.1.name">Доски огненного дерева</entry>
 	<entry key="tile.magicTreePlank.2.name">Доски дерева жизни</entry>
@@ -42,12 +41,10 @@
 	<entry key="tile.magicTreeWood.1.name">Древесина огненного дерева</entry>
 	<entry key="tile.magicTreeWood.2.name">Древесина дерева жизни</entry>
 	<entry key="tile.magicTreeWood.3.name">Древесина дерева смерти</entry>
-
 	<entry key="tile.magicTreeSapling.0.name">Росток ледяного дерева</entry>
 	<entry key="tile.magicTreeSapling.1.name">Росток огненного дерева</entry>
 	<entry key="tile.magicTreeSapling.2.name">Росток дерева жизни</entry>
 	<entry key="tile.magicTreeSapling.3.name">Росток дерева смерти</entry>
-	
 	<entry key="tile.blockWool1.0.name">Полублок белой шерсти</entry>
 	<entry key="tile.blockWool1.1.name">Полублок оранжевой шерсти</entry>
 	<entry key="tile.blockWool1.2.name">Полублок пурпурной шерсти</entry>
@@ -64,7 +61,6 @@
 	<entry key="tile.blockWool2.5.name">Полублок зелёной шерсти</entry>
 	<entry key="tile.blockWool2.6.name">Полублок красной шерсти</entry>
 	<entry key="tile.blockWool2.7.name">Полублок чёрной шерсти</entry>
-		
 	<entry key="tile.flora.0.name">Цветок</entry>
 	<entry key="tile.flora.1.name">Цветок</entry>
 	<entry key="tile.flora.2.name">Цветок</entry>
@@ -81,7 +77,6 @@
 	<entry key="tile.flora.13.name">Цветок</entry>
 	<entry key="tile.flora.14.name">Цветок</entry>
 	<entry key="tile.flora.15.name">Цветок</entry>
-	
 	<entry key="tile.customStone1.0.name">Камень</entry>
 	<entry key="tile.customStone1.1.name">Булыжник</entry>
 	<entry key="tile.customStone1.2.name">Окантованный булыжник</entry>
@@ -92,7 +87,6 @@
 	<entry key="tile.customStone1.7.name">Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone1.8.name">Качественный каменный кирпич</entry>
 	<entry key="tile.customStone1.9.name">Резной камень</entry>
-	
 	<entry key="tile.customStone2.0.name">Белый Камень</entry>
 	<entry key="tile.customStone2.1.name">Белый Булыжник</entry>
 	<entry key="tile.customStone2.2.name">Белый Окантованный булыжник</entry>
@@ -103,7 +97,6 @@
 	<entry key="tile.customStone2.7.name">Белый Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone2.8.name">Белый Качественный каменный кирпич</entry>
 	<entry key="tile.customStone2.9.name">Белый Резной камень</entry>
-	
 	<entry key="tile.customStone3.0.name">Чёрный Камень</entry>
 	<entry key="tile.customStone3.1.name">Чёрный Булыжник</entry>
 	<entry key="tile.customStone3.2.name">Чёрный Окантованный булыжник</entry>
@@ -114,7 +107,6 @@
 	<entry key="tile.customStone3.7.name">Чёрный Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone3.8.name">Чёрный Качественный каменный кирпич</entry>
 	<entry key="tile.customStone3.9.name">Чёрный Резной камень</entry>
-	
 	<entry key="tile.customStone4.0.name">Песчаный Камень</entry>
 	<entry key="tile.customStone4.1.name">Песчаный Булыжник</entry>
 	<entry key="tile.customStone4.2.name">Песчаный Окантованный булыжник</entry>
@@ -125,7 +117,6 @@
 	<entry key="tile.customStone4.7.name">Песчаный Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone4.8.name">Песчаный Качественный каменный кирпич</entry>
 	<entry key="tile.customStone4.9.name">Песчаный Резной камень</entry>
-
 	<entry key="tile.customStone5.0.name">Зелёный Камень</entry>
 	<entry key="tile.customStone5.1.name">Зелёный Булыжник</entry>
 	<entry key="tile.customStone5.2.name">Зелёный Окантованный булыжник</entry>
@@ -136,7 +127,6 @@
 	<entry key="tile.customStone5.7.name">Зелёный Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone5.8.name">Зелёный Качественный каменный кирпич</entry>
 	<entry key="tile.customStone5.9.name">Зелёный Резной камень</entry>	
-	
 	<entry key="tile.customStone6.0.name">Коричневый Камень</entry>
 	<entry key="tile.customStone6.1.name">Коричневый Булыжник</entry>
 	<entry key="tile.customStone6.2.name">Коричневый Окантованный булыжник</entry>
@@ -147,7 +137,6 @@
 	<entry key="tile.customStone6.7.name">Коричневый Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone6.8.name">Коричневый Качественный каменный кирпич</entry>
 	<entry key="tile.customStone6.9.name">Коричневый Резной камень</entry>
-	
 	<entry key="tile.customStone7.0.name">Замшелый Камень</entry>
 	<entry key="tile.customStone7.1.name">Подготовленный Замшелый Булыжник</entry>
 	<entry key="tile.customStone7.2.name">Замшелый Окантованный булыжник</entry>
@@ -158,7 +147,6 @@
 	<entry key="tile.customStone7.7.name">Замшелый Замшелый треснувший каменный кирпич</entry>
 	<entry key="tile.customStone7.8.name">Замшелый Качественный каменный кирпич</entry>
 	<entry key="tile.customStone7.9.name">Замшелый Резной камень</entry>
-	
 	<entry key="tile.customStone8.0.name">Обсидиановый Камень</entry>
 	<entry key="tile.customStone8.1.name">Подготовленный Обсидиановый Булыжник</entry>
 	<entry key="tile.customStone8.2.name">Обсидиановый Окантованный булыжник</entry>
@@ -169,7 +157,6 @@
 	<entry key="tile.customStone8.7.name">Обсидиановый Корозионный треснувший каменный кирпич</entry>
 	<entry key="tile.customStone8.8.name">Обсидиановый Качественный каменный кирпич</entry>
 	<entry key="tile.customStone8.9.name">Обсидиановый Резной камень</entry>
-	
 	<entry key="tile.customSlabHalf.0.name">Гладкий каменный полублок</entry>
 	<entry key="tile.customSlabHalf.1.name">Белый каменный полублок</entry>
 	<entry key="tile.customSlabHalf.2.name">Чёрный каменный полублок</entry>
@@ -178,7 +165,6 @@
 	<entry key="tile.customSlabHalf.5.name">Коричневый каменный полублок</entry>
 	<entry key="tile.customSlabHalf.6.name">Замшелый каменный полублок</entry>
 	<entry key="tile.customSlabHalf.7.name">Обсидиановый каменный полублок</entry>
-	
 	<entry key="tile.customSlabHalf2.0.name">Гладкий кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.1.name">Белый кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.2.name">Чёрный кирпичный полублок</entry>
@@ -187,7 +173,6 @@
 	<entry key="tile.customSlabHalf2.5.name">Коричневый кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.6.name">Замшелый кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.7.name">Обсидиановый кирпичный полублок</entry>
-	
 	<entry key="tile.customSlabHalf2.0.name">Гладкий качественный кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.1.name">Белый качественный кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.2.name">Чёрный качественный кирпичный полублок</entry>
@@ -196,18 +181,14 @@
 	<entry key="tile.customSlabHalf2.5.name">Коричневый качественный кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.6.name">Замшелый качественный кирпичный полублок</entry>
 	<entry key="tile.customSlabHalf2.7.name">Обсидиановый качественный кирпичный полублок</entry>
-	
-	
 	<entry key="tile.decoratedTreeWood.0.name">Декорированное Дерево</entry>
 	<entry key="tile.decoratedTreeWood.1.name">Декорированное Дерево</entry>
 	<entry key="tile.decoratedTreeWood.2.name">Декорированное Дерево</entry>
 	<entry key="tile.decoratedTreeWood.3.name">Декорированное Дерево</entry>
-	
 	<entry key="tile.redBlock.0.name">Красный камень</entry>
 	<entry key="tile.redBlock.1.name">Красный резной камень</entry>
 	<entry key="tile.redBlock.2.name">Лапис резной</entry>
 	<entry key="tile.redBlock.3.name">Камень в шашечку</entry>
-	
 	<entry key="tile.candle.0.name">Candel</entry>
 	<entry key="tile.candle.1.name">Orange Candel</entry>
 	<entry key="tile.candle.2.name">Pink Candel</entry>
@@ -224,10 +205,12 @@
 	<entry key="tile.candle.13.name">Dark Green Candel</entry>
 	<entry key="tile.candle.14.name">Bloody Candel</entry>
 	<entry key="tile.candle.15.name">Black Candel</entry>
-
+	<entry key="tile.cropRice.name">Rice Crop</entry>
+	<entry key="tile.cropBlackRice.name">Black Rice Crop</entry>
 	<entry key="tile.slimeBlock.name">Блок слизи</entry>
 	<entry key="tile.blockhome.name">Блок дома</entry>
 	<entry key="tile.ryeCrop.name">Рожь</entry>
+	
 	<entry key="item.copperHelmet.name">Медный шлем</entry>
 	<entry key="item.copperChestplate.name">Медный нагрудник</entry>
 	<entry key="item.copperLegs.name">Медные поножи</entry>
@@ -236,36 +219,30 @@
 	<entry key="item.mythrilChestplate.name">Митриловый нагрудник</entry>
 	<entry key="item.mythrilLegs.name">Митриловые поножи</entry>
 	<entry key="item.mythrilBoots.name">Митриловые ботинки</entry>
-	
 	<entry key="item.samuraiHelmet.name">Самурайский шлем</entry>
 	<entry key="item.samuraiChestplate.name">Самурайский нагрудник</entry>
 	<entry key="item.samuraiLegs.name">Самурайские поножи</entry>
 	<entry key="item.samuraiBoots.name">Самурайские ботинки</entry>
-	
-	
 	<entry key="item.copperPickaxe.name">Медная кирка</entry>
 	<entry key="item.copperAxe.name">Медный топор</entry>
 	<entry key="item.copperShovel.name">Медная лопата</entry>
 	<entry key="item.copperSword.name">Медный меч</entry>
 	<entry key="item.copperHoe.name">Медная тяпка</entry>
-	
 	<entry key="item.mythrilPickaxe.name">Митриловая кирка</entry>
 	<entry key="item.mythrilAxe.name">Митриловый топор</entry>
 	<entry key="item.mythrilShovel.name">Митриловая лопата</entry>
 	<entry key="item.mythrilSword.name">Митриловый меч</entry>
 	<entry key="item.mythrilHoe.name">Митриловая тяпка</entry>
-	
 	<entry key="item.wax.name">Воск</entry>
-	
+	<entry key="item.rice.name">Rice</entry>
+	<entry key="item.blackrice.name">Black Rice</entry>
 	<entry key="item.expanite.name">Экспанит</entry>
 	<entry key="item.mythrilIngot.name">Митриловый слиток</entry>
 	<entry key="item.copperIngot.name">Медный слиток</entry>
 	<entry key="item.homescroll.0.name">Свиток возврата</entry>
 	<entry key="item.homescroll.1.name">Свиток возврата (абсалутный)</entry>
-	
 	<entry key="item.cropRye.name">Рожь</entry>
 	<entry key="item.seedRye.name">Семяна ржи</entry>
-	
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
 	
 	<entry key="world.undefined">Неизвестно</entry>

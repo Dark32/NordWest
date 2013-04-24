@@ -40,6 +40,8 @@ public class CustomItems {
 	static Item samuraiBoots;
 	static Item seedRye;
 	static Item cropRye;
+	static Item seedRice;
+	static Item seedBlackRice;
 	/**
 	 * Armor Materials:
 	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
@@ -79,6 +81,8 @@ public class CustomItems {
 	private static int renderCopperArmour;
 	private static int renderMythrilArmour;
 	private static int renderSamuraiArmour;
+	
+	
 
 	public static void render() {
 		renderCopperArmour = NordWest.proxy.addArmor("Copper");
@@ -125,8 +129,9 @@ public class CustomItems {
 		samuraiBoots = new CustomColoredArmor(Config.ITEM_ID.samuraiBoots, samuraiArmorMaterial, renderSamuraiArmour, 3).setUnlocalizedName("samuraiBoots");
 
 		cropRye = new BaseItem(Config.ITEM_ID.cropRye).setUnlocalizedName("cropRye");
-//		seedRye = new BaseSeed(Config.ITEM_ID.seedRye, CustomBlocks.ryeCrop.blockID).setUnlocalizedName("seedRye");
 		seedRye = new BaseSeed(Config.ITEM_ID.seedRye, Config.BLOCK_ID.ryeCrop).setUnlocalizedName("seedRye");
+		seedRice = new BaseSeed(Config.ITEM_ID.seedRice, Config.BLOCK_ID.riceCrop).setUnlocalizedName("rice");
+		seedBlackRice = new BaseSeed(Config.ITEM_ID.seedBlackRice, Config.BLOCK_ID.blackriceCrop).setUnlocalizedName("blackrice");
 
 	}
 

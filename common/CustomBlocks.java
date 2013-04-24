@@ -63,6 +63,8 @@ public class CustomBlocks {
 	public static Block decoratedTreeWood2;
 	public static Block candle;
 	public static Block ryeCrop;
+	public static Block riceCrop;
+	public static Block blackriceCrop;
 
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
@@ -176,8 +178,11 @@ public class CustomBlocks {
 		decoratedTreeWood2 = new CustomTreeWood(Config.BLOCK_ID.decoratedTreeWood2).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("decoratedTreeWood2");
 		GameRegistry.registerBlock(decoratedTreeWood2, MetadataBlockItem.class, "decoratedTreeWood2");
 		ryeCrop = new BaseCrop(Config.BLOCK_ID.ryeCrop,CustomItems.cropRye.itemID, CustomItems.seedRye.itemID).setHardness(0.1F).setResistance(1F).setUnlocalizedName("ryeCrop");
-	//	ryeCrop = new BaseCrop(Config.BLOCK_ID.ryeCrop,Config.ITEM_ID.cropRye, Config.ITEM_ID.seedRye).setHardness(0.1F).setResistance(1F).setUnlocalizedName("ryeCrop");
 		GameRegistry.registerBlock(ryeCrop, "ryeCrop");
+		riceCrop = new BaseCrop(Config.BLOCK_ID.riceCrop,CustomItems.seedRice.itemID, CustomItems.seedRice.itemID).setHardness(0.1F).setResistance(1F).setUnlocalizedName("cropRice");
+		GameRegistry.registerBlock(riceCrop, "riceCrop");
+		blackriceCrop = new BaseCrop(Config.BLOCK_ID.blackriceCrop,CustomItems.seedBlackRice.itemID, CustomItems.seedBlackRice.itemID).setHardness(0.1F).setResistance(1F).setUnlocalizedName("cropBlackRice");
+		GameRegistry.registerBlock(blackriceCrop, "blackriceCrop");
 		
 		
 	}

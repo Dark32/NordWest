@@ -58,6 +58,8 @@ public class Config {
 		public static int decoratedTreeWood2;
 		public static int candle;
 		public static int ryeCrop;
+		public static int riceCrop;
+		public static int blackriceCrop;
 
 	}
 
@@ -93,6 +95,8 @@ public class Config {
 		public static int samuraiBoots;
 		public static int seedRye;
 		public static int cropRye;
+		public static int seedRice;
+		public static int seedBlackRice;
 	}
 
 	/** Other **/
@@ -153,7 +157,8 @@ public class Config {
 			BLOCK_ID.decoratedTreeWood2 = cfg.getBlock("decoratedTreeWood2", 1042).getInt(1042);
 			BLOCK_ID.candle = cfg.getBlock("candle", 1043).getInt(1043);
 			BLOCK_ID.ryeCrop = cfg.getBlock("ryeCrop", 1044).getInt(1044);
-
+			BLOCK_ID.riceCrop = cfg.getBlock("riceCrop", 1045).getInt(1045);
+			BLOCK_ID.blackriceCrop = cfg.getBlock("blackriceCrop", 1046).getInt(1046);
 			/** Items... AGAIN! **/
 			ITEM_ID.wax = cfg.getItem("wax", 5000).getInt(5000);
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 5001).getInt(5001);
@@ -184,6 +189,8 @@ public class Config {
 			ITEM_ID.samuraiBoots = cfg.getItem("samuraiBoots", 5026).getInt(5026);
 			ITEM_ID.seedRye = cfg.getItem("seedRye", 5027).getInt(5027);
 			ITEM_ID.cropRye = cfg.getItem("cropRye", 5028).getInt(5028);
+			ITEM_ID.seedRice = cfg.getItem("seedRice", 5029).getInt(5029);
+			ITEM_ID.seedBlackRice = cfg.getItem("seedBlackRice", 5030).getInt(5030);
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");
