@@ -200,7 +200,7 @@ public class Recipes {
 				return Item.itemsList[(Integer) mat];
 			}
 		} else if (mat instanceof String) {
-			return getAnyCraftablyMateryal(OreDictionary.getOres((String) mat));
+			return (ArrayList<ItemStack>)(OreDictionary.getOres((String) mat));
 		} else if (mat instanceof ItemStack) {
 			return (ItemStack) mat;
 		} else if (mat instanceof ArrayList<?>) {
