@@ -33,7 +33,7 @@ public class CustomTreeWorldGenerator implements IWorldGenerator {
 		final BiomeGenBase biome = world.getBiomeGenForCoords(chunkX, chunkZ);
 		/** Yellow tree **/
 		if (biome == BiomeGenBase.plains || biome == BiomeGenBase.extremeHills)
-			for (int i = 0; i < 13; i++) {
+			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
 				final int y = world.getTopSolidOrLiquidBlock(x, z);
@@ -41,7 +41,7 @@ public class CustomTreeWorldGenerator implements IWorldGenerator {
 			}
 		/** Pink tree **/
 		if (biome == BiomeGenBase.river || biome == BiomeGenBase.frozenRiver)
-			for (int i = 0; i < 13; i++) {
+			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
 				final int y = world.getTopSolidOrLiquidBlock(x, z);
@@ -49,28 +49,28 @@ public class CustomTreeWorldGenerator implements IWorldGenerator {
 			}
 		/** Big tree **/
 		if (biome == BiomeGenBase.river || biome == BiomeGenBase.frozenRiver || biome == BiomeGenBase.forest || biome == BiomeGenBase.forestHills)
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
 				final int y = world.getTopSolidOrLiquidBlock(x, z);
 				worldGenHugeTree.generate(world, rand, x, y, z);
 			}
 		if (biome == BiomeGenBase.forest || biome == BiomeGenBase.forestHills || biome == BiomeGenBase.jungle)
-			for (int i = 0; i < 2; i++) {
+			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
 				final int y = world.getTopSolidOrLiquidBlock(x, z);
 				worldGenCustomTree.generate(world, rand, x, y, z);
 			}
 		if (biome == BiomeGenBase.forest || biome == BiomeGenBase.forestHills || biome == BiomeGenBase.jungle)
-			for (int i = 0; i < 15; i++) {
+			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
 				final int y = world.getTopSolidOrLiquidBlock(x, z);
 				worldGenCustomTree3.generate(world, rand, x, y, z);
 			}
 		if (biome == BiomeGenBase.forest || biome == BiomeGenBase.forestHills || biome == BiomeGenBase.taiga)
-			for (int i = 0; i < 15; i++) {
+			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
 				final int y = world.getTopSolidOrLiquidBlock(x, z);
