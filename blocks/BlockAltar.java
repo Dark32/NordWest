@@ -5,7 +5,6 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import mekanism.common.Mekanism;
 import mods.nordwest.common.CustomBlocks;
 import mods.nordwest.common.NordWest;
 import mods.nordwest.tileentity.TileEntityAltar;
@@ -16,6 +15,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
@@ -30,7 +30,6 @@ public class BlockAltar extends BaseBlock {
         setHardness(2500.0F);
         setResistance(20.0F);
         setCreativeTab(CreativeTabs.tabDecorations);
-
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -71,7 +70,7 @@ public class BlockAltar extends BaseBlock {
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int a, float par1, float par2, float par3){
 		ItemStack itemstack = player.inventory.getCurrentItem();
 		if (itemstack != null){
-			if (itemstack.itemID == 259){
+			if (itemstack.itemID == Item.flintAndSteel.itemID){
                 /*TileEntity tileEntity = world.getBlockTileEntity(x, y, z);*/
                 if (/*tileEntity == null || */player.isSneaking()) {
                 return false;
