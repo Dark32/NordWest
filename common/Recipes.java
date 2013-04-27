@@ -3,6 +3,7 @@ package mods.nordwest.common;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import mods.nordwest.utils.Dictionary;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

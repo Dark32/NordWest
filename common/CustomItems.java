@@ -9,39 +9,39 @@ import net.minecraftforge.common.MinecraftForge;
 import mods.nordwest.items.*;
 
 public class CustomItems {
-	static Item expaniteItem;
-	static Item mythrilIngotItem;
-	static Item copperIngotItem;
-	static Item homescroll;
-	static Item wax;
+	public static Item expaniteItem;
+	public static Item mythrilIngotItem;
+	public static Item copperIngotItem;
+	public static Item homescroll;
+	public static Item wax;
 	
-	static Item copperHelmet;
-	static Item copperChestplate;
-	static Item copperLegs;
-	static Item copperBoots;
-	static Item mythrilHelmet;
-	static Item mythrilChestplate;
-	static Item mythrilLegs;
-	static Item mythrilBoots;
+	public static Item copperHelmet;
+	public static Item copperChestplate;
+	public static Item copperLegs;
+	public static Item copperBoots;
+	public static Item mythrilHelmet;
+	public static Item mythrilChestplate;
+	public static Item mythrilLegs;
+	public static Item mythrilBoots;
 
-	static Item copperPickaxe;
-	static Item copperAxe;
-	static Item copperShovel;
-	static Item copperHoe;
-	static Item copperSword;
-	static Item mythrilPickaxe;
-	static Item mythrilAxe;
-	static Item mythrilShovel;
-	static Item mythrilHoe;
-	static Item mythrilSword;
-	static Item samuraiHelmet;
-	static Item samuraiChestplate;
-	static Item samuraiLegs;
-	static Item samuraiBoots;
-	static Item seedRye;
-	static Item cropRye;
-	static Item seedRice;
-	static Item seedBlackRice;
+	public static Item copperPickaxe;
+	public static Item copperAxe;
+	public static Item copperShovel;
+	public static Item copperHoe;
+	public static Item copperSword;
+	public static Item mythrilPickaxe;
+	public static Item mythrilAxe;
+	public static Item mythrilShovel;
+	public static Item mythrilHoe;
+	public static Item mythrilSword;
+	public static Item samuraiHelmet;
+	public static Item samuraiChestplate;
+	public static Item samuraiLegs;
+	public static Item samuraiBoots;
+	public static Item seedRye;
+	public static Item cropRye;
+	public static Item seedRice;
+	public static Item seedBlackRice;
 	/**
 	 * Armor Materials:
 	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
@@ -59,8 +59,8 @@ public class CustomItems {
 	 *   Gold: 25, 
 	 *   Diamond: 10.
 	 */
-	static EnumArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 15, new int[] { 2, 5, 4, 1 }, 9);
-	static EnumArmorMaterial mythrilArmorMaterial = EnumHelper.addArmorMaterial("mythrilArmorMaterial", 40, new int[] { 3, 8, 6, 3 }, 12);
+	public static EnumArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 15, new int[] { 2, 5, 4, 1 }, 9);
+	public static EnumArmorMaterial mythrilArmorMaterial = EnumHelper.addArmorMaterial("mythrilArmorMaterial", 40, new int[] { 3, 8, 6, 3 }, 12);
 	public static EnumArmorMaterial samuraiArmorMaterial = EnumHelper.addArmorMaterial("samuraiArmorMaterial", 10, new int[] { 2, 6, 5, 2 }, 18);
 	/**
 	 * Tool Materials:

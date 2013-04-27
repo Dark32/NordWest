@@ -121,7 +121,7 @@ public class CustomBlocks {
 		flora = new BlockFlora(Config.BLOCK_ID.flora).setHardness(0.0F).setResistance(1F).setUnlocalizedName("flora").setStepSound(Block.soundGrassFootstep);
 		GameRegistry.registerBlock(flora, MetadataBlockItem.class, "flora");
 
-		blockhome = new BlockHome(Config.BLOCK_ID.homeblock).setHardness(10.0F).setResistance(10F).setUnlocalizedName("blockhome").setStepSound(Block.soundStoneFootstep);
+		blockhome = new BlockAltar(Config.BLOCK_ID.homeblock).setHardness(10.0F).setResistance(10F).setUnlocalizedName("blockhome").setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(blockhome, "blockhome");
 		blockWoolHalf1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolHalf1, false,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(255).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");
 		blockWoolFull1 = (BlockHalfSlab) (new BaseBlockStep(Config.BLOCK_ID.blockWoolFull1, true,Material.rock)).setHardness(1.0F).setResistance(1.0F).setLightOpacity(0).setStepSound(Block.soundClothFootstep).setUnlocalizedName("blockWool1");

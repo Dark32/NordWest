@@ -5,13 +5,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.minecraftforge.common.EnumHelper;
+import mods.nordwest.common.GuiHandler;
 import mods.nordwest.blocks.*;
 import mods.nordwest.common.Config.BLOCK_ID;
 import mods.nordwest.common.Config.ITEM_ID;
 import mods.nordwest.generators.CustomTreeWorldGenerator;
 import mods.nordwest.generators.OreWorldGenerator;
-import mods.nordwest.utils.PacketHandler;
 import mods.nordwest.items.*;
+import mods.nordwest.utils.Dictionary;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
@@ -37,16 +38,17 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "NordWest", name = "Mod for mcnw.ru", version = "0.1.a")
+@Mod(modid = "NordWest", name = "Minecraft NordWest", version = "0.1.a")
 @NetworkMod(channels = { "NordWest" }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class NordWest {
 
 	public static Logger logger = Logger.getLogger("Minecraft");
 
-	@Instance("nordwest")
+	@Instance("NordWest")
 	public static NordWest instance;
 
 	@SidedProxy(clientSide = "mods.nordwest.client.ClientProxy", serverSide = "mods.nordwest.common.CommonProxy")
@@ -89,6 +91,8 @@ public class NordWest {
 		/** Our Proxies */
 		proxy.registerEvent();
 
+		/** Registering GUI handler */
+		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		/** Registering Smelting Recipes **/
 		GameRegistry.addSmelting(CustomBlocks.copperOre.blockID, new ItemStack(CustomItems.copperIngotItem), 0.2f);
 		GameRegistry.addSmelting(CustomBlocks.mythrilOre.blockID, new ItemStack(CustomItems.mythrilIngotItem), 0.2f);

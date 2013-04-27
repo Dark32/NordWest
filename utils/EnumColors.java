@@ -2,6 +2,7 @@ package mods.nordwest.utils;
 
 public enum EnumColors
 {
+	/* Colors */
 	BLACK("\u00a70", "Black"),
 	DARK_BLUE("\u00a71", "Dark Blue"),
 	DARK_GREEN("\u00a72", "Dark Green"),

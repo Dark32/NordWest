@@ -5,7 +5,11 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mekanism.common.Mekanism;
 import mods.nordwest.common.CustomBlocks;
+import mods.nordwest.common.NordWest;
+import mods.nordwest.tileentity.TileEntityAltar;
+import mods.nordwest.utils.EffectsLibrary;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -13,15 +17,20 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
-public class BlockHome extends BaseBlock {
+public class BlockAltar extends BaseBlock {
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
-	public BlockHome(int par1) {
+	public BlockAltar(int par1) {
 		super(par1, Material.rock);
+        setHardness(2500.0F);
+        setResistance(20.0F);
+        setCreativeTab(CreativeTabs.tabDecorations);
+
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -33,7 +42,15 @@ public class BlockHome extends BaseBlock {
 		this.iconArray[1] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".top");
 		this.iconArray[2] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".buttom");
 	}
-
+	
+	   /*public float hardness(EntityPlayer player, Block block, World world, int x, int y, int z)
+	   {
+		   	any tile = block(x, y, z);
+	   		if ((tile != null) && ((tile instanceof TileOwned)) && (.equals(((TileOwned)tile).owner))) return 0.02F;
+	   
+	   			return 1.0E-004F;
+	   }*/
+	
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
 		Random random = new Random();
@@ -45,18 +62,30 @@ public class BlockHome extends BaseBlock {
 			} else {
 			world.destroyBlock(x, y, z, false);
 			}
-		}/** else {
-			if (homeGui(world, x, y, z, player) == true) {
-				
-			} else {
-				world.destroyBlock(x, y, z, true);
-			}
-		}*/
+		} else {
+			boolean onBlockActivated;
+		}
 	}
 	
-	/**public boolean homeGui(World world, int x, int y, int z, EntityPlayer player){
-		player.openGui(Tutorial.instance, 3, world, x, y, z);
-	}*/
+	@Override
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int a, float par1, float par2, float par3){
+		ItemStack itemstack = player.inventory.getCurrentItem();
+		if (itemstack != null){
+			if (itemstack.itemID == 259){
+                /*TileEntity tileEntity = world.getBlockTileEntity(x, y, z);*/
+                if (/*tileEntity == null || */player.isSneaking()) {
+                return false;
+                }
+				EffectsLibrary.smokeCloud(player, x, y, z, 48);
+				EffectsLibrary.playSoundOnEntity(player, "fire.ignite");
+				itemstack.damageItem(3, player);
+				player.openGui(NordWest.instance, 0, world, 0, 0, 0);
+				return true;
+			}
+		}
+		return false;
+	}
+
 	
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -101,4 +130,14 @@ public class BlockHome extends BaseBlock {
 			return test;
 		}
 	}
+	
+    /*@Override
+    public TileEntity createTileEntity(World world, int meta) {
+           return new TileEntityAltar();
+    }
+    
+    @Override
+    public boolean hasTileEntity(int metadata) {
+        return true;
+    }*/
 }

@@ -248,16 +248,27 @@
 	<entry key="world.undefined">Неизвестно</entry>
 	<entry key="world.overworld">Верхний мир</entry>
 	<entry key="world.nether">Нижний мир</entry>
-	<entry key="world.desc">World</entry>
+	<entry key="world.desc">Измерение</entry>
 	
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
 	
-	<entry key="author.by">Creator</entry>
+	<entry key="author.by">Автор</entry>
 	
 	<entry key="scroll.tp">*Poof*</entry>
 	<entry key="scroll.error.end">You're not allowed to use this type of scrolls within this world.</entry>
 	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
 	<entry key="scroll.error.notCreative">Your altar was removed, so you can't return to home this way.</entry>
 	<entry key="scroll.error.wrongDimension">You can't jump to your home, as it is so far.</entry>
+	
+	<entry key="homing.title">Алтарь</entry>
+	<entry key="homing.done">Готово</entry>
+	<entry key="homing.back">Отмена</entry>
+	<entry key="homing.default">Дом игрока %p.</entry>
+	<entry key="homing.subtitle">Введите имя вашего алтаря</entry>
+	<entry key="homing.remember">Запомните</entry>
+	<entry key="homing.desc.s1">После того, как вы</entry>
+	<entry key="homing.desc.s2">закончите настройку,</entry>
+	<entry key="homing.desc.s3">изменить что-либо</entry>
+	<entry key="homing.desc.s4">будет невозможно.</entry>
 	
 	</properties>

@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import mods.nordwest.common.CustomBlocks;
 import mods.nordwest.common.NordWest;
 import mods.nordwest.utils.EnumColors;
+import mods.nordwest.utils.EnumFormatting;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
 import net.minecraft.client.Minecraft;
@@ -62,7 +63,7 @@ public class ScrollItem extends BaseItem {
 			x = par1ItemStack.getTagCompound().getInteger("X");
 			y = par1ItemStack.getTagCompound().getInteger("Y");
 			z = par1ItemStack.getTagCompound().getInteger("Z");
-			par3List.add(EnumColors.WHITE + homeName);
+			par3List.add(EnumColors.WHITE + "\u00a7o" + homeName);
 			par3List.add(color + worldDescription + doublePoint + worldName);
 			par3List.add(by + doublePoint + par1ItemStack.getTagCompound().getString("Lore"));
 			par3List.add("X" + doublePoint + x);

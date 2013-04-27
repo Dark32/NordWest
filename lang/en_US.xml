@@ -257,6 +257,19 @@
 	<entry key="scroll.error.end">You're not allowed to use this type of scrolls within this world.</entry>
 	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
 	<entry key="scroll.error.notCreative">Your altar was removed, so you can't return to home this way.</entry>
-	<entry key="scroll.error.wrongDimension">You can't jump to your home, as it is so far.</entry>
+	<entry key="scroll.error.wrongDimension">Your home is not accessible now, as it is in another dimension.</entry>
+	
+	<entry key="homing.title">Homing</entry>
+	<entry key="homing.done">Activate</entry>
+	<entry key="homing.back">Cancel</entry>
+	<entry key="homing.default">%p's Home.</entry>
+	<entry key="homing.subtitle">Enter your altar's name</entry>
+	<entry key="homing.remember">Remember</entry>
+	<entry key="homing.desc.s1">Once you set it up, you'll</entry>
+	<entry key="homing.desc.s2">not be able to change this</entry>
+	<entry key="homing.desc.s3">until you break the altar.</entry>
+	<entry key="homing.alert.1">Good luck!</entry>
+	<entry key="homing.alert.2">Be careful!</entry>
+	<entry key="homing.alert.rare">Don't try this at home!</entry>
 	
 	</properties>
