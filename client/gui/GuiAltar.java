@@ -93,7 +93,7 @@ public class GuiAltar extends GuiScreen
 	{
 		/* Background and Title */
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.renderEngine.bindTexture("/mods/mekanism/gui/GuiStopwatch.png");
+        mc.renderEngine.bindTexture("/mods/nordwest/textures/gui/GuiAltar.png");
         drawTexturedModalRect(width / 2 - 88, height / 2 - 80, 0, 0, 176, 166);
         fontRenderer.drawString(LanguageRegistry.instance().getStringLocalization("homing.title"), width / 2 - 75, height / 2 - 73, 4210752);
 		textfield.drawTextBox();
