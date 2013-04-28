@@ -29,6 +29,7 @@ public class CandleBlock extends BaseBlock {
 	public CandleBlock(int par1, Material par2Material) {
 		super(par1, Material.circuits);
 		setCreativeTab(NordWest.tabNord);
+		this.setBlockBounds(0.375F, 0.0F, 0.375F, 0.625F, 0.5F, 0.625F);
 	}
 
 	public int getRenderType() {
@@ -92,4 +93,12 @@ public class CandleBlock extends BaseBlock {
 		return par1;
 
 	}
+
+	public void onNeighborBlockChange(World par1World, int x, int y, int z, int par5) {
+		if (!canPlaceCandleOn(par1World, x, y - 1, z)) {
+			 this.dropBlockAsItem(par1World, x, y, z, par1World.getBlockMetadata(x, y, z), 0);
+             par1World.setBlockToAir(x, y, z);
+		}
+	}
+
 }

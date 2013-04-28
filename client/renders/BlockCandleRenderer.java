@@ -54,10 +54,12 @@ public class BlockCandleRenderer extends BlockRenderer implements ISimpleBlockRe
 
 		block.setBlockBounds(0.475F, 0.5F, 0.475F, 0.525F, W10, 0.525F);
 		renderer.setRenderBoundsFromBlock(block);
-		renderer.renderStandardBlockWithAmbientOcclusion(block, x, y, z, 1.0F, 1.0F, 1.0F);
+		renderer.renderStandardBlockWithColorMultiplier(block, x, y, z, 0.8F, 0.8F, 0.8F);;
 
-		block.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-		renderer.setRenderBoundsFromBlock(block);
+	
+		
+
+		renderer.setRenderBounds(0.375F, 0.0F, 0.375F, 0.625F, 0.5F, 0.625F);
 		return true;
 	}
 

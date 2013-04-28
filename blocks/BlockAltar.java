@@ -29,7 +29,7 @@ public class BlockAltar extends BaseBlock {
 		super(par1, Material.rock);
         setHardness(2500.0F);
         setResistance(20.0F);
-        setCreativeTab(CreativeTabs.tabDecorations);
+        setCreativeTab(NordWest.tabNord);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -1,6 +1,10 @@
 package mods.nordwest.items;
 
+import java.security.Timestamp;
+import java.util.Date;
 import java.util.List;
+
+import org.lwjgl.Sys;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -139,10 +143,10 @@ public class ScrollItem extends BaseItem {
 	      tag = new NBTTagCompound();
 	      itemstack.setTagCompound(tag);
 	     }
-		boolean delay = false;
+		boolean delay = true;
 		int id = world.getBlockId(x, y, z);
 		int worldId = itemstack.getTagCompound().getInteger("worldID");
-		if (Minecraft.getSystemTime() >= itemstack.getTagCompound().getLong("time") + 1250 || (!tag.hasKey("time"))) {
+		if (getSystemTime() >= itemstack.getTagCompound().getLong("time") + 1250 || (!tag.hasKey("time"))) {
 				delay = true;
 			} else {
 				delay = false;
@@ -153,31 +157,31 @@ public class ScrollItem extends BaseItem {
 					player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.wrongDimension"));
 					badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
 					world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
-					tag.setLong("time", Minecraft.getSystemTime());
+					tag.setLong("time", getSystemTime());
 				return false;
 			} else if (worldId == (world.provider.dimensionId) && id != CustomBlocks.blockhome.blockID && (!player.capabilities.isCreativeMode)) {
 				if (!world.isRemote)
 					player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notCreative"));
 					badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
 					world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
-					tag.setLong("time", Minecraft.getSystemTime());
+					tag.setLong("time", getSystemTime());
 				return false;
 			} else if (worldId == (world.provider.dimensionId) && id == CustomBlocks.blockhome.blockID && worldId == 1) {
 				if (!world.isRemote)
 					player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.end"));
 					badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
 					world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
-					tag.setLong("time", Minecraft.getSystemTime());
+					tag.setLong("time", getSystemTime());
 				return false;
 			} else if (worldId == (world.provider.dimensionId) && id != CustomBlocks.blockhome.blockID && (player.capabilities.isCreativeMode)) {
 				 if (!world.isRemote)
 					player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
-				 	tag.setLong("time", Minecraft.getSystemTime());
+				 	tag.setLong("time", getSystemTime());
 				 return true;
 			} else {
 				if (!world.isRemote)
 					player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
-					tag.setLong("time", Minecraft.getSystemTime());
+					tag.setLong("time", getSystemTime());
 				return true;
 			}
 		} else {
@@ -226,4 +230,9 @@ public class ScrollItem extends BaseItem {
 		int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 15);
 		return super.getUnlocalizedName() + "." + i;
 	}
+    public static long getSystemTime()
+    {
+      //  return Sys.getTime() * 1000L / Sys.getTimerResolution();
+        return (new Date()).getTime();
+    }
 }
