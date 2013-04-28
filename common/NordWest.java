@@ -12,6 +12,7 @@ import mods.nordwest.common.Config.ITEM_ID;
 import mods.nordwest.generators.CustomTreeWorldGenerator;
 import mods.nordwest.generators.OreWorldGenerator;
 import mods.nordwest.items.*;
+import mods.nordwest.tileentity.TileEntityAltar;
 import mods.nordwest.utils.Dictionary;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.block.Block;
@@ -39,6 +40,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -92,6 +94,8 @@ public class NordWest {
 		proxy.registerEvent();
 
 		/** Registering GUI handler */
+		GameRegistry.registerTileEntity(TileEntityAltar.class, "tileEntityAltar");
+		
 		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		/** Registering Smelting Recipes **/
 		GameRegistry.addSmelting(CustomBlocks.copperOre.blockID, new ItemStack(CustomItems.copperIngotItem), 0.2f);

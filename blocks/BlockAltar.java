@@ -62,6 +62,7 @@ public class BlockAltar extends BaseBlock {
 			world.destroyBlock(x, y, z, false);
 			}
 		} else {
+			world.setBlockTileEntity(x, y, z, createTileEntity(world, world.getBlockMetadata(x, y, z))); 
 			boolean onBlockActivated;
 		}
 	}
@@ -71,14 +72,14 @@ public class BlockAltar extends BaseBlock {
 		ItemStack itemstack = player.inventory.getCurrentItem();
 		if (itemstack != null){
 			if (itemstack.itemID == Item.flintAndSteel.itemID){
-                /*TileEntity tileEntity = world.getBlockTileEntity(x, y, z);*/
-                if (/*tileEntity == null || */player.isSneaking()) {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if (tileEntity == null || player.isSneaking()) {
                 return false;
                 }
 				EffectsLibrary.smokeCloud(player, x, y, z, 48);
 				EffectsLibrary.playSoundOnEntity(player, "fire.ignite");
 				itemstack.damageItem(3, player);
-				player.openGui(NordWest.instance, 0, world, 0, 0, 0);
+				player.openGui(NordWest.instance, 0, world, x, y, z);
 				return true;
 			}
 		}
@@ -130,13 +131,20 @@ public class BlockAltar extends BaseBlock {
 		}
 	}
 	
-    /*@Override
+    @Override
     public TileEntity createTileEntity(World world, int meta) {
-           return new TileEntityAltar();
+           try
+           {
+               return new TileEntityAltar();
+           }
+           catch (Exception e)
+           {
+               throw new RuntimeException(e);
+           }
     }
     
     @Override
     public boolean hasTileEntity(int metadata) {
         return true;
-    }*/
+    }
 }

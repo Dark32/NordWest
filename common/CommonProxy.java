@@ -1,5 +1,6 @@
 package mods.nordwest.common;
 
+import mods.nordwest.client.gui.GuiAltar;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.tileentity.TileEntity;
@@ -18,22 +19,23 @@ public class CommonProxy {
 	}
 
 	public int addArmor(String armor) {
-		return 0; /** Server doesn't care what number is. */
+		return 0;
+		/** Server doesn't care what number is. */
 	}
-	
-	public Object getClientGui(int ID, EntityPlayer player, World world, int x, int y, int z) 
-	{
+
+	public Object getClientGui(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		return null;
 	}
-	
-	public Container getServerGui(int ID, EntityPlayer player, World world, int x, int y, int z) 
-	{
+
+	public Container getServerGui(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-		
-		switch(ID)
-		{
-			/*case 1:
-				return new ContainerChest(player.inventory, (TileEntityChest)tileEntity);*/
+
+		switch (ID) {
+		//case 0:
+		//	return new GuiAltar(tileEntity, player, world);
+			/*
+			 * case 1: return new ContainerChest(player.inventory, (TileEntityChest)tileEntity);
+			 */
 		}
 		return null;
 	}
@@ -48,8 +50,9 @@ public class CommonProxy {
 	public void registerEvent() {
 		MinecraftForge.EVENT_BUS.register(new GeneralHandler());
 	}
-	public String getStringLocalization(String key){
-		return key;	
+
+	public String getStringLocalization(String key) {
+		return key;
 	}
 
 }

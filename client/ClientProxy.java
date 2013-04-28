@@ -31,7 +31,7 @@ public class ClientProxy extends CommonProxy {
 		switch(ID)
 		{
 			case 0:
-				return new GuiAltar(player, world);
+				return new GuiAltar(tileEntity,player, world);
 		}
 		return null;
 	}
