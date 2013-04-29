@@ -14,6 +14,7 @@ import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import mods.nordwest.client.gui.GuiAltar;
 import mods.nordwest.client.renders.BlockCandleRenderer;
+import mods.nordwest.client.renders.BlockExtractorRenderer;
 import mods.nordwest.common.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
@@ -21,6 +22,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerRenderers() {
 		 RenderingRegistry.registerBlockHandler(new BlockCandleRenderer());
+		 RenderingRegistry.registerBlockHandler(new BlockExtractorRenderer());
 	}
 	
 	@Override

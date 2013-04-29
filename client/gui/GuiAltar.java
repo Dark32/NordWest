@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -134,6 +135,8 @@ public class GuiAltar extends GuiScreen {
 	public boolean doesGuiPauseGame() {
 		return false;
 	}
+
+	
 
 	@Override
 	public void actionPerformed(GuiButton guibutton) {

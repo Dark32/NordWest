@@ -65,7 +65,8 @@ public class CustomBlocks {
 	public static Block ryeCrop;
 	public static Block riceCrop;
 	public static Block blackriceCrop;
-
+	
+	public static Block extractor;
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
 		GameRegistry.registerBlock(expaniteOre, "expaniteOre");
@@ -183,7 +184,8 @@ public class CustomBlocks {
 		GameRegistry.registerBlock(riceCrop, "riceCrop");
 		blackriceCrop = new BaseCrop(Config.BLOCK_ID.blackriceCrop,CustomItems.seedBlackRice.itemID, CustomItems.seedBlackRice.itemID).setHardness(0.1F).setResistance(1F).setUnlocalizedName("cropBlackRice");
 		GameRegistry.registerBlock(blackriceCrop, "blackriceCrop");
-		
+		extractor= new Extractor(Config.BLOCK_ID.extractor).setHardness(0.1F).setResistance(1F).setUnlocalizedName("extractor");
+		GameRegistry.registerBlock(extractor, "extractor");
 		
 	}
 	public static void posItemBlockInit(){
