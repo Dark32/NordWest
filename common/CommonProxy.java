@@ -1,6 +1,9 @@
 package mods.nordwest.common;
 
 import mods.nordwest.client.gui.GuiAltar;
+import mods.nordwest.client.gui.GuiExtractor;
+import mods.nordwest.common.container.ContainerExtractor;
+import mods.nordwest.tileentity.TileEntityExtractor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.tileentity.TileEntity;
@@ -31,8 +34,8 @@ public class CommonProxy {
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
 
 		switch (ID) {
-		//case 0:
-		//	return new GuiAltar(tileEntity, player, world);
+		case 1:
+			return new ContainerExtractor(player.inventory,(TileEntityExtractor)tileEntity);
 			/*
 			 * case 1: return new ContainerChest(player.inventory, (TileEntityChest)tileEntity);
 			 */

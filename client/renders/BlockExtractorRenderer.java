@@ -118,6 +118,8 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 		tessellator.addVertexWithUV(x, y + w2, z, maxX, minZ);
 		tessellator.addVertexWithUV(x + 1, y + w2, z, minX, minZ);
 		tessellator.addVertexWithUV(x + 1, y + w2, z + 1, minX, maxZ);
+		
+		block.setBlockBounds(0, 0.0F, 0, 1.0F, 1.0F, 1.0F);
 		return true;
 	}
 

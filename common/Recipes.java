@@ -179,6 +179,18 @@ public class Recipes {
 	}
 
 	/**
+	 * Метод позваляет добавлять рецепты экстракторы
+	 * @param input входной стак
+	 * @param output выходной стак
+	 * @param chance шанс бонуса
+	 * @param bonus бонусный стак
+	 * @param exp опыт
+	 */
+	private static void addExtracting(ItemStack input, ItemStack output, int chance, ItemStack bonus, Float exp) {
+		ExtractorRecipes.extracting().addExtracting(input.itemID, input.getItemDamage(), output, chance, bonus, exp);
+	}
+
+	/**
 	 * Крайне не безопасный метод получения Вещи, блока, Стака или нескольких видов стаков по за ранее не определённому параметру
 	 * @param mat Число, Блок, стак, Вещь, лист стаков или строка, остальные типы вызовут проблемы
 	 * @return Блок, Вещь, стак, лист стаков
@@ -201,7 +213,7 @@ public class Recipes {
 				return Item.itemsList[(Integer) mat];
 			}
 		} else if (mat instanceof String) {
-			return (ArrayList<ItemStack>)(OreDictionary.getOres((String) mat));
+			return (ArrayList<ItemStack>) (OreDictionary.getOres((String) mat));
 		} else if (mat instanceof ItemStack) {
 			return (ItemStack) mat;
 		} else if (mat instanceof ArrayList<?>) {

@@ -272,4 +272,6 @@
 	<entry key="homing.alert.2">Be careful!</entry>
 	<entry key="homing.alert.rare">Don't try this at home!</entry>
 	
+	<entry key="container.extractor">Extractor</entry>
+	
 	</properties>

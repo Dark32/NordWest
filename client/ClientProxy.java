@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import mods.nordwest.client.gui.GuiAltar;
+import mods.nordwest.client.gui.GuiExtractor;
 import mods.nordwest.client.renders.BlockCandleRenderer;
 import mods.nordwest.client.renders.BlockExtractorRenderer;
 import mods.nordwest.common.CommonProxy;
@@ -34,6 +35,8 @@ public class ClientProxy extends CommonProxy {
 		{
 			case 0:
 				return new GuiAltar(tileEntity,player, world);
+			case 1:
+				return new GuiExtractor(player.inventory,tileEntity,player);
 		}
 		return null;
 	}

@@ -13,6 +13,7 @@ import mods.nordwest.generators.CustomTreeWorldGenerator;
 import mods.nordwest.generators.OreWorldGenerator;
 import mods.nordwest.items.*;
 import mods.nordwest.tileentity.TileEntityAltar;
+import mods.nordwest.tileentity.TileEntityExtractor;
 import mods.nordwest.utils.Dictionary;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.block.Block;
@@ -95,6 +96,7 @@ public class NordWest {
 
 		/** Registering GUI handler */
 		GameRegistry.registerTileEntity(TileEntityAltar.class, "tileEntityAltar");
+		GameRegistry.registerTileEntity(TileEntityExtractor.class, "tileEntityExtractor");
 		
 		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		/** Registering Smelting Recipes **/

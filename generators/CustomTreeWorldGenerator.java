@@ -32,7 +32,7 @@ public class CustomTreeWorldGenerator implements IWorldGenerator {
 		chunkZ = chunkZ << 4;
 		final BiomeGenBase biome = world.getBiomeGenForCoords(chunkX, chunkZ);
 		/** Yellow tree **/
-		if (biome == BiomeGenBase.plains || biome == BiomeGenBase.extremeHills)
+		if (biome == BiomeGenBase.extremeHills)
 			for (int i = 0; i < 1; i++) {
 				final int x = chunkX + rand.nextInt(16) + 8;
 				final int z = chunkZ + rand.nextInt(16) + 8;
