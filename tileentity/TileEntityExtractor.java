@@ -280,12 +280,12 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 			return false;
 		} else {
 			ItemStack itemstack = ExtractorRecipes.extracting().getExtractingResult((this.extractorItemStacks[0]));//FurnaceRecipes.smelting().getSmeltingResult(this.extractorItemStacks[0]);
-			ItemStack bonus 
+			//ItemStack bonus 
 			if (itemstack == null)
 				return false;
 			if (this.extractorItemStacks[2] == null)
 				return true;
-			if (!this.extractorItemStacks[2].isItemEqual(itemstack)||)
+			if (!this.extractorItemStacks[2].isItemEqual(itemstack)/*||*/)
 				return false;
 			int result = extractorItemStacks[2].stackSize + itemstack.stackSize;
 			return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());

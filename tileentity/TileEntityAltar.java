@@ -1,6 +1,7 @@
 package mods.nordwest.tileentity;
 
 import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,9 +17,10 @@ import com.google.common.io.ByteArrayDataInput;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.network.PacketDispatcher;
 
-public class TileEntityAltar extends TileEntity {
+public class TileEntityAltar extends TileEntity implements ITileNetSync {
 	public String name = "name";
 	public String owner = "owner";
+	public int stage;
 
 	@Override
 	public void readFromNBT(NBTTagCompound nbtTags) {
@@ -35,11 +37,6 @@ public class TileEntityAltar extends TileEntity {
 		nbtTags.setString("owner", owner);
 	}
 
-	public void sendUpdate() {
-		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-		worldObj.notifyBlockChange(xCoord, yCoord, zCoord, 2);
-	}
-
 	@Override
 	public Packet getDescriptionPacket() {
 		Packet132TileEntityData packet = (Packet132TileEntityData) super.getDescriptionPacket();
@@ -48,14 +45,45 @@ public class TileEntityAltar extends TileEntity {
 		return new Packet132TileEntityData(xCoord, yCoord, zCoord, 1, tag);
 	}
 
-	
+	@Override
+	public void handlePacketData(DataInputStream inputStream) {
+		try {
+			stage = inputStream.readInt();
+			name = inputStream.readUTF();
+			owner = inputStream.readUTF();
+			//	System.out.println("Okay, now stage is " + stage + ". And the name - " + name + " by " + owner + ".");
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public DataOutputStream getNetworkedData(DataOutputStream outputStream) {
+		try {
+			outputStream.writeInt(0x001);
+			outputStream.writeInt(xCoord);
+			outputStream.writeInt(yCoord);
+			outputStream.writeInt(zCoord);
+			outputStream.writeInt(stage);
+			outputStream.writeUTF(name);
+			outputStream.writeUTF(owner);
+			//return outputStream;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.err.println("[Mekanism] Error while writing tile entity packet.");
+		}
+		return outputStream;
+
+	}
 
 	@Override
 	public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt) {
 		super.onDataPacket(net, pkt);
 		NBTTagCompound tag = pkt.customParam1;
 		readFromNBT(tag);
-		//checkGotPieces();
 	}
 
 }

@@ -11,13 +11,16 @@ import mods.nordwest.common.NordWest;
 import mods.nordwest.utils.EnumFormatting;
 import mods.nordwest.utils.EffectsLibrary;
 import mods.nordwest.tileentity.TileEntityAltar;
+import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet132TileEntityData;
+import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StringTranslate;
 import net.minecraft.world.World;
@@ -136,16 +139,51 @@ public class GuiAltar extends GuiScreen {
 		return false;
 	}
 
-	
-
 	@Override
 	public void actionPerformed(GuiButton guibutton) {
 		if (guibutton.id == 0) {
 			tileEntity.owner = player.getEntityName();
 			tileEntity.name = textfield.getText();
-			//world.notifyBlockChange(tileEntity.xCoord, tileEntity.yCoord, tileEntity.zCoord, 2);
-			tileEntity.sendUpdate();
+			tileEntity.stage = 2;
+			/* Packet Sending */
+
+			ByteArrayOutputStream bos = new ByteArrayOutputStream(64);
+			DataOutputStream outputStream = new DataOutputStream(bos);
+			tileEntity.getNetworkedData(outputStream);
+			/*try {
+				outputStream.writeInt(0x001);
+				outputStream.writeInt(tileEntity.xCoord);
+				outputStream.writeInt(tileEntity.yCoord);
+				outputStream.writeInt(tileEntity.zCoord);
+				outputStream.writeInt(tileEntity.stage);
+				outputStream.writeUTF(tileEntity.name);
+				outputStream.writeUTF(tileEntity.owner);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				System.err.println("[Mekanism] Error while writing tile entity packet.");
+			}*/
+
+			Packet250CustomPayload packet = new Packet250CustomPayload();
+			packet.channel = "NordWest";
+			packet.data = bos.toByteArray();
+			packet.length = bos.size();
+
+			//Side side = FMLCommonHandler.instance().getEffectiveSide();
+			// if (side == Side.SERVER) {
+			// We're on the server side.
+			//         EntityPlayerMP MPplayer = (EntityPlayerMP) player;
+			// } else if (side == Side.CLIENT) {
+			// We're on the client side.
+			EntityClientPlayerMP MPplayer = (EntityClientPlayerMP) player;
+			PacketDispatcher.sendPacketToServer(packet);
+			// } else {
+			// We're on the Bukkit server.
+			//  }
 			mc.displayGuiScreen(null);
+			//Activation button.
+			//}
+
+			/* Packet Sending End */
 		}
 		if (guibutton.id == 1) {
 			mc.displayGuiScreen(null);
