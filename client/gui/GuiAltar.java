@@ -55,7 +55,7 @@ public class GuiAltar extends GuiScreen {
 	@Override
 	public void initGui() {
 		String DefaultText = LanguageRegistry.instance().getStringLocalization("homing.default");
-		DefaultText = tileEntity.name.equals("name") ? DefaultText.replaceAll("%p", player.getEntityName()) : tileEntity.name;
+		DefaultText = DefaultText.replaceAll("%p", player.getEntityName());
 
 		buttonList.clear();
 		/* Buttons with their settings! */

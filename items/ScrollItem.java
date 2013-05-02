@@ -12,6 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.nordwest.common.CustomBlocks;
 import mods.nordwest.common.NordWest;
+import mods.nordwest.tileentity.TileEntityAltar;
 import mods.nordwest.utils.EnumColors;
 import mods.nordwest.utils.EnumFormatting;
 import net.minecraft.block.Block;
@@ -22,6 +23,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -49,7 +51,6 @@ public class ScrollItem extends BaseItem {
 			String doublePoint = ": ";
 			String worldDescription = LanguageRegistry.instance().getStringLocalization("world.desc");
 			String worldName = LanguageRegistry.instance().getStringLocalization("world.undefined");
-			String homeName = LanguageRegistry.instance().getStringLocalization("world.undefined");
 			String color = "\u00a77"; //Default Color
 			if (worldID == 0) {
 				worldName = LanguageRegistry.instance().getStringLocalization("world.overworld");
@@ -67,7 +68,7 @@ public class ScrollItem extends BaseItem {
 			x = par1ItemStack.getTagCompound().getInteger("X");
 			y = par1ItemStack.getTagCompound().getInteger("Y");
 			z = par1ItemStack.getTagCompound().getInteger("Z");
-			par3List.add(EnumColors.WHITE + "\u00a7o" + homeName);
+			par3List.add(EnumColors.WHITE + "\u00a7o" + par1ItemStack.getTagCompound().getString("blockName"));
 			par3List.add(color + worldDescription + doublePoint + worldName);
 			par3List.add(by + doublePoint + par1ItemStack.getTagCompound().getString("Lore"));
 			par3List.add("X" + doublePoint + x);
@@ -87,6 +88,7 @@ public class ScrollItem extends BaseItem {
 			int x = movingobjectposition.blockX;
 			int y = movingobjectposition.blockY;
 			int z = movingobjectposition.blockZ;
+			TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
 			if (!itemstack.hasTagCompound()) {
 				if (itemstack.itemID == this.itemID && (checkOnLinking(world, x, y, z))) {
 					ItemStack item = new ItemStack(this, 1, itemstack.getItemDamage());
@@ -97,6 +99,7 @@ public class ScrollItem extends BaseItem {
 					}
 					tag.setString("Lore", player.getEntityName());
 					tag.setString("worldName", world.provider.getDimensionName());
+					tag.setString("blockName", tileEntity.name);
 					tag.setInteger("X", x);
 					tag.setInteger("Y", y);
 					tag.setInteger("Z", z);
@@ -146,6 +149,8 @@ public class ScrollItem extends BaseItem {
 		boolean delay = true;
 		int id = world.getBlockId(x, y, z);
 		int worldId = itemstack.getTagCompound().getInteger("worldID");
+		String welcomeMessage = LanguageRegistry.instance().getStringLocalization("scroll.welcome");
+		welcomeMessage = welcomeMessage.replaceAll("%p", itemstack.getTagCompound().getString("blockName"));
 		if (getSystemTime() >= itemstack.getTagCompound().getLong("time") + 1250 || (!tag.hasKey("time"))) {
 				delay = true;
 			} else {
@@ -180,8 +185,10 @@ public class ScrollItem extends BaseItem {
 				 return true;
 			} else {
 				if (!world.isRemote)
-					player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
-					tag.setLong("time", getSystemTime());
+				player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
+				if (!world.isRemote)
+				player.sendChatToPlayer(EnumColors.PURPLE + welcomeMessage);
+				tag.setLong("time", getSystemTime());
 				return true;
 			}
 		} else {

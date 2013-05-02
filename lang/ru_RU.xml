@@ -253,8 +253,10 @@
 	<entry key="itemGroup.tabNord">NordWest Essential</entry>
 	
 	<entry key="author.by">Автор</entry>
+	<entry key="menu.friends">Friends</entry>
 	
 	<entry key="scroll.tp">*Poof*</entry>
+	<entry key="scroll.welcome">Добро пожаловать в %p.</entry>
 	<entry key="scroll.error.end">You're not allowed to use this type of scrolls within this world.</entry>
 	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
 	<entry key="scroll.error.notCreative">Your altar was removed, so you can't return to home this way.</entry>

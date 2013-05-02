@@ -72,7 +72,7 @@ public class BlockAltar extends BaseBlock {
 		ItemStack itemstack = player.inventory.getCurrentItem();
 		if (itemstack != null){
 			if (itemstack.itemID == Item.flintAndSteel.itemID){
-                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
                 if (tileEntity == null || player.isSneaking()) {
                 return false;
                 }
