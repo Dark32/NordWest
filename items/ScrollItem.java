@@ -147,10 +147,23 @@ public class ScrollItem extends BaseItem {
 	      itemstack.setTagCompound(tag);
 	     }
 		boolean delay = true;
-		int id = world.getBlockId(x, y, z);
 		int worldId = itemstack.getTagCompound().getInteger("worldID");
+		int id = world.getBlockId(x, y, z);
+		TileEntityAltar tileEntity = null;
+		if (world.getBlockTileEntity(x, y, z) instanceof TileEntityAltar) {
+		tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
+		}
+		String homeName = itemstack.getTagCompound().getString("blockName");
+		if (tileEntity != null) {
+			if (!tileEntity.name.equals("Unknown")) {
+		homeName = tileEntity.name;
+			}
+		}
+		homeName = homeName.replace(".", "");
 		String welcomeMessage = LanguageRegistry.instance().getStringLocalization("scroll.welcome");
-		welcomeMessage = welcomeMessage.replaceAll("%p", itemstack.getTagCompound().getString("blockName"));
+		welcomeMessage = welcomeMessage.replaceAll("%p", homeName);
+		String forcedTeleportationMessage = LanguageRegistry.instance().getStringLocalization("scroll.forced");
+		forcedTeleportationMessage = forcedTeleportationMessage.replaceAll("%p", homeName);
 		if (getSystemTime() >= itemstack.getTagCompound().getLong("time") + 1250 || (!tag.hasKey("time"))) {
 				delay = true;
 			} else {
@@ -164,33 +177,57 @@ public class ScrollItem extends BaseItem {
 					world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
 					tag.setLong("time", getSystemTime());
 				return false;
-			} else if (worldId == (world.provider.dimensionId) && id != CustomBlocks.blockhome.blockID && (!player.capabilities.isCreativeMode)) {
-				if (!world.isRemote)
-					player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notCreative"));
-					badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
-					world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
-					tag.setLong("time", getSystemTime());
-				return false;
-			} else if (worldId == (world.provider.dimensionId) && id == CustomBlocks.blockhome.blockID && worldId == 1) {
+			} else if (worldId == (world.provider.dimensionId) && tileEntity == null) {
+				if (player.capabilities.isCreativeMode) {
+					 if (!world.isRemote) {
+						player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
+						player.sendChatToPlayer(EnumColors.YELLOW + forcedTeleportationMessage);
+						 }
+						tag.setLong("time", getSystemTime());
+						return true;
+				} else {
+					if (!world.isRemote)
+						player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notCreative"));
+						badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
+						world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
+						tag.setLong("time", getSystemTime());
+						return false;
+				}
+			} else if (worldId == (world.provider.dimensionId) && tileEntity != null && worldId == 1) {
 				if (!world.isRemote)
 					player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.end"));
 					badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
 					world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
 					tag.setLong("time", getSystemTime());
 				return false;
-			} else if (worldId == (world.provider.dimensionId) && id != CustomBlocks.blockhome.blockID && (player.capabilities.isCreativeMode)) {
-				 if (!world.isRemote)
-					player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
-				 	tag.setLong("time", getSystemTime());
-				 return true;
-			} else {
-				if (!world.isRemote)
-				player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
-				if (!world.isRemote)
-				player.sendChatToPlayer(EnumColors.PURPLE + welcomeMessage);
-				tag.setLong("time", getSystemTime());
-				return true;
-			}
+			} else if (tileEntity != null) {
+				if (tileEntity.stage == 2) {
+					if (!world.isRemote) {
+						player.sendChatToPlayer(EnumColors.PURPLE + LanguageRegistry.instance().getStringLocalization("scroll.tp"));
+						player.sendChatToPlayer(EnumColors.PURPLE + welcomeMessage);
+					}
+					tag.setLong("time", getSystemTime());
+					return true;
+				} else {
+					if (player.capabilities.isCreativeMode) {
+						 if (!world.isRemote) {
+							player.sendChatToPlayer(EnumColors.YELLOW + LanguageRegistry.instance().getStringLocalization("scroll.error.creative"));
+							player.sendChatToPlayer(EnumColors.YELLOW + forcedTeleportationMessage);
+							 }
+							tag.setLong("time", getSystemTime());
+							return true;
+					} else {
+						if (!world.isRemote)
+							player.sendChatToPlayer(EnumColors.DARK_RED + LanguageRegistry.instance().getStringLocalization("scroll.error.notCreative"));
+							badEffectDraw(world, player.posX, player.posY - 1, player.posZ);
+							world.playSound(player.posX + 0.5D, player.posY + 1.0D, player.posZ + 0.5D, "random.breath", 0.5f, 2.2f, false);
+							tag.setLong("time", getSystemTime());
+							return false;
+						}
+					}
+				} else {
+					return false;
+				}
 		} else {
 				return false;
 			}
@@ -198,7 +235,8 @@ public class ScrollItem extends BaseItem {
 	
 	private boolean checkOnLinking(World world, int x, int y, int z) {
 		int id = world.getBlockId(x, y, z);
-		if (id != CustomBlocks.blockhome.blockID) {
+		TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
+		if (id != CustomBlocks.blockhome.blockID || tileEntity.stage != 2) {
 			return false;
 		} else {
 			/**boolean test = true;
@@ -239,7 +277,6 @@ public class ScrollItem extends BaseItem {
 	}
     public static long getSystemTime()
     {
-      //  return Sys.getTime() * 1000L / Sys.getTimerResolution();
         return (new Date()).getTime();
     }
 }

@@ -18,8 +18,8 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.network.PacketDispatcher;
 
 public class TileEntityAltar extends TileEntity implements ITileNetSync {
-	public String name = "name";
-	public String owner = "owner";
+	public String name = "Unknown";
+	public String owner = "Unknown";
 	public int stage;
 
 	@Override

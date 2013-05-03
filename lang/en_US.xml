@@ -256,6 +256,7 @@
 	
 	<entry key="scroll.tp">*Poof*</entry>
 	<entry key="scroll.welcome">Welcome to %p.</entry>
+	<entry key="scroll.forced">You're moved to %p.</entry>
 	<entry key="scroll.error.end">You're not allowed to use this type of scrolls within this world.</entry>
 	<entry key="scroll.error.creative">Target altar was removed, but you can jump to it... *Poof*</entry>
 	<entry key="scroll.error.notCreative">Your altar was removed, so you can't return to home this way.</entry>

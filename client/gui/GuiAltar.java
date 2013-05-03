@@ -89,6 +89,7 @@ public class GuiAltar extends GuiScreen {
 	@Override
 	public void onGuiClosed() {
 		player.playSound("random.fizz", 0.5F, 1.2F);
+		tileEntity.stage = 0;
 	}
 
 	@Override
@@ -145,48 +146,25 @@ public class GuiAltar extends GuiScreen {
 			tileEntity.owner = player.getEntityName();
 			tileEntity.name = textfield.getText();
 			tileEntity.stage = 2;
+			
 			/* Packet Sending */
 
 			ByteArrayOutputStream bos = new ByteArrayOutputStream(64);
 			DataOutputStream outputStream = new DataOutputStream(bos);
 			tileEntity.getNetworkedData(outputStream);
-			/*try {
-				outputStream.writeInt(0x001);
-				outputStream.writeInt(tileEntity.xCoord);
-				outputStream.writeInt(tileEntity.yCoord);
-				outputStream.writeInt(tileEntity.zCoord);
-				outputStream.writeInt(tileEntity.stage);
-				outputStream.writeUTF(tileEntity.name);
-				outputStream.writeUTF(tileEntity.owner);
-			} catch (Exception ex) {
-				ex.printStackTrace();
-				System.err.println("[Mekanism] Error while writing tile entity packet.");
-			}*/
 
 			Packet250CustomPayload packet = new Packet250CustomPayload();
 			packet.channel = "NordWest";
 			packet.data = bos.toByteArray();
 			packet.length = bos.size();
 
-			//Side side = FMLCommonHandler.instance().getEffectiveSide();
-			// if (side == Side.SERVER) {
-			// We're on the server side.
-			//         EntityPlayerMP MPplayer = (EntityPlayerMP) player;
-			// } else if (side == Side.CLIENT) {
-			// We're on the client side.
 			EntityClientPlayerMP MPplayer = (EntityClientPlayerMP) player;
 			PacketDispatcher.sendPacketToServer(packet);
-			// } else {
-			// We're on the Bukkit server.
-			//  }
 			mc.displayGuiScreen(null);
-			//Activation button.
-			//}
-
-			/* Packet Sending End */
 		}
 		if (guibutton.id == 1) {
 			mc.displayGuiScreen(null);
+			tileEntity.stage = 0;
 		}
 	}
 

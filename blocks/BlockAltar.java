@@ -27,7 +27,7 @@ public class BlockAltar extends BaseBlock {
 
 	public BlockAltar(int par1) {
 		super(par1, Material.rock);
-        setHardness(2500.0F);
+        setHardness(50.0F);
         setResistance(20.0F);
         setCreativeTab(NordWest.tabNord);
 	}
@@ -48,7 +48,13 @@ public class BlockAltar extends BaseBlock {
 	   		if ((tile != null) && ((tile instanceof TileOwned)) && (.equals(((TileOwned)tile).owner))) return 0.02F;
 	   
 	   			return 1.0E-004F;
-	   }*/
+	   }
+	
+	@Override
+	public void onBlockHarvested(World world, int x, int y, int z, int metadata, EntityPlayer par6EntityPlayer) {
+		TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
+		
+	}*/
 	
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
@@ -63,26 +69,24 @@ public class BlockAltar extends BaseBlock {
 			}
 		} else {
 			world.setBlockTileEntity(x, y, z, createTileEntity(world, world.getBlockMetadata(x, y, z))); 
-			boolean onBlockActivated;
 		}
 	}
 	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int a, float par1, float par2, float par3){
 		ItemStack itemstack = player.inventory.getCurrentItem();
-		if (itemstack != null){
-			if (itemstack.itemID == Item.flintAndSteel.itemID){
-                TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
-                if (tileEntity == null || player.isSneaking()) {
+		TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
+		if (itemstack != null && itemstack.itemID == Item.flintAndSteel.itemID){
+                if (tileEntity == null || player.isSneaking() || tileEntity.stage != 0) {
                 return false;
                 }
 				EffectsLibrary.smokeCloud(player, x, y, z, 48);
 				EffectsLibrary.playSoundOnEntity(player, "fire.ignite");
 				itemstack.damageItem(3, player);
 				player.openGui(NordWest.instance, 0, world, x, y, z);
+				tileEntity.stage = 1;
 				return true;
 			}
-		}
 		return false;
 	}
 
