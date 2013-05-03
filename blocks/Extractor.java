@@ -68,26 +68,20 @@ public class Extractor extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World world) {
-		// TODO Auto-generated method stub
 		return new TileEntityExtractor();
 	}
 	 public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
 	    {
-	        if (world.isRemote)
-	        {
-	            return true;
-	        }
-	        else
+	        if (!world.isRemote)
 	        {
 	        	TileEntityExtractor tileentity = (TileEntityExtractor)world.getBlockTileEntity(x, y, z);
 
 	            if (tileentity != null)
 	            {
-	                //par5EntityPlayer.displayGUIFurnace(tileentity);
 	            	par5EntityPlayer.openGui(NordWest.instance, 1, world, x, y, z);
 	            }
-
 	            return true;
 	        }
+	        return false;
 	    }
 }

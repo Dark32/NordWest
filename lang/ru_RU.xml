@@ -210,6 +210,7 @@
 	<entry key="tile.slimeBlock.name">Блок слизи</entry>
 	<entry key="tile.blockhome.name">Блок дома</entry>
 	<entry key="tile.ryeCrop.name">Рожь</entry>
+	<entry key="tile.extractor.name">Экстрактор</entry>
 	
 	<entry key="item.copperHelmet.name">Медный шлем</entry>
 	<entry key="item.copperChestplate.name">Медный нагрудник</entry>

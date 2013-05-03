@@ -47,7 +47,6 @@ public class SlimeBlock extends BaseBlock {
 		if (id != this.blockID && id != 0)
 			box = AxisAlignedBB.getBoundingBox((double) x, (double) y, (double) z, (double) (x + 1), (double) ((float) (y + 1) - dy), (double) (z + 1));
 		return box;
-		//return null;
 	}
 
 	@Override
@@ -57,8 +56,6 @@ public class SlimeBlock extends BaseBlock {
 	}
 
 	public void onEntityJump(World world, int i, int j, int k, Entity entity) {
-		//if (par1World.isRemote)
-		//	return;
 		float m = 1.25f;
 		if (world.getBlockId(i + 1, j, k) == this.blockID && world.getBlockId(i - 1, j, k) == this.blockID && world.getBlockId(i, j, k + 1) == this.blockID && world.getBlockId(i, j, k - 1) == this.blockID) {
 			m = 1.55f;
@@ -89,11 +86,9 @@ public class SlimeBlock extends BaseBlock {
 					method.setAccessible(true);
 					method.invoke(slime, new Object[] { 2 });
 				} catch (Exception e) {
-					System.out.println("Плёхая осибка насяльника, ми не знаем сто делять");
+					System.out.println("Если вы увидели это сообщение в консоли, скажите, что вы сделали");
 					e.printStackTrace();
-				} 
-
-				//slime.setSlimeSize(2);
+				}
 				world.spawnEntityInWorld(slime);
 				slime.spawnExplosionParticle();
 				world.setBlock(i, j, k, 0);
@@ -115,9 +110,6 @@ public class SlimeBlock extends BaseBlock {
 		}
 	}
 
-	/**
-	 * If there is space to fall below will start this block falling
-	 */
 	private void tryToFall(World par1World, int par2, int par3, int par4) {
 		if (canFallBelow(par1World, par2, par3 - 1, par4) && par3 >= 0) {
 			byte b0 = 32;
@@ -143,26 +135,16 @@ public class SlimeBlock extends BaseBlock {
 		}
 	}
 
-	/**
-	 * Called when the falling block entity for this block is created
-	 */
 	protected void onStartFalling(EntityFallingSand par1EntityFallingSand) {
 	}
 
-	/**
-	 * How many world ticks before ticking
-	 */
 	@Override
 	public int tickRate(World par1World) {
 		return 2;
 	}
 
-	/**
-	 * Checks to see if the sand can fall into the block below it
-	 */
 	public static boolean canFallBelow(World par0World, int par1, int par2, int par3) {
 		int l = par0World.getBlockId(par1, par2, par3);
-
 		if (l == 0) {
 			return true;
 		} else if (l == Block.fire.blockID) {
@@ -173,11 +155,6 @@ public class SlimeBlock extends BaseBlock {
 		}
 	}
 
-	/**
-	 * Called when the falling block entity for this block hits the ground and turns back into a block
-	 */
 	public void onFinishFalling(World par1World, int par2, int par3, int par4, int par5) {
-
 	}
-
 }

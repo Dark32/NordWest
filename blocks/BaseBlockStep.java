@@ -20,7 +20,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BaseBlockStep extends BlockHalfSlab {
-	//protected static Icon iconSide, iconTop;
 	private Icon[] iconSide = new Icon[8];
 	private Icon[] iconTop = new Icon[8];
 	private String[] siconTop = new String[8];
@@ -84,7 +83,6 @@ public class BaseBlockStep extends BlockHalfSlab {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int par1, int par2) {
-		//return iconSide[par2 & 7];
 		if (par1 == 1 || par1 == 0) {
 			if (siconTop[par2 & 7] != null && !siconTop[par2 & 7].equals("")) {
 				return iconTop[par2 & 7];

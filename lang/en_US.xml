@@ -210,6 +210,7 @@
 	<entry key="tile.candle.15.name">Black Candel</entry>
 	<entry key="tile.cropRice.name">Rice Crop</entry>
 	<entry key="tile.cropBlackRice.name">Black Rice Crop</entry>
+    <entry key="tile.extractor.name">Extractor</entry>
 
 	<entry key="item.copperHelmet.name">Copper Helmet</entry>
 	<entry key="item.copperChestplate.name">Copper Chestplate</entry>

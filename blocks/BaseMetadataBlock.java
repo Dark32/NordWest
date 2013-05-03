@@ -10,8 +10,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
 public class BaseMetadataBlock extends BaseBlock {
 	private int subName;
@@ -95,5 +98,9 @@ public class BaseMetadataBlock extends BaseBlock {
 			return this.iconArray[par2];
 		}
 	}
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
+    {
+       return new ItemStack(this.blockID, 1,world.getBlockMetadata(x, y, z));
+    }
 	
 }

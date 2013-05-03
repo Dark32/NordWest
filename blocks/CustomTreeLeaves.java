@@ -25,8 +25,6 @@ import net.minecraftforge.common.IShearable;
 
 public class CustomTreeLeaves extends BlockLeaves implements IShearable {
 	public static final String[] LEAF_TYPES = new String[] { "0", "1", "2", "3" };
-	// public static final String[][] field_94396_b = new String[][] {{"0", "1",
-	// "2", "3"}, {"0", "1", "2", "3"}};
 	@SideOnly(Side.CLIENT)
 	private int field_94394_cP;
 	private Icon[] iconArray = new Icon[4];
@@ -87,8 +85,7 @@ public class CustomTreeLeaves extends BlockLeaves implements IShearable {
 				}
 			}
 
-			if ((par5 & 3) == 0 && par1World.rand.nextInt(j1) == 0) {// Заменить
-																		// вещь
+			if ((par5 & 3) == 0 && par1World.rand.nextInt(j1) == 0) {// Заменить вещь
 				this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.appleRed, 1, 0));
 			}
 		}
