@@ -97,7 +97,7 @@ public class ContainerExtractor extends Container {
 	 */
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int ind) {
-		System.out.println(ind);
+		//System.out.println(ind);
 		ItemStack itemstack = null;
 		Slot slot = (Slot) this.inventorySlots.get(ind);
 

@@ -75,6 +75,7 @@ public class SlimeBlock extends BaseBlock {
 			if (!world.isRemote) {
 				EntitySlime slime = new EntitySlime(world);
 				slime.setLocationAndAngles(i + 0.5D, j + 0.5D, k + 0.5D, NordWest.rand.nextFloat() * 360.0F, 0.0F);
+				//slime.setSlimeSize(2);
 				world.spawnEntityInWorld(slime);
 				slime.spawnExplosionParticle();
 				world.setBlock(i, j, k, 0);
