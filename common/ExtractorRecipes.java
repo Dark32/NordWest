@@ -15,7 +15,8 @@ public class ExtractorRecipes {
 
 	/** The list of extractor results. */
 	private HashMap<List<Integer>, ItemStack> metaExtractingList = new HashMap<List<Integer>, ItemStack>();
-	private HashMap<List<Integer>, List<Object>> metaExtractingBonusList = new HashMap<List<Integer>, List<Object>>();
+	private HashMap<List<Integer>, ItemStack> metaExtractingBonusList = new HashMap<List<Integer>, ItemStack>();
+	private HashMap<List<Integer>, Integer> metaExtractingChanceList = new HashMap<List<Integer>, Integer>();
 	private HashMap<List<Integer>, Float> metaExperience = new HashMap<List<Integer>, Float>();
 
 	/**
@@ -27,6 +28,7 @@ public class ExtractorRecipes {
 
 	private ExtractorRecipes() {
 		this.addExtracting(Block.leaves.blockID, 0, new ItemStack(Item.ingotIron), 50, new ItemStack(Item.ingotIron), 0.7F);
+		this.addExtracting(CustomItems.expaniteItem.itemID, 0, new ItemStack(Item.expBottle), 1, new ItemStack(CustomItems.expaniteItem), 0.0F);
 
 	}
 
@@ -41,7 +43,8 @@ public class ExtractorRecipes {
 	public void addExtracting(int itemID, int metadata, ItemStack itemstack, int chance, ItemStack bonus, float experience) {
 		metaExtractingList.put(Arrays.asList(itemID, metadata), itemstack);
 		metaExperience.put(Arrays.asList(itemID, metadata), experience);
-		metaExtractingBonusList.put(Arrays.asList(itemID, metadata), Arrays.asList(chance, bonus));
+		metaExtractingBonusList.put(Arrays.asList(itemID, metadata), bonus);
+		metaExtractingChanceList.put(Arrays.asList(itemID, metadata), chance);
 	}
 
 	/**
@@ -64,21 +67,22 @@ public class ExtractorRecipes {
 		if (item == null) {
 			return null;
 		}
-		ItemStack ret = (ItemStack)(metaExtractingBonusList.get(Arrays.asList(item.itemID, item.getItemDamage())).get(1));
+		ItemStack ret =metaExtractingBonusList.get(Arrays.asList(item.itemID, item.getItemDamage()));
 		if (ret != null) {
 			return ret;
 		}
 		return null;
 	}
+
 	public int getExtractingBonusChance(ItemStack item) {
 		if (item == null) {
 			return 0;
 		}
-		int ret =(Integer)(metaExtractingBonusList.get(Arrays.asList(item.itemID, item.getItemDamage())).get(0));
-			return ret;
-		
-		
+		int ret = metaExtractingChanceList.get(Arrays.asList(item.itemID, item.getItemDamage()));
+		return ret;
+
 	}
+
 	/**
 	 * Grabs the amount of base experience for this item to give when pulled from the furnace slot.
 	 */
@@ -97,7 +101,10 @@ public class ExtractorRecipes {
 		return metaExtractingList;
 	}
 
-	public HashMap<List<Integer>, List<Object>> getExtractingBonusList() {
+	public HashMap<List<Integer>, ItemStack> getExtractingBonusList() {
 		return this.metaExtractingBonusList;
+	}
+	public HashMap<List<Integer>, Integer> getExtractingChanceList() {
+		return this.metaExtractingChanceList;
 	}
 }

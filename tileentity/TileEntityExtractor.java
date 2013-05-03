@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mods.nordwest.common.ExtractorRecipes;
+import mods.nordwest.common.NordWest;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
@@ -279,13 +280,12 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 		if (this.extractorItemStacks[0] == null) {
 			return false;
 		} else {
-			ItemStack itemstack = ExtractorRecipes.extracting().getExtractingResult((this.extractorItemStacks[0]));//FurnaceRecipes.smelting().getSmeltingResult(this.extractorItemStacks[0]);
-			//ItemStack bonus 
+			ItemStack itemstack = ExtractorRecipes.extracting().getExtractingResult(this.extractorItemStacks[0]);//FurnaceRecipes.smelting().getSmeltingResult(this.extractorItemStacks[0]);
 			if (itemstack == null)
 				return false;
 			if (this.extractorItemStacks[2] == null)
 				return true;
-			if (!this.extractorItemStacks[2].isItemEqual(itemstack)/*||*/)
+			if (!this.extractorItemStacks[2].isItemEqual(itemstack))
 				return false;
 			int result = extractorItemStacks[2].stackSize + itemstack.stackSize;
 			return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());
@@ -298,17 +298,34 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 	public void extractItem() {
 		if (this.canExtractor()) {
 			ItemStack itemstack = ExtractorRecipes.extracting().getExtractingResult((this.extractorItemStacks[0]));//FurnaceRecipes.smelting().getSmeltingResult(this.extractorItemStacks[0]);
-
-			if (this.extractorItemStacks[2] == null) {
-				this.extractorItemStacks[2] = itemstack.copy();
-			} else if (this.extractorItemStacks[2].isItemEqual(itemstack)) {
-				extractorItemStacks[2].stackSize += itemstack.stackSize;
+			ItemStack bonus = ExtractorRecipes.extracting().getExtractingBonusResult(this.extractorItemStacks[0]);
+			int chance = ExtractorRecipes.extracting().getExtractingBonusChance(this.extractorItemStacks[0]);
+			boolean botle = false;
+			if (this.extractorItemStacks[3] != null && this.extractorItemStacks[3].getItem().itemID == Item.glassBottle.itemID && this.extractorItemStacks[3].stackSize > 0) {
+				botle = true;
 			}
-
+			if (botle) {
+				if (this.extractorItemStacks[2] == null) {
+					this.extractorItemStacks[2] = itemstack.copy();
+				} else if (this.extractorItemStacks[2].isItemEqual(itemstack)) {
+					extractorItemStacks[2].stackSize += itemstack.stackSize;
+				}
+				--this.extractorItemStacks[3].stackSize;
+			}
+			
 			--this.extractorItemStacks[0].stackSize;
-
+			if(chance>NordWest.rand.nextInt(100)){
+				if (this.extractorItemStacks[4] == null) {
+					this.extractorItemStacks[4] = bonus.copy();
+				} else if (this.extractorItemStacks[2].isItemEqual(bonus)) {
+					extractorItemStacks[4].stackSize += bonus.stackSize;
+				}
+			}
 			if (this.extractorItemStacks[0].stackSize <= 0) {
 				this.extractorItemStacks[0] = null;
+			}
+			if (botle && this.extractorItemStacks[3].stackSize <= 0) {
+				this.extractorItemStacks[3] = null;
 			}
 		}
 	}
@@ -369,9 +386,11 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 	public boolean isUseableByPlayer(EntityPlayer par1EntityPlayer) {
 		return this.worldObj.getBlockTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : par1EntityPlayer.getDistanceSq((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D) <= 64.0D;
 	}
+
 	@Override
 	public void openChest() {
 	}
+
 	@Override
 	public void closeChest() {
 	}
@@ -381,17 +400,17 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 	 */
 	@Override
 	public boolean isStackValidForSlot(int par1, ItemStack par2ItemStack) {
-		if (par1 == 2){
+		if (par1 == 2) {
 			return false;
-		}else if (par1 == 1){
+		} else if (par1 == 1) {
 			return isItemFuel(par2ItemStack);
-		}else if (par1 == 3){
+		} else if (par1 == 3) {
 			return par2ItemStack.getItem().itemID == Item.glassBottle.itemID;
-		}else{
+		} else {
 			return true;
 		}
 		//return par1 == 2 ? false : (par1 == 1 ? isItemFuel(par2ItemStack) : true);
-	//	return tileEntityInvalid;
+		//	return tileEntityInvalid;
 	}
 
 	/**
