@@ -1,6 +1,10 @@
 package mods.nordwest.blocks;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Random;
+
+import cpw.mods.fml.relauncher.ReflectionHelper;
 
 import mods.nordwest.common.CustomBlocks;
 import mods.nordwest.common.NordWest;
@@ -45,22 +49,25 @@ public class SlimeBlock extends BaseBlock {
 		return box;
 		//return null;
 	}
+
 	@Override
 	public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity) {
 		this.onEntityJump(world, i, j, k, entity);
 
 	}
-	
+
 	public void onEntityJump(World world, int i, int j, int k, Entity entity) {
 		//if (par1World.isRemote)
 		//	return;
 		float m = 1.25f;
-		if(world.getBlockId(i+1, j, k) == this.blockID && world.getBlockId(i-1, j, k) == this.blockID && world.getBlockId(i, j, k+1) == this.blockID && world.getBlockId(i, j, k-1) == this.blockID){
+		if (world.getBlockId(i + 1, j, k) == this.blockID && world.getBlockId(i - 1, j, k) == this.blockID && world.getBlockId(i, j, k + 1) == this.blockID && world.getBlockId(i, j, k - 1) == this.blockID) {
 			m = 1.55f;
 		}
 		entity.fallDistance = 0.0F;
 		if (entity.motionY < -0.25) {
-			entity.setVelocity(entity.motionX * m, entity.motionY * -m, entity.motionZ * m);
+			entity.motionX *= m;
+			entity.motionY *= -m;
+			entity.motionZ *= m;
 			entity.playSound("mob.slime.big", 1f, 1f);
 		} else {
 			entity.motionX *= 0.5D;
@@ -69,12 +76,23 @@ public class SlimeBlock extends BaseBlock {
 		}
 
 	}
+
 	@Override
 	public void onNeighborBlockChange(World world, int i, int j, int k, int l) {
 		if (world.isBlockIndirectlyGettingPowered(i, j, k)) {
 			if (!world.isRemote) {
 				EntitySlime slime = new EntitySlime(world);
 				slime.setLocationAndAngles(i + 0.5D, j + 0.5D, k + 0.5D, NordWest.rand.nextFloat() * 360.0F, 0.0F);
+				Class _class = slime.getClass();
+				try {
+					Method method = _class.getDeclaredMethod("setSlimeSize", new Class[] { int.class });
+					method.setAccessible(true);
+					method.invoke(slime, new Object[] { 2 });
+				} catch (Exception e) {
+					System.out.println("Плёхая осибка насяльника, ми не знаем сто делять");
+					e.printStackTrace();
+				} 
+
 				//slime.setSlimeSize(2);
 				world.spawnEntityInWorld(slime);
 				slime.spawnExplosionParticle();

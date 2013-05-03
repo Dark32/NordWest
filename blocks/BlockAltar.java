@@ -27,9 +27,9 @@ public class BlockAltar extends BaseBlock {
 
 	public BlockAltar(int par1) {
 		super(par1, Material.rock);
-        setHardness(50.0F);
-        setResistance(20.0F);
-        setCreativeTab(NordWest.tabNord);
+		setHardness(50.0F);
+		setResistance(20.0F);
+		setCreativeTab(NordWest.tabNord);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -41,56 +41,48 @@ public class BlockAltar extends BaseBlock {
 		this.iconArray[1] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".top");
 		this.iconArray[2] = par1IconRegister.registerIcon("nordwest:" + this.getUnlocalizedName2() + ".buttom");
 	}
-	
-	   /*public float hardness(EntityPlayer player, Block block, World world, int x, int y, int z)
-	   {
-		   	any tile = block(x, y, z);
-	   		if ((tile != null) && ((tile instanceof TileOwned)) && (.equals(((TileOwned)tile).owner))) return 0.02F;
-	   
-	   			return 1.0E-004F;
-	   }
-	
-	@Override
-	public void onBlockHarvested(World world, int x, int y, int z, int metadata, EntityPlayer par6EntityPlayer) {
-		TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
-		
-	}*/
-	
+
+	/*
+	 * public float hardness(EntityPlayer player, Block block, World world, int x, int y, int z) { any tile = block(x, y, z); if ((tile != null) && ((tile instanceof TileOwned)) && (.equals(((TileOwned)tile).owner))) return 0.02F; return 1.0E-004F; }
+	 * @Override public void onBlockHarvested(World world, int x, int y, int z, int metadata, EntityPlayer par6EntityPlayer) { TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z); }
+	 */
+
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
 		Random random = new Random();
 		if (world.provider.dimensionId == 1) {
 			int dropChance = random.nextInt(10);
-			world.createExplosion((Entity)null, x, y, z, 2.0F, false);
+			world.createExplosion((Entity) null, x, y, z, 2.0F, false);
 			if (dropChance <= 7) {
-			world.destroyBlock(x, y, z, true);
+				world.destroyBlock(x, y, z, true);
 			} else {
-			world.destroyBlock(x, y, z, false);
+				world.destroyBlock(x, y, z, false);
 			}
 		} else {
-			world.setBlockTileEntity(x, y, z, createTileEntity(world, world.getBlockMetadata(x, y, z))); 
+			world.setBlockTileEntity(x, y, z, createTileEntity(world, world.getBlockMetadata(x, y, z)));
 		}
 	}
-	
+
 	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int a, float par1, float par2, float par3){
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int a, float par1, float par2, float par3) {
 		ItemStack itemstack = player.inventory.getCurrentItem();
 		TileEntityAltar tileEntity = (TileEntityAltar) world.getBlockTileEntity(x, y, z);
-		if (itemstack != null && itemstack.itemID == Item.flintAndSteel.itemID){
-                if (tileEntity == null || player.isSneaking() || tileEntity.stage != 0) {
-                return false;
-                }
-				EffectsLibrary.smokeCloud(player, x, y, z, 48);
-				EffectsLibrary.playSoundOnEntity(player, "fire.ignite");
-				itemstack.damageItem(3, player);
-				player.openGui(NordWest.instance, 0, world, x, y, z);
-				tileEntity.stage = 1;
-				return true;
+		if (itemstack != null && itemstack.itemID == Item.flintAndSteel.itemID) {
+			String owner = tileEntity.owner;
+
+			if (tileEntity == null || player.isSneaking() || !tileEntity.owner.equals("Unknown")) {
+				return false;
 			}
+			EffectsLibrary.smokeCloud(player, x, y, z, 48);
+			EffectsLibrary.playSoundOnEntity(player, "fire.ignite");
+			itemstack.damageItem(3, player);
+			player.openGui(NordWest.instance, 0, world, x, y, z);
+			tileEntity.stage = 1;
+			return true;
+		}
 		return false;
 	}
 
-	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public Icon getIcon(int par1, int par2) {
@@ -100,7 +92,7 @@ public class BlockAltar extends BaseBlock {
 			return this.iconArray[1];
 		return this.iconArray[0];
 	}
-	
+
 	@Override
 	public void randomDisplayTick(World par1World, int x, int y, int z, Random random) {
 		super.randomDisplayTick(par1World, x, y, z, random);
@@ -109,8 +101,7 @@ public class BlockAltar extends BaseBlock {
 				for (int j = y; j < y + 4; j++) {
 					for (int k = z - 2; k < z + 3; k++) {
 						if (random.nextInt(16) == 0) {
-							par1World.spawnParticle("portal", i + random.nextDouble(), j + random.nextDouble(), k
-									+ random.nextDouble(), 0, 0, 0);
+							par1World.spawnParticle("portal", i + random.nextDouble(), j + random.nextDouble(), k + random.nextDouble(), 0, 0, 0);
 						}
 					}
 				}
@@ -134,21 +125,18 @@ public class BlockAltar extends BaseBlock {
 			return test;
 		}
 	}
-	
-    @Override
-    public TileEntity createTileEntity(World world, int meta) {
-           try
-           {
-               return new TileEntityAltar();
-           }
-           catch (Exception e)
-           {
-               throw new RuntimeException(e);
-           }
-    }
-    
-    @Override
-    public boolean hasTileEntity(int metadata) {
-        return true;
-    }
+
+	@Override
+	public TileEntity createTileEntity(World world, int meta) {
+		try {
+			return new TileEntityAltar();
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	@Override
+	public boolean hasTileEntity(int metadata) {
+		return true;
+	}
 }
