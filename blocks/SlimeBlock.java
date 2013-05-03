@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityFallingSand;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class SlimeBlock extends BaseBlock {
@@ -44,14 +45,22 @@ public class SlimeBlock extends BaseBlock {
 		return box;
 		//return null;
 	}
-
 	@Override
-	public void onEntityCollidedWithBlock(World par1World, int i, int j, int k, Entity entity) {
-		if (par1World.isRemote)
-			return;
-		if (entity.motionY < -0.3) {
-			entity.setVelocity(entity.motionX * 1.2D, entity.motionY * -1.2D, entity.motionZ * 1.2D);
-			entity.fallDistance = 0.0F;
+	public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity) {
+		this.onEntityJump(world, i, j, k, entity);
+
+	}
+	
+	public void onEntityJump(World world, int i, int j, int k, Entity entity) {
+		//if (par1World.isRemote)
+		//	return;
+		float m = 1.25f;
+		if(world.getBlockId(i+1, j, k) == this.blockID && world.getBlockId(i-1, j, k) == this.blockID && world.getBlockId(i, j, k+1) == this.blockID && world.getBlockId(i, j, k-1) == this.blockID){
+			m = 1.55f;
+		}
+		entity.fallDistance = 0.0F;
+		if (entity.motionY < -0.25) {
+			entity.setVelocity(entity.motionX * m, entity.motionY * -m, entity.motionZ * m);
 			entity.playSound("mob.slime.big", 1f, 1f);
 		} else {
 			entity.motionX *= 0.5D;
@@ -60,7 +69,6 @@ public class SlimeBlock extends BaseBlock {
 		}
 
 	}
-
 	@Override
 	public void onNeighborBlockChange(World world, int i, int j, int k, int l) {
 		if (world.isBlockIndirectlyGettingPowered(i, j, k)) {

@@ -58,7 +58,7 @@ public class BlockCandleRenderer extends BlockRenderer implements ISimpleBlockRe
 
 	
 		
-
+		block.setBlockBounds(W6, 0.0F, W6, W10, 0.5F, W10);
 		renderer.setRenderBounds(0.375F, 0.0F, 0.375F, 0.625F, 0.5F, 0.625F);
 		return true;
 	}
