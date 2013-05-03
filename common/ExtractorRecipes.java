@@ -27,7 +27,7 @@ public class ExtractorRecipes {
 	}
 
 	private ExtractorRecipes() {
-		this.addExtracting(Block.leaves.blockID, 0, new ItemStack(Item.ingotIron), 50, new ItemStack(Item.ingotIron), 0.7F);
+		//this.addExtracting(Block.leaves.blockID, 0, new ItemStack(Item.ingotIron), 50, new ItemStack(Item.ingotIron), 0.7F);
 		this.addExtracting(CustomItems.expaniteItem.itemID, 0, new ItemStack(Item.expBottle), 1, new ItemStack(CustomItems.expaniteItem), 0.0F);
 
 	}
