@@ -43,23 +43,36 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 			renderer.setRenderBoundsFromBlock(_block);
 			drawFaces(renderer, Block.furnaceIdle, true);
 
+			_block.setBlockBounds(0.0f, w5 - 0.0001f, 0.0f, 1.0F, w6 + 0.0001f, 1.0F);
+			renderer.setRenderBoundsFromBlock(_block);
+			drawFaces(renderer, Block.glass, true);
+
+			_block.setBlockBounds(w1, w1, w1, 1.0F - w1, 0.99F, 1.0F - w1);
+			renderer.setRenderBoundsFromBlock(_block);
+			drawFaces(renderer, Block.blockIron, true);
+
+			_block.setBlockBounds(0.0f, w6, 0.0f, 1.0F, 1.0F, 1.0F);
+			renderer.setRenderBoundsFromBlock(_block);
+			drawFaces(renderer, Block.stone, true);
+
 		}
 	}
 
 	@Override
-	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block _block, int modelId, RenderBlocks renderer) {
+	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
 		int meta = world.getBlockMetadata(x, y, z);
+		Tessellator tessellator = Tessellator.instance;
 		if (meta == 0) {
-			renderExtractor(x, y, z, _block, renderer);
+			renderExtractor(x, y, z, block, renderer, tessellator);
 		} else if (meta == 1) {
-			renderDistiller(x, y, z, _block, renderer);
+			renderDistiller(x, y, z, block, renderer, tessellator);
 		}
-		_block.setBlockBounds(0, 0.0F, 0, 1.0F, 1.0F, 1.0F);
+		block.setBlockBounds(0, 0.0F, 0, 1.0F, 1.0F, 1.0F);
 		return true;
 	}
 
-	private void renderDistiller(int x, int y, int z, Block _block, RenderBlocks renderer) {
-		Tessellator tessellator = Tessellator.instance;
+	private void renderDistiller(int x, int y, int z, Block _block, RenderBlocks renderer, Tessellator tessellator) {
+
 		Icon iconTop = renderer.getBlockIconFromSide(Block.furnaceIdle, 0);
 		Icon iconSide = renderer.getBlockIconFromSideAndMetadata(Block.furnaceIdle, 2, 2);
 		Icon iconStill = renderer.getBlockIconFromSideAndMetadata(Block.waterMoving, 0, 0);
@@ -113,57 +126,32 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 		tessellator.addVertexWithUV(x + 1, y, z, sideMinX, sideMaxZ);
 
 		//top glass
-		_block.setBlockBounds(0.0f, w5-0.0001f, 0.0f, 1.0F, w6+0.0001f, 1.0F);
+		_block.setBlockBounds(0.0f, w5 - 0.0001f, 0.0f, 1.0F, w6 + 0.0001f, 1.0F);
 		renderer.setRenderBoundsFromBlock(_block);
 		renderer.renderStandardBlock(Block.glass, x, y, z);
-		
-		_block.setBlockBounds(w1, w1, w1, 1.0F-w1, 0.99F, 1.0F-w1);
+
+		_block.setBlockBounds(w1, w1, w1, 1.0F - w1, 0.99F, 1.0F - w1);
 		renderer.setRenderBoundsFromBlock(_block);
 		renderer.renderStandardBlock(Block.blockIron, x, y, z);
-		
+
 		_block.setBlockBounds(0.0f, w6, 0.0f, 1.0F, 1.0F, 1.0F);
 		renderer.setRenderBoundsFromBlock(_block);
 		renderer.renderStandardBlock(Block.stone, x, y, z);
-		
-		//top cooler
-		float shift = 0.01f;
-		// side 1
-
-	/*	tessellator.addVertexWithUV(x + shift, y + w5, z + 1, stillMaxX, stillMaxZ);
-		tessellator.addVertexWithUV(x + shift, y + w6, z + 1, stillMaxX, stillMinZ);
-		tessellator.addVertexWithUV(x + shift, y + w6, z, stillMinX, stillMinZ);
-		tessellator.addVertexWithUV(x + shift, y + w5, z, stillMinX, stillMaxZ);
-		//side 2
-		tessellator.addVertexWithUV(x + 1, y, z + 1, stillMaxX, stillMaxZ);
-		tessellator.addVertexWithUV(x + 1, y + w5, z + 1, stillMaxX, stillMinZ);
-		tessellator.addVertexWithUV(x, y + w5, z + 1, stillMinX, stillMinZ);
-		tessellator.addVertexWithUV(x, y, z + 1, stillMinX, stillMaxZ);
-		// side 3
-		tessellator.addVertexWithUV(x + 1, y, z, stillMaxX, stillMaxZ);
-		tessellator.addVertexWithUV(x + 1, y + w5, z, stillMaxX, stillMinZ);
-		tessellator.addVertexWithUV(x + 1, y + w5, z + 1, stillMinX, stillMinZ);
-		tessellator.addVertexWithUV(x + 1, y, z + 1, stillMinX, stillMaxZ);
-		//side 4
-		tessellator.addVertexWithUV(x, y, z, stillMaxX, stillMaxZ);
-		tessellator.addVertexWithUV(x, y + w5, z, stillMaxX, stillMinZ);
-		tessellator.addVertexWithUV(x + 1, y + w5, z, stillMinX, stillMinZ);
-		tessellator.addVertexWithUV(x + 1, y, z, stillMinX, stillMaxZ);*/
-
 	}
 
-	private void renderExtractor(int x, int y, int z, Block _block, RenderBlocks renderer) {
-		_block.setBlockBounds(0, 0.0F, 0, 1.0F, 1.0F, 1.0F);
-		renderer.setRenderBoundsFromBlock(_block);
-		renderer.renderStandardBlock(CustomBlocks.mechanism, x, y, z);
+	private void renderExtractor(int x, int y, int z, Block block, RenderBlocks renderer, Tessellator tessellator) {
+		block.setBlockBounds(0, 0.0F, 0, 1.0F, 1.0F, 1.0F);
+		renderer.setRenderBoundsFromBlock(block);
+		renderer.renderStandardBlock(block, x, y, z);
 		Icon icon = renderer.getBlockIconFromSide(Block.waterStill, 0);
-		Tessellator tessellator = Tessellator.instance;
+
 		double minX = (double) icon.getInterpolatedU(0);
 		double maxX = (double) icon.getInterpolatedU(16);
 		double minZ = (double) icon.getInterpolatedV(0);
 		double maxZ = (double) icon.getInterpolatedV(16);
 		double w2_w3_maxZ = (double) icon.getInterpolatedV(16 * w4);
 		float shift = 0.01f;
-		tessellator.setColorOpaque(250, 250, 200);
+		//tessellator.setColorOpaque(250, 250, 200);
 		//liquid
 		//top
 		tessellator.addVertexWithUV(x, y + w4, z, maxX, maxZ);
@@ -204,7 +192,7 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 		maxZ = (double) icon.getInterpolatedV(16);
 		w2_w3_maxZ = (double) icon.getInterpolatedV(16 * w2);
 		float innershift = w1 + 2 * shift;
-		tessellator.setColorOpaque(100, 100, 100);
+		//tessellator.setColorOpaque(100, 100, 100);
 		// inner side 1
 		tessellator.addVertexWithUV(x + innershift, y + shift, z + 1, maxX, w2_w3_maxZ);
 		tessellator.addVertexWithUV(x + innershift, y + w2, z + 1, maxX, minZ);

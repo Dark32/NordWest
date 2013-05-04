@@ -127,12 +127,12 @@ public class Mechanism extends BlockContainer {
 	}
 
 	public int getRenderBlockPass() {
-		return 1;
+		return 0;
 	}
 
 	@Override
 	public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
 
-		return false;
+		return true;
 	}
 }

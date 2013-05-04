@@ -428,20 +428,7 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 		return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
 	}
 
-	/***********************************************************************************
-	 * This function is here for compatibilities sake, Modders should Check for Sided before ContainerWorldly, Vanilla Minecraft does not follow the sided standard that Modding has for a while.
-	 * 
-	 * In vanilla:
-	 * 
-	 * Top: Ores Sides: Fuel Bottom: Output
-	 * 
-	 * Standard Modding: Top: Ores Sides: Output Bottom: Fuel
-	 * 
-	 * The Modding one is designed after the GUI, the vanilla one is designed because its intended use is for the hopper, which logically would take things in from the top.
-	 * 
-	 * This will possibly be removed in future updates, and make vanilla the definitive standard.
-	 */
-
+	
 	@Override
 	public int getStartInventorySide(ForgeDirection side) {
 		if (ForgeDummyContainer.legacyFurnaceSides) {
