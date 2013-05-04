@@ -27,6 +27,7 @@ public class TileEntityAltar extends TileEntity implements ITileNetSync {
 		super.readFromNBT(nbtTags);
 		name = nbtTags.getString("name");
 		owner = nbtTags.getString("owner");
+		stage = nbtTags.getInteger("stage");
 
 	}
 
@@ -35,6 +36,7 @@ public class TileEntityAltar extends TileEntity implements ITileNetSync {
 		super.writeToNBT(nbtTags);
 		nbtTags.setString("name", name);
 		nbtTags.setString("owner", owner);
+		nbtTags.setInteger("stage", stage);
 	}
 
 	@Override

@@ -5,7 +5,7 @@ import java.util.Map;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import mods.nordwest.blocks.*;
-import mods.nordwest.items.MetadataBlockItem;
+import mods.nordwest.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockStone;
@@ -66,7 +66,7 @@ public class CustomBlocks {
 	public static Block riceCrop;
 	public static Block blackriceCrop;
 	
-	public static Block extractor;
+	public static Block mechanism;
 	public static void init() {
 		expaniteOre = new BaseOre(Config.BLOCK_ID.expaniteOre_id, Material.rock, CustomItems.expaniteItem.itemID, 2, 4, 0).setHardness(3F).setResistance(5F).setUnlocalizedName("expaniteOre");
 		GameRegistry.registerBlock(expaniteOre, "expaniteOre");
@@ -184,8 +184,8 @@ public class CustomBlocks {
 		GameRegistry.registerBlock(riceCrop, "riceCrop");
 		blackriceCrop = new BaseCrop(Config.BLOCK_ID.blackriceCrop,CustomItems.seedBlackRice.itemID, CustomItems.seedBlackRice.itemID).setHardness(0.1F).setResistance(1F).setUnlocalizedName("cropBlackRice");
 		GameRegistry.registerBlock(blackriceCrop, "blackriceCrop");
-		extractor= new Extractor(Config.BLOCK_ID.extractor).setHardness(0.1F).setResistance(1F).setUnlocalizedName("extractor");
-		GameRegistry.registerBlock(extractor, "extractor");
+		mechanism= new Mechanism(Config.BLOCK_ID.mechanism).setHardness(0.1F).setResistance(1F).setUnlocalizedName("mechanism");
+		GameRegistry.registerBlock(mechanism,MechanismBlockItem.class, "mechanism");
 		
 	}
 	public static void posItemBlockInit(){

@@ -310,15 +310,15 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 				} else if (this.extractorItemStacks[2].isItemEqual(itemstack)) {
 					extractorItemStacks[2].stackSize += itemstack.stackSize;
 				}
-				--this.extractorItemStacks[3].stackSize;
-			}
-			
-			--this.extractorItemStacks[0].stackSize;
-			if(chance>NordWest.rand.nextInt(100)){
-				if (this.extractorItemStacks[4] == null) {
-					this.extractorItemStacks[4] = bonus.copy();
-				} else if (this.extractorItemStacks[2].isItemEqual(bonus)) {
-					extractorItemStacks[4].stackSize += bonus.stackSize;
+				this.extractorItemStacks[3].stackSize-=itemstack.stackSize;
+				--this.extractorItemStacks[0].stackSize;
+
+				if (chance > NordWest.rand.nextInt(100)) {
+					if (this.extractorItemStacks[4] == null) {
+						this.extractorItemStacks[4] = bonus.copy();
+					} else if (this.extractorItemStacks[2].isItemEqual(bonus)) {
+						extractorItemStacks[4].stackSize += bonus.stackSize;
+					}
 				}
 			}
 			if (this.extractorItemStacks[0].stackSize <= 0) {
