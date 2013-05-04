@@ -60,7 +60,7 @@ public class Config {
 		public static int ryeCrop;
 		public static int riceCrop;
 		public static int blackriceCrop;
-		public static int extractor;
+		public static int mechanism;
 
 	}
 
@@ -161,7 +161,7 @@ public class Config {
 			BLOCK_ID.ryeCrop = cfg.getBlock("ryeCrop", 1044).getInt(1044);
 			BLOCK_ID.riceCrop = cfg.getBlock("riceCrop", 1045).getInt(1045);
 			BLOCK_ID.blackriceCrop = cfg.getBlock("blackriceCrop", 1046).getInt(1046);
-			BLOCK_ID.extractor= cfg.getBlock("extractor", 1047).getInt(1047);
+			BLOCK_ID.mechanism= cfg.getBlock("mechanism", 1047).getInt(1047);
 			/** Items... AGAIN! **/
 			ITEM_ID.wax = cfg.getItem("wax", 5000).getInt(5000);
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 5001).getInt(5001);
