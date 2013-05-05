@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
 public class MechanismBlockItem extends ItemBlock {
-	private String[] names =new  String[]{"extractor","distiller"};
+	private String[] names =new  String[]{"extractor","distiller","cooler"};
 	public MechanismBlockItem(int par1) {
 		super(par1);
 		setMaxDamage(0);

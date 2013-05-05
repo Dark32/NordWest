@@ -8,6 +8,7 @@ import mods.nordwest.common.Config;
 import mods.nordwest.common.CustomBlocks;
 import mods.nordwest.common.NordWest;
 import mods.nordwest.tileentity.TileEntityExtractor;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -30,6 +31,8 @@ public class Mechanism extends BlockContainer {
 	private Icon iconTop;
 	private Icon iconSide;
 	private Icon iconDown;
+	private Icon distiller;
+	private Icon cooler;
 
 	public Mechanism(int par1) {
 		super(par1, Material.rock);
@@ -43,6 +46,8 @@ public class Mechanism extends BlockContainer {
 		this.iconTop = par1IconRegister.registerIcon("nordwest:extractor_top");
 		this.iconSide = par1IconRegister.registerIcon("nordwest:extractor_side");
 		this.iconDown = par1IconRegister.registerIcon("nordwest:extractor_down");
+		this.distiller = par1IconRegister.registerIcon("nordwest:distiller");
+		this.cooler = par1IconRegister.registerIcon("nordwest:cooler");
 	}
 
 	@Override
@@ -54,13 +59,28 @@ public class Mechanism extends BlockContainer {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public Icon getIcon(int par1, int par2) {
-		if (par1 == 1) {
-			return this.iconTop;
-		} else if (par1 == 0) {
-			return this.iconDown;
-		} else {
-			return this.iconSide;
+		if (par2 == 0) {
+			if (par1 == 1) {
+				return this.iconTop;
+			} else if (par1 == 0) {
+				return this.iconDown;
+			} else {
+				return this.iconSide;
+			}
+		}else if (par2 == 1){
+			if (par1 > 1) {
+				return this.distiller;
+			} else {
+				return Block.furnaceIdle.getBlockTextureFromSide(0);
+			}
+		}else if (par2 == 2){
+			if (par1 > 1) {
+				return this.cooler;
+			} else {
+				return Block.furnaceIdle.getBlockTextureFromSide(0);
+			}
 		}
+		return this.iconSide;
 	}
 
 	public int getRenderType() {
@@ -119,6 +139,7 @@ public class Mechanism extends BlockContainer {
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
 		par3List.add(new ItemStack(par1, 1, 0));
 		par3List.add(new ItemStack(par1, 1, 1));
+		par3List.add(new ItemStack(par1, 1, 2));
 	}
 
 	@Override
