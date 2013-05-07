@@ -99,6 +99,13 @@ public class Config {
 		public static int seedRice;
 		public static int seedBlackRice;
 		public static int basefood;
+		public static int woodDagger;
+		public static int stoneDagger;
+		public static int ironDagger;
+		public static int goldDagger;
+		public static int diamondDagger;
+		public static int copperDagger;
+		public static int mythrilDagger;
 	}
 
 	/** Other **/
@@ -162,7 +169,7 @@ public class Config {
 			BLOCK_ID.ryeCrop = cfg.getBlock("ryeCrop", 1044).getInt(1044);
 			BLOCK_ID.riceCrop = cfg.getBlock("riceCrop", 1045).getInt(1045);
 			BLOCK_ID.blackriceCrop = cfg.getBlock("blackriceCrop", 1046).getInt(1046);
-			BLOCK_ID.mechanism= cfg.getBlock("mechanism", 1047).getInt(1047);
+			BLOCK_ID.mechanism = cfg.getBlock("mechanism", 1047).getInt(1047);
 			/** Items... AGAIN! **/
 			ITEM_ID.wax = cfg.getItem("wax", 5000).getInt(5000);
 			ITEM_ID.expanite_id = cfg.getItem("expanite", 5001).getInt(5001);
@@ -196,6 +203,13 @@ public class Config {
 			ITEM_ID.seedRice = cfg.getItem("seedRice", 5029).getInt(5029);
 			ITEM_ID.seedBlackRice = cfg.getItem("seedBlackRice", 5030).getInt(5030);
 			ITEM_ID.basefood = cfg.getItem("basefood", 5031).getInt(5031);
+			ITEM_ID.woodDagger = cfg.getItem("woodDagger", 5032).getInt(5032);
+			ITEM_ID.stoneDagger = cfg.getItem("stoneDagger", 5033).getInt(5033);
+			ITEM_ID.ironDagger = cfg.getItem("ironDagger", 5034).getInt(5034);
+			ITEM_ID.goldDagger = cfg.getItem("goldDagger", 5035).getInt(5035);
+			ITEM_ID.diamondDagger = cfg.getItem("diamondDagger", 5036).getInt(5036);
+			ITEM_ID.copperDagger = cfg.getItem("copperDagger", 5037).getInt(5037);
+			ITEM_ID.mythrilDagger = cfg.getItem("mythrilDagger", 5038).getInt(5038);
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");
@@ -215,8 +229,5 @@ public class Config {
 	}
 }
 /**
- * str=''
- * i=5000 str.each_line{|l| 
- * print l.gsub(/,\s(\d+)\)\.getInt\((\d+)\)/,", #{i}).getInt(#{i})") 
- * i+=1 }
+ * str='' i=5000 str.each_line{|l| print l.gsub(/,\s(\d+)\)\.getInt\((\d+)\)/,", #{i}).getInt(#{i})") i+=1 }
  * **/

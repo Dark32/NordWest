@@ -24,7 +24,16 @@ public class Recipes {
 
 		baseArmorRecipe(Dictionary.ingotCopper, CustomItems.copperHelmet, CustomItems.copperChestplate, CustomItems.copperLegs, CustomItems.copperBoots);
 		baseArmorRecipe(Dictionary.ingotMythril, CustomItems.mythrilHelmet, CustomItems.mythrilChestplate, CustomItems.mythrilLegs, CustomItems.mythrilBoots);
-
+		
+		baseDaggerRecipe(Dictionary.woodPlank, CustomItems.woodDagger);
+		baseDaggerRecipe(Block.planks, CustomItems.woodDagger);
+		baseDaggerRecipe(Block.cobblestone, CustomItems.stoneDagger);
+		baseDaggerRecipe(Item.ingotIron, CustomItems.ironDagger);
+		baseDaggerRecipe(Item.ingotGold, CustomItems.goldDagger);
+		baseDaggerRecipe(Item.diamond, CustomItems.diamondDagger);
+		baseDaggerRecipe(Dictionary.ingotCopper, CustomItems.copperDagger);
+		baseDaggerRecipe(Dictionary.ingotMythril, CustomItems.mythrilDagger);
+		
 		addRecipe(new ItemStack(CustomBlocks.mythrilBlock, 1), new Object[] { "###", "###", "###", '#', CustomItems.mythrilIngotItem });
 		addRecipe(new ItemStack(CustomBlocks.copperBlock, 1), new Object[] { "###", "###", "###", '#', CustomItems.copperIngotItem });
 		addRecipe(new ItemStack(CustomBlocks.blockhome, 1), new Object[] { "x#x", "#Z#", "x#x", 'x', Item.paper, '#', Item.enderPearl, 'Z', CustomItems.homescroll });
@@ -137,6 +146,25 @@ public class Recipes {
 			addRecipe(new ItemStack(axe, 1), new Object[] { "XX", "X#", " #", '#', Item.stick, 'X', material });
 			addRecipe(new ItemStack(hoe, 1), new Object[] { "XX", " #", " #", '#', Item.stick, 'X', material });
 		}
+	}
+
+	private static void baseDaggerRecipe(Object mat, Item dagger) {
+		Object material = null;
+		mat = getAnyCraftablyMateryal(mat);
+
+		if (mat instanceof ArrayList<?>) {
+			material = (ArrayList<?>) mat;
+			for (ItemStack _mat : (ArrayList<ItemStack>) material) {
+				baseDaggerRecipe(_mat, dagger);
+			}
+			return;
+		} else {
+			material = mat;
+		}
+		if (material != null) {
+			addRecipe(new ItemStack(dagger, 1), new Object[] { "X", "#", '#', Item.stick, 'X', mat });
+		}
+
 	}
 
 	private static void customStoneRecipe(Block material) {

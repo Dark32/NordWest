@@ -248,7 +248,13 @@
 	<entry key="item.seedRye.name">Семяна ржи</entry>
 	<entry key="item.basefood.cherry.name">Вишня</entry>
 	<entry key="item.basefood.goldenCherry.name">Золотая Вишня</entry>
-	
+	<entry key="item.woodDagger.name">Wood Dagger</entry>
+	<entry key="item.stoneDagger.name">Stone Dagger</entry>
+	<entry key="item.ironDagger.name">Iron Dagger</entry>
+	<entry key="item.goldDagger.name">Gold Dagger</entry>
+	<entry key="item.diamondDagger.name">Diamond Dagger</entry>
+	<entry key="item.copperDagger.name">Copper Dagger</entry>
+	<entry key="item.mythrilDagger.name">Mythril Dagger</entry>
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
 	
 	<entry key="world.undefined">Неизвестно</entry>

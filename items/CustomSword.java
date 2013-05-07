@@ -30,6 +30,17 @@ public class CustomSword extends ItemSword
         weaponDamage = 4 + enumtoolmaterial.getDamageVsEntity();
 		setCreativeTab(NordWest.tabNord);
     }
+    
+    public CustomSword(int id, EnumToolMaterial enumtoolmaterial, float multiple)
+    {
+        super(id, enumtoolmaterial);
+        toolMaterial = enumtoolmaterial;
+        maxStackSize = 1;
+        setMaxDamage((int)(enumtoolmaterial.getMaxUses()*multiple));
+        weaponDamage = (int) ((4 + enumtoolmaterial.getDamageVsEntity())*multiple);
+		setCreativeTab(NordWest.tabNord);
+    }
+    
     @Override
 	public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon("nordwest:" + this.getUnlocalizedName());
@@ -40,12 +51,6 @@ public class CustomSword extends ItemSword
     {
         return block.blockID != Block.web.blockID ? 1.5F : 15F;
     }
-    
-    //@Override
-//public void addInformation(ItemStack itemstack, EntityPlayer entityplayer, List list, boolean flag)
-//{
-     //list.add("Durability: " + (itemstack.getMaxDamage() - itemstack.getItemDamage()));
-//}
 
     @Override
     public boolean hitEntity(ItemStack itemstack, EntityLiving entityplayer, EntityLiving entityliving)

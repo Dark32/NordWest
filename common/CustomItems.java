@@ -46,6 +46,13 @@ public class CustomItems {
 	public static Item seedRice;
 	public static Item seedBlackRice;
 	public static Item basefood;
+	public static Item woodDagger;
+	public static Item stoneDagger;
+	public static Item ironDagger;
+	public static Item goldDagger;
+	public static Item diamondDagger;
+	public static Item copperDagger;
+	public static Item mythrilDagger;
 	/**
 	 * Armor Materials:
 	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
@@ -85,6 +92,8 @@ public class CustomItems {
 	private static int renderCopperArmour;
 	private static int renderMythrilArmour;
 	private static int renderSamuraiArmour;
+	
+	
 	
 	
 
@@ -141,6 +150,13 @@ public class CustomItems {
 		BaseFood.addFoodStats("goldenCherry", 3, 5, EnumRarity.epic, new PotionEffect(Potion.regeneration.id, 600, 3));
 		
 		basefood = new BaseFood(Config.ITEM_ID.basefood).setUnlocalizedName("basefood");
+		woodDagger = new CustomSword(Config.ITEM_ID.woodDagger, EnumToolMaterial.WOOD, 0.5f).setUnlocalizedName("woodDagger");
+		stoneDagger = new CustomSword(Config.ITEM_ID.stoneDagger, EnumToolMaterial.STONE, 0.5f).setUnlocalizedName("stoneDagger");
+		ironDagger = new CustomSword(Config.ITEM_ID.ironDagger, EnumToolMaterial.IRON, 0.5f).setUnlocalizedName("ironDagger");
+		goldDagger = new CustomSword(Config.ITEM_ID.goldDagger, EnumToolMaterial.GOLD, 0.5f).setUnlocalizedName("goldDagger");
+		diamondDagger = new CustomSword(Config.ITEM_ID.diamondDagger, EnumToolMaterial.EMERALD, 0.5f).setUnlocalizedName("diamondDagger");
+		copperDagger = new CustomSword(Config.ITEM_ID.copperDagger, copperToolMaterial, 0.5f).setUnlocalizedName("copperDagger");
+		mythrilDagger = new CustomSword(Config.ITEM_ID.mythrilDagger, mythrilToolMaterial, 0.5f).setUnlocalizedName("mythrilDagger");
 		
 		
 	}
