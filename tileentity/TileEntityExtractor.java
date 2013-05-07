@@ -310,7 +310,7 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 				} else if (this.extractorItemStacks[2].isItemEqual(itemstack)) {
 					extractorItemStacks[2].stackSize += itemstack.stackSize;
 				}
-				this.extractorItemStacks[3].stackSize-=itemstack.stackSize;
+				this.extractorItemStacks[3].stackSize -= itemstack.stackSize;
 				--this.extractorItemStacks[0].stackSize;
 
 				if (chance > NordWest.rand.nextInt(100)) {
@@ -356,7 +356,7 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 				return 200;
 			if (item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD"))
 				return 200;
-			if (item instanceof ItemHoe && ((ItemHoe) item).func_77842_f().equals("WOOD"))
+			if (item instanceof ItemHoe && ((ItemHoe) item).getMaterialName().equals("WOOD"))
 				return 200;
 			if (i == Item.stick.itemID)
 				return 100;
@@ -416,19 +416,21 @@ public class TileEntityExtractor extends TileEntity implements ISidedInventory, 
 	/**
 	 * Get the size of the side inventory.
 	 */
-	public int[] getSizeInventorySide(int par1) {
+	@Override
+	public int[] getAccessibleSlotsFromSide(int par1) {
 		return par1 == 0 ? field_102011_e : (par1 == 1 ? field_102010_d : field_102009_f);
 	}
 
-	public boolean func_102007_a(int par1, ItemStack par2ItemStack, int par3) {
+	@Override
+	public boolean canInsertItem(int par1, ItemStack par2ItemStack, int par3) {
 		return this.isStackValidForSlot(par1, par2ItemStack);
 	}
 
-	public boolean func_102008_b(int par1, ItemStack par2ItemStack, int par3) {
+	@Override
+	public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3) {
 		return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
 	}
 
-	
 	@Override
 	public int getStartInventorySide(ForgeDirection side) {
 		if (ForgeDummyContainer.legacyFurnaceSides) {
