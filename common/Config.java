@@ -98,6 +98,7 @@ public class Config {
 		public static int cropRye;
 		public static int seedRice;
 		public static int seedBlackRice;
+		public static int basefood;
 	}
 
 	/** Other **/
@@ -194,6 +195,7 @@ public class Config {
 			ITEM_ID.cropRye = cfg.getItem("cropRye", 5028).getInt(5028);
 			ITEM_ID.seedRice = cfg.getItem("seedRice", 5029).getInt(5029);
 			ITEM_ID.seedBlackRice = cfg.getItem("seedBlackRice", 5030).getInt(5030);
+			ITEM_ID.basefood = cfg.getItem("basefood", 5031).getInt(5031);
 			/** Localizations **/
 			List<String> _lang = new ArrayList<String>();
 			_lang.add("ru_RU");

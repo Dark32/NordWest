@@ -2,8 +2,11 @@ package mods.nordwest.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import mods.nordwest.items.*;
@@ -42,6 +45,7 @@ public class CustomItems {
 	public static Item cropRye;
 	public static Item seedRice;
 	public static Item seedBlackRice;
+	public static Item basefood;
 	/**
 	 * Armor Materials:
 	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
@@ -132,7 +136,13 @@ public class CustomItems {
 		seedRye = new BaseSeed(Config.ITEM_ID.seedRye, Config.BLOCK_ID.ryeCrop).setUnlocalizedName("seedRye");
 		seedRice = new BaseSeed(Config.ITEM_ID.seedRice, Config.BLOCK_ID.riceCrop).setUnlocalizedName("rice");
 		seedBlackRice = new BaseSeed(Config.ITEM_ID.seedBlackRice, Config.BLOCK_ID.blackriceCrop).setUnlocalizedName("blackrice");
-
+		BaseFood.addFoodStats("cherry", 0, 2);
+		BaseFood.addFoodStats("goldenCherry", 3, 5, EnumRarity.rare);
+		BaseFood.addFoodStats("goldenCherry", 3, 5, EnumRarity.epic, new PotionEffect(Potion.regeneration.id, 600, 3));
+		
+		basefood = new BaseFood(Config.ITEM_ID.basefood).setUnlocalizedName("basefood");
+		
+		
 	}
 
 	public static void posBlockInit() {

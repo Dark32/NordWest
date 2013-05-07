@@ -246,6 +246,9 @@
 	<entry key="item.homescroll.1.name">Свиток возврата (абсалутный)</entry>
 	<entry key="item.cropRye.name">Рожь</entry>
 	<entry key="item.seedRye.name">Семяна ржи</entry>
+	<entry key="item.basefood.cherry.name">Вишня</entry>
+	<entry key="item.basefood.goldenCherry.name">Золотая Вишня</entry>
+	
 	<entry key="itemGroup.tabNord">Основные блоки (NordWest)</entry>
 	
 	<entry key="world.undefined">Неизвестно</entry>

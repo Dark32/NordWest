@@ -246,6 +246,8 @@
 	<entry key="item.homescroll.1.name">Scroll of Teleportation</entry>
 	<entry key="item.cropRye.name">Rye</entry>
 	<entry key="item.seedRye.name">Seed of Rye</entry>
+	<entry key="item.basefood.cherry.name">Cherry</entry>
+	<entry key="item.basefood.goldenCherry.name">Golden Cherry</entry>
 	
 	<entry key="world.undefined">Undefined</entry>
 	<entry key="world.overworld">Overworld</entry>
