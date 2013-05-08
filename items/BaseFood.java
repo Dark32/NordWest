@@ -7,6 +7,7 @@ import java.util.List;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import mods.nordwest.common.CustomItems;
 import mods.nordwest.common.NordWest;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -35,7 +36,7 @@ public class BaseFood extends BaseItem {
 		setHasSubtypes(true);
 	}
 
-	public static void addFoodStats(String name, int healAmount, int saturationModifier, EnumRarity rare, PotionEffect potion) {
+	public static ItemStack addFoodStats(String name, int healAmount, float saturationModifier, EnumRarity rare, PotionEffect potion) {
 		List value = new ArrayList();
 		value.add(name);
 		value.add(healAmount);
@@ -45,18 +46,19 @@ public class BaseFood extends BaseItem {
 		value.add(potion);
 		int sub = statsFood.size();
 		statsFood.put(sub, value);
+		return new ItemStack(CustomItems.basefood,1,sub);
 	}
 
-	public static void addFoodStats(String name, int healAmount, int saturationModifier, PotionEffect potion) {
-		addFoodStats(name, saturationModifier, saturationModifier, EnumRarity.common, potion);
+	public static ItemStack addFoodStats(String name, int healAmount, float saturationModifier, PotionEffect potion) {
+		return addFoodStats(name, healAmount, saturationModifier, EnumRarity.common, potion);
 	}
 
-	public static void addFoodStats(String name, int healAmount, int saturationModifier, EnumRarity rare) {
-		addFoodStats(name, saturationModifier, saturationModifier, rare, null);
+	public static ItemStack addFoodStats(String name, int healAmount, float saturationModifier, EnumRarity rare) {
+		return addFoodStats(name, healAmount, saturationModifier, rare, null);
 	}
 
-	public static void addFoodStats(String name, int healAmount, int saturationModifier) {
-		addFoodStats(name, saturationModifier, saturationModifier, EnumRarity.common, null);
+	public static ItemStack addFoodStats(String name, int healAmount, float saturationModifier) {
+		return addFoodStats(name, healAmount, saturationModifier, EnumRarity.common, null);
 	}
 
 	public static String getName(int key) {

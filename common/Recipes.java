@@ -102,7 +102,11 @@ public class Recipes {
 		addRecipe(new ItemStack(CustomBlocks.customStone1, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.cobblestone) });
 		addRecipe(new ItemStack(CustomBlocks.customStone7, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.cobblestoneMossy) });
 		addRecipe(new ItemStack(CustomBlocks.customStone8, 1, 1), new Object[] { "XXX", "XZX", "XXX", 'X', Item.stick, 'Z', new ItemStack(Block.obsidian) });
-
+		
+		addRecipe(CustomItems.FOOD.goldenCherry, new Object[] { "XXX", "XZX", "XXX", 'X', Item.goldNugget, 'Z',CustomItems.FOOD.cherry });
+		addRecipe(CustomItems.FOOD.epicGoldenChery, new Object[] { "XXX", "XZX", "XXX", 'X', Block.blockGold, 'Z',CustomItems.FOOD.cherry });
+		addRecipe(CustomItems.FOOD.ryeLoaf, new Object[] { "XXX", 'X', CustomItems.cropRye });
+		
 	}
 
 	private static void basePlankRecipe(Block plank) {

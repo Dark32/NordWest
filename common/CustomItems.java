@@ -5,6 +5,7 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.EnumHelper;
@@ -12,12 +13,23 @@ import net.minecraftforge.common.MinecraftForge;
 import mods.nordwest.items.*;
 
 public class CustomItems {
+	public static class FOOD {
+		public static ItemStack cherry = BaseFood.addFoodStats("cherry", 4, 0.2f);
+		public static ItemStack goldenCherry = BaseFood.addFoodStats("goldenCherry", 4, 1, EnumRarity.rare);
+		public static ItemStack epicGoldenChery = BaseFood.addFoodStats("goldenCherry", 4, 1, EnumRarity.epic, new PotionEffect(Potion.regeneration.id, 600, 3));;
+		public static ItemStack ryeLoaf = BaseFood.addFoodStats("ryeLoaf", 5, 0.6f);
+
+		private static void initFood() {
+			// Что то связанное с едой, метод пока пуст.
+		}
+	}
+
 	public static Item expaniteItem;
 	public static Item mythrilIngotItem;
 	public static Item copperIngotItem;
 	public static Item homescroll;
 	public static Item wax;
-	
+
 	public static Item copperHelmet;
 	public static Item copperChestplate;
 	public static Item copperLegs;
@@ -54,36 +66,13 @@ public class CustomItems {
 	public static Item copperDagger;
 	public static Item mythrilDagger;
 	/**
-	 * Armor Materials:
-	 * Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). 
-	 * Reduction Amount is a main armor feature. 
-	 * Vanilla Reduction Amounts:
-	 * 	 Leather: {1, 3, 2, 1},
-	 * 	 Chain: {2, 5, 4, 1}, 
-	 *   Iron: {2, 6, 5, 2}, 
-	 * 	 Gold: {2, 6, 5, 2}, 
-	 * 	 Diamond: {3, 8, 6, 3}.
-	 * Vanilla Enchantabilities:
-	 *   Leather: 15, 
-	 *   Chain: 12, 
-	 *   Iron: 9, 
-	 *   Gold: 25, 
-	 *   Diamond: 10.
+	 * Armor Materials: Use following syntaxes: (Material Name, Durability, ReductionAmounts, Enchantability). Reduction Amount is a main armor feature. Vanilla Reduction Amounts: Leather: {1, 3, 2, 1}, Chain: {2, 5, 4, 1}, Iron: {2, 6, 5, 2}, Gold: {2, 6, 5, 2}, Diamond: {3, 8, 6, 3}. Vanilla Enchantabilities: Leather: 15, Chain: 12, Iron: 9, Gold: 25, Diamond: 10.
 	 */
 	public static EnumArmorMaterial copperArmorMaterial = EnumHelper.addArmorMaterial("copperArmorMaterial", 15, new int[] { 2, 5, 4, 1 }, 9);
 	public static EnumArmorMaterial mythrilArmorMaterial = EnumHelper.addArmorMaterial("mythrilArmorMaterial", 40, new int[] { 3, 8, 6, 3 }, 12);
 	public static EnumArmorMaterial samuraiArmorMaterial = EnumHelper.addArmorMaterial("samuraiArmorMaterial", 10, new int[] { 2, 6, 5, 2 }, 18);
 	/**
-	 * Tool Materials:
-	 * Use following syntaxes: (Material Name, Harvest Level (See Below), Durability (Max Uses), Speed, Entities Damage, Enchantability). 
-	 * Vanilla Harvest Levels:
-	 * 3 = DIAMOND (Everything + Obsidian); 
-	 * 2 = IRON (Everything);
-	 * 1 = STONE (Everything except Diamonds, Emeralds, Redstone);
-	 * 0 = WOOD/GOLD (Everything except Diamonds, Emeralds, Redstone, Lapis, Gold & Iron).
-	 * Vanilla Durabilities - Wood: 59, Stone: 131, Iron: 250, Diamond: 1561, Gold: 32.
-	 * Vanilla Entities Damage - Diamond: 3, Iron: 2, Stone: 1, Wood/Gold: 0.
-	 * Vanilla Enchantabilities -  Wood: 15, Stone: 5, Iron: 14, Diamond: 10, Gold: 22.
+	 * Tool Materials: Use following syntaxes: (Material Name, Harvest Level (See Below), Durability (Max Uses), Speed, Entities Damage, Enchantability). Vanilla Harvest Levels: 3 = DIAMOND (Everything + Obsidian); 2 = IRON (Everything); 1 = STONE (Everything except Diamonds, Emeralds, Redstone); 0 = WOOD/GOLD (Everything except Diamonds, Emeralds, Redstone, Lapis, Gold & Iron). Vanilla Durabilities - Wood: 59, Stone: 131, Iron: 250, Diamond: 1561, Gold: 32. Vanilla Entities Damage - Diamond: 3, Iron: 2, Stone: 1, Wood/Gold: 0. Vanilla Enchantabilities - Wood: 15, Stone: 5, Iron: 14, Diamond: 10, Gold: 22.
 	 */
 	static EnumToolMaterial mythrilToolMaterial = EnumHelper.addToolMaterial("mythrilToolMaterial", 3, 1561, 10.5F, 3, 22);
 	static EnumToolMaterial copperToolMaterial = EnumHelper.addToolMaterial("copperToolMaterial", 2, 180, 6.5F, 2, 8);
@@ -92,10 +81,6 @@ public class CustomItems {
 	private static int renderCopperArmour;
 	private static int renderMythrilArmour;
 	private static int renderSamuraiArmour;
-	
-	
-	
-	
 
 	public static void render() {
 		renderCopperArmour = NordWest.proxy.addArmor("Copper");
@@ -145,11 +130,9 @@ public class CustomItems {
 		seedRye = new BaseSeed(Config.ITEM_ID.seedRye, Config.BLOCK_ID.ryeCrop).setUnlocalizedName("seedRye");
 		seedRice = new BaseSeed(Config.ITEM_ID.seedRice, Config.BLOCK_ID.riceCrop).setUnlocalizedName("rice");
 		seedBlackRice = new BaseSeed(Config.ITEM_ID.seedBlackRice, Config.BLOCK_ID.blackriceCrop).setUnlocalizedName("blackrice");
-		BaseFood.addFoodStats("cherry", 0, 2);
-		BaseFood.addFoodStats("goldenCherry", 3, 5, EnumRarity.rare);
-		BaseFood.addFoodStats("goldenCherry", 3, 5, EnumRarity.epic, new PotionEffect(Potion.regeneration.id, 600, 3));
-		
 		basefood = new BaseFood(Config.ITEM_ID.basefood).setUnlocalizedName("basefood");
+		FOOD.initFood();
+
 		woodDagger = new CustomSword(Config.ITEM_ID.woodDagger, EnumToolMaterial.WOOD, 0.5f).setUnlocalizedName("woodDagger");
 		stoneDagger = new CustomSword(Config.ITEM_ID.stoneDagger, EnumToolMaterial.STONE, 0.5f).setUnlocalizedName("stoneDagger");
 		ironDagger = new CustomSword(Config.ITEM_ID.ironDagger, EnumToolMaterial.IRON, 0.5f).setUnlocalizedName("ironDagger");
@@ -157,12 +140,10 @@ public class CustomItems {
 		diamondDagger = new CustomSword(Config.ITEM_ID.diamondDagger, EnumToolMaterial.EMERALD, 0.5f).setUnlocalizedName("diamondDagger");
 		copperDagger = new CustomSword(Config.ITEM_ID.copperDagger, copperToolMaterial, 0.5f).setUnlocalizedName("copperDagger");
 		mythrilDagger = new CustomSword(Config.ITEM_ID.mythrilDagger, mythrilToolMaterial, 0.5f).setUnlocalizedName("mythrilDagger");
-		
-		
+
 	}
 
 	public static void posBlockInit() {
-
 	}
 
 	public static void setToolClass() {
