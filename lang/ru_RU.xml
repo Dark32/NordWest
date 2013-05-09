@@ -213,6 +213,7 @@
 	<entry key="tile.mechanism.extractor.name">Экстрактор</entry>
 	<entry key="tile.mechanism.distiller.name">Дестилатор</entry>
 	<entry key="tile.mechanism.cooler.name">Холодильная камера</entry>
+	<entry key="tile.mechanism.gyle.name">Бродильный чан</entry>
 	
 	<entry key="item.copperHelmet.name">Медный шлем</entry>
 	<entry key="item.copperChestplate.name">Медный нагрудник</entry>

@@ -213,6 +213,7 @@
     <entry key="tile.mechanism.extractor.name">Extractor</entry>
     <entry key="tile.mechanism.distiller.name">Distiller</entry>
     <entry key="tile.mechanism.cooler.name">Cooler</entry>
+    <entry key="tile.mechanism.gyle.name">Gyle</entry>
 
 	<entry key="item.copperHelmet.name">Copper Helmet</entry>
 	<entry key="item.copperChestplate.name">Copper Chestplate</entry>

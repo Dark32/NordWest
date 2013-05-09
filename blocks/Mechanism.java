@@ -67,17 +67,23 @@ public class Mechanism extends BlockContainer {
 			} else {
 				return this.iconSide;
 			}
-		}else if (par2 == 1){
+		} else if (par2 == 1) {
 			if (par1 > 1) {
 				return this.distiller;
 			} else {
 				return Block.furnaceIdle.getBlockTextureFromSide(0);
 			}
-		}else if (par2 == 2){
+		} else if (par2 == 2) {
 			if (par1 > 1) {
 				return this.cooler;
 			} else {
 				return Block.furnaceIdle.getBlockTextureFromSide(0);
+			}
+		} else if (par2 == 3) {
+			if (par1 != 6) {
+				return Block.planks.getIcon(0, 0);
+			} else {
+				return Block.waterMoving.getBlockTextureFromSide(0);
 			}
 		}
 		return this.iconSide;
@@ -88,8 +94,27 @@ public class Mechanism extends BlockContainer {
 	}
 
 	public void addCollisionBoxesToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity) {
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-		super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+		int meta = par1World.getBlockMetadata(par2, par3, par4);
+		if (meta == 3) {
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.3125F, 1.0F);
+			super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+			float f = 0.125F;
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, f, 1.0F, 1.0F);
+			super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, f);
+			super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+			this.setBlockBounds(1.0F - f, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+			super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+			this.setBlockBounds(0.0F, 0.0F, 1.0F - f, 1.0F, 1.0F, 1.0F);
+			super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+			this.setBlockBoundsForItemRender();
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+		} else {
+
+			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+			super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+
+		}
 	}
 
 	public boolean renderAsNormalBlock() {
@@ -140,6 +165,7 @@ public class Mechanism extends BlockContainer {
 		par3List.add(new ItemStack(par1, 1, 0));
 		par3List.add(new ItemStack(par1, 1, 1));
 		par3List.add(new ItemStack(par1, 1, 2));
+		par3List.add(new ItemStack(par1, 1, 3));
 	}
 
 	@Override
@@ -148,7 +174,7 @@ public class Mechanism extends BlockContainer {
 	}
 
 	public int getRenderBlockPass() {
-		return 0;
+		return 1;
 	}
 
 	@Override

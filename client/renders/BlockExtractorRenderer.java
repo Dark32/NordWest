@@ -62,6 +62,37 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 			renderer.setRenderBoundsFromBlock(_block);
 			drawFaces(renderer, _block, true, 2);
 
+		} else if (metadata == 3) {
+			for (int k = 0; k < 5; k++) {
+				switch (k) {
+				case 0: {
+					renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25F, 1.0F);
+					break;
+				}
+				case 1: {
+					renderer.setRenderBounds(0.0F, 0.25F, 0.0F, 0.125F, 1.0F, 1.0F);
+					break;
+				}
+				case 2: {
+					renderer.setRenderBounds(0.875F, 0.25F, 0.0F, 1.0F, 1.0F, 1.0F);
+					break;
+				}
+				case 3: {
+					renderer.setRenderBounds(0.125F, 0.25F, 0.0F, 0.875F, 1.0F, 0.125F);
+					break;
+				}
+				case 4: {
+					renderer.setRenderBounds(0.125F, 0.25F, 0.875F, 0.875F, 1.0F, 1.0F);
+					break;
+				}
+				}
+				/*
+				 * if (k == 0) { renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25F, 1.0F); } if (k == 1) { renderer.setRenderBounds(0.0F, 0.25F, 0.0F, 0.125F, 1.0F, 1.0F); } if (k == 2) { renderer.setRenderBounds(0.875F, 0.25F, 0.0F, 1.0F, 1.0F, 1.0F); } if (k == 3) { renderer.setRenderBounds(0.125F, 0.25F, 0.0F, 0.875F, 1.0F, 0.125F); } if (k == 4) { renderer.setRenderBounds(0.125F, 0.25F, 0.875F, 0.875F, 1.0F, 1.0F); }
+				 */
+
+				drawFaces(renderer, _block, true, 3);
+			}
+
 		}
 	}
 
@@ -75,9 +106,38 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 			renderDistiller(x, y, z, block, renderer, tessellator);
 		} else if (meta == 2) {
 			renderCooler(x, y, z, block, renderer, tessellator);
+		} else if (meta == 3) {
+			renderGyle(x, y, z, block, renderer, tessellator);
 		}
 		block.setBlockBounds(0, 0.0F, 0, 1.0F, 1.0F, 1.0F);
 		return true;
+	}
+
+	private void renderGyle(int i, int j, int k, Block _block, RenderBlocks renderer, Tessellator tessellator) {
+
+		tessellator.draw();
+		tessellator.startDrawingQuads();
+
+		float f = 5;
+		renderer.setOverrideBlockTexture(Block.blocksList[5].getBlockTextureFromSide(0));
+		renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25F, 1.0F);
+		renderer.renderStandardBlock(_block, i, j, k);
+		renderer.setRenderBounds(0.0F, 0.25F, 0.0F, 0.125F, 1.0F, 1.0F);
+		renderer.renderStandardBlock(_block, i, j, k);
+		renderer.setRenderBounds(0.875F, 0.25F, 0.0F, 1.0F, 1.0F, 1.0F);
+		renderer.renderStandardBlock(_block, i, j, k);
+		renderer.setRenderBounds(0.125F, 0.25F, 0.0F, 0.875F, 1.0F, 0.125F);
+		renderer.renderStandardBlock(_block, i, j, k);
+		renderer.setRenderBounds(0.125F, 0.25F, 0.875F, 0.875F, 1.0F, 1.0F);
+		renderer.renderStandardBlock(_block, i, j, k);
+		renderer.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+		renderer.setOverrideBlockTexture(_block.getIcon(6, 3));
+		tessellator.draw();
+		tessellator.startDrawingQuads();
+		renderer.setRenderBounds(0.125F, 0.24F, 0.125F, 0.875F, 0.24F + 0.125F * f, 0.875F);
+		renderer.renderFaceYPos(_block, i,j, k, renderer.getBlockIconFromSideAndMetadata(_block, 6, 3));
+		renderer.clearOverrideBlockTexture();
+		
 	}
 
 	private void renderCooler(int x, int y, int z, Block block2, RenderBlocks renderer, Tessellator tessellator) {
@@ -97,13 +157,23 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 		tessellator.addVertexWithUV(x + 1, y + w2 + 0.01f, z + 1, topMaxX, topMinZ);
 		tessellator.addVertexWithUV(x, y + w2 + 0.01f, z + 1, topMinX, topMinZ);
 		tessellator.addVertexWithUV(x, y + w2 + 0.01f, z, topMinX, topMaxZ);
-		
+
 		block2.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0F, 1.00F, 1.0F);
 		renderer.setRenderBoundsFromBlock(block2);
 		renderer.renderStandardBlock(block2, x, y, z);
+
 		block2.setBlockBounds(w1, w7, w1, 1.0F - w1, w2, 1.0F - w1);
 		renderer.setRenderBoundsFromBlock(block2);
 		renderer.renderStandardBlock(Block.blockIron, x, y, z);
+
+		
+		//tessellator.setColorRGBA(255, 255, 255, 000);
+		//GL11.glEnable(GL11.GL_BLEND);
+		//GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		block2.setBlockBounds(0.01f, w7+0.01f, 0.01f, 0.99F, w2, 0.99F);
+		renderer.setRenderBoundsFromBlock(block2);
+		renderer.renderStandardBlock(Block.waterStill, x, y, z);
+		//GL11.glDisable(GL11.GL_BLEND); 
 
 	}
 
@@ -146,7 +216,43 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 		double maxZ = (double) icon.getInterpolatedV(16);
 		double w2_w3_maxZ = (double) icon.getInterpolatedV(16 * w4);
 		float shift = 0.01f;
-		tessellator.setColorRGBA(100, 100, 100,255);
+		tessellator.setColorRGBA(100, 100, 100, 255);
+
+		// внутренние стенки
+		Icon iconInnerSise = renderer.getBlockIconFromSide(Block.cobblestone, 0);
+		double innerSideMinX = (double) iconInnerSise.getInterpolatedU(0);
+		double innerSideMaxX = (double) iconInnerSise.getInterpolatedU(16);
+		double innerSideMinZ = (double) iconInnerSise.getInterpolatedV(0);
+		double innerSideMaxZ = (double) iconInnerSise.getInterpolatedV(16);
+		double innerSide_w2_w3_maxZ = (double) icon.getInterpolatedV(16 * w2);
+		float innershift = w1 + 2 * shift;
+		tessellator.setColorRGBA(100, 100, 100, 255);
+		// inner side 1
+		tessellator.addVertexWithUV(x + innershift, y + shift, z + 1, innerSideMaxX, innerSide_w2_w3_maxZ);
+		tessellator.addVertexWithUV(x + innershift, y + w2, z + 1, innerSideMaxX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + innershift, y + w2, z, innerSideMinX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + innershift, y + shift, z, innerSideMinX, innerSide_w2_w3_maxZ);
+		//inner side 2
+		tessellator.addVertexWithUV(x + 1, y + shift, z + 1 - innershift, innerSideMaxX, innerSide_w2_w3_maxZ);
+		tessellator.addVertexWithUV(x + 1, y + w2, z + 1 - innershift, innerSideMaxX, innerSideMinZ);
+		tessellator.addVertexWithUV(x, y + w2, z + 1 - innershift, innerSideMinX, innerSideMinZ);
+		tessellator.addVertexWithUV(x, y + shift, z + 1 - innershift, innerSideMinX, innerSide_w2_w3_maxZ);
+		// inner  side 1
+		tessellator.addVertexWithUV(x + 1 - innershift, y + shift, z, innerSideMaxX, innerSide_w2_w3_maxZ);
+		tessellator.addVertexWithUV(x + 1 - innershift, y + w2, z, innerSideMaxX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + 1 - innershift, y + w2, z + 1, innerSideMinX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + 1 - innershift, y + shift, z + 1, innerSideMinX, innerSide_w2_w3_maxZ);
+		// inner side 2
+		tessellator.addVertexWithUV(x, y + shift, z + innershift, innerSideMaxX, innerSide_w2_w3_maxZ);
+		tessellator.addVertexWithUV(x, y + shift + w2, z + innershift, innerSideMaxX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + 1, y + w2, z + innershift, innerSideMinX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + 1, y, z + innershift, innerSideMinX, innerSide_w2_w3_maxZ);
+		//inner top
+		tessellator.addVertexWithUV(x, y + w2, z + 1, innerSideMaxX, innerSideMaxZ);
+		tessellator.addVertexWithUV(x, y + w2, z, innerSideMaxX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + 1, y + w2, z, innerSideMinX, innerSideMinZ);
+		tessellator.addVertexWithUV(x + 1, y + w2, z + 1, innerSideMinX, innerSideMaxZ);
+
 		//liquid
 		//top
 		tessellator.addVertexWithUV(x, y + w4, z, maxX, maxZ);
@@ -178,41 +284,6 @@ public class BlockExtractorRenderer extends RenderBlocks implements ISimpleBlock
 		tessellator.addVertexWithUV(x, y + w4, z + shift, maxX, minZ);
 		tessellator.addVertexWithUV(x + 1, y + w4, z + shift, minX, minZ);
 		tessellator.addVertexWithUV(x + 1, y, z + shift, minX, w2_w3_maxZ);
-
-		// внутренние стенки
-		icon = renderer.getBlockIconFromSide(Block.cobblestone, 0);
-		minX = (double) icon.getInterpolatedU(0);
-		maxX = (double) icon.getInterpolatedU(16);
-		minZ = (double) icon.getInterpolatedV(0);
-		maxZ = (double) icon.getInterpolatedV(16);
-		w2_w3_maxZ = (double) icon.getInterpolatedV(16 * w2);
-		float innershift = w1 + 2 * shift;
-		tessellator.setColorRGBA(100, 100, 100,255);
-		// inner side 1
-		tessellator.addVertexWithUV(x + innershift, y + shift, z + 1, maxX, w2_w3_maxZ);
-		tessellator.addVertexWithUV(x + innershift, y + w2, z + 1, maxX, minZ);
-		tessellator.addVertexWithUV(x + innershift, y + w2, z, minX, minZ);
-		tessellator.addVertexWithUV(x + innershift, y + shift, z, minX, w2_w3_maxZ);
-		//inner side 2
-		tessellator.addVertexWithUV(x + 1, y + shift, z + 1 - innershift, maxX, w2_w3_maxZ);
-		tessellator.addVertexWithUV(x + 1, y + w2, z + 1 - innershift, maxX, minZ);
-		tessellator.addVertexWithUV(x, y + w2, z + 1 - innershift, minX, minZ);
-		tessellator.addVertexWithUV(x, y + shift, z + 1 - innershift, minX, w2_w3_maxZ);
-		// inner  side 1
-		tessellator.addVertexWithUV(x + 1 - innershift, y + shift, z, maxX, w2_w3_maxZ);
-		tessellator.addVertexWithUV(x + 1 - innershift, y + w2, z, maxX, minZ);
-		tessellator.addVertexWithUV(x + 1 - innershift, y + w2, z + 1, minX, minZ);
-		tessellator.addVertexWithUV(x + 1 - innershift, y + shift, z + 1, minX, w2_w3_maxZ);
-		// inner side 2
-		tessellator.addVertexWithUV(x, y + shift, z + innershift, maxX, w2_w3_maxZ);
-		tessellator.addVertexWithUV(x, y + shift + w2, z + innershift, maxX, minZ);
-		tessellator.addVertexWithUV(x + 1, y + w2, z + innershift, minX, minZ);
-		tessellator.addVertexWithUV(x + 1, y, z + innershift, minX, w2_w3_maxZ);
-		//inner top
-		tessellator.addVertexWithUV(x, y + w2, z + 1, maxX, maxZ);
-		tessellator.addVertexWithUV(x, y + w2, z, maxX, minZ);
-		tessellator.addVertexWithUV(x + 1, y + w2, z, minX, minZ);
-		tessellator.addVertexWithUV(x + 1, y + w2, z + 1, minX, maxZ);
 
 	}
 
